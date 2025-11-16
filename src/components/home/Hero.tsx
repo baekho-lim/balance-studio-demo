@@ -26,8 +26,8 @@ export default function Hero({
           className="object-cover object-center"
           sizes="100vw"
         />
-        {/* Gradient Overlay for text readability */}
-        <div className="absolute inset-0 bg-gradient-to-b from-black/30 via-transparent to-black/50" />
+        {/* Gray Transparent Overlay for text readability */}
+        <div className="absolute inset-0 bg-gray-900/40" />
       </div>
 
       {/* Content - Centered */}

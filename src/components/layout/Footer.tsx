@@ -23,14 +23,14 @@ export default function Footer() {
               <span className="hidden sm:inline">hello@limhyejung.com</span>
             </a>
             <a
-              href="https://instagram.com/limhyejung_art"
+              href="https://www.instagram.com/limhyejung_artworks/"
               target="_blank"
               rel="noopener noreferrer"
               className="flex items-center gap-2 text-sm hover:text-pastel-sage transition-colors"
               aria-label="Instagram"
             >
               <Instagram size={18} />
-              <span className="hidden sm:inline">@limhyejung_art</span>
+              <span className="hidden sm:inline">@limhyejung_artworks</span>
             </a>
           </div>
         </div>
