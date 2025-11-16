@@ -38,6 +38,9 @@ export interface Artwork {
     alt: string;
   };
   order: number;
+  imageWidth?: number;
+  imageHeight?: number;
+  sizeCategory?: 'small' | 'medium' | 'large';
 }
 
 // 작가 정보

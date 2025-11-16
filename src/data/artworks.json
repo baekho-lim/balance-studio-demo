@@ -2,7 +2,7 @@
   {
     "id": "sg-001",
     "title": "I am only passing through the woods",
-    "year": 2023,
+    "year": 2025,
     "chapter": "secret-garden",
     "medium": "Mixed media",
     "dimensions": "",
@@ -13,12 +13,15 @@
       "full": "/images/works/1. I am only passing though the woods..jpg",
       "alt": "I am only passing through the woods"
     },
-    "order": 1
+    "order": 1,
+    "imageWidth": 4446,
+    "imageHeight": 2914,
+    "sizeCategory": "large"
   },
   {
     "id": "sg-002",
     "title": "Look at me or Wait for the daffodils",
-    "year": 2023,
+    "year": 2025,
     "chapter": "secret-garden",
     "medium": "Mixed media",
     "dimensions": "",
@@ -29,12 +32,15 @@
       "full": "/images/works/2. Look at me or Wait for the daffodiles..JPG",
       "alt": "Look at me or Wait for the daffodils"
     },
-    "order": 2
+    "order": 2,
+    "imageWidth": 3084,
+    "imageHeight": 3569,
+    "sizeCategory": "large"
   },
   {
     "id": "sg-003",
     "title": "Those ladybugs",
-    "year": 2023,
+    "year": 2025,
     "chapter": "secret-garden",
     "medium": "Mixed media",
     "dimensions": "",
@@ -45,12 +51,15 @@
       "full": "/images/works/8. Those ladybugs..JPG",
       "alt": "Those ladybugs"
     },
-    "order": 3
+    "order": 3,
+    "imageWidth": 1563,
+    "imageHeight": 1997,
+    "sizeCategory": "small"
   },
   {
     "id": "sg-004",
     "title": "Those silkworms",
-    "year": 2023,
+    "year": 2025,
     "chapter": "secret-garden",
     "medium": "Mixed media",
     "dimensions": "",
@@ -61,12 +70,15 @@
       "full": "/images/works/9. Those silkworms..jpg",
       "alt": "Those silkworms"
     },
-    "order": 4
+    "order": 4,
+    "imageWidth": 1563,
+    "imageHeight": 1997,
+    "sizeCategory": "small"
   },
   {
     "id": "sg-005",
     "title": "Those mantises",
-    "year": 2023,
+    "year": 2025,
     "chapter": "secret-garden",
     "medium": "Mixed media",
     "dimensions": "",
@@ -77,12 +89,15 @@
       "full": "/images/works/10. THose mantises..jpg",
       "alt": "Those mantises"
     },
-    "order": 5
+    "order": 5,
+    "imageWidth": 1563,
+    "imageHeight": 1997,
+    "sizeCategory": "small"
   },
   {
     "id": "sg-006",
     "title": "Those snails",
-    "year": 2023,
+    "year": 2025,
     "chapter": "secret-garden",
     "medium": "Mixed media",
     "dimensions": "",
@@ -93,12 +108,15 @@
       "full": "/images/works/11. Those snails..JPG",
       "alt": "Those snails"
     },
-    "order": 6
+    "order": 6,
+    "imageWidth": 1563,
+    "imageHeight": 1997,
+    "sizeCategory": "small"
   },
   {
     "id": "sg-007",
     "title": "Those bees",
-    "year": 2023,
+    "year": 2025,
     "chapter": "secret-garden",
     "medium": "Mixed media",
     "dimensions": "",
@@ -109,12 +127,15 @@
       "full": "/images/works/12. Those bees. .JPG",
       "alt": "Those bees"
     },
-    "order": 7
+    "order": 7,
+    "imageWidth": 1563,
+    "imageHeight": 1997,
+    "sizeCategory": "small"
   },
   {
     "id": "sg-008",
     "title": "The attraction of emotion",
-    "year": 2023,
+    "year": 2025,
     "chapter": "secret-garden",
     "medium": "Mixed media",
     "dimensions": "",
@@ -125,12 +146,15 @@
       "full": "/images/works/20.The attraction of emotion.jpeg",
       "alt": "The attraction of emotion"
     },
-    "order": 8
+    "order": 8,
+    "imageWidth": 3285,
+    "imageHeight": 5091,
+    "sizeCategory": "large"
   },
   {
     "id": "es-001",
     "title": "Effortlessly chirping birds (L)",
-    "year": 2023,
+    "year": 2025,
     "chapter": "effortless-spring",
     "medium": "Mixed media",
     "dimensions": "",
@@ -141,12 +165,15 @@
       "full": "/images/works/3. Effortlessly chirping birds._L.JPG",
       "alt": "Effortlessly chirping birds - Left"
     },
-    "order": 1
+    "order": 1,
+    "imageWidth": 4390,
+    "imageHeight": 2927,
+    "sizeCategory": "large"
   },
   {
     "id": "es-002",
     "title": "Effortlessly chirping birds (R)",
-    "year": 2023,
+    "year": 2025,
     "chapter": "effortless-spring",
     "medium": "Mixed media",
     "dimensions": "",
@@ -157,12 +184,15 @@
       "full": "/images/works/4. Effortlessly chirping birds._R.JPG",
       "alt": "Effortlessly chirping birds - Right"
     },
-    "order": 2
+    "order": 2,
+    "imageWidth": 4390,
+    "imageHeight": 2927,
+    "sizeCategory": "large"
   },
   {
     "id": "es-003",
     "title": "Take a break",
-    "year": 2023,
+    "year": 2025,
     "chapter": "effortless-spring",
     "medium": "Mixed media",
     "dimensions": "",
@@ -173,12 +203,15 @@
       "full": "/images/works/5. Take a break.JPG",
       "alt": "Take a break"
     },
-    "order": 3
+    "order": 3,
+    "imageWidth": 1563,
+    "imageHeight": 1997,
+    "sizeCategory": "small"
   },
   {
     "id": "es-004",
     "title": "Brighten someone",
-    "year": 2023,
+    "year": 2025,
     "chapter": "effortless-spring",
     "medium": "Mixed media",
     "dimensions": "",
@@ -189,12 +222,15 @@
       "full": "/images/works/6. Brighten someone..JPG",
       "alt": "Brighten someone"
     },
-    "order": 4
+    "order": 4,
+    "imageWidth": 1563,
+    "imageHeight": 1997,
+    "sizeCategory": "small"
   },
   {
     "id": "es-005",
     "title": "Recall a happy memory",
-    "year": 2023,
+    "year": 2025,
     "chapter": "effortless-spring",
     "medium": "Mixed media",
     "dimensions": "",
@@ -205,12 +241,15 @@
       "full": "/images/works/7. Recall a happy memory.JPG",
       "alt": "Recall a happy memory"
     },
-    "order": 5
+    "order": 5,
+    "imageWidth": 1563,
+    "imageHeight": 1997,
+    "sizeCategory": "small"
   },
   {
     "id": "ds-001",
     "title": "You are going to grow up",
-    "year": 2023,
+    "year": 2025,
     "chapter": "desert-stories",
     "medium": "Mixed media",
     "dimensions": "",
@@ -221,12 +260,15 @@
       "full": "/images/works/13. You are going to grow up..JPG",
       "alt": "You are going to grow up"
     },
-    "order": 1
+    "order": 1,
+    "imageWidth": 2328,
+    "imageHeight": 3335,
+    "sizeCategory": "medium"
   },
   {
     "id": "ds-002",
     "title": "I am going to have to grow old",
-    "year": 2023,
+    "year": 2025,
     "chapter": "desert-stories",
     "medium": "Mixed media",
     "dimensions": "",
@@ -237,12 +279,15 @@
       "full": "/images/works/14. I am going to have to grow old..JPG",
       "alt": "I am going to have to grow old"
     },
-    "order": 2
+    "order": 2,
+    "imageWidth": 2328,
+    "imageHeight": 3335,
+    "sizeCategory": "medium"
   },
   {
     "id": "ds-003",
     "title": "And then I will die",
-    "year": 2023,
+    "year": 2025,
     "chapter": "desert-stories",
     "medium": "Mixed media",
     "dimensions": "",
@@ -253,12 +298,15 @@
       "full": "/images/works/15. And then I will die..JPG",
       "alt": "And then I will die"
     },
-    "order": 3
+    "order": 3,
+    "imageWidth": 2328,
+    "imageHeight": 3335,
+    "sizeCategory": "medium"
   },
   {
     "id": "ds-004",
     "title": "They live like nothing happened",
-    "year": 2023,
+    "year": 2025,
     "chapter": "desert-stories",
     "medium": "Mixed media",
     "dimensions": "",
@@ -269,12 +317,15 @@
       "full": "/images/works/19.they live like nothing....jpeg",
       "alt": "They live like nothing happened"
     },
-    "order": 4
+    "order": 4,
+    "imageWidth": 5417,
+    "imageHeight": 3601,
+    "sizeCategory": "large"
   },
   {
     "id": "wt-001",
     "title": "On your heart",
-    "year": 2023,
+    "year": 2025,
     "chapter": "waters-of-time",
     "medium": "Mixed media",
     "dimensions": "",
@@ -285,12 +336,15 @@
       "full": "/images/works/16. On your heart..JPG",
       "alt": "On your heart"
     },
-    "order": 1
+    "order": 1,
+    "imageWidth": 1563,
+    "imageHeight": 1997,
+    "sizeCategory": "small"
   },
   {
     "id": "wt-002",
     "title": "Take one tiny step",
-    "year": 2023,
+    "year": 2025,
     "chapter": "waters-of-time",
     "medium": "Mixed media",
     "dimensions": "",
@@ -301,12 +355,15 @@
       "full": "/images/works/17. Take one tiny step..jpg",
       "alt": "Take one tiny step"
     },
-    "order": 2
+    "order": 2,
+    "imageWidth": 2757,
+    "imageHeight": 3489,
+    "sizeCategory": "medium"
   },
   {
     "id": "wt-003",
     "title": "Go there",
-    "year": 2023,
+    "year": 2025,
     "chapter": "waters-of-time",
     "medium": "Mixed media",
     "dimensions": "",
@@ -317,12 +374,15 @@
       "full": "/images/works/18. Go there..jpg",
       "alt": "Go there"
     },
-    "order": 3
+    "order": 3,
+    "imageWidth": 2779,
+    "imageHeight": 3530,
+    "sizeCategory": "medium"
   },
   {
     "id": "wt-004",
     "title": "Just that we grow",
-    "year": 2023,
+    "year": 2025,
     "chapter": "waters-of-time",
     "medium": "Mixed media",
     "dimensions": "",
@@ -333,6 +393,9 @@
       "full": "/images/works/21.Just that we grow.jpeg",
       "alt": "Just that we grow"
     },
-    "order": 4
+    "order": 4,
+    "imageWidth": 3829,
+    "imageHeight": 4849,
+    "sizeCategory": "large"
   }
 ]

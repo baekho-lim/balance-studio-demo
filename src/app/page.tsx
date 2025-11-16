@@ -6,6 +6,7 @@ import Hero from '@/components/home/Hero'
 import ArtworkCard from '@/components/works/ArtworkCard'
 import LightboxModal from '@/components/works/LightboxModal'
 import ContactSection from '@/components/home/ContactSection'
+import ViewModeSelector, { type ViewMode } from '@/components/works/ViewModeSelector'
 
 // Import data
 import artistData from '@/data/artist.json'
@@ -20,6 +21,7 @@ const chapters = chaptersData as Chapter[]
 
 export default function HomePage() {
   const [selectedArtwork, setSelectedArtwork] = useState<Artwork | null>(null)
+  const [viewMode, setViewMode] = useState<ViewMode>('grid')
 
   // Group artworks by chapter
   const artworksByChapter = useMemo(() => {
@@ -46,9 +48,12 @@ export default function HomePage() {
           <h2 className="font-serif text-3xl md:text-4xl text-center mb-4">
             Works
           </h2>
-          <p className="text-secondary text-center mb-20">
+          <p className="text-secondary text-center mb-12">
             작품
           </p>
+
+          {/* View Mode Selector */}
+          <ViewModeSelector currentMode={viewMode} onModeChange={setViewMode} />
 
           {/* Chapters */}
           <div className="space-y-32 md:space-y-40">
@@ -81,12 +86,19 @@ export default function HomePage() {
                 </div>
 
                 {/* Chapter Artworks Grid */}
-                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-10 lg:gap-12">
+                <div
+                  className={`
+                    ${viewMode === 'grid' ? 'grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-10 lg:gap-12' : ''}
+                    ${viewMode === 'proportional' ? 'columns-1 sm:columns-2 lg:columns-3 gap-8 space-y-8' : ''}
+                    ${viewMode === 'large' ? 'space-y-12' : ''}
+                  `}
+                >
                   {chapterArtworks.map((artwork) => (
                     <ArtworkCard
                       key={artwork.id}
                       artwork={artwork}
                       onClick={setSelectedArtwork}
+                      viewMode={viewMode}
                     />
                   ))}
                 </div>
@@ -107,7 +119,7 @@ export default function HomePage() {
                   src={artist.profileImage}
                   alt={artist.name}
                   fill
-                  className="object-cover"
+                  className="object-cover object-top"
                   sizes="(max-width: 768px) 192px, 256px"
                 />
               </div>
