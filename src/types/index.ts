@@ -47,7 +47,7 @@ export interface Artist {
   education: {
     degree: string;
     institution: string;
-    year: number;
+    year: number | string;
   }[];
   statement: {
     kr: string;
