@@ -35,7 +35,7 @@ export default function HomePage() {
     <>
       {/* Hero Section - Full Screen */}
       <Hero
-        backgroundImage="/images/works/1. I am only passing though the woods..jpg"
+        backgroundImage="/images/works/21.Just that we grow.jpeg"
         artistName="Lim Hyejung"
         tagline="Utopia = Reality"
       />
