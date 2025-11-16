@@ -1,0 +1,46 @@
+[
+  {
+    "id": "secret-garden",
+    "title": "Secret Garden",
+    "titleKr": "비밀의 정원",
+    "question": "What lies hidden in the spaces between memory and imagination?",
+    "questionKr": "기억과 상상 사이, 그 숨겨진 공간에는 무엇이 있을까요?",
+    "description": "A series exploring intimate landscapes where nature becomes a vessel for hidden emotions.",
+    "descriptionKr": "자연이 숨겨진 감정의 그릇이 되는 내밀한 풍경을 탐구하는 시리즈입니다.",
+    "coverImage": "/images/works/2. Look at me or Wait for the daffodiles..JPG",
+    "color": "pastel-green"
+  },
+  {
+    "id": "effortless-spring",
+    "title": "Effortless Spring",
+    "titleKr": "무심한 봄",
+    "question": "Can beauty exist without the weight of intention?",
+    "questionKr": "의도의 무게 없이도 아름다움이 존재할 수 있을까요?",
+    "description": "Works that capture the spontaneous beauty of renewal and natural cycles.",
+    "descriptionKr": "재생과 자연의 순환이 지닌 자발적인 아름다움을 포착한 작품들입니다.",
+    "coverImage": "/images/works/3. Effortlessly chirping birds._L.JPG",
+    "color": "pastel-pink"
+  },
+  {
+    "id": "desert-stories",
+    "title": "Desert Stories",
+    "titleKr": "사막의 이야기",
+    "question": "What stories emerge from silence and solitude?",
+    "questionKr": "고요와 고독에서 어떤 이야기가 피어날까요?",
+    "description": "Narratives born from vast emptiness and the resilience found within.",
+    "descriptionKr": "광활한 공허와 그 안에서 발견되는 회복력으로부터 태어난 서사입니다.",
+    "coverImage": "/images/works/13. You are going to grow up..JPG",
+    "color": "pastel-cream"
+  },
+  {
+    "id": "waters-of-time",
+    "title": "Waters of Time",
+    "titleKr": "시간의 물",
+    "question": "How does time flow through the landscapes of our consciousness?",
+    "questionKr": "시간은 우리 의식의 풍경을 어떻게 흘러가는 걸까요?",
+    "description": "Meditations on temporality, memory, and the fluid nature of experience.",
+    "descriptionKr": "시간성, 기억, 그리고 경험의 유동적 본질에 대한 명상입니다.",
+    "coverImage": "/images/works/16. On your heart..JPG",
+    "color": "pastel-blue"
+  }
+]
