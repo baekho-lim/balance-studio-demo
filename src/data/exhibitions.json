@@ -1,0 +1,16 @@
+[
+  {
+    "year": 2025,
+    "title": "Utopia = Reality",
+    "titleKr": "유토피아는 곧 현실이다",
+    "venue": "",
+    "location": "",
+    "startDate": "2025",
+    "endDate": "",
+    "type": "solo",
+    "description": "Current exhibition featuring 21 artworks exploring nature reconstructed through imagination.",
+    "descriptionKr": "상상력으로 재구성된 자연을 탐구하는 21점의 작품을 선보이는 현재 전시.",
+    "chapters": ["secret-garden", "tiny-moments", "growth-and-time", "heart-and-journey"],
+    "featured": true
+  }
+]

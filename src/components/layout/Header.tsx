@@ -1,10 +1,12 @@
 'use client'
 
 import { useState, useEffect } from 'react'
+import Link from 'next/link'
 import { Menu, X } from 'lucide-react'
 
 const navigation = [
   { name: 'Works', href: '#works' },
+  { name: 'Archive', href: '/archive', isLink: true },
   { name: 'About', href: '#about' },
   { name: 'Contact', href: '#contact' },
 ]
@@ -54,13 +56,23 @@ export default function Header() {
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center space-x-12">
             {navigation.map((item) => (
-              <button
-                key={item.name}
-                onClick={() => handleNavClick(item.href)}
-                className="text-sm tracking-widest uppercase hover:text-pastel-sage transition-colors"
-              >
-                {item.name}
-              </button>
+              'isLink' in item && item.isLink ? (
+                <Link
+                  key={item.name}
+                  href={item.href}
+                  className="text-sm tracking-widest uppercase hover:text-pastel-sage transition-colors"
+                >
+                  {item.name}
+                </Link>
+              ) : (
+                <button
+                  key={item.name}
+                  onClick={() => handleNavClick(item.href)}
+                  className="text-sm tracking-widest uppercase hover:text-pastel-sage transition-colors"
+                >
+                  {item.name}
+                </button>
+              )
             ))}
           </div>
 
@@ -80,13 +92,24 @@ export default function Header() {
         <div className="md:hidden bg-pastel-cream/95 backdrop-blur-sm">
           <div className="container-wide py-8 space-y-6">
             {navigation.map((item) => (
-              <button
-                key={item.name}
-                onClick={() => handleNavClick(item.href)}
-                className="block text-lg tracking-wide hover:text-pastel-sage transition-colors"
-              >
-                {item.name}
-              </button>
+              'isLink' in item && item.isLink ? (
+                <Link
+                  key={item.name}
+                  href={item.href}
+                  onClick={() => setIsMobileMenuOpen(false)}
+                  className="block text-lg tracking-wide hover:text-pastel-sage transition-colors"
+                >
+                  {item.name}
+                </Link>
+              ) : (
+                <button
+                  key={item.name}
+                  onClick={() => handleNavClick(item.href)}
+                  className="block text-lg tracking-wide hover:text-pastel-sage transition-colors"
+                >
+                  {item.name}
+                </button>
+              )
             ))}
           </div>
         </div>
