@@ -2,6 +2,7 @@
 
 import { useState } from 'react'
 import Image from 'next/image'
+import { QRCodeSVG } from 'qrcode.react'
 import catalogData from '@/data/catalog.json'
 
 type Language = 'en' | 'kr'
@@ -56,26 +57,42 @@ export default function CatalogPage() {
       </div>
 
       {/* Cover Page */}
-      <section className="h-screen flex flex-col items-center justify-center p-8 page-break-after">
-        <div className="text-center max-w-2xl">
-          <h1 className="font-serif text-5xl md:text-6xl mb-4 tracking-wide">
-            {catalogData.title}
-          </h1>
-          <p className="text-xl text-secondary mb-12">
-            {catalogData.subtitle}
-          </p>
+      <section className="h-screen relative page-break-after">
+        {/* Background Artwork */}
+        <div className="absolute inset-0">
+          <Image
+            src="/images/works/1. I am only passing though the woods..jpg"
+            alt="Cover artwork"
+            fill
+            className="object-cover"
+            priority
+          />
+          {/* Dark overlay for text readability */}
+          <div className="absolute inset-0 bg-black/50" />
+        </div>
 
-          <div className="w-24 h-px bg-primary/30 mx-auto mb-12" />
+        {/* Cover Content */}
+        <div className="relative h-full flex flex-col items-center justify-center p-8">
+          <div className="text-center max-w-2xl">
+            <h1 className="font-serif text-5xl md:text-6xl mb-4 tracking-wide text-white">
+              {catalogData.title}
+            </h1>
+            <p className="text-xl text-white/80 mb-12">
+              {catalogData.subtitle}
+            </p>
 
-          <p className="font-serif text-2xl mb-2">
-            {catalogData.artist.name}
-          </p>
-          <p className="text-lg text-secondary mb-1">
-            {catalogData.artist.nameKr}
-          </p>
-          <p className="text-sm text-secondary/70">
-            {catalogData.artist.birth}
-          </p>
+            <div className="w-24 h-px bg-white/50 mx-auto mb-12" />
+
+            <p className="font-serif text-2xl mb-2 text-white">
+              {catalogData.artist.name}
+            </p>
+            <p className="text-lg text-white/80 mb-1">
+              {catalogData.artist.nameKr}
+            </p>
+            <p className="text-sm text-white/60">
+              {catalogData.artist.birth}
+            </p>
+          </div>
         </div>
       </section>
 
@@ -183,8 +200,20 @@ export default function CatalogPage() {
             {lang === 'en' ? 'Artist' : '작가'}
           </h2>
 
+          {/* Artist Profile Photo */}
+          <div className="flex justify-center mb-12">
+            <div className="relative w-48 h-48 rounded-full overflow-hidden bg-gray-100">
+              <Image
+                src="/images/artist/hj lim black.png"
+                alt="Lim Hyejung"
+                fill
+                className="object-cover"
+              />
+            </div>
+          </div>
+
           <div className="space-y-8">
-            <div>
+            <div className="text-center">
               <h3 className="font-serif text-2xl mb-2">
                 {catalogData.artist.name}
               </h3>
@@ -215,8 +244,27 @@ export default function CatalogPage() {
                 {lang === 'en' ? 'Contact' : '연락처'}
               </h4>
               <p className="mb-1">{catalogData.contact.email}</p>
-              <p className="mb-1">{catalogData.contact.instagram}</p>
-              <p className="text-sm text-secondary">{catalogData.contact.website}</p>
+              <p className="mb-6">{catalogData.contact.instagram}</p>
+
+              {/* QR Code for Artist Website */}
+              <div className="mt-6 text-center">
+                <p className="text-sm uppercase tracking-widest text-secondary mb-4">
+                  {lang === 'en' ? 'Visit Artist Website' : '작가 홈페이지'}
+                </p>
+                <div className="flex justify-center mb-4">
+                  <div className="bg-white p-3 rounded-lg shadow-sm">
+                    <QRCodeSVG
+                      value="https://www.limhyejung.com/"
+                      size={120}
+                      level="M"
+                      includeMargin={false}
+                    />
+                  </div>
+                </div>
+                <p className="text-sm text-primary">
+                  https://www.limhyejung.com/
+                </p>
+              </div>
             </div>
           </div>
         </div>
@@ -258,6 +306,31 @@ export default function CatalogPage() {
             <p className="text-sm text-secondary">
               {catalogData.contact.gallery_email}
             </p>
+          </div>
+
+          {/* QR Code for Gallery Website */}
+          <div className="mt-12">
+            <p className="text-sm uppercase tracking-widest text-secondary mb-4">
+              {lang === 'en' ? 'Visit Gallery' : '갤러리 방문'}
+            </p>
+            <div className="flex justify-center mb-4">
+              <div className="bg-white p-4 rounded-lg shadow-sm">
+                <QRCodeSVG
+                  value="https://www.ahlfah.com/"
+                  size={150}
+                  level="M"
+                  includeMargin={false}
+                />
+              </div>
+            </div>
+            <a
+              href="https://www.ahlfah.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-sm text-primary hover:underline"
+            >
+              www.ahlfah.com
+            </a>
           </div>
         </div>
       </section>

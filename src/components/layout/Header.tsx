@@ -8,6 +8,7 @@ import LanguageSelector from '@/components/ui/LanguageSelector'
 const navigation = [
   { name: 'Works', href: '#works' },
   { name: 'Story', href: '/story', isLink: true },
+  { name: 'Catalog', href: '/catalog', isLink: true },
   { name: 'Archive', href: '/archive', isLink: true },
   { name: 'About', href: '#about' },
   { name: 'Contact', href: '#contact' },
