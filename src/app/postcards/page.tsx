@@ -345,10 +345,18 @@ export default function PostcardsPage() {
                           </div>
 
                           <div className="border-t border-gray-200 pt-3">
-                            <div className="flex justify-between items-end">
+                            <div className="flex justify-between items-center">
                               <div>
                                 <p className="font-serif text-sm">{catalogData.artist.name}</p>
                                 <p className="text-xs text-secondary">{catalogData.artist.nameKr}</p>
+                              </div>
+                              <div className="bg-white p-1 rounded">
+                                <QRCodeSVG
+                                  value="https://www.limhyejung.com/"
+                                  size={40}
+                                  level="M"
+                                  includeMargin={false}
+                                />
                               </div>
                               <div className="text-right">
                                 <p className="text-xs text-secondary">{catalogData.contact.website}</p>
