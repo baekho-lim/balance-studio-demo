@@ -17,6 +17,7 @@ export default function PostcardsPage() {
   const [lang, setLang] = useState<Language>('en')
   const [showBack, setShowBack] = useState(false)
   const [imageMode, setImageMode] = useState<'contain' | 'cover'>('contain')
+  const [orientationFilter, setOrientationFilter] = useState<'all' | 'portrait' | 'landscape'>('all')
 
   return (
     <div className="min-h-screen bg-gray-100 py-12">
@@ -39,6 +40,37 @@ export default function PostcardsPage() {
             }`}
           >
             KR
+          </button>
+        </div>
+
+        {/* Orientation Filter */}
+        <div className="bg-white/90 backdrop-blur-sm rounded-full shadow-lg p-1 flex">
+          <button
+            onClick={() => setOrientationFilter('all')}
+            className={`px-3 py-2 rounded-full text-xs transition-all ${
+              orientationFilter === 'all' ? 'bg-primary text-white' : 'text-primary hover:bg-gray-100'
+            }`}
+            title="모든 엽서"
+          >
+            전체
+          </button>
+          <button
+            onClick={() => setOrientationFilter('landscape')}
+            className={`px-3 py-2 rounded-full text-xs transition-all ${
+              orientationFilter === 'landscape' ? 'bg-primary text-white' : 'text-primary hover:bg-gray-100'
+            }`}
+            title="가로형만 (7x5)"
+          >
+            가로
+          </button>
+          <button
+            onClick={() => setOrientationFilter('portrait')}
+            className={`px-3 py-2 rounded-full text-xs transition-all ${
+              orientationFilter === 'portrait' ? 'bg-primary text-white' : 'text-primary hover:bg-gray-100'
+            }`}
+            title="세로형만 (5x7)"
+          >
+            세로
           </button>
         </div>
 
@@ -98,7 +130,8 @@ export default function PostcardsPage() {
 
         {/* Postcards Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 print:grid-cols-1 print:gap-0">
-          {/* Artist Info Postcard */}
+          {/* Artist Info Postcard - Only show when 'all' or 'landscape' */}
+          {(orientationFilter === 'all' || orientationFilter === 'landscape') && (
           <div className="postcard-wrapper print:page-break-after">
             {/* Front Side - Artist Photo or Exhibition Image */}
             <div
@@ -189,8 +222,17 @@ export default function PostcardsPage() {
               Artist Info Card
             </p>
           </div>
+          )}
 
-          {artworks.map((work) => {
+          {artworks
+            .filter((work) => {
+              if (orientationFilter === 'all') return true
+              const isPortrait = work.imageHeight > work.imageWidth
+              if (orientationFilter === 'portrait') return isPortrait
+              if (orientationFilter === 'landscape') return !isPortrait
+              return true
+            })
+            .map((work) => {
             // Determine orientation based on artwork dimensions
             const isPortrait = work.imageHeight > work.imageWidth
             const postcardWidth = isPortrait ? '5in' : '7in'
@@ -296,6 +338,7 @@ export default function PostcardsPage() {
 
           @page {
             margin: 0;
+            ${orientationFilter === 'portrait' ? 'size: 5in 7in;' : orientationFilter === 'landscape' ? 'size: 7in 5in;' : ''}
           }
         }
       `}</style>
