@@ -49,23 +49,25 @@ export default function ResourcesPage() {
         </p>
 
         <div className="space-y-20">
-          {chapters.map((chapter) => {
-            const chapterArtworks = artworksByChapter[chapter.id] || []
-            if (chapterArtworks.length === 0) return null
+          {(() => {
+            let globalIndex = 0
+            return chapters.map((chapter) => {
+              const chapterArtworks = artworksByChapter[chapter.id] || []
+              if (chapterArtworks.length === 0) return null
 
-            return (
-              <div key={chapter.id}>
-                <h2 className="font-serif text-3xl mb-8 text-center">
-                  {chapter.title} / {chapter.titleKr}
-                </h2>
+              return (
+                <div key={chapter.id}>
+                  <h2 className="font-serif text-3xl mb-8 text-center">
+                    {chapter.title} / {chapter.titleKr}
+                  </h2>
 
-                <div className="overflow-x-auto">
-                  <table className="w-full bg-white rounded-lg shadow-sm border border-primary/10">
-                    <thead className="bg-pastel-sage/10">
-                      <tr>
-                        <th className="px-4 py-3 text-left text-sm font-medium text-primary">
-                          #
-                        </th>
+                  <div className="overflow-x-auto">
+                    <table className="w-full bg-white rounded-lg shadow-sm border border-primary/10">
+                      <thead className="bg-pastel-sage/10">
+                        <tr>
+                          <th className="px-4 py-3 text-left text-sm font-medium text-primary">
+                            #
+                          </th>
                         <th className="px-4 py-3 text-left text-sm font-medium text-primary">
                           Thumbnail
                         </th>
@@ -95,14 +97,16 @@ export default function ResourcesPage() {
                     <tbody>
                       {chapterArtworks
                         .sort((a, b) => a.order - b.order)
-                        .map((artwork) => (
-                          <tr
-                            key={artwork.id}
-                            className="border-t border-primary/5 hover:bg-pastel-sage/5 transition-colors"
-                          >
-                            <td className="px-4 py-3 text-sm font-medium text-primary">
-                              {artwork.order}
-                            </td>
+                        .map((artwork) => {
+                          globalIndex++
+                          return (
+                            <tr
+                              key={artwork.id}
+                              className="border-t border-primary/5 hover:bg-pastel-sage/5 transition-colors"
+                            >
+                              <td className="px-4 py-3 text-sm font-medium text-primary">
+                                {globalIndex}
+                              </td>
                             <td className="px-4 py-3">
                               <div className="relative w-16 h-16 rounded overflow-hidden bg-gray-100">
                                 <Image
@@ -169,8 +173,9 @@ export default function ResourcesPage() {
                                 <span className="hidden md:inline">Download</span>
                               </button>
                             </td>
-                          </tr>
-                        ))}
+                            </tr>
+                          )
+                        })}
                     </tbody>
                   </table>
                 </div>
@@ -180,8 +185,9 @@ export default function ResourcesPage() {
                   {chapterArtworks.length} artwork{chapterArtworks.length !== 1 ? 's' : ''}
                 </div>
               </div>
-            )
-          })}
+              )
+            })
+          })()}
         </div>
 
         {/* Notes */}
