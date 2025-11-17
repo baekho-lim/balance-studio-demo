@@ -38,6 +38,9 @@ export default function ResourcesPage() {
     }
   }
 
+  // Calculate global index for continuous numbering
+  let globalIndex = 0
+
   return (
     <div className="pt-24 pb-16">
       <div className="container-wide">
@@ -49,25 +52,23 @@ export default function ResourcesPage() {
         </p>
 
         <div className="space-y-20">
-          {(() => {
-            let globalIndex = 0
-            return chapters.map((chapter) => {
-              const chapterArtworks = artworksByChapter[chapter.id] || []
-              if (chapterArtworks.length === 0) return null
+          {chapters.map((chapter) => {
+            const chapterArtworks = artworksByChapter[chapter.id] || []
+            if (chapterArtworks.length === 0) return null
 
-              return (
-                <div key={chapter.id}>
-                  <h2 className="font-serif text-3xl mb-8 text-center">
-                    {chapter.title} / {chapter.titleKr}
-                  </h2>
+            return (
+              <div key={chapter.id}>
+                <h2 className="font-serif text-3xl mb-8 text-center">
+                  {chapter.title} / {chapter.titleKr}
+                </h2>
 
-                  <div className="overflow-x-auto">
-                    <table className="w-full bg-white rounded-lg shadow-sm border border-primary/10">
-                      <thead className="bg-pastel-sage/10">
-                        <tr>
-                          <th className="px-4 py-3 text-left text-sm font-medium text-primary">
-                            #
-                          </th>
+                <div className="overflow-x-auto">
+                  <table className="w-full bg-white rounded-lg shadow-sm border border-primary/10">
+                    <thead className="bg-pastel-sage/10">
+                      <tr>
+                        <th className="px-4 py-3 text-left text-sm font-medium text-primary">
+                          #
+                        </th>
                         <th className="px-4 py-3 text-left text-sm font-medium text-primary">
                           Thumbnail
                         </th>
@@ -107,72 +108,72 @@ export default function ResourcesPage() {
                               <td className="px-4 py-3 text-sm font-medium text-primary">
                                 {globalIndex}
                               </td>
-                            <td className="px-4 py-3">
-                              <div className="relative w-16 h-16 rounded overflow-hidden bg-gray-100">
-                                <Image
-                                  src={artwork.images.thumbnail}
-                                  alt={artwork.title}
-                                  fill
-                                  className="object-cover"
-                                  sizes="64px"
-                                  unoptimized
-                                  loading="lazy"
-                                />
-                              </div>
-                            </td>
-                            <td className="px-4 py-3 text-sm text-secondary font-mono">
-                              {artwork.id}
-                            </td>
-                            <td className="px-4 py-3 text-sm">
-                              <div>
-                                <div className="font-medium text-primary">
-                                  {artwork.title}
+                              <td className="px-4 py-3">
+                                <div className="relative w-16 h-16 rounded overflow-hidden bg-gray-100">
+                                  <Image
+                                    src={artwork.images.thumbnail}
+                                    alt={artwork.title}
+                                    fill
+                                    className="object-cover"
+                                    sizes="64px"
+                                    unoptimized
+                                    loading="lazy"
+                                  />
                                 </div>
-                                {artwork.titleKr && (
-                                  <div className="text-xs text-secondary mt-1">
-                                    {artwork.titleKr}
+                              </td>
+                              <td className="px-4 py-3 text-sm text-secondary font-mono">
+                                {artwork.id}
+                              </td>
+                              <td className="px-4 py-3 text-sm">
+                                <div>
+                                  <div className="font-medium text-primary">
+                                    {artwork.title}
                                   </div>
-                                )}
-                              </div>
-                            </td>
-                            <td className="px-4 py-3 text-sm text-secondary">
-                              {artwork.year}
-                            </td>
-                            <td className="px-4 py-3 text-sm text-secondary">
-                              {artwork.medium}
-                            </td>
-                            <td className="px-4 py-3 text-sm text-secondary">
-                              {artwork.dimensions}
-                            </td>
-                            <td className="px-4 py-3 text-sm">
-                              <span
-                                className={`inline-block px-2 py-1 text-xs rounded-full ${
-                                  artwork.sizeCategory === 'large'
-                                    ? 'bg-pastel-green/30 text-primary'
-                                    : artwork.sizeCategory === 'medium'
-                                    ? 'bg-pastel-cream/50 text-primary'
-                                    : 'bg-pastel-lavender/30 text-primary'
-                                }`}
-                              >
-                                {artwork.sizeCategory}
-                              </span>
-                            </td>
-                            <td className="px-4 py-3 text-center">
-                              <button
-                                onClick={() =>
-                                  handleDownload(
-                                    artwork.images.full,
-                                    artwork.title,
-                                    artwork.id
-                                  )
-                                }
-                                className="inline-flex items-center gap-1 text-xs text-primary hover:text-primary/70 transition-colors"
-                                title="Download high-resolution image"
-                              >
-                                <Download size={16} />
-                                <span className="hidden md:inline">Download</span>
-                              </button>
-                            </td>
+                                  {artwork.titleKr && (
+                                    <div className="text-xs text-secondary mt-1">
+                                      {artwork.titleKr}
+                                    </div>
+                                  )}
+                                </div>
+                              </td>
+                              <td className="px-4 py-3 text-sm text-secondary">
+                                {artwork.year}
+                              </td>
+                              <td className="px-4 py-3 text-sm text-secondary">
+                                {artwork.medium}
+                              </td>
+                              <td className="px-4 py-3 text-sm text-secondary">
+                                {artwork.dimensions}
+                              </td>
+                              <td className="px-4 py-3 text-sm">
+                                <span
+                                  className={`inline-block px-2 py-1 text-xs rounded-full ${
+                                    artwork.sizeCategory === 'large'
+                                      ? 'bg-pastel-green/30 text-primary'
+                                      : artwork.sizeCategory === 'medium'
+                                      ? 'bg-pastel-cream/50 text-primary'
+                                      : 'bg-pastel-lavender/30 text-primary'
+                                  }`}
+                                >
+                                  {artwork.sizeCategory}
+                                </span>
+                              </td>
+                              <td className="px-4 py-3 text-center">
+                                <button
+                                  onClick={() =>
+                                    handleDownload(
+                                      artwork.images.full,
+                                      artwork.title,
+                                      artwork.id
+                                    )
+                                  }
+                                  className="inline-flex items-center gap-1 text-xs text-primary hover:text-primary/70 transition-colors"
+                                  title="Download high-resolution image"
+                                >
+                                  <Download size={16} />
+                                  <span className="hidden md:inline">Download</span>
+                                </button>
+                              </td>
                             </tr>
                           )
                         })}
@@ -185,9 +186,8 @@ export default function ResourcesPage() {
                   {chapterArtworks.length} artwork{chapterArtworks.length !== 1 ? 's' : ''}
                 </div>
               </div>
-              )
-            })
-          })()}
+            )
+          })}
         </div>
 
         {/* Notes */}
