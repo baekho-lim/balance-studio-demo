@@ -50,7 +50,9 @@ export default function Header() {
           {/* Logo */}
           <button
             onClick={scrollToTop}
-            className="font-serif text-xl tracking-wide hover:opacity-70 transition-opacity"
+            className={`font-serif text-xl tracking-wide hover:opacity-70 transition-all ${
+              isScrolled ? 'text-primary' : 'text-white'
+            }`}
           >
             Lim Hyejung
           </button>
@@ -62,7 +64,9 @@ export default function Header() {
                 <Link
                   key={item.name}
                   href={item.href}
-                  className="text-sm tracking-widest uppercase hover:text-pastel-sage transition-colors"
+                  className={`text-sm tracking-widest uppercase hover:text-pastel-sage transition-all ${
+                    isScrolled ? 'text-primary' : 'text-white'
+                  }`}
                 >
                   {item.name}
                 </Link>
@@ -70,7 +74,9 @@ export default function Header() {
                 <button
                   key={item.name}
                   onClick={() => handleNavClick(item.href)}
-                  className="text-sm tracking-widest uppercase hover:text-pastel-sage transition-colors"
+                  className={`text-sm tracking-widest uppercase hover:text-pastel-sage transition-all ${
+                    isScrolled ? 'text-primary' : 'text-white'
+                  }`}
                 >
                   {item.name}
                 </button>
@@ -82,7 +88,7 @@ export default function Header() {
           {/* Mobile Menu Button */}
           <button
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-            className="md:hidden p-2"
+            className={`md:hidden p-2 ${isScrolled ? 'text-primary' : 'text-white'}`}
             aria-label="Toggle menu"
           >
             {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
