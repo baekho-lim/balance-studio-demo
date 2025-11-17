@@ -398,7 +398,7 @@ export default function PostcardsPage() {
 
           .postcard-front img,
           .postcard-front [style*="background"] img {
-            object-fit: contain !important;
+            object-fit: ${imageMode} !important;
             width: 100% !important;
             height: 100% !important;
           }
