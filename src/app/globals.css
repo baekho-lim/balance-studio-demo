@@ -42,4 +42,42 @@
   .animation-delay-600 {
     animation-delay: 600ms;
   }
+
+  .page-break-after {
+    page-break-after: always;
+  }
+
+  .page-break-before {
+    page-break-before: always;
+  }
+}
+
+/* Print styles for catalog/pamphlet */
+@media print {
+  body {
+    @apply bg-white text-black;
+  }
+
+  .print\:hidden {
+    display: none !important;
+  }
+
+  .page-break-after {
+    page-break-after: always;
+    break-after: page;
+  }
+
+  .page-break-before {
+    page-break-before: always;
+    break-before: page;
+  }
+
+  section {
+    page-break-inside: avoid;
+  }
+
+  @page {
+    margin: 0.5in;
+    size: A4;
+  }
 }
