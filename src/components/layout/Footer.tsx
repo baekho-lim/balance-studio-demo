@@ -92,6 +92,11 @@ export default function Footer() {
                   Postcards
                 </Link>
               </li>
+              <li>
+                <Link href="/resources" className="text-sm text-secondary hover:text-primary transition-colors">
+                  Resources
+                </Link>
+              </li>
             </ul>
           </div>
 
