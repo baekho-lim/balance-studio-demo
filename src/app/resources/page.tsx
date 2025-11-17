@@ -111,6 +111,8 @@ export default function ResourcesPage() {
                                   fill
                                   className="object-cover"
                                   sizes="64px"
+                                  unoptimized
+                                  loading="lazy"
                                 />
                               </div>
                             </td>
