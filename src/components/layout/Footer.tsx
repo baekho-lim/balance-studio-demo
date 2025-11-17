@@ -1,12 +1,44 @@
+'use client'
+
+import { useRef } from 'react'
 import Link from 'next/link'
-import { Instagram, Mail } from 'lucide-react'
+import { Instagram, Mail, Download } from 'lucide-react'
+import { QRCodeSVG } from 'qrcode.react'
 
 export default function Footer() {
+  const qrRef = useRef<HTMLDivElement>(null)
+
+  const downloadQRCode = () => {
+    if (!qrRef.current) return
+
+    const svg = qrRef.current.querySelector('svg')
+    if (!svg) return
+
+    const svgData = new XMLSerializer().serializeToString(svg)
+    const canvas = document.createElement('canvas')
+    const ctx = canvas.getContext('2d')
+    const img = new Image()
+
+    img.onload = () => {
+      canvas.width = img.width
+      canvas.height = img.height
+      ctx?.drawImage(img, 0, 0)
+      const pngFile = canvas.toDataURL('image/png')
+
+      const downloadLink = document.createElement('a')
+      downloadLink.download = 'limhyejung-website-qr.png'
+      downloadLink.href = pngFile
+      downloadLink.click()
+    }
+
+    img.src = 'data:image/svg+xml;base64,' + btoa(unescape(encodeURIComponent(svgData)))
+  }
+
   return (
     <footer className="bg-pastel-cream border-t border-primary/10">
       <div className="container-wide py-16">
         {/* Main Footer Content */}
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
+        <div className="grid grid-cols-1 md:grid-cols-5 gap-12 mb-12">
           {/* Artist Info */}
           <div>
             <h3 className="font-serif text-lg mb-2">Lim Hyejung</h3>
@@ -110,6 +142,44 @@ export default function Footer() {
                 </a>
               </li>
             </ul>
+          </div>
+
+          {/* Resources */}
+          <div>
+            <h4 className="text-sm font-medium uppercase tracking-widest mb-4">Resources</h4>
+            <div className="space-y-4">
+              <div>
+                <p className="text-xs text-secondary mb-2">Website</p>
+                <a
+                  href="https://www.limhyejung.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-sm text-primary hover:underline"
+                >
+                  www.limhyejung.com
+                </a>
+              </div>
+
+              <div>
+                <p className="text-xs text-secondary mb-2">QR Code</p>
+                <div ref={qrRef} className="bg-white p-2 rounded inline-block">
+                  <QRCodeSVG
+                    value="https://www.limhyejung.com/"
+                    size={80}
+                    level="M"
+                    includeMargin={false}
+                  />
+                </div>
+              </div>
+
+              <button
+                onClick={downloadQRCode}
+                className="flex items-center gap-2 text-xs text-primary hover:text-primary/70 transition-colors"
+              >
+                <Download size={14} />
+                Download QR Code
+              </button>
+            </div>
           </div>
         </div>
 

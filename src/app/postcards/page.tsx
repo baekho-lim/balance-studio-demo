@@ -18,6 +18,7 @@ export default function PostcardsPage() {
   const [showBack, setShowBack] = useState(false)
   const [imageMode, setImageMode] = useState<'contain' | 'cover'>('contain')
   const [orientationFilter, setOrientationFilter] = useState<'all' | 'portrait' | 'landscape'>('all')
+  const [printMode, setPrintMode] = useState<'front' | 'both'>('front')
 
   return (
     <div className="min-h-screen bg-gray-100 py-12">
@@ -103,6 +104,28 @@ export default function PostcardsPage() {
         >
           {showBack ? 'Show Front' : 'Show Back'}
         </button>
+
+        {/* Print Mode Toggle */}
+        <div className="bg-white/90 backdrop-blur-sm rounded-full shadow-lg p-1 flex">
+          <button
+            onClick={() => setPrintMode('front')}
+            className={`px-3 py-2 rounded-full text-xs transition-all ${
+              printMode === 'front' ? 'bg-primary text-white' : 'text-primary hover:bg-gray-100'
+            }`}
+            title="앞면만 인쇄"
+          >
+            앞면만
+          </button>
+          <button
+            onClick={() => setPrintMode('both')}
+            className={`px-3 py-2 rounded-full text-xs transition-all ${
+              printMode === 'both' ? 'bg-primary text-white' : 'text-primary hover:bg-gray-100'
+            }`}
+            title="앞뒤 모두 인쇄"
+          >
+            앞뒤
+          </button>
+        </div>
       </div>
 
       {/* Navigation Buttons */}
@@ -135,7 +158,7 @@ export default function PostcardsPage() {
           <div className="postcard-wrapper print:page-break-after">
             {/* Front Side - Artist Photo or Exhibition Image */}
             <div
-              className={`postcard-front bg-white shadow-xl ${showBack ? 'hidden print:block' : 'block'}`}
+              className={`postcard-front bg-white shadow-xl ${showBack ? 'hidden' : 'block'}`}
               style={{
                 width: '7in',
                 height: '5in',
@@ -155,7 +178,7 @@ export default function PostcardsPage() {
 
             {/* Back Side - Artist Info */}
             <div
-              className={`postcard-back bg-white shadow-xl ${showBack ? 'block' : 'hidden print:block'} print:mt-4`}
+              className={`postcard-back bg-white shadow-xl ${showBack ? 'block' : 'hidden'}`}
               style={{
                 width: '7in',
                 height: '5in',
@@ -227,14 +250,14 @@ export default function PostcardsPage() {
           {artworks
             .filter((work) => {
               if (orientationFilter === 'all') return true
-              const isPortrait = work.imageHeight > work.imageWidth
+              const isPortrait = (work.imageHeight || 0) > (work.imageWidth || 0)
               if (orientationFilter === 'portrait') return isPortrait
               if (orientationFilter === 'landscape') return !isPortrait
               return true
             })
             .map((work) => {
             // Determine orientation based on artwork dimensions
-            const isPortrait = work.imageHeight > work.imageWidth
+            const isPortrait = (work.imageHeight || 0) > (work.imageWidth || 0)
             const postcardWidth = isPortrait ? '5in' : '7in'
             const postcardHeight = isPortrait ? '7in' : '5in'
 
@@ -242,7 +265,7 @@ export default function PostcardsPage() {
             <div key={work.id} className="postcard-wrapper print:page-break-after">
               {/* Front Side - High Quality Image */}
               <div
-                className={`postcard-front bg-white shadow-xl ${showBack ? 'hidden print:block' : 'block'}`}
+                className={`postcard-front bg-white shadow-xl ${showBack ? 'hidden' : 'block'}`}
                 style={{
                   width: postcardWidth,
                   height: postcardHeight,
@@ -265,7 +288,7 @@ export default function PostcardsPage() {
 
               {/* Back Side */}
               <div
-                className={`postcard-back bg-white shadow-xl ${showBack ? 'block' : 'hidden print:block'} print:mt-4`}
+                className={`postcard-back bg-white shadow-xl ${showBack ? 'block' : 'hidden'}`}
                 style={{
                   width: postcardWidth,
                   height: postcardHeight,
@@ -323,17 +346,61 @@ export default function PostcardsPage() {
         @media print {
           body {
             background: white !important;
+            margin: 0 !important;
+            padding: 0 !important;
+          }
+
+          .container {
+            padding: 0 !important;
+            margin: 0 !important;
+            max-width: none !important;
+          }
+
+          .grid {
+            display: block !important;
+            gap: 0 !important;
           }
 
           .postcard-wrapper {
             page-break-after: always;
             page-break-inside: avoid;
+            width: ${orientationFilter === 'portrait' ? '5in' : '7in'} !important;
+            height: ${orientationFilter === 'portrait' ? '7in' : '5in'} !important;
+            margin: 0 auto !important;
+            padding: 0 !important;
+            display: block !important;
           }
 
           .postcard-front,
           .postcard-back {
             box-shadow: none !important;
-            border: 1px solid #ddd;
+            border: 1px solid #ddd !important;
+            margin: 0 !important;
+            padding: 0 !important;
+            width: ${orientationFilter === 'portrait' ? '5in' : '7in'} !important;
+            height: ${orientationFilter === 'portrait' ? '7in' : '5in'} !important;
+            overflow: visible !important;
+          }
+
+          .postcard-front {
+            display: block !important;
+          }
+
+          .postcard-back {
+            ${printMode === 'front' ? 'display: none !important;' : 'display: block !important; page-break-before: always;'}
+          }
+
+          .postcard-front > div {
+            width: 100% !important;
+            height: 100% !important;
+            position: relative !important;
+          }
+
+          .postcard-front img,
+          .postcard-front [style*="background"] img {
+            object-fit: contain !important;
+            width: 100% !important;
+            height: 100% !important;
           }
 
           @page {
