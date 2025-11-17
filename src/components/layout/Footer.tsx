@@ -36,11 +36,6 @@ export default function Footer() {
                 </Link>
               </li>
               <li>
-                <Link href="/catalog" className="text-sm text-secondary hover:text-primary transition-colors">
-                  Catalog
-                </Link>
-              </li>
-              <li>
                 <Link href="/archive" className="text-sm text-secondary hover:text-primary transition-colors">
                   Archive
                 </Link>
@@ -53,6 +48,16 @@ export default function Footer() {
               <li>
                 <Link href="/#contact" className="text-sm text-secondary hover:text-primary transition-colors">
                   Contact
+                </Link>
+              </li>
+              <li>
+                <Link href="/catalog" className="text-sm text-secondary hover:text-primary transition-colors">
+                  Catalog
+                </Link>
+              </li>
+              <li>
+                <Link href="/postcards" className="text-sm text-secondary hover:text-primary transition-colors">
+                  Postcards
                 </Link>
               </li>
             </ul>

@@ -1,22 +1,23 @@
 'use client'
 
 import { useState, useEffect } from 'react'
+import { useRouter, usePathname } from 'next/navigation'
 import Link from 'next/link'
 import { Menu, X } from 'lucide-react'
 import LanguageSelector from '@/components/ui/LanguageSelector'
 
 const navigation = [
-  { name: 'Works', href: '#works' },
+  { name: 'Works', href: '/#works' },
   { name: 'Story', href: '/story', isLink: true },
-  { name: 'Catalog', href: '/catalog', isLink: true },
   { name: 'Archive', href: '/archive', isLink: true },
-  { name: 'About', href: '#about' },
-  { name: 'Contact', href: '#contact' },
+  { name: 'Contact', href: '/#contact' },
 ]
 
 export default function Header() {
   const [isScrolled, setIsScrolled] = useState(false)
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
+  const router = useRouter()
+  const pathname = usePathname()
 
   useEffect(() => {
     const handleScroll = () => {
@@ -28,14 +29,35 @@ export default function Header() {
 
   const handleNavClick = (href: string) => {
     setIsMobileMenuOpen(false)
-    const element = document.querySelector(href)
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth' })
+
+    // Check if it's a hash link (e.g., /#works, /#contact)
+    if (href.startsWith('/#')) {
+      const hash = href.substring(1) // Get #works from /#works
+      if (pathname === '/') {
+        // Already on homepage, just scroll
+        const element = document.querySelector(hash)
+        if (element) {
+          element.scrollIntoView({ behavior: 'smooth' })
+        }
+      } else {
+        // Navigate to homepage with hash
+        router.push(href)
+      }
+    } else if (href.startsWith('#')) {
+      // Legacy anchor link (shouldn't happen with new navigation)
+      const element = document.querySelector(href)
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth' })
+      }
     }
   }
 
-  const scrollToTop = () => {
-    window.scrollTo({ top: 0, behavior: 'smooth' })
+  const goToHome = () => {
+    if (pathname === '/') {
+      window.scrollTo({ top: 0, behavior: 'smooth' })
+    } else {
+      router.push('/')
+    }
   }
 
   return (
@@ -50,7 +72,7 @@ export default function Header() {
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
           <button
-            onClick={scrollToTop}
+            onClick={goToHome}
             className={`font-serif text-xl tracking-wide hover:opacity-70 transition-all ${
               isScrolled ? 'text-primary' : 'text-white'
             }`}

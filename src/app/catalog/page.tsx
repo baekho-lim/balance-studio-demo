@@ -2,7 +2,9 @@
 
 import { useState } from 'react'
 import Image from 'next/image'
+import Link from 'next/link'
 import { QRCodeSVG } from 'qrcode.react'
+import { ArrowLeft } from 'lucide-react'
 import catalogData from '@/data/catalog.json'
 
 type Language = 'en' | 'kr'
@@ -46,8 +48,15 @@ export default function CatalogPage() {
         </div>
       </div>
 
-      {/* Print Button */}
-      <div className="fixed top-4 left-4 z-50 print:hidden">
+      {/* Navigation Buttons */}
+      <div className="fixed top-4 left-4 z-50 print:hidden flex gap-3">
+        <Link
+          href="/"
+          className="bg-white/90 backdrop-blur-sm text-primary px-4 py-2 rounded-full text-sm hover:bg-gray-100 transition-all shadow-lg flex items-center gap-2"
+        >
+          <ArrowLeft size={16} />
+          Home
+        </Link>
         <button
           onClick={() => window.print()}
           className="bg-primary text-white px-6 py-2 rounded-full text-sm hover:bg-primary/90 transition-all shadow-lg"
