@@ -3,9 +3,11 @@
 import { useState, useEffect } from 'react'
 import Link from 'next/link'
 import { Menu, X } from 'lucide-react'
+import LanguageSelector from '@/components/ui/LanguageSelector'
 
 const navigation = [
   { name: 'Works', href: '#works' },
+  { name: 'Story', href: '/story', isLink: true },
   { name: 'Archive', href: '/archive', isLink: true },
   { name: 'About', href: '#about' },
   { name: 'Contact', href: '#contact' },
@@ -74,6 +76,7 @@ export default function Header() {
                 </button>
               )
             ))}
+            <LanguageSelector />
           </div>
 
           {/* Mobile Menu Button */}
@@ -111,6 +114,9 @@ export default function Header() {
                 </button>
               )
             ))}
+            <div className="pt-4 border-t border-gray-200">
+              <LanguageSelector />
+            </div>
           </div>
         </div>
       )}

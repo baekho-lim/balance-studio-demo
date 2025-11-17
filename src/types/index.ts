@@ -30,6 +30,9 @@ export interface Artwork {
   dimensions?: string;
   question?: string;
   questionKr?: string;
+  questionVi?: string;
+  questionMs?: string;
+  questionId?: string;
   description?: string;
   descriptionKr?: string;
   images: {

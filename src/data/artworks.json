@@ -16,7 +16,10 @@
     "order": 1,
     "imageWidth": 4446,
     "imageHeight": 2914,
-    "sizeCategory": "large"
+    "sizeCategory": "large",
+    "questionVi": "Nếu bạn chỉ đang đi ngang qua khu rừng này, bạn sẽ dừng lại để ngắm nhìn điều gì thay vì chỉ bước qua?",
+    "questionMs": "Jika anda hanya melalui hutan ini, apakah yang akan anda berhenti sejenak untuk diperhatikan?",
+    "questionId": "Jika Anda hanya melewati hutan ini, apa yang akan Anda hentikan untuk diamati alih-alih hanya berjalan melewatinya?"
   },
   {
     "id": "sg-002",
@@ -35,7 +38,10 @@
     "order": 2,
     "imageWidth": 3084,
     "imageHeight": 3569,
-    "sizeCategory": "large"
+    "sizeCategory": "large",
+    "questionVi": "Bạn đang nhìn vào những gì hiện có, hay đang chờ đợi điều gì chưa nở rộ?",
+    "questionMs": "Adakah anda melihat apa yang ada sekarang, atau menunggu sesuatu yang belum mekar?",
+    "questionId": "Apakah Anda melihat apa yang ada sekarang, atau menunggu sesuatu yang belum mekar?"
   },
   {
     "id": "sg-003",
@@ -54,7 +60,10 @@
     "order": 3,
     "imageWidth": 1563,
     "imageHeight": 1997,
-    "sizeCategory": "small"
+    "sizeCategory": "small",
+    "questionVi": "Bạn có nhớ một điều nhỏ bé nào đã bất ngờ thay đổi cả ngày của bạn không?",
+    "questionMs": "Bolehkah anda mengingati sesuatu yang kecil yang secara tidak dijangka mengubah seluruh hari anda?",
+    "questionId": "Bisakah Anda mengingat hal kecil yang secara tidak terduga mengubah seluruh hari Anda?"
   },
   {
     "id": "sg-004",
@@ -73,7 +82,10 @@
     "order": 4,
     "imageWidth": 1563,
     "imageHeight": 1997,
-    "sizeCategory": "small"
+    "sizeCategory": "small",
+    "questionVi": "Lúc này bạn đang gần hơn với sự thay đổi từ từ hay sự chuyển hóa đột ngột?",
+    "questionMs": "Adakah anda lebih dekat sekarang dengan perubahan yang perlahan atau transformasi yang tiba-tiba?",
+    "questionId": "Apakah Anda sekarang lebih dekat dengan perubahan yang perlahan atau transformasi yang tiba-tiba?"
   },
   {
     "id": "sg-005",
@@ -92,7 +104,10 @@
     "order": 5,
     "imageWidth": 1563,
     "imageHeight": 1997,
-    "sizeCategory": "small"
+    "sizeCategory": "small",
+    "questionVi": "Trong khung cảnh yên bình này, bạn cảm nhận được sự cảnh giác hoặc căng thẳng ẩn giấu ở đâu?",
+    "questionMs": "Dalam pemandangan yang tenang ini, di manakah anda merasakan kewaspadaan atau ketegangan tersembunyi?",
+    "questionId": "Dalam pemandangan yang tenang ini, di mana Anda merasakan kewaspadaan atau ketegangan yang tersembunyi?"
   },
   {
     "id": "sg-006",
@@ -111,7 +126,10 @@
     "order": 6,
     "imageWidth": 1563,
     "imageHeight": 1997,
-    "sizeCategory": "small"
+    "sizeCategory": "small",
+    "questionVi": "Điều gì trong cuộc sống của bạn đang tiến về phía trước rất chậm, nhưng vẫn đang di chuyển?",
+    "questionMs": "Apakah satu perkara dalam hidup anda yang bergerak sangat perlahan, tetapi masih bergerak?",
+    "questionId": "Apa satu hal dalam hidup Anda yang bergerak sangat perlahan, tetapi tetap bergerak?"
   },
   {
     "id": "sg-007",
@@ -130,7 +148,10 @@
     "order": 7,
     "imageWidth": 1563,
     "imageHeight": 1997,
-    "sizeCategory": "small"
+    "sizeCategory": "small",
+    "questionVi": "Công việc nào bạn vẫn làm một cách trung thành, ngay cả khi dường như không ai để ý?",
+    "questionMs": "Apakah kerja yang anda terus lakukan dengan setia, walaupun tiada siapa yang nampaknya perasan?",
+    "questionId": "Pekerjaan apa yang terus Anda lakukan dengan setia, bahkan ketika tidak ada yang tampaknya memperhatikan?"
   },
   {
     "id": "sg-008",
@@ -149,7 +170,10 @@
     "order": 8,
     "imageWidth": 3285,
     "imageHeight": 5091,
-    "sizeCategory": "large"
+    "sizeCategory": "large",
+    "questionVi": "Nếu phải chọn một cảm xúc mà bạn bị thu hút nhất lúc này, đó sẽ là gì và tại sao?",
+    "questionMs": "Jika anda perlu memilih satu perasaan yang paling menarik anda sekarang, apakah itu dan mengapa?",
+    "questionId": "Jika Anda harus memilih satu perasaan yang paling menarik bagi Anda sekarang, apa itu dan mengapa?"
   },
   {
     "id": "es-001",
@@ -168,7 +192,10 @@
     "order": 1,
     "imageWidth": 4390,
     "imageHeight": 2927,
-    "sizeCategory": "large"
+    "sizeCategory": "large",
+    "questionVi": "Khi nào tiếng nói của bạn tuôn ra tự nhiên nhất, như tiếng chim hót?",
+    "questionMs": "Bilakah suara anda mengalir keluar paling mudah, seperti nyanyian burung?",
+    "questionId": "Kapan suara Anda mengalir paling mudah, seperti kicauan burung?"
   },
   {
     "id": "es-002",
@@ -187,7 +214,10 @@
     "order": 2,
     "imageWidth": 4390,
     "imageHeight": 2927,
-    "sizeCategory": "large"
+    "sizeCategory": "large",
+    "questionVi": "Bạn có nhớ khoảnh khắc nào mà bạn không cần nhiều lời để được hiểu?",
+    "questionMs": "Bolehkah anda mengingati satu saat apabila anda tidak memerlukan banyak perkataan untuk difahami?",
+    "questionId": "Bisakah Anda mengingat momen ketika Anda tidak memerlukan banyak kata untuk dipahami?"
   },
   {
     "id": "es-003",
@@ -206,7 +236,10 @@
     "order": 3,
     "imageWidth": 1563,
     "imageHeight": 1997,
-    "sizeCategory": "small"
+    "sizeCategory": "small",
+    "questionVi": "Nếu bạn dừng lại bên dòng nước này một lúc, bạn muốn đặt xuống và nghỉ ngơi khỏi điều gì?",
+    "questionMs": "Jika anda berhenti di tepi air ini sebentar, apakah yang anda ingin letakkan dan berehat daripadanya?",
+    "questionId": "Jika Anda berhenti di tepi air ini sebentar, apa yang ingin Anda letakkan dan istirahatkan?"
   },
   {
     "id": "es-004",
@@ -225,7 +258,10 @@
     "order": 4,
     "imageWidth": 1563,
     "imageHeight": 1997,
-    "sizeCategory": "small"
+    "sizeCategory": "small",
+    "questionVi": "Nếu bạn có thể làm sáng lên ngày hôm nay của một người, ai sẽ xuất hiện trong tâm trí bạn?",
+    "questionMs": "Jika anda boleh mencerahkan hari seseorang hari ini, siapakah yang terlintas di fikiran?",
+    "questionId": "Jika Anda bisa mencerahkan hari seseorang hari ini, siapa yang terlintas di pikiran Anda?"
   },
   {
     "id": "es-005",
@@ -244,7 +280,10 @@
     "order": 5,
     "imageWidth": 1563,
     "imageHeight": 1997,
-    "sizeCategory": "small"
+    "sizeCategory": "small",
+    "questionVi": "Nhìn vào ánh lấp lánh này, khoảnh khắc hạnh phúc nào trong cuộc đời bạn cảm thấy giống nó nhất?",
+    "questionMs": "Melihat kilauan ini, detik bahagia manakah dalam hidup anda yang paling serupa dengannya?",
+    "questionId": "Melihat kilauan ini, momen bahagia mana dalam hidup Anda yang paling mirip dengannya?"
   },
   {
     "id": "ds-001",
@@ -263,7 +302,10 @@
     "order": 1,
     "imageWidth": 2328,
     "imageHeight": 3335,
-    "sizeCategory": "medium"
+    "sizeCategory": "medium",
+    "questionVi": "Một câu bạn muốn nói với bản thân tương lai trưởng thành của mình là gì?",
+    "questionMs": "Apakah satu ayat yang anda ingin sampaikan kepada diri anda yang akan dewasa kelak?",
+    "questionId": "Apa satu kalimat yang ingin Anda sampaikan kepada diri Anda yang dewasa di masa depan?"
   },
   {
     "id": "ds-002",
@@ -282,7 +324,10 @@
     "order": 2,
     "imageWidth": 2328,
     "imageHeight": 3335,
-    "sizeCategory": "medium"
+    "sizeCategory": "medium",
+    "questionVi": "Khi bạn tưởng tượng mình già đi, điều gì làm bạn sợ nhất và điều gì bạn tò mò hoặc hy vọng nhất?",
+    "questionMs": "Apabila anda membayangkan diri menjadi tua, apakah yang paling menakutkan dan apakah yang paling anda ingin tahu atau harapkan?",
+    "questionId": "Ketika Anda membayangkan diri menjadi tua, apa yang paling menakutkan dan apa yang paling ingin Anda ketahui atau harapkan?"
   },
   {
     "id": "ds-003",
@@ -301,7 +346,10 @@
     "order": 3,
     "imageWidth": 2328,
     "imageHeight": 3335,
-    "sizeCategory": "medium"
+    "sizeCategory": "medium",
+    "questionVi": "Biết rằng mọi thứ sẽ kết thúc một ngày nào đó, điều đó thay đổi cách bạn nhìn khoảnh khắc này như thế nào?",
+    "questionMs": "Mengetahui bahawa segala-galanya akan berakhir suatu hari nanti, bagaimanakah itu mengubah cara anda melihat saat ini?",
+    "questionId": "Mengetahui bahwa segalanya akan berakhir suatu hari nanti, bagaimana hal itu mengubah cara Anda melihat momen ini?"
   },
   {
     "id": "ds-004",
@@ -320,7 +368,10 @@
     "order": 4,
     "imageWidth": 5417,
     "imageHeight": 3601,
-    "sizeCategory": "large"
+    "sizeCategory": "large",
+    "questionVi": "Sau khi thế giới dường như rung chuyển, điều gì trong cuộc sống của bạn âm thầm tiếp tục như thể không có gì xảy ra?",
+    "questionMs": "Selepas dunia seolah-olah bergegar, apakah dalam hidup anda yang diam-diam berterusan seolah-olah tiada apa yang berlaku?",
+    "questionId": "Setelah dunia tampak berguncang, apa dalam hidup Anda yang diam-diam terus berlanjut seolah-olah tidak ada yang terjadi?"
   },
   {
     "id": "wt-001",
@@ -339,7 +390,10 @@
     "order": 1,
     "imageWidth": 1563,
     "imageHeight": 1997,
-    "sizeCategory": "small"
+    "sizeCategory": "small",
+    "questionVi": "Nếu những cảm xúc trong tim bạn là mặt nước này, hôm nay chúng sẽ có màu gì?",
+    "questionMs": "Jika perasaan di hati anda adalah permukaan air ini, apakah warnanya hari ini?",
+    "questionId": "Jika perasaan di hati Anda adalah permukaan air ini, warna apa yang akan mereka miliki hari ini?"
   },
   {
     "id": "wt-002",
@@ -358,7 +412,10 @@
     "order": 2,
     "imageWidth": 2757,
     "imageHeight": 3489,
-    "sizeCategory": "medium"
+    "sizeCategory": "medium",
+    "questionVi": "Hướng tới một nơi vẫn còn xa xôi, một bước nhỏ nào bạn có thể thực hiện hôm nay?",
+    "questionMs": "Ke arah tempat yang masih terasa jauh, apakah satu langkah kecil yang boleh anda ambil hari ini?",
+    "questionId": "Menuju tempat yang masih terasa jauh, apa satu langkah kecil yang bisa Anda ambil hari ini?"
   },
   {
     "id": "wt-003",
@@ -377,7 +434,10 @@
     "order": 3,
     "imageWidth": 2779,
     "imageHeight": 3530,
-    "sizeCategory": "medium"
+    "sizeCategory": "medium",
+    "questionVi": "Nếu \"một ngày nào đó\" trở thành \"bây giờ\", nơi nào trong tâm hồn bạn muốn ghé thăm đầu tiên?",
+    "questionMs": "Jika \"suatu hari nanti\" menjadi \"sekarang\", tempat dalaman manakah yang anda ingin lawati dahulu?",
+    "questionId": "Jika \"suatu hari nanti\" menjadi \"sekarang\", tempat batin mana yang ingin Anda kunjungi terlebih dahulu?"
   },
   {
     "id": "wt-004",
@@ -396,6 +456,9 @@
     "order": 4,
     "imageWidth": 3829,
     "imageHeight": 4849,
-    "sizeCategory": "large"
+    "sizeCategory": "large",
+    "questionVi": "Nếu bạn quên đi thành công và thất bại trong chốc lát và chỉ tập trung vào việc bạn đang trưởng thành, điều gì sẽ cảm thấy nhẹ nhàng hơn một chút?",
+    "questionMs": "Jika anda melupakan kejayaan dan kegagalan seketika dan fokus hanya pada hakikat bahawa anda sedang berkembang, apakah yang akan terasa sedikit lebih ringan?",
+    "questionId": "Jika Anda melupakan kesuksesan dan kegagalan sejenak dan hanya fokus pada kenyataan bahwa Anda sedang tumbuh, apa yang akan terasa sedikit lebih ringan?"
   }
 ]
