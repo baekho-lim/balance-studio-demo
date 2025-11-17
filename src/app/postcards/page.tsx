@@ -16,7 +16,6 @@ type Language = 'en' | 'kr'
 export default function PostcardsPage() {
   const [lang, setLang] = useState<Language>('en')
   const [showBack, setShowBack] = useState(false)
-  const [imageMode, setImageMode] = useState<'contain' | 'cover'>('contain')
   const [orientationFilter, setOrientationFilter] = useState<'all' | 'portrait' | 'landscape'>('all')
   const [printMode, setPrintMode] = useState<'front' | 'both'>('front')
 
@@ -72,28 +71,6 @@ export default function PostcardsPage() {
             title="세로형만 (5x7)"
           >
             세로
-          </button>
-        </div>
-
-        {/* Image Mode Toggle */}
-        <div className="bg-white/90 backdrop-blur-sm rounded-full shadow-lg p-1 flex">
-          <button
-            onClick={() => setImageMode('contain')}
-            className={`px-3 py-2 rounded-full text-xs transition-all ${
-              imageMode === 'contain' ? 'bg-primary text-white' : 'text-primary hover:bg-gray-100'
-            }`}
-            title="전체 작품 표시 (여백 있음)"
-          >
-            A: 전체
-          </button>
-          <button
-            onClick={() => setImageMode('cover')}
-            className={`px-3 py-2 rounded-full text-xs transition-all ${
-              imageMode === 'cover' ? 'bg-primary text-white' : 'text-primary hover:bg-gray-100'
-            }`}
-            title="엽서 채움 (잘림 있음)"
-          >
-            B: 채움
           </button>
         </div>
 
@@ -277,7 +254,7 @@ export default function PostcardsPage() {
                     src={work.images.full}
                     alt={work.title}
                     fill
-                    className={imageMode === 'contain' ? 'object-contain' : 'object-cover'}
+                    className="object-cover"
                     sizes="(max-width: 768px) 100vw, 7in"
                     quality={100}
                     priority={artworks.indexOf(work) < 4}
@@ -398,7 +375,7 @@ export default function PostcardsPage() {
 
           .postcard-front img,
           .postcard-front [style*="background"] img {
-            object-fit: ${imageMode} !important;
+            object-fit: cover !important;
             width: 100% !important;
             height: 100% !important;
           }
