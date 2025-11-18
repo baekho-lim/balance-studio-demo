@@ -33,6 +33,7 @@ const imageMap: Record<string, string> = {
   'sg-002': '/images/works/2. Look at me or Wait for the daffodiles..JPG',
   'sg-008': '/images/works/20.The attraction of emotion.jpeg',
   'es-001': '/images/works/3. Effortlessly chirping birds._L.JPG',
+  'es-002': '/images/works/4. Effortlessly chirping birds._R.JPG',
   'ds-001': '/images/works/13. You are going to grow up..JPG',
   'ds-002': '/images/works/14. I am going to have to grow old..JPG',
   'ds-003': '/images/works/15. And then I will die..JPG',
@@ -191,18 +192,29 @@ export default function CatalogPage() {
 
       {/* Selected Works */}
       {catalogData.selectedWorks.map((work, index) => {
+        // Diptych works (Effortlessly chirping birds)
+        const diptychIds = ['es-001', 'es-002']
+        const isDiptych = diptychIds.includes(work.id)
+        const isFirstOfDiptych = work.id === 'es-001'
+        const isOtherDiptychPart = isDiptych && !isFirstOfDiptych
+
         // Triptych works (temporal series)
         const triptychIds = ['ds-001', 'ds-002', 'ds-003']
         const isTriptych = triptychIds.includes(work.id)
         const isFirstOfTriptych = work.id === 'ds-001'
         const isOtherTriptychPart = isTriptych && !isFirstOfTriptych
 
-        // Skip rendering for ds-002 and ds-003 as they'll be shown with ds-001
-        if (isOtherTriptychPart) return null
+        // Skip rendering for second parts as they'll be shown with first
+        if (isOtherDiptychPart || isOtherTriptychPart) return null
 
         // Calculate aspect ratio and determine orientation
         const aspectRatio = work.imageWidth / work.imageHeight
         const isPortrait = aspectRatio < 1
+
+        // Get diptych works if this is the first one
+        const diptychWorks = isFirstOfDiptych
+          ? catalogData.selectedWorks.filter(w => diptychIds.includes(w.id))
+          : null
 
         // Get triptych works if this is the first one
         const triptychWorks = isFirstOfTriptych
@@ -273,6 +285,61 @@ export default function CatalogPage() {
 
                   <div className="text-center mt-8 text-sm text-secondary/50">
                     {index + 1} / {catalogData.selectedWorks.length - 2}
+                  </div>
+                </>
+              ) : diptychWorks ? (
+                /* Diptych Layout: Two connected landscape works */
+                <>
+                  <h2 className="font-serif text-3xl mb-8 text-center">
+                    {diptychWorks.map(w => w.title).join(' / ')}
+                  </h2>
+
+                  {/* Two images side-by-side */}
+                  <div className="grid grid-cols-2 gap-6 mb-8">
+                    {diptychWorks.map((dWork) => {
+                      const dAspectRatio = dWork.imageWidth / dWork.imageHeight
+                      return (
+                        <div key={dWork.id} className="relative w-full" style={{ aspectRatio: dAspectRatio }}>
+                          <Image
+                            src={imageMap[dWork.id] || '/images/placeholder.jpg'}
+                            alt={dWork.title}
+                            fill
+                            className="object-contain"
+                            sizes="(max-width: 768px) 100vw, 50vw"
+                          />
+                        </div>
+                      )
+                    })}
+                  </div>
+
+                  {/* Shared information */}
+                  <div className="mb-6">
+                    <p className="text-secondary mb-2 text-center">
+                      {diptychWorks[0].year} · {diptychWorks[0].medium}
+                    </p>
+                    <p className="text-sm text-secondary/70 text-center">
+                      {diptychWorks.map(w => w.dimensions).join(' / ')}
+                    </p>
+                  </div>
+
+                  {/* Curator texts in two columns */}
+                  <div className="grid grid-cols-2 gap-8 mb-8">
+                    {diptychWorks.map((dWork) => (
+                      <div key={`text-${dWork.id}`}>
+                        <p className="text-base leading-relaxed mb-4">
+                          {lang === 'en' ? dWork.curator_text.en : dWork.curator_text.kr}
+                        </p>
+                        <div className="border-l-2 border-primary/30 pl-3">
+                          <p className="italic text-primary/80 text-sm">
+                            {lang === 'en' ? dWork.question.en : dWork.question.kr}
+                          </p>
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+
+                  <div className="text-center mt-8 text-sm text-secondary/50">
+                    {index + 1} / {catalogData.selectedWorks.length - 1}
                   </div>
                 </>
               ) : isPortrait ? (
