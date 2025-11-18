@@ -10,7 +10,11 @@
     "preprocess": "node scripts/preprocess-data.js",
     "validate": "node scripts/validate-data.js",
     "analyze": "node scripts/analyze-translations.js",
-    "data:check": "npm run preprocess && npm run validate"
+    "data:check": "npm run preprocess && npm run validate",
+    "test:visual": "playwright test",
+    "test:visual:update": "playwright test --update-snapshots",
+    "test:visual:ui": "playwright test --ui",
+    "test:visual:report": "playwright show-report"
   },
   "dependencies": {
     "framer-motion": "^10.16.16",
@@ -21,6 +25,7 @@
     "react-dom": "^18.2.0"
   },
   "devDependencies": {
+    "@playwright/test": "^1.56.1",
     "@types/node": "^20.10.6",
     "@types/react": "^18.2.46",
     "@types/react-dom": "^18.2.18",
