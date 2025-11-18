@@ -106,51 +106,17 @@ export default function CatalogPage() {
         </div>
       </section>
 
-      {/* Artist Statement Page */}
+      {/* Exhibition Statement Page */}
       <section className="min-h-screen flex flex-col items-center justify-center p-8 md:p-16 page-break-after">
         <div className="max-w-3xl">
           <h2 className="font-serif text-3xl mb-8 text-center">
-            {lang === 'en' ? 'Artist Statement' : '작가 노트'}
+            {lang === 'en' ? 'Exhibition Statement' : '전시 서문'}
           </h2>
 
           <div className="prose prose-lg max-w-none">
-            {lang === 'en' ? (
-              <>
-                <p className="text-lg leading-relaxed mb-6">
-                  My work explores the threshold between imagination and reality, where nature becomes a mirror
-                  for our inner landscapes. Through mixed media on canvas, I reconstruct natural forms—forests,
-                  flowers, birds—not as they appear in the physical world, but as they exist in the realm of
-                  memory and emotion.
-                </p>
-                <p className="text-lg leading-relaxed mb-6">
-                  The title of this exhibition, <em>Utopia = Reality</em>, suggests that the ideal world we
-                  seek is not somewhere distant, but woven into the fabric of our present experience. Each
-                  painting invites the viewer to pause, to look deeper, to find in these reimagined landscapes
-                  something of their own truth.
-                </p>
-                <p className="text-lg leading-relaxed">
-                  I paint what I feel rather than what I see. In this process, the boundary between the real
-                  and the imagined dissolves, revealing that perhaps they were never separate at all.
-                </p>
-              </>
-            ) : (
-              <>
-                <p className="text-lg leading-relaxed mb-6">
-                  나의 작업은 상상과 현실 사이의 경계를 탐구하며, 자연은 우리 내면 풍경의 거울이 됩니다.
-                  캔버스 위의 혼합 매체를 통해, 나는 숲, 꽃, 새와 같은 자연의 형태를 물리적 세계에 존재하는
-                  그대로가 아닌, 기억과 감정의 영역에 존재하는 대로 재구성합니다.
-                </p>
-                <p className="text-lg leading-relaxed mb-6">
-                  이 전시의 제목인 <em>유토피아 = 현실</em>은 우리가 찾는 이상적인 세계가 어딘가 먼 곳이
-                  아니라 현재 경험의 직물 속에 짜여 있음을 암시합니다. 각 그림은 관람자를 멈추게 하고,
-                  더 깊이 바라보게 하며, 이 재상상된 풍경 속에서 자신만의 진실을 발견하도록 초대합니다.
-                </p>
-                <p className="text-lg leading-relaxed">
-                  나는 보이는 것이 아닌 느끼는 것을 그립니다. 이 과정에서 현실과 상상의 경계는 녹아들며,
-                  아마도 그것들은 처음부터 분리되지 않았음을 드러냅니다.
-                </p>
-              </>
-            )}
+            <div className="text-base leading-relaxed whitespace-pre-line">
+              {lang === 'en' ? catalogData.exhibitionStatement.en : catalogData.exhibitionStatement.kr}
+            </div>
           </div>
         </div>
       </section>
