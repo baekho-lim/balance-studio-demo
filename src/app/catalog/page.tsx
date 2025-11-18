@@ -191,14 +191,91 @@ export default function CatalogPage() {
 
       {/* Selected Works */}
       {catalogData.selectedWorks.map((work, index) => {
+        // Triptych works (temporal series)
+        const triptychIds = ['ds-001', 'ds-002', 'ds-003']
+        const isTriptych = triptychIds.includes(work.id)
+        const isFirstOfTriptych = work.id === 'ds-001'
+        const isOtherTriptychPart = isTriptych && !isFirstOfTriptych
+
+        // Skip rendering for ds-002 and ds-003 as they'll be shown with ds-001
+        if (isOtherTriptychPart) return null
+
         // Calculate aspect ratio and determine orientation
         const aspectRatio = work.imageWidth / work.imageHeight
         const isPortrait = aspectRatio < 1
 
+        // Get triptych works if this is the first one
+        const triptychWorks = isFirstOfTriptych
+          ? catalogData.selectedWorks.filter(w => triptychIds.includes(w.id))
+          : null
+
         return (
           <section key={work.id} className="min-h-screen p-8 md:p-16 page-break-after">
             <div className="max-w-6xl mx-auto">
-              {isPortrait ? (
+              {triptychWorks ? (
+                /* Triptych Layout: Three connected works */
+                <>
+                  <h2 className="font-serif text-3xl mb-8 text-center">
+                    {lang === 'en' ? 'Temporal Triptych' : '시간 3부작'}
+                  </h2>
+
+                  {/* Three images in a row */}
+                  <div className="grid grid-cols-3 gap-6 mb-8">
+                    {triptychWorks.map((tWork) => {
+                      const tAspectRatio = tWork.imageWidth / tWork.imageHeight
+                      return (
+                        <div key={tWork.id}>
+                          <div className="relative w-full mb-4" style={{ aspectRatio: tAspectRatio }}>
+                            <Image
+                              src={imageMap[tWork.id] || '/images/placeholder.jpg'}
+                              alt={tWork.title}
+                              fill
+                              className="object-contain"
+                              sizes="(max-width: 768px) 100vw, 33vw"
+                            />
+                          </div>
+                          <h3 className="font-serif text-lg mb-1 text-center">
+                            {tWork.title}
+                          </h3>
+                          <p className="text-sm text-secondary text-center">
+                            {tWork.year}
+                          </p>
+                        </div>
+                      )
+                    })}
+                  </div>
+
+                  {/* Shared information */}
+                  <div className="mb-6">
+                    <p className="text-secondary mb-2 text-center">
+                      {triptychWorks[0].year} · {triptychWorks[0].medium}
+                    </p>
+                    <p className="text-sm text-secondary/70 text-center">
+                      {triptychWorks.map(w => w.dimensions).join(' / ')}
+                    </p>
+                  </div>
+
+                  {/* Curator texts in three columns */}
+                  <div className="grid grid-cols-3 gap-8 mb-8">
+                    {triptychWorks.map((tWork) => (
+                      <div key={`text-${tWork.id}`}>
+                        <p className="text-sm leading-relaxed mb-4">
+                          {lang === 'en' ? tWork.curator_text.en : tWork.curator_text.kr}
+                        </p>
+                        <div className="border-l-2 border-primary/30 pl-3">
+                          <p className="italic text-primary/80 text-xs">
+                            {lang === 'en' ? tWork.question.en : tWork.question.kr}
+                          </p>
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+
+                  <div className="text-center mt-8 text-sm text-secondary/50">
+                    {index + 1} / {catalogData.selectedWorks.length - 2}
+                  </div>
+                </>
+              ) : isPortrait ? (
                 /* Portrait Layout: Side-by-side (Image Left, Text Right) */
                 <>
                   <div className="grid md:grid-cols-[60%_40%] gap-8 items-start">
