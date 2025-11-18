@@ -19,7 +19,10 @@
     "sizeCategory": "large",
     "questionVi": "Nếu bạn chỉ đang đi ngang qua khu rừng này, bạn sẽ dừng lại để ngắm nhìn điều gì thay vì chỉ bước qua?",
     "questionMs": "Jika anda hanya melalui hutan ini, apakah yang akan anda berhenti sejenak untuk diperhatikan?",
-    "questionId": "Jika Anda hanya melewati hutan ini, apa yang akan Anda hentikan untuk diamati alih-alih hanya berjalan melewatinya?"
+    "questionId": "Jika Anda hanya melewati hutan ini, apa yang akan Anda hentikan untuk diamati alih-alih hanya berjalan melewatinya?",
+    "titleKr": "I am only passing through the woods",
+    "mediumKr": "Mixed media on canvas",
+    "dimensionsKr": "60.5 x 91 cm"
   },
   {
     "id": "sg-002",
@@ -41,7 +44,10 @@
     "sizeCategory": "large",
     "questionVi": "Bạn đang nhìn vào những gì hiện có, hay đang chờ đợi điều gì chưa nở rộ?",
     "questionMs": "Adakah anda melihat apa yang ada sekarang, atau menunggu sesuatu yang belum mekar?",
-    "questionId": "Apakah Anda melihat apa yang ada sekarang, atau menunggu sesuatu yang belum mekar?"
+    "questionId": "Apakah Anda melihat apa yang ada sekarang, atau menunggu sesuatu yang belum mekar?",
+    "titleKr": "Look at me or Wait for the daffodils",
+    "mediumKr": "Mixed media on canvas",
+    "dimensionsKr": "60.5 x 91 cm"
   },
   {
     "id": "sg-003",
@@ -63,7 +69,10 @@
     "sizeCategory": "small",
     "questionVi": "Bạn có nhớ một điều nhỏ bé nào đã bất ngờ thay đổi cả ngày của bạn không?",
     "questionMs": "Bolehkah anda mengingati sesuatu yang kecil yang secara tidak dijangka mengubah seluruh hari anda?",
-    "questionId": "Bisakah Anda mengingat hal kecil yang secara tidak terduga mengubah seluruh hari Anda?"
+    "questionId": "Bisakah Anda mengingat hal kecil yang secara tidak terduga mengubah seluruh hari Anda?",
+    "titleKr": "Those ladybugs",
+    "mediumKr": "Mixed media on canvas",
+    "dimensionsKr": "34.8 x 27.3 cm"
   },
   {
     "id": "sg-004",
@@ -85,7 +94,10 @@
     "sizeCategory": "small",
     "questionVi": "Lúc này bạn đang gần hơn với sự thay đổi từ từ hay sự chuyển hóa đột ngột?",
     "questionMs": "Adakah anda lebih dekat sekarang dengan perubahan yang perlahan atau transformasi yang tiba-tiba?",
-    "questionId": "Apakah Anda sekarang lebih dekat dengan perubahan yang perlahan atau transformasi yang tiba-tiba?"
+    "questionId": "Apakah Anda sekarang lebih dekat dengan perubahan yang perlahan atau transformasi yang tiba-tiba?",
+    "titleKr": "Those silkworms",
+    "mediumKr": "Mixed media on canvas",
+    "dimensionsKr": "34.8 x 27.3 cm"
   },
   {
     "id": "sg-005",
@@ -107,7 +119,10 @@
     "sizeCategory": "small",
     "questionVi": "Trong khung cảnh yên bình này, bạn cảm nhận được sự cảnh giác hoặc căng thẳng ẩn giấu ở đâu?",
     "questionMs": "Dalam pemandangan yang tenang ini, di manakah anda merasakan kewaspadaan atau ketegangan tersembunyi?",
-    "questionId": "Dalam pemandangan yang tenang ini, di mana Anda merasakan kewaspadaan atau ketegangan yang tersembunyi?"
+    "questionId": "Dalam pemandangan yang tenang ini, di mana Anda merasakan kewaspadaan atau ketegangan yang tersembunyi?",
+    "titleKr": "Those mantises",
+    "mediumKr": "Mixed media on canvas",
+    "dimensionsKr": "34.8 x 27.3 cm"
   },
   {
     "id": "sg-006",
@@ -129,7 +144,10 @@
     "sizeCategory": "small",
     "questionVi": "Điều gì trong cuộc sống của bạn đang tiến về phía trước rất chậm, nhưng vẫn đang di chuyển?",
     "questionMs": "Apakah satu perkara dalam hidup anda yang bergerak sangat perlahan, tetapi masih bergerak?",
-    "questionId": "Apa satu hal dalam hidup Anda yang bergerak sangat perlahan, tetapi tetap bergerak?"
+    "questionId": "Apa satu hal dalam hidup Anda yang bergerak sangat perlahan, tetapi tetap bergerak?",
+    "titleKr": "Those snails",
+    "mediumKr": "Mixed media on canvas",
+    "dimensionsKr": "34.8 x 27.3 cm"
   },
   {
     "id": "sg-007",
@@ -151,7 +169,10 @@
     "sizeCategory": "small",
     "questionVi": "Công việc nào bạn vẫn làm một cách trung thành, ngay cả khi dường như không ai để ý?",
     "questionMs": "Apakah kerja yang anda terus lakukan dengan setia, walaupun tiada siapa yang nampaknya perasan?",
-    "questionId": "Pekerjaan apa yang terus Anda lakukan dengan setia, bahkan ketika tidak ada yang tampaknya memperhatikan?"
+    "questionId": "Pekerjaan apa yang terus Anda lakukan dengan setia, bahkan ketika tidak ada yang tampaknya memperhatikan?",
+    "titleKr": "Those bees",
+    "mediumKr": "Mixed media on canvas",
+    "dimensionsKr": "34.8 x 27.3 cm"
   },
   {
     "id": "sg-008",
@@ -173,7 +194,10 @@
     "sizeCategory": "large",
     "questionVi": "Nếu phải chọn một cảm xúc mà bạn bị thu hút nhất lúc này, đó sẽ là gì và tại sao?",
     "questionMs": "Jika anda perlu memilih satu perasaan yang paling menarik anda sekarang, apakah itu dan mengapa?",
-    "questionId": "Jika Anda harus memilih satu perasaan yang paling menarik bagi Anda sekarang, apa itu dan mengapa?"
+    "questionId": "Jika Anda harus memilih satu perasaan yang paling menarik bagi Anda sekarang, apa itu dan mengapa?",
+    "titleKr": "The attraction of emotion",
+    "mediumKr": "Mixed media on canvas",
+    "dimensionsKr": "91 x 60.5 cm"
   },
   {
     "id": "es-001",
@@ -195,7 +219,10 @@
     "sizeCategory": "large",
     "questionVi": "Khi nào tiếng nói của bạn tuôn ra tự nhiên nhất, như tiếng chim hót?",
     "questionMs": "Bilakah suara anda mengalir keluar paling mudah, seperti nyanyian burung?",
-    "questionId": "Kapan suara Anda mengalir paling mudah, seperti kicauan burung?"
+    "questionId": "Kapan suara Anda mengalir paling mudah, seperti kicauan burung?",
+    "titleKr": "Effortlessly chirping birds (L)",
+    "mediumKr": "Mixed media on canvas",
+    "dimensionsKr": "60.5 x 91 cm"
   },
   {
     "id": "es-002",
@@ -217,7 +244,10 @@
     "sizeCategory": "large",
     "questionVi": "Bạn có nhớ khoảnh khắc nào mà bạn không cần nhiều lời để được hiểu?",
     "questionMs": "Bolehkah anda mengingati satu saat apabila anda tidak memerlukan banyak perkataan untuk difahami?",
-    "questionId": "Bisakah Anda mengingat momen ketika Anda tidak memerlukan banyak kata untuk dipahami?"
+    "questionId": "Bisakah Anda mengingat momen ketika Anda tidak memerlukan banyak kata untuk dipahami?",
+    "titleKr": "Effortlessly chirping birds (R)",
+    "mediumKr": "Mixed media on canvas",
+    "dimensionsKr": "60.5 x 91 cm"
   },
   {
     "id": "es-003",
@@ -227,7 +257,7 @@
     "medium": "Mixed media on canvas",
     "dimensions": "34.8 x 27.3 cm",
     "question": "If you stopped by this water for a while, what would you like to set down and rest from?",
-    "questionKr": "지금 이 물결 앞이라면, 잠시 멈추어 내려놓고 싶은 짐은 무엇인가요?",
+    "questionKr": "이 고요한 물결을 바라보며 잠시 멈춘다면, 당신이 내려놓고 싶은 짐이나 걱정은 무엇일까요?",
     "images": {
       "thumbnail": "/images/works/5. Take a break.JPG",
       "full": "/images/works/5. Take a break.JPG",
@@ -239,7 +269,10 @@
     "sizeCategory": "small",
     "questionVi": "Nếu bạn dừng lại bên dòng nước này một lúc, bạn muốn đặt xuống và nghỉ ngơi khỏi điều gì?",
     "questionMs": "Jika anda berhenti di tepi air ini sebentar, apakah yang anda ingin letakkan dan berehat daripadanya?",
-    "questionId": "Jika Anda berhenti di tepi air ini sebentar, apa yang ingin Anda letakkan dan istirahatkan?"
+    "questionId": "Jika Anda berhenti di tepi air ini sebentar, apa yang ingin Anda letakkan dan istirahatkan?",
+    "titleKr": "Take a break",
+    "mediumKr": "Mixed media on canvas",
+    "dimensionsKr": "34.8 x 27.3 cm"
   },
   {
     "id": "es-004",
@@ -261,7 +294,10 @@
     "sizeCategory": "small",
     "questionVi": "Nếu bạn có thể làm sáng lên ngày hôm nay của một người, ai sẽ xuất hiện trong tâm trí bạn?",
     "questionMs": "Jika anda boleh mencerahkan hari seseorang hari ini, siapakah yang terlintas di fikiran?",
-    "questionId": "Jika Anda bisa mencerahkan hari seseorang hari ini, siapa yang terlintas di pikiran Anda?"
+    "questionId": "Jika Anda bisa mencerahkan hari seseorang hari ini, siapa yang terlintas di pikiran Anda?",
+    "titleKr": "Brighten someone",
+    "mediumKr": "Mixed media on canvas",
+    "dimensionsKr": "34.8 x 27.3 cm"
   },
   {
     "id": "es-005",
@@ -283,7 +319,10 @@
     "sizeCategory": "small",
     "questionVi": "Nhìn vào ánh lấp lánh này, khoảnh khắc hạnh phúc nào trong cuộc đời bạn cảm thấy giống nó nhất?",
     "questionMs": "Melihat kilauan ini, detik bahagia manakah dalam hidup anda yang paling serupa dengannya?",
-    "questionId": "Melihat kilauan ini, momen bahagia mana dalam hidup Anda yang paling mirip dengannya?"
+    "questionId": "Melihat kilauan ini, momen bahagia mana dalam hidup Anda yang paling mirip dengannya?",
+    "titleKr": "Recall a happy memory",
+    "mediumKr": "Mixed media on canvas",
+    "dimensionsKr": "34.8 x 27.3 cm"
   },
   {
     "id": "ds-001",
@@ -305,7 +344,10 @@
     "sizeCategory": "medium",
     "questionVi": "Một câu bạn muốn nói với bản thân tương lai trưởng thành của mình là gì?",
     "questionMs": "Apakah satu ayat yang anda ingin sampaikan kepada diri anda yang akan dewasa kelak?",
-    "questionId": "Apa satu kalimat yang ingin Anda sampaikan kepada diri Anda yang dewasa di masa depan?"
+    "questionId": "Apa satu kalimat yang ingin Anda sampaikan kepada diri Anda yang dewasa di masa depan?",
+    "titleKr": "You are going to grow up",
+    "mediumKr": "Mixed media on canvas",
+    "dimensionsKr": "65.1 x 136.5 cm"
   },
   {
     "id": "ds-002",
@@ -315,7 +357,7 @@
     "medium": "Mixed media on canvas",
     "dimensions": "65.1 x 136.5 cm",
     "question": "When you imagine yourself growing old, what scares you most and what are you most curious or hopeful about?",
-    "questionKr": "나이가 든 나를 떠올릴 때, 가장 두려운 점과 가장 기대되는 점은 무엇인가요?",
+    "questionKr": "미래의 나이 든 나를 상상해 본다면, 가장 두렵게 느껴지는 것은 무엇이며 가장 기대되거나 호기심이 생기는 것은 무엇일까요?",
     "images": {
       "thumbnail": "/images/works/14. I am going to have to grow old..JPG",
       "full": "/images/works/14. I am going to have to grow old..JPG",
@@ -327,7 +369,10 @@
     "sizeCategory": "medium",
     "questionVi": "Khi bạn tưởng tượng mình già đi, điều gì làm bạn sợ nhất và điều gì bạn tò mò hoặc hy vọng nhất?",
     "questionMs": "Apabila anda membayangkan diri menjadi tua, apakah yang paling menakutkan dan apakah yang paling anda ingin tahu atau harapkan?",
-    "questionId": "Ketika Anda membayangkan diri menjadi tua, apa yang paling menakutkan dan apa yang paling ingin Anda ketahui atau harapkan?"
+    "questionId": "Ketika Anda membayangkan diri menjadi tua, apa yang paling menakutkan dan apa yang paling ingin Anda ketahui atau harapkan?",
+    "titleKr": "I am going to have to grow old",
+    "mediumKr": "Mixed media on canvas",
+    "dimensionsKr": "65.1 x 136.5 cm"
   },
   {
     "id": "ds-003",
@@ -337,7 +382,7 @@
     "medium": "Mixed media on canvas",
     "dimensions": "65.1 x 136.5 cm",
     "question": "Knowing that everything will one day end, how does that change the way you see this moment?",
-    "questionKr": "언젠가 끝이 온다는 사실이, 지금 이 순간을 대하는 태도를 어떻게 바꾸게 하나요?",
+    "questionKr": "모든 것이 언젠가는 끝난다는 사실을 알게 될 때, 그것이 지금 이 순간을 바라보고 대하는 당신의 태도를 어떻게 변화시킬까요?",
     "images": {
       "thumbnail": "/images/works/15. And then I will die..JPG",
       "full": "/images/works/15. And then I will die..JPG",
@@ -349,7 +394,10 @@
     "sizeCategory": "medium",
     "questionVi": "Biết rằng mọi thứ sẽ kết thúc một ngày nào đó, điều đó thay đổi cách bạn nhìn khoảnh khắc này như thế nào?",
     "questionMs": "Mengetahui bahawa segala-galanya akan berakhir suatu hari nanti, bagaimanakah itu mengubah cara anda melihat saat ini?",
-    "questionId": "Mengetahui bahwa segalanya akan berakhir suatu hari nanti, bagaimana hal itu mengubah cara Anda melihat momen ini?"
+    "questionId": "Mengetahui bahwa segalanya akan berakhir suatu hari nanti, bagaimana hal itu mengubah cara Anda melihat momen ini?",
+    "titleKr": "And then I will die",
+    "mediumKr": "Mixed media on canvas",
+    "dimensionsKr": "65.1 x 136.5 cm"
   },
   {
     "id": "ds-004",
@@ -359,7 +407,7 @@
     "medium": "Mixed media on canvas",
     "dimensions": "91 x 60.5 cm",
     "question": "After the world seems to shake, what in your life quietly goes on as if nothing happened?",
-    "questionKr": "세상이 요동친 뒤에도, '아무 일 없었다는 듯' 계속되는 일상은 당신에게 무엇인가요?",
+    "questionKr": "큰 변화나 힘든 시간이 지나간 후에도, 당신의 삶에서 아무 일 없었던 것처럼 조용히 계속되어가는 것은 무엇일까요?",
     "images": {
       "thumbnail": "/images/works/19.they live like nothing....jpeg",
       "full": "/images/works/19.they live like nothing....jpeg",
@@ -371,7 +419,10 @@
     "sizeCategory": "large",
     "questionVi": "Sau khi thế giới dường như rung chuyển, điều gì trong cuộc sống của bạn âm thầm tiếp tục như thể không có gì xảy ra?",
     "questionMs": "Selepas dunia seolah-olah bergegar, apakah dalam hidup anda yang diam-diam berterusan seolah-olah tiada apa yang berlaku?",
-    "questionId": "Setelah dunia tampak berguncang, apa dalam hidup Anda yang diam-diam terus berlanjut seolah-olah tidak ada yang terjadi?"
+    "questionId": "Setelah dunia tampak berguncang, apa dalam hidup Anda yang diam-diam terus berlanjut seolah-olah tidak ada yang terjadi?",
+    "titleKr": "They live like nothing happened",
+    "mediumKr": "Mixed media on canvas",
+    "dimensionsKr": "91 x 60.5 cm"
   },
   {
     "id": "wt-001",
@@ -393,7 +444,10 @@
     "sizeCategory": "small",
     "questionVi": "Nếu những cảm xúc trong tim bạn là mặt nước này, hôm nay chúng sẽ có màu gì?",
     "questionMs": "Jika perasaan di hati anda adalah permukaan air ini, apakah warnanya hari ini?",
-    "questionId": "Jika perasaan di hati Anda adalah permukaan air ini, warna apa yang akan mereka miliki hari ini?"
+    "questionId": "Jika perasaan di hati Anda adalah permukaan air ini, warna apa yang akan mereka miliki hari ini?",
+    "titleKr": "On your heart",
+    "mediumKr": "Mixed media on canvas",
+    "dimensionsKr": "34.8 x 27.3 cm"
   },
   {
     "id": "wt-002",
@@ -415,7 +469,10 @@
     "sizeCategory": "medium",
     "questionVi": "Hướng tới một nơi vẫn còn xa xôi, một bước nhỏ nào bạn có thể thực hiện hôm nay?",
     "questionMs": "Ke arah tempat yang masih terasa jauh, apakah satu langkah kecil yang boleh anda ambil hari ini?",
-    "questionId": "Menuju tempat yang masih terasa jauh, apa satu langkah kecil yang bisa Anda ambil hari ini?"
+    "questionId": "Menuju tempat yang masih terasa jauh, apa satu langkah kecil yang bisa Anda ambil hari ini?",
+    "titleKr": "Take one tiny step",
+    "mediumKr": "Mixed media on canvas",
+    "dimensionsKr": "34.8 x 27.3 cm"
   },
   {
     "id": "wt-003",
@@ -437,7 +494,10 @@
     "sizeCategory": "medium",
     "questionVi": "Nếu \"một ngày nào đó\" trở thành \"bây giờ\", nơi nào trong tâm hồn bạn muốn ghé thăm đầu tiên?",
     "questionMs": "Jika \"suatu hari nanti\" menjadi \"sekarang\", tempat dalaman manakah yang anda ingin lawati dahulu?",
-    "questionId": "Jika \"suatu hari nanti\" menjadi \"sekarang\", tempat batin mana yang ingin Anda kunjungi terlebih dahulu?"
+    "questionId": "Jika \"suatu hari nanti\" menjadi \"sekarang\", tempat batin mana yang ingin Anda kunjungi terlebih dahulu?",
+    "titleKr": "Go there",
+    "mediumKr": "Mixed media on canvas",
+    "dimensionsKr": "34.8 x 27.3 cm"
   },
   {
     "id": "wt-004",
@@ -447,7 +507,7 @@
     "medium": "Mixed media on canvas",
     "dimensions": "80.3 x 65.1 cm",
     "question": "If you forgot success and failure for a moment and focused only on the fact that you are growing, what would feel a little lighter?",
-    "questionKr": "성공이나 실패를 잠시 잊고, '그저 자라가고 있다'는 사실만 바라본다면 무엇이 조금 가벼워지나요?",
+    "questionKr": "성공과 실패라는 판단을 잠시 내려놓고, 오직 당신이 자라나고 있다는 단순한 사실에만 집중한다면, 당신의 마음에서 무엇이 더 가벼워질까요?",
     "images": {
       "thumbnail": "/images/works/21.Just that we grow.jpeg",
       "full": "/images/works/21.Just that we grow.jpeg",
@@ -459,6 +519,55 @@
     "sizeCategory": "large",
     "questionVi": "Nếu bạn quên đi thành công và thất bại trong chốc lát và chỉ tập trung vào việc bạn đang trưởng thành, điều gì sẽ cảm thấy nhẹ nhàng hơn một chút?",
     "questionMs": "Jika anda melupakan kejayaan dan kegagalan seketika dan fokus hanya pada hakikat bahawa anda sedang berkembang, apakah yang akan terasa sedikit lebih ringan?",
-    "questionId": "Jika Anda melupakan kesuksesan dan kegagalan sejenak dan hanya fokus pada kenyataan bahwa Anda sedang tumbuh, apa yang akan terasa sedikit lebih ringan?"
+    "questionId": "Jika Anda melupakan kesuksesan dan kegagalan sejenak dan hanya fokus pada kenyataan bahwa Anda sedang tumbuh, apa yang akan terasa sedikit lebih ringan?",
+    "titleKr": "Just that we grow",
+    "mediumKr": "Mixed media on canvas",
+    "dimensionsKr": "80.3 x 65.1 cm"
+  },
+  {
+    "id": "breathing-2024",
+    "title": "Breathing",
+    "titleKr": "Breathing",
+    "year": 2024,
+    "chapter": "waters-of-time",
+    "medium": "Mixed media on canvas",
+    "mediumKr": "캔버스에 혼합 재료",
+    "dimensions": "60.5 x 91 cm",
+    "dimensionsKr": "60.5 x 91 cm",
+    "question": "Where in this painting would you choose to pause and catch your breath?",
+    "questionKr": "당신이 잠시 숨을 고르고 싶은 자리는 이 그림 속 어디인가요?",
+    "images": {
+      "thumbnail": "/images/works/2024/breathing.jpg",
+      "full": "/images/works/2024/breathing.jpg",
+      "alt": "Breathing - Figures resting among blue hydrangeas"
+    },
+    "order": 999,
+    "hasArtistNote": true,
+    "imageWidth": 0,
+    "imageHeight": 0,
+    "sizeCategory": "medium"
+  },
+  {
+    "id": "spend-sometime-2024",
+    "title": "Spend sometime",
+    "titleKr": "Spend sometime",
+    "year": 2024,
+    "chapter": "waters-of-time",
+    "medium": "Mixed media on canvas",
+    "mediumKr": "캔버스에 혼합 재료",
+    "dimensions": "53.0 x 41.0 cm",
+    "dimensionsKr": "53.0 x 41.0 cm",
+    "question": "Where would you choose to sit in this forest?",
+    "questionKr": "이 숲에서 당신은 어느 자리에 앉아 있고 싶나요?",
+    "images": {
+      "thumbnail": "/images/works/2024/spend-sometime.jpg",
+      "full": "/images/works/2024/spend-sometime.jpg",
+      "alt": "Spend sometime - Deer and a horned girl in moonlit forest"
+    },
+    "order": 1000,
+    "hasArtistNote": true,
+    "imageWidth": 0,
+    "imageHeight": 0,
+    "sizeCategory": "medium"
   }
 ]

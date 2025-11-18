@@ -44,6 +44,7 @@ export interface Artwork {
   imageWidth?: number;
   imageHeight?: number;
   sizeCategory?: 'small' | 'medium' | 'large';
+  hasArtistNote?: boolean;  // artwork-notes.json에 원본 노트 있음을 표시
 }
 
 // 작가 정보
@@ -81,4 +82,20 @@ export interface Exhibition {
   endDate?: string;
   type: 'solo' | 'group';
   description?: string;
+}
+
+// 작품 노트 (원천 데이터)
+export interface ArtworkNote {
+  artworkId: string;  // artworks.json의 id와 매칭
+  year: number;
+  artistNote: {
+    en: string;
+    kr: string;
+  };
+  viewerQuestions: {
+    en: string[];
+    kr: string[];
+  };
+  themes: string[];  // 테마 태그
+  sourceDate: string;  // 작성 날짜
 }

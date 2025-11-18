@@ -6,7 +6,11 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "preprocess": "node scripts/preprocess-data.js",
+    "validate": "node scripts/validate-data.js",
+    "analyze": "node scripts/analyze-translations.js",
+    "data:check": "npm run preprocess && npm run validate"
   },
   "dependencies": {
     "framer-motion": "^10.16.16",

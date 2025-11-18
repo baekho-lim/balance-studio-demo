@@ -1,0 +1,44 @@
+{
+  "notes": [
+    {
+      "artworkId": "breathing-2024",
+      "year": 2024,
+      "artistNote": {
+        "en": "Among clusters of blue hydrangeas, several figures pause in different postures of rest. One sits curled up, another lies with eyes closed, another stands quietly with a hand on her chest—as if they are all held inside a single, slow breath.\n\nPlant growth and human breathing overlap, turning the canvas into one living body. Rather than a real garden, this feels like an inner garden reconstructed in the artist's mind. Here, the hydrangeas are not just flowers; they soften anxiety and hold personal memories like gentle shields.\n\nWith the appearance of a giraffe and unusual foliage, the scene moves beyond everyday reality. In this work, utopia and reality are no longer separate; the viewer is invited into an imagined world that simply asks, \"How am I breathing right now, in this moment?\"",
+        "kr": "파란 수국과 짙은 잎사귀 사이로 여러 인물이 서로 다른 자세로 숨을 고르고 있다. 웅크리고 앉아 있는 아이, 눈을 감고 누워 있는 몸, 조용히 서서 자신의 가슴에 손을 얹은 인물까지—모두가 하나의 커다란 숨 속에서 잠시 멈춰 있는 듯하다.\n\n식물의 생장과 인간의 호흡이 겹쳐지면서, 화면 전체는 마치 \"한 생명이 숨 쉬는 몸\"처럼 보인다. 현실의 정원이라기보다, 작가가 마음속에서 다시 조합한 내면의 정원이다. 이곳에서 수국은 단순한 꽃이 아니라, 불안을 덮어주고 기억을 품어주는 부드러운 방패처럼 작동한다.\n\n기린과 특이한 식물의 등장으로 장면은 더 이상 일상적인 풍경이 아니다. 이 작품에서 유토피아와 현실은 구분되지 않고, \"지금 여기에서 숨 쉬고 있는 나\"를 조용히 돌아보게 만드는 상상 속 세계로 확장된다."
+      },
+      "viewerQuestions": {
+        "en": [
+          "Where in this painting would you choose to pause and catch your breath?",
+          "Which figure did you notice first, and why do you think your eyes went there?"
+        ],
+        "kr": [
+          "당신이 잠시 숨을 고르고 싶은 자리는 이 그림 속 어디인가요?",
+          "이 화면에서 가장 먼저 눈에 들어온 인물은 누구였나요, 그리고 그 이유는 무엇인가요?"
+        ]
+      },
+      "themes": ["breathing", "rest", "hydrangea", "pause", "inner-garden", "utopia", "reality"],
+      "sourceDate": "2024-11-18"
+    },
+    {
+      "artworkId": "spend-sometime-2024",
+      "year": 2024,
+      "artistNote": {
+        "en": "Under a pale moon in a dense forest, deer and a horned girl share a quiet shoreline. The girl sits against a tree, somewhere between human and animal, while the fawns curl up nearby as if trusting the stillness of the night.\n\nThis forest feels less like a real landscape and more like a private place of memory. Soft greys and browns carry a mixture of fear and comfort, solitude and solace. The light that seeps through the trees suggests a kind of silence that is not empty, but filled with slow, almost imperceptible changes inside.\n\nIn this work, \"spending time\" is not about productivity or achievement. It is the act of simply staying—with oneself, with others, with the night. Nothing dramatic seems to happen, yet in that pause, our inner temperature begins to shift.",
+        "kr": "짙은 숲과 달빛, 고요한 물가 위에 사슴과 한 인물이 함께 머물러 있다. 뿔이 돋은 소녀는 사슴과 사람 사이 어딘가에 서 있으며, 그 옆으로 새끼 사슴들이 몸을 웅크린 채 조용히 시간을 견디고 있다.\n\n이 화면의 숲은 실제 풍경이라기보다, 혼자만 알고 있는 기억의 장소에 가깝다. 회색과 갈색의 깊은 톤 사이로 번지는 빛은 두려움과 안도감, 고독과 위로가 동시에 섞여 있는 감정을 보여준다.\n\n작가는 \"시간을 보낸다\"는 행위를, 무언가를 성취하기 위해 쓰는 시간이 아니라 그저 함께 머물러 주는 시간으로 그려낸다. 아무 말 없이, 아무 일도 일어나지 않는 것 같지만 그 틈에서 서서히 마음의 체온이 바뀌는 순간들을 담고 있다."
+      },
+      "viewerQuestions": {
+        "en": [
+          "Where would you choose to sit in this forest?",
+          "Have you ever experienced time alone that didn't feel lonely—what scene from your life does this painting remind you of?"
+        ],
+        "kr": [
+          "이 숲에서 당신은 어느 자리에 앉아 있고 싶나요?",
+          "혼자 남겨진 시간이 꼭 외롭지만은 않았던 순간이 있었다면, 그 기억은 어떤 장면에 가까운가요?"
+        ]
+      },
+      "themes": ["solitude", "deer", "forest", "moonlight", "companionship", "time", "stillness"],
+      "sourceDate": "2024-11-18"
+    }
+  ]
+}
