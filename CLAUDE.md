@@ -11,6 +11,12 @@ Next.js 14 기반 아티스트 포트폴리오 웹사이트. 작품 갤러리, �
 - **Deployment**: Vercel (auto-deploy on push)
 - **Data**: JSON files (`/src/data/`)
 
+### Deployment Rules
+- **CRITICAL**: GitHub와 연동된 Vercel 프로젝트는 자동 배포 구조 사용
+- **절대 금지**: 사용자 확인 없이 `vercel` CLI로 새 프로젝트 생성
+- **올바른 배포 방법**: `git push`만 하면 자동 배포됨
+- **수동 배포 필요 시**: 반드시 사용자에게 먼저 확인 받기
+
 ## Project Structure
 ```
 /src
