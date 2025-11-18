@@ -1,13 +1,15 @@
 'use client'
 
-import { useState } from 'react'
+import React, { useState, useMemo } from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
 import { QRCodeSVG } from 'qrcode.react'
 import { ArrowLeft } from 'lucide-react'
 import catalogData from '@/data/catalog.json'
+import CatalogPrintStyles from '@/components/print/CatalogPrintStyles'
 
 type Language = 'en' | 'kr'
+type TextMode = 'poetic' | 'curator'
 
 interface CatalogWork {
   id: string
@@ -18,6 +20,10 @@ interface CatalogWork {
   imageWidth: number
   imageHeight: number
   curator_text: {
+    en: string
+    kr: string
+  }
+  curator_worldview: {
     en: string
     kr: string
   }
@@ -48,61 +54,58 @@ const imageMap: Record<string, string> = {
 
 export default function CatalogPage() {
   const [lang, setLang] = useState<Language>('en')
+  const [textMode, setTextMode] = useState<TextMode>('poetic')
+
+  // Helper function to get curator text based on language and text mode
+  const getCuratorText = (work: CatalogWork) => {
+    if (lang === 'en') {
+      return work.curator_text.en
+    }
+    // Korean: choose between poetic and curator versions
+    return textMode === 'poetic' ? work.curator_text.kr : work.curator_worldview.kr
+  }
+
+  // Calculate page numbers for all works
+  const pageNumbersMap = useMemo(() => {
+    const map = new Map<string, number>()
+    let pageCounter = 1
+
+    catalogData.selectedWorks.forEach((work) => {
+      const isDiptychFirst = work.id === 'es-001'
+      const isTriptychFirst = work.id === 'ds-001'
+      const isDiptychOther = work.id === 'es-002'
+      const isTriptychOther = ['ds-002', 'ds-003'].includes(work.id)
+
+      if (isDiptychOther || isTriptychOther) {
+        // Skip, will be handled with first
+        return
+      }
+
+      if (isDiptychFirst) {
+        map.set('diptych-overview', pageCounter++)
+        map.set('es-001', pageCounter++)
+        map.set('es-002', pageCounter++)
+      } else if (isTriptychFirst) {
+        map.set('triptych-overview', pageCounter++)
+        map.set('ds-001', pageCounter++)
+        map.set('ds-002', pageCounter++)
+        map.set('ds-003', pageCounter++)
+      } else {
+        map.set(work.id, pageCounter++)
+      }
+    })
+
+    return { map, totalPages: pageCounter - 1 }
+  }, [])
 
   return (
     <div className="min-h-screen bg-white">
-      {/* Print-Optimized CSS */}
-      <style dangerouslySetInnerHTML={{
-        __html: `
-          @media print {
-            @page {
-              size: A4;
-              margin: 2cm;
-            }
+      {/* Print-Optimized CSS - Now extracted to reusable component */}
+      <CatalogPrintStyles />
 
-            .page-break-after {
-              page-break-after: always;
-              break-after: page;
-            }
-
-            h2, h3, h4 {
-              page-break-after: avoid;
-              break-after: avoid;
-            }
-
-            img {
-              page-break-inside: avoid;
-              break-inside: avoid;
-            }
-
-            body {
-              font-size: 11pt;
-              line-height: 1.5;
-            }
-
-            h2 {
-              font-size: 18pt;
-            }
-
-            h3 {
-              font-size: 16pt;
-            }
-
-            * {
-              -webkit-print-color-adjust: exact;
-              print-color-adjust: exact;
-              color-adjust: exact;
-            }
-
-            section {
-              min-height: auto;
-            }
-          }
-        `
-      }} />
-
-      {/* Language Toggle */}
-      <div className="fixed top-4 right-4 z-50 print:hidden">
+      {/* Language Toggle & Text Mode Toggle */}
+      <div className="fixed top-4 right-4 z-50 print:hidden flex flex-col gap-2 items-end">
+        {/* Language Toggle */}
         <div className="bg-white/90 backdrop-blur-sm rounded-full shadow-lg p-1 flex">
           <button
             onClick={() => setLang('en')}
@@ -121,28 +124,52 @@ export default function CatalogPage() {
             KR
           </button>
         </div>
+
+        {/* Text Mode Toggle - Only show for Korean */}
+        {lang === 'kr' && (
+          <div className="bg-white/90 backdrop-blur-sm rounded-full shadow-lg p-1 flex animate-fadeIn">
+            <button
+              onClick={() => setTextMode('poetic')}
+              className={`px-3 py-1.5 rounded-full text-xs transition-all ${
+                textMode === 'poetic' ? 'bg-primary text-white' : 'text-primary hover:bg-gray-100'
+              }`}
+            >
+              에디터 버전
+            </button>
+            <button
+              onClick={() => setTextMode('curator')}
+              className={`px-3 py-1.5 rounded-full text-xs transition-all ${
+                textMode === 'curator' ? 'bg-primary text-white' : 'text-primary hover:bg-gray-100'
+              }`}
+            >
+              큐레이터 버전
+            </button>
+          </div>
+        )}
       </div>
 
       {/* Navigation Buttons */}
-      <div className="fixed top-4 left-4 z-50 print:hidden flex gap-3">
-        <Link
-          href="/"
-          className="bg-white/90 backdrop-blur-sm text-primary px-4 py-2 rounded-full text-sm hover:bg-gray-100 transition-all shadow-lg flex items-center gap-2"
-        >
-          <ArrowLeft size={16} />
-          Home
-        </Link>
-        <button
-          onClick={() => window.print()}
-          className="bg-primary text-white px-6 py-2 rounded-full text-sm hover:bg-primary/90 transition-all shadow-lg"
-        >
-          Print / PDF
-        </button>
+      <div className="fixed top-4 left-4 z-50 print:hidden flex flex-col gap-2">
+        <div className="flex gap-3">
+          <Link
+            href="/"
+            className="bg-white/90 backdrop-blur-sm text-primary px-4 py-2 rounded-full text-sm hover:bg-gray-100 transition-all shadow-lg flex items-center gap-2"
+          >
+            <ArrowLeft size={16} />
+            Home
+          </Link>
+          <button
+            onClick={() => window.print()}
+            className="bg-primary text-white px-6 py-2 rounded-full text-sm hover:bg-primary/90 transition-all shadow-lg"
+          >
+            Print / PDF
+          </button>
+        </div>
       </div>
 
       {/* Cover Page */}
-      <section className="h-screen relative page-break-after">
-        {/* Background Artwork */}
+      <section className="h-screen relative page-break-after cover-page">
+        {/* Background Artwork - Full Bleed */}
         <div className="absolute inset-0">
           <Image
             src="/images/works/1. I am only passing though the woods..jpg"
@@ -151,46 +178,72 @@ export default function CatalogPage() {
             className="object-cover"
             priority
           />
-          {/* Dark overlay for text readability */}
-          <div className="absolute inset-0 bg-black/50" />
+          {/* Subtle overlay for text readability */}
+          <div className="absolute inset-0 bg-black/30" />
         </div>
 
-        {/* Cover Content */}
-        <div className="relative h-full flex flex-col items-center justify-center p-8">
+        {/* Cover Content - Minimal */}
+        <div className="relative h-full flex flex-col items-center justify-center p-12">
           <div className="text-center max-w-2xl">
-            <h1 className="font-serif text-5xl md:text-6xl mb-4 tracking-wide text-white">
+            <h1 className="font-serif text-5xl md:text-6xl mb-3 tracking-wide text-white drop-shadow-lg">
               {catalogData.title}
             </h1>
-            <p className="text-xl text-white/80 mb-12">
-              {catalogData.subtitle}
+            <p className="text-lg text-white/90 mb-8 drop-shadow-md">
+              {lang === 'en' ? catalogData.subtitle.en : catalogData.subtitle.kr}
             </p>
 
-            <div className="w-24 h-px bg-white/50 mx-auto mb-12" />
+            <div className="w-20 h-px bg-white/60 mx-auto mb-8" />
 
-            <p className="font-serif text-2xl mb-2 text-white">
+            <p className="font-serif text-xl mb-1 text-white drop-shadow-md">
               {catalogData.artist.name}
             </p>
-            <p className="text-lg text-white/80 mb-1">
+            <p className="text-base text-white/85 drop-shadow-md">
               {catalogData.artist.nameKr}
-            </p>
-            <p className="text-sm text-white/60">
-              {catalogData.artist.birth}
             </p>
           </div>
         </div>
       </section>
 
-      {/* Exhibition Statement Page */}
-      <section className="min-h-screen flex flex-col items-center justify-center p-8 md:p-16 page-break-after">
-        <div className="max-w-3xl">
+      {/* Exhibition Statement Page (Curator Jiyeon Park v1.1) */}
+      <section className="min-h-screen flex flex-col items-center justify-start p-8 md:p-16 page-break-after">
+        <div className="max-w-3xl mb-16">
           <h2 className="font-serif text-3xl mb-8 text-center">
             {lang === 'en' ? 'Exhibition Statement' : '전시 서문'}
           </h2>
 
           <div className="prose prose-lg max-w-none">
             <div className="text-base leading-relaxed whitespace-pre-line">
-              {lang === 'en' ? catalogData.exhibitionStatement.en : catalogData.exhibitionStatement.kr}
+              {lang === 'en' ? catalogData.curatorStatement.en : catalogData.curatorStatement.kr}
             </div>
+          </div>
+
+          {/* Curator */}
+          <div className="text-right mt-8">
+            <p className="text-sm italic text-secondary/70">
+              {lang === 'en' ? '— Jiyeon Park, Curator' : '— 큐레이터 박지연'}
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* Catalog Introduction Page */}
+      <section className="min-h-screen flex flex-col items-center justify-start p-8 md:p-16 page-break-after">
+        <div className="max-w-3xl mb-16">
+          <h2 className="font-serif text-3xl mb-8 text-center">
+            {lang === 'en' ? catalogData.catalogIntroduction.title.en : catalogData.catalogIntroduction.title.kr}
+          </h2>
+
+          <div className="prose prose-lg max-w-none">
+            <div className="text-base leading-relaxed whitespace-pre-line">
+              {lang === 'en' ? catalogData.catalogIntroduction.en : catalogData.catalogIntroduction.kr}
+            </div>
+          </div>
+
+          {/* Author Name */}
+          <div className="text-right mt-8">
+            <p className="text-sm italic text-secondary/70">
+              {lang === 'en' ? '— Baekho Lim, Editor' : '— 편집자 임백호'}
+            </p>
           </div>
         </div>
       </section>
@@ -226,81 +279,137 @@ export default function CatalogPage() {
           ? catalogData.selectedWorks.filter(w => triptychIds.includes(w.id))
           : null
 
-        return (
-          <section key={work.id} className="min-h-screen p-8 md:p-16 page-break-after">
-            <div className="max-w-6xl mx-auto">
-              {triptychWorks ? (
-                /* Triptych Layout: Three connected works */
-                <>
-                  <h2 className="font-serif text-3xl mb-8 text-center">
+        // For triptych, render overview + individual pages
+        if (triptychWorks && isFirstOfTriptych) {
+          return (
+            <React.Fragment key={`triptych-${work.id}`}>
+              {/* Triptych Overview Page */}
+              <section className="min-h-screen p-8 md:p-16 page-break-after overview-page">
+                <div className="w-full h-full flex flex-col">
+                  {/* Title - Enhanced hierarchy */}
+                  <h2 className="font-serif text-2xl mb-8 text-center font-medium">
                     {lang === 'en' ? 'Temporal Triptych' : '시간 3부작'}
                   </h2>
 
-                  {/* Three images in a row */}
-                  <div className="grid grid-cols-3 gap-6 mb-8">
-                    {triptychWorks.map((tWork) => {
-                      const tAspectRatio = tWork.imageWidth / tWork.imageHeight
-                      return (
-                        <div key={tWork.id}>
-                          <div className="relative w-full mb-4" style={{ aspectRatio: tAspectRatio }}>
-                            <Image
-                              src={imageMap[tWork.id] || '/images/placeholder.jpg'}
-                              alt={tWork.title}
-                              fill
-                              className="object-contain"
-                              sizes="(max-width: 768px) 100vw, 33vw"
-                            />
-                          </div>
-                          <h3 className="font-serif text-lg mb-1 text-center">
-                            {tWork.title}
-                          </h3>
-                          <p className="text-sm text-secondary text-center">
-                            {tWork.year}
-                          </p>
-                        </div>
-                      )
-                    })}
-                  </div>
-
-                  {/* Shared information */}
-                  <div className="mb-6">
-                    <p className="text-secondary mb-2 text-center">
-                      {triptychWorks[0].year} · {triptychWorks[0].medium}
-                    </p>
-                    <p className="text-sm text-secondary/70 text-center">
-                      {triptychWorks.map(w => w.dimensions).join(' / ')}
-                    </p>
-                  </div>
-
-                  {/* Curator texts in three columns */}
-                  <div className="grid grid-cols-3 gap-8 mb-8">
+                  {/* Three images in a row - Better breathing room */}
+                  <div className="grid grid-cols-3 gap-4 mb-6" style={{ minHeight: '500px' }}>
                     {triptychWorks.map((tWork) => (
-                      <div key={`text-${tWork.id}`}>
-                        <p className="text-sm leading-relaxed mb-4">
-                          {lang === 'en' ? tWork.curator_text.en : tWork.curator_text.kr}
-                        </p>
-                        <div className="border-l-2 border-primary/30 pl-3">
-                          <p className="italic text-primary/80 text-xs">
-                            {lang === 'en' ? tWork.question.en : tWork.question.kr}
-                          </p>
-                        </div>
+                      <div key={tWork.id} className="relative w-full" style={{ aspectRatio: tWork.imageWidth / tWork.imageHeight }}>
+                        <Image
+                          src={imageMap[tWork.id] || '/images/placeholder.jpg'}
+                          alt={tWork.title}
+                          fill
+                          priority
+                          className="object-contain"
+                          sizes="(max-width: 768px) 100vw, 33vw"
+                        />
                       </div>
                     ))}
                   </div>
 
-                  <div className="text-center mt-8 text-sm text-secondary/50">
-                    {index + 1} / {catalogData.selectedWorks.length - 2}
+                  {/* Individual work info - Improved readability */}
+                  <div className="grid grid-cols-3 gap-4 mb-6">
+                    {triptychWorks.map((tWork) => (
+                      <div key={`info-${tWork.id}`} className="text-center text-sm text-secondary/80">
+                        <p className="font-medium mb-1">{tWork.title}</p>
+                        <p className="text-xs text-secondary/60">{tWork.year}</p>
+                        <p className="text-xs text-secondary/60">{tWork.dimensions}</p>
+                      </div>
+                    ))}
                   </div>
-                </>
-              ) : diptychWorks ? (
-                /* Diptych Layout: Two connected landscape works */
-                <>
-                  <h2 className="font-serif text-3xl mb-8 text-center">
-                    {diptychWorks.map(w => w.title).join(' / ')}
+
+                  {/* Brief description - Enhanced prominence */}
+                  <div className="text-center px-8 max-w-3xl mx-auto">
+                    <p className="text-base leading-relaxed">
+                      {lang === 'en'
+                        ? 'A temporal trilogy capturing the arc of existence: growth, aging, and mortality. These three panels explore how all stages of life coexist within us, each informing and enriching the others. The following pages present each panel individually.'
+                        : '존재의 궤적을 담은 시간 3부작: 성장, 노화, 죽음. 세 개의 패널은 삶의 모든 단계가 우리 안에서 어떻게 공존하며, 서로를 알리고 풍요롭게 하는지 탐구한다. 다음 페이지에서 각 패널을 개별적으로 살펴본다.'
+                      }
+                    </p>
+                  </div>
+
+                  <div className="absolute bottom-8 left-0 right-0 text-center text-sm text-secondary/50">
+                    {pageNumbersMap.map.get('triptych-overview')} / {pageNumbersMap.totalPages}
+                  </div>
+                </div>
+              </section>
+
+              {/* Individual Pages for Each Triptych Work */}
+              {triptychWorks.map((tWork, tIdx) => {
+                const tAspectRatio = tWork.imageWidth / tWork.imageHeight
+
+                return (
+                  <section key={`triptych-detail-${tWork.id}`} className="min-h-screen p-8 md:p-16 page-break-after">
+                    <div className="max-w-6xl mx-auto">
+                      {/* Portrait Layout: Image Left (60%), Text Right (40%) */}
+                      <div className="grid md:grid-cols-[60%_40%] gap-8 items-start">
+                        {/* Artwork Image */}
+                        <div className="relative w-full" style={{ aspectRatio: tAspectRatio }}>
+                          <Image
+                            src={imageMap[tWork.id] || '/images/placeholder.jpg'}
+                            alt={tWork.title}
+                            fill
+                            priority
+                            className="object-contain"
+                            sizes="(max-width: 768px) 100vw, 60vw"
+                          />
+                        </div>
+
+                        {/* Artwork Info */}
+                        <div className="flex flex-col justify-center">
+                          <div className="mb-6">
+                            <div className="text-xs text-secondary/50 mb-2">
+                              {lang === 'en' ? `Temporal Triptych ${tIdx + 1}/3` : `시간 3부작 ${tIdx + 1}/3`}
+                            </div>
+                            <h3 className="font-serif text-2xl mb-2">
+                              {tWork.title}
+                            </h3>
+                            <p className="text-secondary mb-2">
+                              {tWork.year} · {tWork.medium}
+                            </p>
+                            <p className="text-sm text-secondary/70">
+                              {tWork.dimensions}
+                            </p>
+                          </div>
+
+                          <div>
+                            <p className="text-base leading-relaxed mb-6">
+                              {getCuratorText(tWork)}
+                            </p>
+                            <div className="border-l-2 border-primary/30 pl-4">
+                              <p className="italic text-primary/80 text-sm">
+                                {lang === 'en' ? tWork.question.en : tWork.question.kr}
+                              </p>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+
+                      <div className="absolute bottom-8 left-0 right-0 text-center text-sm text-secondary/50">
+                        {pageNumbersMap.map.get(tWork.id)} / {pageNumbersMap.totalPages}
+                      </div>
+                    </div>
+                  </section>
+                )
+              })}
+            </React.Fragment>
+          )
+        }
+
+        // For diptych, render overview + individual pages
+        if (diptychWorks && isFirstOfDiptych) {
+          return (
+            <React.Fragment key={`diptych-${work.id}`}>
+              {/* Diptych Overview Page */}
+              <section className="min-h-screen p-8 md:p-16 page-break-after overview-page">
+                <div className="w-full h-full flex flex-col">
+                  {/* Title - Enhanced hierarchy */}
+                  <h2 className="font-serif text-2xl mb-8 text-center font-medium">
+                    {diptychWorks[0].title.replace(/\s*\([LR]\)$/, '')}
                   </h2>
 
-                  {/* Two images side-by-side */}
-                  <div className="grid grid-cols-2 gap-6 mb-8">
+                  {/* Two images side-by-side - Better breathing room */}
+                  <div className="grid grid-cols-2 gap-4 mb-6" style={{ minHeight: '500px' }}>
                     {diptychWorks.map((dWork) => {
                       const dAspectRatio = dWork.imageWidth / dWork.imageHeight
                       return (
@@ -309,6 +418,7 @@ export default function CatalogPage() {
                             src={imageMap[dWork.id] || '/images/placeholder.jpg'}
                             alt={dWork.title}
                             fill
+                            priority
                             className="object-contain"
                             sizes="(max-width: 768px) 100vw, 50vw"
                           />
@@ -317,37 +427,94 @@ export default function CatalogPage() {
                     })}
                   </div>
 
-                  {/* Shared information */}
-                  <div className="mb-6">
-                    <p className="text-secondary mb-2 text-center">
-                      {diptychWorks[0].year} · {diptychWorks[0].medium}
-                    </p>
-                    <p className="text-sm text-secondary/70 text-center">
-                      {diptychWorks.map(w => w.dimensions).join(' / ')}
-                    </p>
-                  </div>
-
-                  {/* Curator texts in two columns */}
-                  <div className="grid grid-cols-2 gap-8 mb-8">
+                  {/* Individual work info - Improved readability */}
+                  <div className="grid grid-cols-2 gap-4 mb-6">
                     {diptychWorks.map((dWork) => (
-                      <div key={`text-${dWork.id}`}>
-                        <p className="text-base leading-relaxed mb-4">
-                          {lang === 'en' ? dWork.curator_text.en : dWork.curator_text.kr}
-                        </p>
-                        <div className="border-l-2 border-primary/30 pl-3">
-                          <p className="italic text-primary/80 text-sm">
-                            {lang === 'en' ? dWork.question.en : dWork.question.kr}
-                          </p>
-                        </div>
+                      <div key={`info-${dWork.id}`} className="text-center text-sm text-secondary/80">
+                        <p className="font-medium mb-1">{dWork.title}</p>
+                        <p className="text-xs text-secondary/60">{dWork.year}</p>
+                        <p className="text-xs text-secondary/60">{dWork.dimensions}</p>
                       </div>
                     ))}
                   </div>
 
-                  <div className="text-center mt-8 text-sm text-secondary/50">
-                    {index + 1} / {catalogData.selectedWorks.length - 1}
+                  {/* Brief description - Enhanced prominence */}
+                  <div className="text-center px-8 max-w-3xl mx-auto">
+                    <p className="text-base leading-relaxed">
+                      {lang === 'en'
+                        ? 'Two moments in expression: the gathering before sound, and the release into song. This diptych explores how authentic communication flows not from effort, but from presence.'
+                        : '표현의 두 순간: 소리 전의 모임, 그리고 노래로의 방출. 이 이면화는 진정한 소통이 노력이 아닌 현존에서 어떻게 흐르는지 탐구한다.'
+                      }
+                    </p>
                   </div>
-                </>
-              ) : isPortrait ? (
+
+                  <div className="absolute bottom-8 left-0 right-0 text-center text-sm text-secondary/50">
+                    {pageNumbersMap.map.get('diptych-overview')} / {pageNumbersMap.totalPages}
+                  </div>
+                </div>
+              </section>
+
+              {/* Individual Pages for Each Diptych Work */}
+              {diptychWorks.map((dWork, dIdx) => {
+                const dAspectRatio = dWork.imageWidth / dWork.imageHeight
+
+                return (
+                  <section key={`diptych-detail-${dWork.id}`} className="min-h-screen p-8 md:p-16 page-break-after">
+                    <div className="max-w-6xl mx-auto">
+                      {/* Artwork Image */}
+                      <div className="relative w-full mb-6" style={{ aspectRatio: dAspectRatio }}>
+                        <Image
+                          src={imageMap[dWork.id] || '/images/placeholder.jpg'}
+                          alt={dWork.title}
+                          fill
+                          priority
+                          className="object-contain"
+                          sizes="(max-width: 768px) 100vw, 80vw"
+                        />
+                      </div>
+
+                      {/* Metadata - Compact */}
+                      <div className="mb-4">
+                        <div className="text-xs text-secondary/50 mb-2">
+                          {lang === 'en' ? `Diptych ${dIdx + 1}/2` : `이면화 ${dIdx + 1}/2`}
+                        </div>
+                        <h3 className="font-serif text-2xl mb-2">
+                          {dWork.title}
+                        </h3>
+                        <p className="text-secondary text-sm">
+                          {dWork.year} · {dWork.medium} · {dWork.dimensions}
+                        </p>
+                      </div>
+
+                      {/* Curator Text - 2 Columns */}
+                      <div className="landscape-text-columns mb-4">
+                        <p className="text-base leading-relaxed">
+                          {getCuratorText(dWork)}
+                        </p>
+                      </div>
+
+                      {/* Question - Full Width */}
+                      <div className="border-l-2 border-primary/30 pl-4">
+                        <p className="italic text-primary/80 text-sm">
+                          {lang === 'en' ? dWork.question.en : dWork.question.kr}
+                        </p>
+                      </div>
+
+                      <div className="absolute bottom-8 left-0 right-0 text-center text-sm text-secondary/50">
+                        {pageNumbersMap.map.get(dWork.id)} / {pageNumbersMap.totalPages}
+                      </div>
+                    </div>
+                  </section>
+                )
+              })}
+            </React.Fragment>
+          )
+        }
+
+        return (
+          <section key={work.id} className="min-h-screen p-8 md:p-16 page-break-after">
+            <div className="max-w-6xl mx-auto">
+              {isPortrait ? (
                 /* Portrait Layout: Side-by-side (Image Left, Text Right) */
                 <>
                   <div className="grid md:grid-cols-[60%_40%] gap-8 items-start">
@@ -357,6 +524,7 @@ export default function CatalogPage() {
                         src={imageMap[work.id] || '/images/placeholder.jpg'}
                         alt={work.title}
                         fill
+                        priority
                         className="object-contain"
                         sizes="(max-width: 768px) 100vw, 60vw"
                       />
@@ -378,7 +546,7 @@ export default function CatalogPage() {
 
                       <div>
                         <p className="text-base leading-relaxed mb-6">
-                          {lang === 'en' ? work.curator_text.en : work.curator_text.kr}
+                          {getCuratorText(work)}
                         </p>
                         <div className="border-l-2 border-primary/30 pl-4">
                           <p className="italic text-primary/80 text-sm">
@@ -389,52 +557,51 @@ export default function CatalogPage() {
                     </div>
                   </div>
 
-                  <div className="text-center mt-8 text-sm text-secondary/50">
-                    {index + 1} / {catalogData.selectedWorks.length}
+                  <div className="absolute bottom-8 left-0 right-0 text-center text-sm text-secondary/50">
+                    {pageNumbersMap.map.get(work.id)} / {pageNumbersMap.totalPages}
                   </div>
                 </>
               ) : (
-                /* Landscape Layout: Stacked (Image Top, Text Bottom in 2 Columns) */
+                /* Landscape Layout: Image Top, 2-Column Text Below */
                 <>
                   {/* Artwork Image */}
-                  <div className="relative w-full mb-8" style={{ aspectRatio: aspectRatio }}>
+                  <div className="relative w-full mb-6" style={{ aspectRatio: aspectRatio }}>
                     <Image
                       src={imageMap[work.id] || '/images/placeholder.jpg'}
                       alt={work.title}
                       fill
+                      priority
                       className="object-contain"
                       sizes="(max-width: 768px) 100vw, 80vw"
                     />
                   </div>
 
-                  {/* Artwork Info */}
-                  <div className="grid md:grid-cols-2 gap-12">
-                    <div>
-                      <h3 className="font-serif text-2xl mb-2">
-                        {work.title}
-                      </h3>
-                      <p className="text-secondary mb-4">
-                        {work.year} · {work.medium}
-                      </p>
-                      <p className="text-sm text-secondary/70">
-                        {work.dimensions}
-                      </p>
-                    </div>
-
-                    <div>
-                      <p className="text-lg leading-relaxed mb-6">
-                        {lang === 'en' ? work.curator_text.en : work.curator_text.kr}
-                      </p>
-                      <div className="border-l-2 border-primary/30 pl-4">
-                        <p className="italic text-primary/80">
-                          {lang === 'en' ? work.question.en : work.question.kr}
-                        </p>
-                      </div>
-                    </div>
+                  {/* Metadata - Compact */}
+                  <div className="mb-4">
+                    <h3 className="font-serif text-2xl mb-2">
+                      {work.title}
+                    </h3>
+                    <p className="text-secondary text-sm">
+                      {work.year} · {work.medium} · {work.dimensions}
+                    </p>
                   </div>
 
-                  <div className="text-center mt-8 text-sm text-secondary/50">
-                    {index + 1} / {catalogData.selectedWorks.length}
+                  {/* Curator Text - 2 Columns */}
+                  <div className="landscape-text-columns mb-4">
+                    <p className="text-base leading-relaxed">
+                      {getCuratorText(work)}
+                    </p>
+                  </div>
+
+                  {/* Question - Full Width */}
+                  <div className="border-l-2 border-primary/30 pl-4">
+                    <p className="italic text-primary/80 text-sm">
+                      {lang === 'en' ? work.question.en : work.question.kr}
+                    </p>
+                  </div>
+
+                  <div className="absolute bottom-8 left-0 right-0 text-center text-sm text-secondary/50">
+                    {pageNumbersMap.map.get(work.id)} / {pageNumbersMap.totalPages}
                   </div>
                 </>
               )}
@@ -444,10 +611,10 @@ export default function CatalogPage() {
       })}
 
       {/* Artist CV Page */}
-      <section className="min-h-screen flex flex-col items-center justify-center p-8 md:p-16 page-break-after">
-        <div className="max-w-2xl w-full">
+      <section className="min-h-screen flex flex-col items-center justify-start p-8 md:p-16 page-break-after">
+        <div className="max-w-2xl w-full mb-16">
           <h2 className="font-serif text-3xl mb-12 text-center">
-            {lang === 'en' ? 'Artist' : '작가'}
+            Artist
           </h2>
 
           {/* Artist Profile Photo */}
@@ -457,6 +624,7 @@ export default function CatalogPage() {
                 src="/images/artist/hj lim black.png"
                 alt="Lim Hyejung"
                 fill
+                priority
                 className="object-cover"
               />
             </div>
@@ -497,12 +665,12 @@ export default function CatalogPage() {
               <p className="mb-6">{catalogData.contact.instagram}</p>
 
               {/* QR Code for Artist Website */}
-              <div className="mt-6 text-center">
+              <div className="mt-6">
                 <p className="text-sm uppercase tracking-widest text-secondary mb-4">
                   {lang === 'en' ? 'Visit Artist Website' : '작가 홈페이지'}
                 </p>
-                <div className="flex justify-center mb-4">
-                  <div className="bg-white p-3 rounded-lg shadow-sm">
+                <div className="mb-4">
+                  <div className="bg-white p-3 rounded-lg shadow-sm inline-block">
                     <QRCodeSVG
                       value="https://www.limhyejung.com/"
                       size={120}
@@ -521,16 +689,19 @@ export default function CatalogPage() {
       </section>
 
       {/* Gallery Info Page */}
-      <section className="min-h-screen flex flex-col items-center justify-center p-8 md:p-16">
-        <div className="max-w-3xl w-full text-center">
+      <section className="min-h-screen flex flex-col items-center justify-start p-8 md:p-16">
+        <div className="max-w-3xl w-full text-center mb-16">
           <h2 className="font-serif text-3xl mb-2">
             {catalogData.gallery.name}
           </h2>
           <p className="text-lg text-secondary mb-2">
             {catalogData.gallery.nameKr}
           </p>
-          <p className="text-sm italic text-primary/70 mb-8">
+          <p className="text-sm italic text-primary/70 mb-2">
             {catalogData.gallery.fullName}
+          </p>
+          <p className="text-sm text-secondary/60 mb-8">
+            {lang === 'en' ? 'Jinsol Park, Director' : '박진솔 관장'}
           </p>
 
           <div className="w-16 h-px bg-primary/30 mx-auto mb-8" />
@@ -567,7 +738,7 @@ export default function CatalogPage() {
               <div className="bg-white p-4 rounded-lg shadow-sm">
                 <QRCodeSVG
                   value="https://www.ahlfah.com/"
-                  size={150}
+                  size={120}
                   level="M"
                   includeMargin={false}
                 />
