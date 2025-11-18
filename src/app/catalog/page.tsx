@@ -9,6 +9,24 @@ import catalogData from '@/data/catalog.json'
 
 type Language = 'en' | 'kr'
 
+interface CatalogWork {
+  id: string
+  title: string
+  year: number
+  medium: string
+  dimensions: string
+  imageWidth: number
+  imageHeight: number
+  curator_text: {
+    en: string
+    kr: string
+  }
+  question: {
+    en: string
+    kr: string
+  }
+}
+
 // Map artwork IDs to image files
 const imageMap: Record<string, string> = {
   'sg-001': '/images/works/1. I am only passing though the woods..jpg',
@@ -27,6 +45,56 @@ export default function CatalogPage() {
 
   return (
     <div className="min-h-screen bg-white">
+      {/* Print-Optimized CSS */}
+      <style dangerouslySetInnerHTML={{
+        __html: `
+          @media print {
+            @page {
+              size: A4;
+              margin: 2cm;
+            }
+
+            .page-break-after {
+              page-break-after: always;
+              break-after: page;
+            }
+
+            h2, h3, h4 {
+              page-break-after: avoid;
+              break-after: avoid;
+            }
+
+            img {
+              page-break-inside: avoid;
+              break-inside: avoid;
+            }
+
+            body {
+              font-size: 11pt;
+              line-height: 1.5;
+            }
+
+            h2 {
+              font-size: 18pt;
+            }
+
+            h3 {
+              font-size: 16pt;
+            }
+
+            * {
+              -webkit-print-color-adjust: exact;
+              print-color-adjust: exact;
+              color-adjust: exact;
+            }
+
+            section {
+              min-height: auto;
+            }
+          }
+        `
+      }} />
+
       {/* Language Toggle */}
       <div className="fixed top-4 right-4 z-50 print:hidden">
         <div className="bg-white/90 backdrop-blur-sm rounded-full shadow-lg p-1 flex">
@@ -122,52 +190,107 @@ export default function CatalogPage() {
       </section>
 
       {/* Selected Works */}
-      {catalogData.selectedWorks.map((work, index) => (
-        <section key={work.id} className="min-h-screen p-8 md:p-16 page-break-after">
-          <div className="max-w-6xl mx-auto">
-            {/* Artwork Image */}
-            <div className="relative w-full aspect-[4/3] mb-8 bg-gray-50">
-              <Image
-                src={imageMap[work.id] || '/images/placeholder.jpg'}
-                alt={work.title}
-                fill
-                className="object-contain"
-                sizes="(max-width: 768px) 100vw, 80vw"
-              />
-            </div>
+      {catalogData.selectedWorks.map((work, index) => {
+        // Calculate aspect ratio and determine orientation
+        const aspectRatio = work.imageWidth / work.imageHeight
+        const isPortrait = aspectRatio < 1
 
-            {/* Artwork Info */}
-            <div className="grid md:grid-cols-2 gap-12">
-              <div>
-                <h3 className="font-serif text-2xl mb-2">
-                  {work.title}
-                </h3>
-                <p className="text-secondary mb-4">
-                  {work.year} · {work.medium}
-                </p>
-                <p className="text-sm text-secondary/70">
-                  {work.dimensions}
-                </p>
-              </div>
+        return (
+          <section key={work.id} className="min-h-screen p-8 md:p-16 page-break-after">
+            <div className="max-w-6xl mx-auto">
+              {isPortrait ? (
+                /* Portrait Layout: Side-by-side (Image Left, Text Right) */
+                <div className="grid md:grid-cols-[60%_40%] gap-8 items-start">
+                  {/* Artwork Image */}
+                  <div className="relative w-full" style={{ aspectRatio: aspectRatio }}>
+                    <Image
+                      src={imageMap[work.id] || '/images/placeholder.jpg'}
+                      alt={work.title}
+                      fill
+                      className="object-contain"
+                      sizes="(max-width: 768px) 100vw, 60vw"
+                    />
+                  </div>
 
-              <div>
-                <p className="text-lg leading-relaxed mb-6">
-                  {lang === 'en' ? work.curator_text.en : work.curator_text.kr}
-                </p>
-                <div className="border-l-2 border-primary/30 pl-4">
-                  <p className="italic text-primary/80">
-                    {lang === 'en' ? work.question.en : work.question.kr}
-                  </p>
+                  {/* Artwork Info */}
+                  <div className="flex flex-col justify-center">
+                    <div className="mb-6">
+                      <h3 className="font-serif text-2xl mb-2">
+                        {work.title}
+                      </h3>
+                      <p className="text-secondary mb-2">
+                        {work.year} · {work.medium}
+                      </p>
+                      <p className="text-sm text-secondary/70">
+                        {work.dimensions}
+                      </p>
+                    </div>
+
+                    <div>
+                      <p className="text-base leading-relaxed mb-6">
+                        {lang === 'en' ? work.curator_text.en : work.curator_text.kr}
+                      </p>
+                      <div className="border-l-2 border-primary/30 pl-4">
+                        <p className="italic text-primary/80 text-sm">
+                          {lang === 'en' ? work.question.en : work.question.kr}
+                        </p>
+                      </div>
+                    </div>
+
+                    <div className="text-center mt-8 text-sm text-secondary/50">
+                      {index + 1} / {catalogData.selectedWorks.length}
+                    </div>
+                  </div>
                 </div>
-              </div>
-            </div>
+              ) : (
+                /* Landscape Layout: Stacked (Image Top, Text Bottom in 2 Columns) */
+                <>
+                  {/* Artwork Image */}
+                  <div className="relative w-full mb-8" style={{ aspectRatio: aspectRatio }}>
+                    <Image
+                      src={imageMap[work.id] || '/images/placeholder.jpg'}
+                      alt={work.title}
+                      fill
+                      className="object-contain"
+                      sizes="(max-width: 768px) 100vw, 80vw"
+                    />
+                  </div>
 
-            <div className="text-center mt-8 text-sm text-secondary/50">
-              {index + 1} / {catalogData.selectedWorks.length}
+                  {/* Artwork Info */}
+                  <div className="grid md:grid-cols-2 gap-12">
+                    <div>
+                      <h3 className="font-serif text-2xl mb-2">
+                        {work.title}
+                      </h3>
+                      <p className="text-secondary mb-4">
+                        {work.year} · {work.medium}
+                      </p>
+                      <p className="text-sm text-secondary/70">
+                        {work.dimensions}
+                      </p>
+                    </div>
+
+                    <div>
+                      <p className="text-lg leading-relaxed mb-6">
+                        {lang === 'en' ? work.curator_text.en : work.curator_text.kr}
+                      </p>
+                      <div className="border-l-2 border-primary/30 pl-4">
+                        <p className="italic text-primary/80">
+                          {lang === 'en' ? work.question.en : work.question.kr}
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div className="text-center mt-8 text-sm text-secondary/50">
+                    {index + 1} / {catalogData.selectedWorks.length}
+                  </div>
+                </>
+              )}
             </div>
-          </div>
-        </section>
-      ))}
+          </section>
+        )
+      })}
 
       {/* Artist CV Page */}
       <section className="min-h-screen flex flex-col items-center justify-center p-8 md:p-16 page-break-after">
