@@ -29,6 +29,8 @@ interface CatalogWork {
 
 // Map artwork IDs to image files
 const imageMap: Record<string, string> = {
+  'breathing-2024': '/images/works/2024/2024002_Breathing.jpg',
+  'spend-sometime-2024': '/images/works/2024/2024004_Spend sometime.jpg',
   'sg-001': '/images/works/1. I am only passing though the woods..jpg',
   'sg-002': '/images/works/2. Look at me or Wait for the daffodiles..JPG',
   'sg-008': '/images/works/20.The attraction of emotion.jpeg',
