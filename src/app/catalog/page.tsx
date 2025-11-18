@@ -200,48 +200,50 @@ export default function CatalogPage() {
             <div className="max-w-6xl mx-auto">
               {isPortrait ? (
                 /* Portrait Layout: Side-by-side (Image Left, Text Right) */
-                <div className="grid md:grid-cols-[60%_40%] gap-8 items-start">
-                  {/* Artwork Image */}
-                  <div className="relative w-full" style={{ aspectRatio: aspectRatio }}>
-                    <Image
-                      src={imageMap[work.id] || '/images/placeholder.jpg'}
-                      alt={work.title}
-                      fill
-                      className="object-contain"
-                      sizes="(max-width: 768px) 100vw, 60vw"
-                    />
-                  </div>
-
-                  {/* Artwork Info */}
-                  <div className="flex flex-col justify-center">
-                    <div className="mb-6">
-                      <h3 className="font-serif text-2xl mb-2">
-                        {work.title}
-                      </h3>
-                      <p className="text-secondary mb-2">
-                        {work.year} · {work.medium}
-                      </p>
-                      <p className="text-sm text-secondary/70">
-                        {work.dimensions}
-                      </p>
+                <>
+                  <div className="grid md:grid-cols-[60%_40%] gap-8 items-start">
+                    {/* Artwork Image */}
+                    <div className="relative w-full" style={{ aspectRatio: aspectRatio }}>
+                      <Image
+                        src={imageMap[work.id] || '/images/placeholder.jpg'}
+                        alt={work.title}
+                        fill
+                        className="object-contain"
+                        sizes="(max-width: 768px) 100vw, 60vw"
+                      />
                     </div>
 
-                    <div>
-                      <p className="text-base leading-relaxed mb-6">
-                        {lang === 'en' ? work.curator_text.en : work.curator_text.kr}
-                      </p>
-                      <div className="border-l-2 border-primary/30 pl-4">
-                        <p className="italic text-primary/80 text-sm">
-                          {lang === 'en' ? work.question.en : work.question.kr}
+                    {/* Artwork Info */}
+                    <div className="flex flex-col justify-center">
+                      <div className="mb-6">
+                        <h3 className="font-serif text-2xl mb-2">
+                          {work.title}
+                        </h3>
+                        <p className="text-secondary mb-2">
+                          {work.year} · {work.medium}
+                        </p>
+                        <p className="text-sm text-secondary/70">
+                          {work.dimensions}
                         </p>
                       </div>
-                    </div>
 
-                    <div className="text-center mt-8 text-sm text-secondary/50">
-                      {index + 1} / {catalogData.selectedWorks.length}
+                      <div>
+                        <p className="text-base leading-relaxed mb-6">
+                          {lang === 'en' ? work.curator_text.en : work.curator_text.kr}
+                        </p>
+                        <div className="border-l-2 border-primary/30 pl-4">
+                          <p className="italic text-primary/80 text-sm">
+                            {lang === 'en' ? work.question.en : work.question.kr}
+                          </p>
+                        </div>
+                      </div>
                     </div>
                   </div>
-                </div>
+
+                  <div className="text-center mt-8 text-sm text-secondary/50">
+                    {index + 1} / {catalogData.selectedWorks.length}
+                  </div>
+                </>
               ) : (
                 /* Landscape Layout: Stacked (Image Top, Text Bottom in 2 Columns) */
                 <>
