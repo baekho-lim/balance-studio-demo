@@ -13,6 +13,7 @@ type Language = 'en' | 'kr'
 const imageMap: Record<string, string> = {
   'sg-001': '/images/works/1. I am only passing though the woods..jpg',
   'sg-002': '/images/works/2. Look at me or Wait for the daffodiles..JPG',
+  'sg-008': '/images/works/20.The attraction of emotion.jpeg',
   'es-001': '/images/works/3. Effortlessly chirping birds._L.JPG',
   'ds-001': '/images/works/13. You are going to grow up..JPG',
   'ds-002': '/images/works/14. I am going to have to grow old..JPG',
