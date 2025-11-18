@@ -116,6 +116,57 @@
       }
     },
     {
+      "id": "es-003",
+      "title": "Take a break",
+      "year": 2025,
+      "medium": "Mixed media on canvas",
+      "dimensions": "34.8 x 27.3 cm",
+      "imageWidth": 1563,
+      "imageHeight": 1997,
+      "curator_text": {
+        "en": "Rest is not the absence of movement but its counterpoint. Lim's still water invites us to pause not out of exhaustion but as an act of deliberate presence. In a world that valorizes constant motion, stopping becomes radical. This work asks us to consider what we carry unnecessarily—the burdens we've grown so accustomed to that we forget they can be set down. The surface reflects not just light but the weight of what we choose to release.",
+        "kr": "휴식은 움직임의 부재가 아니라 그것의 대위법이다. 임혜정의 고요한 물은 피로가 아닌 의도적 현존의 행위로서 멈춤을 초대한다. 끊임없는 움직임을 중시하는 세상에서, 멈추는 것은 급진적이다. 이 작품은 우리가 불필요하게 짊어진 것—너무 익숙해져서 내려놓을 수 있다는 사실을 잊은 짐—을 고려하도록 요청한다. 수면은 빛뿐만 아니라 우리가 놓아주기로 선택한 것의 무게를 반영한다."
+      },
+      "question": {
+        "en": "If you stopped by this water for a while, what would you like to set down and rest from?",
+        "kr": "이 고요한 물결을 바라보며 잠시 멈춘다면, 당신이 내려놓고 싶은 짐이나 걱정은 무엇일까요?"
+      }
+    },
+    {
+      "id": "sg-003",
+      "title": "Those ladybugs",
+      "year": 2025,
+      "medium": "Mixed media on canvas",
+      "dimensions": "34.8 x 27.3 cm",
+      "imageWidth": 1563,
+      "imageHeight": 1997,
+      "curator_text": {
+        "en": "The diminutive holds disproportionate power. Lim captures the transformative potential of small encounters—how a single ladybug can pivot an entire day's trajectory. Scale and significance are not always aligned. This work reminds us that epiphanies rarely announce themselves; they arrive wearing the costume of the ordinary. In attending to the tiny, we discover that change need not be monumental to be profound.",
+        "kr": "작은 것이 불균형적인 힘을 가진다. 임혜정은 작은 만남의 변혁적 잠재력을 포착한다—단 하나의 무당벌레가 어떻게 하루 전체의 궤적을 바꿀 수 있는지. 규모와 중요성이 항상 일치하는 것은 아니다. 이 작품은 깨달음이 거의 자신을 알리지 않는다는 것을 상기시킨다; 그것들은 평범함의 의상을 입고 도착한다. 미세한 것에 주목할 때, 우리는 변화가 심오하기 위해 거대할 필요가 없음을 발견한다."
+      },
+      "question": {
+        "en": "Can you remember a tiny thing that unexpectedly changed your whole day?",
+        "kr": "아주 작은 무언가가 당신의 하루 전체를 바꿔 놓았던 순간이 떠오르나요?"
+      }
+    },
+    {
+      "id": "sg-005",
+      "title": "Those mantises",
+      "year": 2025,
+      "medium": "Mixed media on canvas",
+      "dimensions": "34.8 x 27.3 cm",
+      "imageWidth": 1563,
+      "imageHeight": 1997,
+      "curator_text": {
+        "en": "Stillness can be deceptive. The praying mantis embodies this paradox—perfectly motionless yet coiled with intention. Lim explores the space between calm and vigilance, asking us to recognize that peace and preparedness are not opposites but often companions. Within serene surfaces, forces gather. The work invites us to sense the electric quality of waiting, the tension that precedes action, the alertness that masquerades as rest.",
+        "kr": "정적은 기만적일 수 있다. 사마귀는 이 역설을 구현한다—완벽하게 움직이지 않지만 의도로 감겨 있다. 임혜정은 평온과 경계 사이의 공간을 탐구하며, 평화와 준비가 반대가 아니라 종종 동반자임을 인식하도록 요청한다. 고요한 표면 안에서 힘이 모인다. 작품은 우리에게 기다림의 전기적 특성, 행동에 선행하는 긴장, 휴식으로 가장한 경계를 감지하도록 초대한다."
+      },
+      "question": {
+        "en": "Within this calm scene, where do you sense a hidden alertness or tension?",
+        "kr": "이 평온한 장면 속에서, 보이지 않는 긴장감이나 경계심은 어디에 숨어 있다고 느껴지나요?"
+      }
+    },
+    {
       "id": "ds-001",
       "title": "You are going to grow up",
       "year": 2025,
