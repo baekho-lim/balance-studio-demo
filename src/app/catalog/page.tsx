@@ -6,10 +6,14 @@ import Link from 'next/link'
 import { QRCodeSVG } from 'qrcode.react'
 import { ArrowLeft } from 'lucide-react'
 import catalogData from '@/data/catalog.json'
+import siteSettings from '@/data/site-settings.json'
 import CatalogPrintStyles from '@/components/print/CatalogPrintStyles'
 import PrintWatermark from '@/components/print/PrintWatermark'
 import ArtistProfileImage from '@/components/artist/ArtistProfileImage'
 import AuthGuard from '@/components/admin/AuthGuard'
+import type { SiteSettings } from '@/types'
+
+const settings = siteSettings as SiteSettings
 
 type Language = 'en' | 'kr'
 type TextMode = 'poetic' | 'curator'
@@ -183,7 +187,7 @@ export default function CatalogPage() {
         {/* Background Artwork - Full Bleed */}
         <div className="absolute inset-0">
           <Image
-            src="/images/works/1. I am only passing though the woods..jpg"
+            src={settings.catalogCover.imagePath}
             alt="Cover artwork"
             fill
             className="object-cover"

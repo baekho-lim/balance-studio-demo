@@ -99,3 +99,23 @@ export interface ArtworkNote {
   themes: string[];  // 테마 태그
   sourceDate: string;  // 작성 날짜
 }
+
+// 사이트 설정 (Hero 이미지, 카탈로그 커버 등)
+export interface SiteSettings {
+  homeHero: {
+    artworkId: string;
+    imagePath: string;
+    tagline: {
+      en: string;
+      kr: string;
+    };
+  };
+  catalogCover: {
+    artworkId: string;
+    imagePath: string;
+  };
+  meta: {
+    lastUpdated: string;
+    version: string;
+  };
+}

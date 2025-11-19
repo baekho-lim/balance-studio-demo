@@ -13,12 +13,14 @@ import ArtistProfileImage from '@/components/artist/ArtistProfileImage'
 import artistData from '@/data/artist.json'
 import artworksData from '@/data/artworks.json'
 import chaptersData from '@/data/chapters.json'
+import siteSettings from '@/data/site-settings.json'
 
-import type { Artist, Artwork, Chapter } from '@/types'
+import type { Artist, Artwork, Chapter, SiteSettings } from '@/types'
 
 const artist = artistData as Artist
 const artworks = artworksData as Artwork[]
 const chapters = chaptersData as Chapter[]
+const settings = siteSettings as SiteSettings
 
 export default function HomePage() {
   const [selectedArtwork, setSelectedArtwork] = useState<Artwork | null>(null)
@@ -38,9 +40,9 @@ export default function HomePage() {
     <>
       {/* Hero Section - Full Screen */}
       <Hero
-        backgroundImage="/images/works/21.Just that we grow.jpeg"
+        backgroundImage={settings.homeHero.imagePath}
         artistName="Lim Hyejung"
-        tagline="Utopia = Reality"
+        tagline={settings.homeHero.tagline.en}
       />
 
       {/* Works Section - Chapter by Chapter */}

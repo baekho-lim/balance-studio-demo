@@ -1,0 +1,18 @@
+{
+  "homeHero": {
+    "artworkId": "wt-001",
+    "imagePath": "/images/works/21.Just that we grow.jpeg",
+    "tagline": {
+      "en": "Utopia = Reality",
+      "kr": "유토피아 = 현실"
+    }
+  },
+  "catalogCover": {
+    "artworkId": "sg-001",
+    "imagePath": "/images/works/1. I am only passing though the woods..jpg"
+  },
+  "meta": {
+    "lastUpdated": "2025-11-20T00:00:00Z",
+    "version": "1.0.0"
+  }
+}
