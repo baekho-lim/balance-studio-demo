@@ -40,10 +40,12 @@ export interface Artwork {
     full: string;
     alt: string;
   };
-  order: number;
+  order: number;  // 개발용 내부 순서
+  exhibitionNumber?: string | null;  // 큐레이터 지정 전시/판매 번호 (추후 입력)
   imageWidth?: number;
   imageHeight?: number;
   sizeCategory?: 'small' | 'medium' | 'large';
+  orientation?: 'portrait' | 'landscape' | 'square';  // 자동 계산
   hasArtistNote?: boolean;  // artwork-notes.json에 원본 노트 있음을 표시
 }
 

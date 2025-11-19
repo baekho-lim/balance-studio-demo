@@ -22,7 +22,9 @@
     "questionId": "Jika Anda hanya melewati hutan ini, apa yang akan Anda hentikan untuk diamati alih-alih hanya berjalan melewatinya?",
     "titleKr": "I am only passing through the woods",
     "mediumKr": "Mixed media on canvas",
-    "dimensionsKr": "60.5 x 91 cm"
+    "dimensionsKr": "60.5 x 91 cm",
+    "exhibitionNumber": null,
+    "orientation": "landscape"
   },
   {
     "id": "sg-002",
@@ -47,7 +49,9 @@
     "questionId": "Apakah Anda melihat apa yang ada sekarang, atau menunggu sesuatu yang belum mekar?",
     "titleKr": "Look at me or Wait for the daffodils",
     "mediumKr": "Mixed media on canvas",
-    "dimensionsKr": "60.5 x 91 cm"
+    "dimensionsKr": "60.5 x 91 cm",
+    "exhibitionNumber": null,
+    "orientation": "portrait"
   },
   {
     "id": "sg-003",
@@ -72,7 +76,9 @@
     "questionId": "Bisakah Anda mengingat hal kecil yang secara tidak terduga mengubah seluruh hari Anda?",
     "titleKr": "Those ladybugs",
     "mediumKr": "Mixed media on canvas",
-    "dimensionsKr": "34.8 x 27.3 cm"
+    "dimensionsKr": "34.8 x 27.3 cm",
+    "exhibitionNumber": null,
+    "orientation": "portrait"
   },
   {
     "id": "sg-004",
@@ -97,7 +103,9 @@
     "questionId": "Apakah Anda sekarang lebih dekat dengan perubahan yang perlahan atau transformasi yang tiba-tiba?",
     "titleKr": "Those silkworms",
     "mediumKr": "Mixed media on canvas",
-    "dimensionsKr": "34.8 x 27.3 cm"
+    "dimensionsKr": "34.8 x 27.3 cm",
+    "exhibitionNumber": null,
+    "orientation": "portrait"
   },
   {
     "id": "sg-005",
@@ -122,7 +130,9 @@
     "questionId": "Dalam pemandangan yang tenang ini, di mana Anda merasakan kewaspadaan atau ketegangan yang tersembunyi?",
     "titleKr": "Those mantises",
     "mediumKr": "Mixed media on canvas",
-    "dimensionsKr": "34.8 x 27.3 cm"
+    "dimensionsKr": "34.8 x 27.3 cm",
+    "exhibitionNumber": null,
+    "orientation": "portrait"
   },
   {
     "id": "sg-006",
@@ -147,7 +157,9 @@
     "questionId": "Apa satu hal dalam hidup Anda yang bergerak sangat perlahan, tetapi tetap bergerak?",
     "titleKr": "Those snails",
     "mediumKr": "Mixed media on canvas",
-    "dimensionsKr": "34.8 x 27.3 cm"
+    "dimensionsKr": "34.8 x 27.3 cm",
+    "exhibitionNumber": null,
+    "orientation": "portrait"
   },
   {
     "id": "sg-007",
@@ -172,7 +184,9 @@
     "questionId": "Pekerjaan apa yang terus Anda lakukan dengan setia, bahkan ketika tidak ada yang tampaknya memperhatikan?",
     "titleKr": "Those bees",
     "mediumKr": "Mixed media on canvas",
-    "dimensionsKr": "34.8 x 27.3 cm"
+    "dimensionsKr": "34.8 x 27.3 cm",
+    "exhibitionNumber": null,
+    "orientation": "portrait"
   },
   {
     "id": "sg-008",
@@ -197,7 +211,9 @@
     "questionId": "Jika Anda harus memilih satu perasaan yang paling menarik bagi Anda sekarang, apa itu dan mengapa?",
     "titleKr": "The attraction of emotion",
     "mediumKr": "Mixed media on canvas",
-    "dimensionsKr": "91 x 60.5 cm"
+    "dimensionsKr": "91 x 60.5 cm",
+    "exhibitionNumber": null,
+    "orientation": "portrait"
   },
   {
     "id": "es-001",
@@ -222,7 +238,9 @@
     "questionId": "Kapan suara Anda mengalir paling mudah, seperti kicauan burung?",
     "titleKr": "Effortlessly chirping birds (L)",
     "mediumKr": "Mixed media on canvas",
-    "dimensionsKr": "60.5 x 91 cm"
+    "dimensionsKr": "60.5 x 91 cm",
+    "exhibitionNumber": null,
+    "orientation": "landscape"
   },
   {
     "id": "es-002",
@@ -247,7 +265,9 @@
     "questionId": "Bisakah Anda mengingat momen ketika Anda tidak memerlukan banyak kata untuk dipahami?",
     "titleKr": "Effortlessly chirping birds (R)",
     "mediumKr": "Mixed media on canvas",
-    "dimensionsKr": "60.5 x 91 cm"
+    "dimensionsKr": "60.5 x 91 cm",
+    "exhibitionNumber": null,
+    "orientation": "landscape"
   },
   {
     "id": "es-003",
@@ -272,7 +292,9 @@
     "questionId": "Jika Anda berhenti di tepi air ini sebentar, apa yang ingin Anda letakkan dan istirahatkan?",
     "titleKr": "Take a break",
     "mediumKr": "Mixed media on canvas",
-    "dimensionsKr": "34.8 x 27.3 cm"
+    "dimensionsKr": "34.8 x 27.3 cm",
+    "exhibitionNumber": null,
+    "orientation": "portrait"
   },
   {
     "id": "es-004",
@@ -297,7 +319,9 @@
     "questionId": "Jika Anda bisa mencerahkan hari seseorang hari ini, siapa yang terlintas di pikiran Anda?",
     "titleKr": "Brighten someone",
     "mediumKr": "Mixed media on canvas",
-    "dimensionsKr": "34.8 x 27.3 cm"
+    "dimensionsKr": "34.8 x 27.3 cm",
+    "exhibitionNumber": null,
+    "orientation": "portrait"
   },
   {
     "id": "es-005",
@@ -322,7 +346,9 @@
     "questionId": "Melihat kilauan ini, momen bahagia mana dalam hidup Anda yang paling mirip dengannya?",
     "titleKr": "Recall a happy memory",
     "mediumKr": "Mixed media on canvas",
-    "dimensionsKr": "34.8 x 27.3 cm"
+    "dimensionsKr": "34.8 x 27.3 cm",
+    "exhibitionNumber": null,
+    "orientation": "portrait"
   },
   {
     "id": "ds-001",
@@ -347,7 +373,9 @@
     "questionId": "Apa satu kalimat yang ingin Anda sampaikan kepada diri Anda yang dewasa di masa depan?",
     "titleKr": "You are going to grow up",
     "mediumKr": "Mixed media on canvas",
-    "dimensionsKr": "65.1 x 136.5 cm"
+    "dimensionsKr": "65.1 x 136.5 cm",
+    "exhibitionNumber": null,
+    "orientation": "portrait"
   },
   {
     "id": "ds-002",
@@ -372,7 +400,9 @@
     "questionId": "Ketika Anda membayangkan diri menjadi tua, apa yang paling menakutkan dan apa yang paling ingin Anda ketahui atau harapkan?",
     "titleKr": "I am going to have to grow old",
     "mediumKr": "Mixed media on canvas",
-    "dimensionsKr": "65.1 x 136.5 cm"
+    "dimensionsKr": "65.1 x 136.5 cm",
+    "exhibitionNumber": null,
+    "orientation": "portrait"
   },
   {
     "id": "ds-003",
@@ -397,7 +427,9 @@
     "questionId": "Mengetahui bahwa segalanya akan berakhir suatu hari nanti, bagaimana hal itu mengubah cara Anda melihat momen ini?",
     "titleKr": "And then I will die",
     "mediumKr": "Mixed media on canvas",
-    "dimensionsKr": "65.1 x 136.5 cm"
+    "dimensionsKr": "65.1 x 136.5 cm",
+    "exhibitionNumber": null,
+    "orientation": "portrait"
   },
   {
     "id": "ds-004",
@@ -422,7 +454,9 @@
     "questionId": "Setelah dunia tampak berguncang, apa dalam hidup Anda yang diam-diam terus berlanjut seolah-olah tidak ada yang terjadi?",
     "titleKr": "They live like nothing happened",
     "mediumKr": "Mixed media on canvas",
-    "dimensionsKr": "91 x 60.5 cm"
+    "dimensionsKr": "91 x 60.5 cm",
+    "exhibitionNumber": null,
+    "orientation": "landscape"
   },
   {
     "id": "wt-001",
@@ -447,7 +481,9 @@
     "questionId": "Jika perasaan di hati Anda adalah permukaan air ini, warna apa yang akan mereka miliki hari ini?",
     "titleKr": "On your heart",
     "mediumKr": "Mixed media on canvas",
-    "dimensionsKr": "34.8 x 27.3 cm"
+    "dimensionsKr": "34.8 x 27.3 cm",
+    "exhibitionNumber": null,
+    "orientation": "portrait"
   },
   {
     "id": "wt-002",
@@ -472,7 +508,9 @@
     "questionId": "Menuju tempat yang masih terasa jauh, apa satu langkah kecil yang bisa Anda ambil hari ini?",
     "titleKr": "Take one tiny step",
     "mediumKr": "Mixed media on canvas",
-    "dimensionsKr": "34.8 x 27.3 cm"
+    "dimensionsKr": "34.8 x 27.3 cm",
+    "exhibitionNumber": null,
+    "orientation": "portrait"
   },
   {
     "id": "wt-003",
@@ -497,7 +535,9 @@
     "questionId": "Jika \"suatu hari nanti\" menjadi \"sekarang\", tempat batin mana yang ingin Anda kunjungi terlebih dahulu?",
     "titleKr": "Go there",
     "mediumKr": "Mixed media on canvas",
-    "dimensionsKr": "34.8 x 27.3 cm"
+    "dimensionsKr": "34.8 x 27.3 cm",
+    "exhibitionNumber": null,
+    "orientation": "portrait"
   },
   {
     "id": "wt-004",
@@ -522,7 +562,9 @@
     "questionId": "Jika Anda melupakan kesuksesan dan kegagalan sejenak dan hanya fokus pada kenyataan bahwa Anda sedang tumbuh, apa yang akan terasa sedikit lebih ringan?",
     "titleKr": "Just that we grow",
     "mediumKr": "Mixed media on canvas",
-    "dimensionsKr": "80.3 x 65.1 cm"
+    "dimensionsKr": "80.3 x 65.1 cm",
+    "exhibitionNumber": null,
+    "orientation": "portrait"
   },
   {
     "id": "breathing-2024",
@@ -545,7 +587,9 @@
     "hasArtistNote": true,
     "imageWidth": 3840,
     "imageHeight": 2512,
-    "sizeCategory": "medium"
+    "sizeCategory": "medium",
+    "exhibitionNumber": null,
+    "orientation": "landscape"
   },
   {
     "id": "spend-sometime-2024",
@@ -568,6 +612,8 @@
     "hasArtistNote": true,
     "imageWidth": 2368,
     "imageHeight": 3188,
-    "sizeCategory": "medium"
+    "sizeCategory": "medium",
+    "exhibitionNumber": null,
+    "orientation": "portrait"
   }
 ]

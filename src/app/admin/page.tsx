@@ -20,18 +20,33 @@ export default function AdminDashboard() {
           <p className="text-secondary mb-12">사이트 콘텐츠 관리</p>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            {/* Hero Image Management */}
+            {/* Resources Management - Visual Selection */}
             <Link
-              href="/admin/hero"
+              href="/admin/resources"
               className="bg-white p-6 rounded-lg shadow hover:shadow-lg transition-shadow"
             >
-              <div className="text-3xl mb-3">🖼️</div>
-              <h2 className="text-xl font-medium mb-2">Hero Images</h2>
+              <div className="text-3xl mb-3">🎨</div>
+              <h2 className="text-xl font-medium mb-2">Resources</h2>
               <p className="text-sm text-secondary">
-                Manage homepage hero and catalog cover images
+                Visual selection for hero & catalog images
               </p>
               <p className="text-xs text-secondary mt-2">
-                홈페이지 히어로 및 카탈로그 커버 이미지 관리
+                히어로 및 카탈로그 이미지 시각적 선택
+              </p>
+            </Link>
+
+            {/* Hero Image Management - Legacy */}
+            <Link
+              href="/admin/hero"
+              className="bg-white p-6 rounded-lg shadow hover:shadow-lg transition-shadow opacity-50"
+            >
+              <div className="text-3xl mb-3">🖼️</div>
+              <h2 className="text-xl font-medium mb-2">Hero Images (Legacy)</h2>
+              <p className="text-sm text-secondary">
+                Dropdown-based hero image management
+              </p>
+              <p className="text-xs text-secondary mt-2">
+                드롭다운 방식 히어로 이미지 관리
               </p>
             </Link>
 
