@@ -4,7 +4,6 @@ import React, { useState, useMemo } from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
 import { QRCodeSVG } from 'qrcode.react'
-import { ArrowLeft } from 'lucide-react'
 import catalogData from '@/data/catalog.json'
 import siteSettings from '@/data/site-settings.json'
 import CatalogPrintStyles from '@/components/print/CatalogPrintStyles'
@@ -112,7 +111,7 @@ export default function CatalogPage() {
       {/* Watermark for non-authenticated print attempts */}
       <PrintWatermark />
 
-      {/* Language Toggle & Text Mode Toggle */}
+      {/* Top Right Controls: Language, Text Mode, Print */}
       <div className="fixed top-4 right-4 z-50 print:hidden flex flex-col gap-2 items-end">
         {/* Language Toggle */}
         <div className="bg-white/90 backdrop-blur-sm rounded-full shadow-lg p-1 flex">
@@ -153,33 +152,22 @@ export default function CatalogPage() {
             {lang === 'en' ? 'Worldview' : '큐레이터 버전'}
           </button>
         </div>
-      </div>
 
-      {/* Navigation Buttons */}
-      <div className="fixed top-4 left-4 z-50 print:hidden flex flex-col gap-2">
-        <div className="flex gap-3">
-          <Link
-            href="/"
-            className="bg-white/90 backdrop-blur-sm text-primary px-4 py-2 rounded-full text-sm hover:bg-gray-100 transition-all shadow-lg flex items-center gap-2"
+        {/* Print Button */}
+        <AuthGuard
+          fallback={
+            <div className="bg-white/90 backdrop-blur-sm rounded-full shadow-lg p-2 px-4 text-xs text-gray-600">
+              🔒 PDF download requires password
+            </div>
+          }
+        >
+          <button
+            onClick={() => window.print()}
+            className="bg-primary text-white px-6 py-2 rounded-full text-sm hover:bg-primary/90 transition-all shadow-lg"
           >
-            <ArrowLeft size={16} />
-            Home
-          </Link>
-          <AuthGuard
-            fallback={
-              <div className="bg-white/90 backdrop-blur-sm rounded-full shadow-lg p-2 px-4 text-xs text-gray-600">
-                🔒 PDF download requires password
-              </div>
-            }
-          >
-            <button
-              onClick={() => window.print()}
-              className="bg-primary text-white px-6 py-2 rounded-full text-sm hover:bg-primary/90 transition-all shadow-lg"
-            >
-              Print / PDF
-            </button>
-          </AuthGuard>
-        </div>
+            Print / PDF
+          </button>
+        </AuthGuard>
       </div>
 
       {/* Cover Page */}
@@ -199,7 +187,7 @@ export default function CatalogPage() {
 
         {/* Cover Content - Minimal */}
         <div className="relative h-full flex flex-col items-center justify-center p-12">
-          <div className="text-center max-w-2xl">
+          <Link href="/" className="text-center max-w-2xl cursor-pointer hover:opacity-90 transition-opacity print:pointer-events-none">
             <h1 className="font-serif text-5xl md:text-6xl mb-3 tracking-wide text-white drop-shadow-lg">
               {catalogData.title}
             </h1>
@@ -215,7 +203,7 @@ export default function CatalogPage() {
             <p className="text-base text-white/85 drop-shadow-md">
               {catalogData.artist.nameKr}
             </p>
-          </div>
+          </Link>
         </div>
       </section>
 
