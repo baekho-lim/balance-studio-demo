@@ -7,7 +7,9 @@ import { QRCodeSVG } from 'qrcode.react'
 import { ArrowLeft } from 'lucide-react'
 import catalogData from '@/data/catalog.json'
 import CatalogPrintStyles from '@/components/print/CatalogPrintStyles'
+import PrintWatermark from '@/components/print/PrintWatermark'
 import ArtistProfileImage from '@/components/artist/ArtistProfileImage'
+import AuthGuard from '@/components/admin/AuthGuard'
 
 type Language = 'en' | 'kr'
 type TextMode = 'poetic' | 'curator'
@@ -36,8 +38,8 @@ interface CatalogWork {
 
 // Map artwork IDs to image files
 const imageMap: Record<string, string> = {
-  'breathing-2024': '/images/works/2024/2024002_Breathing.jpg',
-  'spend-sometime-2024': '/images/works/2024/2024004_Spend sometime.jpg',
+  'breathing-2024': '/images/works/2024/breathing.jpg',
+  'spend-sometime-2024': '/images/works/2024/spend-sometime.jpg',
   'sg-001': '/images/works/1. I am only passing though the woods..jpg',
   'sg-002': '/images/works/2. Look at me or Wait for the daffodiles..JPG',
   'sg-008': '/images/works/20.The attraction of emotion.jpeg',
@@ -103,6 +105,8 @@ export default function CatalogPage() {
     <div className="min-h-screen bg-white">
       {/* Print-Optimized CSS - Now extracted to reusable component */}
       <CatalogPrintStyles />
+      {/* Watermark for non-authenticated print attempts */}
+      <PrintWatermark />
 
       {/* Language Toggle & Text Mode Toggle */}
       <div className="fixed top-4 right-4 z-50 print:hidden flex flex-col gap-2 items-end">
@@ -157,12 +161,20 @@ export default function CatalogPage() {
             <ArrowLeft size={16} />
             Home
           </Link>
-          <button
-            onClick={() => window.print()}
-            className="bg-primary text-white px-6 py-2 rounded-full text-sm hover:bg-primary/90 transition-all shadow-lg"
+          <AuthGuard
+            fallback={
+              <div className="bg-white/90 backdrop-blur-sm rounded-full shadow-lg p-2 px-4 text-xs text-gray-600">
+                🔒 PDF download requires password
+              </div>
+            }
           >
-            Print / PDF
-          </button>
+            <button
+              onClick={() => window.print()}
+              className="bg-primary text-white px-6 py-2 rounded-full text-sm hover:bg-primary/90 transition-all shadow-lg"
+            >
+              Print / PDF
+            </button>
+          </AuthGuard>
         </div>
       </div>
 

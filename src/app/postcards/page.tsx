@@ -8,6 +8,8 @@ import { ArrowLeft } from 'lucide-react'
 import artworksData from '@/data/artworks.json'
 import catalogData from '@/data/catalog.json'
 import type { Artwork } from '@/types'
+import AuthGuard from '@/components/admin/AuthGuard'
+import PrintWatermark from '@/components/print/PrintWatermark'
 
 const artworks = artworksData as Artwork[]
 
@@ -68,6 +70,9 @@ export default function PostcardsPage() {
 
   return (
     <div className="min-h-screen bg-gray-100 py-12 print:py-0">
+      {/* Watermark for non-authenticated print attempts */}
+      <PrintWatermark />
+
       {/* Controls */}
       <div className="fixed top-4 right-4 z-50 print:hidden flex gap-4">
         {/* Language Toggle */}
@@ -153,19 +158,27 @@ export default function PostcardsPage() {
           <ArrowLeft size={16} />
           Home
         </Link>
-        <button
-          onClick={handlePrint}
-          disabled={!imagesLoaded}
-          className={`px-6 py-2 rounded-full text-sm transition-all shadow-lg ${
-            imagesLoaded
-              ? 'bg-primary text-white hover:bg-primary/90'
-              : 'bg-gray-400 text-white cursor-not-allowed'
-          }`}
+        <AuthGuard
+          fallback={
+            <div className="bg-white/90 backdrop-blur-sm rounded-full shadow-lg p-2 px-4 text-xs text-gray-600">
+              🔒 PDF download requires password
+            </div>
+          }
         >
-          {imagesLoaded
-            ? 'Print for Shop'
-            : `Loading... ${loadingProgress}/${totalImages}`}
-        </button>
+          <button
+            onClick={handlePrint}
+            disabled={!imagesLoaded}
+            className={`px-6 py-2 rounded-full text-sm transition-all shadow-lg ${
+              imagesLoaded
+                ? 'bg-primary text-white hover:bg-primary/90'
+                : 'bg-gray-400 text-white cursor-not-allowed'
+            }`}
+          >
+            {imagesLoaded
+              ? 'Print for Shop'
+              : `Loading... ${loadingProgress}/${totalImages}`}
+          </button>
+        </AuthGuard>
       </div>
 
       <div className="container mx-auto px-4">
