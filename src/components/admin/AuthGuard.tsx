@@ -36,16 +36,34 @@ export default function AuthGuard({
   onAuthenticated
 }: AuthGuardProps) {
   const [isAuthenticated, setIsAuthenticated] = useState(false)
+  const [isChecking, setIsChecking] = useState(true)
   const [password, setPassword] = useState('')
   const [error, setError] = useState('')
 
-  // Check authentication status on mount
+  // Check authentication status on mount - with loading state to prevent flash
   useEffect(() => {
+    // Check localStorage for existing session
     const authStatus = localStorage.getItem('admin_authenticated')
-    if (authStatus === 'true') {
-      setIsAuthenticated(true)
-      onAuthenticated?.()
+    const authTimestamp = localStorage.getItem('admin_auth_timestamp')
+
+    // Session expires after 24 hours
+    const SESSION_DURATION = 24 * 60 * 60 * 1000 // 24 hours in milliseconds
+    const now = Date.now()
+
+    if (authStatus === 'true' && authTimestamp) {
+      const timestamp = parseInt(authTimestamp, 10)
+      if (now - timestamp < SESSION_DURATION) {
+        // Session is valid
+        setIsAuthenticated(true)
+        onAuthenticated?.()
+      } else {
+        // Session expired
+        localStorage.removeItem('admin_authenticated')
+        localStorage.removeItem('admin_auth_timestamp')
+      }
     }
+
+    setIsChecking(false)
   }, [onAuthenticated])
 
   const handleAuthenticate = (e: React.FormEvent) => {
@@ -56,7 +74,9 @@ export default function AuthGuard({
 
     if (password === correctPassword) {
       setIsAuthenticated(true)
+      // Save authentication status and timestamp
       localStorage.setItem('admin_authenticated', 'true')
+      localStorage.setItem('admin_auth_timestamp', Date.now().toString())
       setError('')
       onAuthenticated?.()
     } else {
@@ -68,7 +88,17 @@ export default function AuthGuard({
   const handleLogout = () => {
     setIsAuthenticated(false)
     localStorage.removeItem('admin_authenticated')
+    localStorage.removeItem('admin_auth_timestamp')
     setPassword('')
+  }
+
+  // Show loading state while checking authentication
+  if (isChecking) {
+    return (
+      <div className="flex items-center justify-center p-8">
+        <div className="text-secondary">Loading...</div>
+      </div>
+    )
   }
 
   // If authenticated, show protected content
