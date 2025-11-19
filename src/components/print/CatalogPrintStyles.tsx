@@ -267,6 +267,13 @@ export default function CatalogPrintStyles() {
             margin: 0 !important;
           }
 
+          /* Cover Page Image - Fill entire page */
+          .cover-page img {
+            object-fit: cover !important;
+            width: 100% !important;
+            height: 100% !important;
+          }
+
           /* Text Spacing */
           p {
             orphans: 3;

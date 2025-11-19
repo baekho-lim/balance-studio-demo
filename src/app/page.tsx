@@ -7,6 +7,7 @@ import ArtworkCard from '@/components/works/ArtworkCard'
 import LightboxModal from '@/components/works/LightboxModal'
 import ContactSection from '@/components/home/ContactSection'
 import ViewModeSelector, { type ViewMode } from '@/components/works/ViewModeSelector'
+import ArtistProfileImage from '@/components/artist/ArtistProfileImage'
 
 // Import data
 import artistData from '@/data/artist.json'
@@ -114,15 +115,7 @@ export default function HomePage() {
           <div className="max-w-4xl mx-auto">
             {/* Profile Header */}
             <div className="text-center mb-16">
-              <div className="relative w-48 h-48 md:w-64 md:h-64 mx-auto mb-8 rounded-full overflow-hidden">
-                <Image
-                  src={artist.profileImage}
-                  alt={artist.name}
-                  fill
-                  className="object-cover object-top"
-                  sizes="(max-width: 768px) 192px, 256px"
-                />
-              </div>
+              <ArtistProfileImage size="large" className="mx-auto mb-8" />
               <h2 className="font-serif text-3xl md:text-4xl mb-2">
                 {artist.name}
               </h2>

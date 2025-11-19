@@ -543,8 +543,8 @@
     },
     "order": 999,
     "hasArtistNote": true,
-    "imageWidth": 0,
-    "imageHeight": 0,
+    "imageWidth": 3840,
+    "imageHeight": 2512,
     "sizeCategory": "medium"
   },
   {
@@ -566,8 +566,8 @@
     },
     "order": 1000,
     "hasArtistNote": true,
-    "imageWidth": 0,
-    "imageHeight": 0,
+    "imageWidth": 2368,
+    "imageHeight": 3188,
     "sizeCategory": "medium"
   }
 ]

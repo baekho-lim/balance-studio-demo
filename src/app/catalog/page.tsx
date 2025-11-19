@@ -7,6 +7,7 @@ import { QRCodeSVG } from 'qrcode.react'
 import { ArrowLeft } from 'lucide-react'
 import catalogData from '@/data/catalog.json'
 import CatalogPrintStyles from '@/components/print/CatalogPrintStyles'
+import ArtistProfileImage from '@/components/artist/ArtistProfileImage'
 
 type Language = 'en' | 'kr'
 type TextMode = 'poetic' | 'curator'
@@ -58,11 +59,11 @@ export default function CatalogPage() {
 
   // Helper function to get curator text based on language and text mode
   const getCuratorText = (work: CatalogWork) => {
-    if (lang === 'en') {
-      return work.curator_text.en
+    if (textMode === 'poetic') {
+      return lang === 'en' ? work.curator_text.en : work.curator_text.kr
+    } else {
+      return lang === 'en' ? work.curator_worldview.en : work.curator_worldview.kr
     }
-    // Korean: choose between poetic and curator versions
-    return textMode === 'poetic' ? work.curator_text.kr : work.curator_worldview.kr
   }
 
   // Calculate page numbers for all works
@@ -125,27 +126,25 @@ export default function CatalogPage() {
           </button>
         </div>
 
-        {/* Text Mode Toggle - Only show for Korean */}
-        {lang === 'kr' && (
-          <div className="bg-white/90 backdrop-blur-sm rounded-full shadow-lg p-1 flex animate-fadeIn">
-            <button
-              onClick={() => setTextMode('poetic')}
-              className={`px-3 py-1.5 rounded-full text-xs transition-all ${
-                textMode === 'poetic' ? 'bg-primary text-white' : 'text-primary hover:bg-gray-100'
-              }`}
-            >
-              에디터 버전
-            </button>
-            <button
-              onClick={() => setTextMode('curator')}
-              className={`px-3 py-1.5 rounded-full text-xs transition-all ${
-                textMode === 'curator' ? 'bg-primary text-white' : 'text-primary hover:bg-gray-100'
-              }`}
-            >
-              큐레이터 버전
-            </button>
-          </div>
-        )}
+        {/* Text Mode Toggle - Always visible */}
+        <div className="bg-white/90 backdrop-blur-sm rounded-full shadow-lg p-1 flex">
+          <button
+            onClick={() => setTextMode('poetic')}
+            className={`px-3 py-1.5 rounded-full text-xs transition-all ${
+              textMode === 'poetic' ? 'bg-primary text-white' : 'text-primary hover:bg-gray-100'
+            }`}
+          >
+            {lang === 'en' ? 'Poetic' : '에디터 버전'}
+          </button>
+          <button
+            onClick={() => setTextMode('curator')}
+            className={`px-3 py-1.5 rounded-full text-xs transition-all ${
+              textMode === 'curator' ? 'bg-primary text-white' : 'text-primary hover:bg-gray-100'
+            }`}
+          >
+            {lang === 'en' ? 'Worldview' : '큐레이터 버전'}
+          </button>
+        </div>
       </div>
 
       {/* Navigation Buttons */}
@@ -619,15 +618,7 @@ export default function CatalogPage() {
 
           {/* Artist Profile Photo */}
           <div className="flex justify-center mb-12">
-            <div className="relative w-48 h-48 rounded-full overflow-hidden bg-gray-100">
-              <Image
-                src="/images/artist/hj lim black.png"
-                alt="Lim Hyejung"
-                fill
-                priority
-                className="object-cover"
-              />
-            </div>
+            <ArtistProfileImage size="medium" />
           </div>
 
           <div className="space-y-8">
