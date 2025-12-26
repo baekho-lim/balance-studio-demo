@@ -2,8 +2,9 @@ import { MetadataRoute } from 'next';
 import { Exhibition, NewsArticle } from '@/types';
 import exhibitionsData from '@/data/exhibitions.json';
 import newsData from '@/data/news.json';
+import { getFullUrl } from '@/lib/config';
 
-const baseUrl = 'https://limhyejung.com';
+const baseUrl = getFullUrl();
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const exhibitions = exhibitionsData as Exhibition[];

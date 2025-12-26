@@ -1,21 +1,25 @@
 import exhibitionsData from '@/data/exhibitions.json'
 import newsData from '@/data/news.json'
 import { Exhibition, NewsArticle } from '@/types'
+import { config, getFullUrl, getArtistName, getInstagramUrl } from '@/lib/config'
 
 const exhibitions = exhibitionsData as Exhibition[]
 const articles = newsData as NewsArticle[]
 
 export default function JsonLd() {
-  const siteUrl = 'https://limhyejung.com'
+  const siteUrl = getFullUrl()
+  const artistNameEn = getArtistName('en')
+  const artistNameKo = getArtistName('ko')
+  const instagramUrl = getInstagramUrl()
 
   // Enhanced Person Schema for Entity Disambiguation
   const artistSchema = {
     '@context': 'https://schema.org',
     '@type': 'Person',
     '@id': `${siteUrl}/#artist`,
-    name: 'Lim Hyejung',
+    name: artistNameEn,
     alternateName: [
-      '임혜정',
+      artistNameKo,
       'Hyejung Lim',
       '林慧貞',
       'リム・ヘジョン',
@@ -23,23 +27,23 @@ export default function JsonLd() {
     ],
     givenName: 'Hyejung',
     familyName: 'Lim',
-    birthDate: '1981',
+    birthDate: String(config.artist.birthYear),
     birthPlace: {
-      '@type': 'Country',
-      name: 'South Korea',
+      '@type': 'Place',
+      name: config.artist.birthPlace,
     },
     nationality: {
       '@type': 'Country',
-      name: 'South Korea',
+      name: config.artist.nationality === 'Korean' ? 'South Korea' : config.artist.nationality,
     },
     url: siteUrl,
     image: {
       '@type': 'ImageObject',
       url: `${siteUrl}/images/artist/hj lim black.png`,
-      caption: 'Portrait of artist Lim Hyejung',
+      caption: `Portrait of artist ${artistNameEn}`,
     },
     sameAs: [
-      'https://www.instagram.com/limhyejung_artworks',
+      instagramUrl,
     ],
     jobTitle: 'Visual Artist',
     description: 'Contemporary Korean artist (b. 1981) exploring inner worlds through nature reconstructed by imagination. Known for the artistic philosophy "Utopia = Reality" where ideals and reality blur into living, evolving works.',
@@ -68,9 +72,9 @@ export default function JsonLd() {
     '@context': 'https://schema.org',
     '@type': 'ArtGallery',
     '@id': `${siteUrl}/#gallery`,
-    name: 'Lim Hyejung Portfolio',
+    name: `${artistNameEn} Portfolio`,
     url: siteUrl,
-    description: 'Official artist portfolio of Lim Hyejung - Where nature and emotions are reconstructed into a new world through the philosophy of "Utopia = Reality"',
+    description: `Official artist portfolio of ${artistNameEn} - ${config.gallery.description.en}`,
     image: `${siteUrl}/images/works/21.Just that we grow.jpeg`,
     founder: {
       '@type': 'Person',
@@ -83,10 +87,10 @@ export default function JsonLd() {
     '@context': 'https://schema.org',
     '@type': 'WebSite',
     '@id': `${siteUrl}/#website`,
-    name: 'Lim Hyejung',
-    alternateName: '임혜정 포트폴리오',
+    name: artistNameEn,
+    alternateName: `${artistNameKo} 포트폴리오`,
     url: siteUrl,
-    description: 'Official website and portfolio of contemporary Korean artist Lim Hyejung (임혜정, b. 1981)',
+    description: `Official website and portfolio of contemporary Korean artist ${artistNameEn} (${artistNameKo}, b. ${config.artist.birthYear})`,
     inLanguage: ['en', 'ko', 'vi', 'ja', 'id', 'ms'],
     publisher: {
       '@type': 'Person',
@@ -252,7 +256,7 @@ export default function JsonLd() {
       performer: {
         '@type': 'Person',
         '@id': `${siteUrl}/#artist`,
-        name: 'Lim Hyejung',
+        name: artistNameEn,
       },
       organizer: organizerSchema,
       image: exhibition.images?.cover ? `${siteUrl}${exhibition.images.cover}` : undefined,
@@ -279,11 +283,11 @@ export default function JsonLd() {
     } : {
       '@type': 'Person',
       '@id': `${siteUrl}/#artist`,
-      name: 'Lim Hyejung',
+      name: artistNameEn,
     },
     publisher: {
       '@type': 'Organization',
-      name: 'Lim Hyejung Studio',
+      name: `${artistNameEn} Studio`,
       url: siteUrl,
     },
     image: article.images?.hero ? `${siteUrl}${article.images.hero}` : undefined,
