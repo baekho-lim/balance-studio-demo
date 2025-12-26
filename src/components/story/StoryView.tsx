@@ -118,34 +118,37 @@ export default function StoryView({ artworks, onClose }: StoryViewProps) {
 
   return (
     <div
-      className="fixed inset-0 bg-pastel-cream z-50 flex flex-col"
+      className="fixed inset-0 bg-pastel-cream z-40 flex flex-col pt-20"
       onTouchStart={handleTouchStart}
       onTouchEnd={handleTouchEnd}
     >
-      {/* Header */}
-      <div className="absolute top-0 left-0 right-0 z-10 p-4 flex justify-between items-center">
+      {/* Story Header - below nav header */}
+      <div className="w-full px-4 py-2 flex justify-between items-center">
         <div className="text-xs text-secondary tracking-widest uppercase">
           {currentIndex + 1} / {totalArtworks}
         </div>
         {onClose && (
           <button
-            onClick={onClose}
-            className="p-2 hover:bg-white/50 rounded-full transition-colors"
+            onClick={(e) => {
+              e.stopPropagation()
+              onClose()
+            }}
+            className="p-2 hover:bg-white/50 rounded-full transition-colors z-50"
             aria-label="Close story view"
           >
-            <X size={24} />
+            <X size={24} className="md:w-6 md:h-6 w-5 h-5" />
           </button>
         )}
       </div>
 
       {/* Main Content */}
       <div
-        className="flex-1 flex flex-col items-center justify-center px-6 py-16 cursor-pointer"
+        className="flex-1 flex flex-col items-center justify-center px-4 md:px-6 py-4 md:py-8 cursor-pointer overflow-hidden"
         onClick={handleClick}
       >
-        {/* Artwork Image - Large */}
+        {/* Artwork Image - Responsive */}
         <div
-          className={`relative w-full max-w-4xl flex-1 max-h-[55vh] transition-opacity duration-700 ease-in-out ${
+          className={`relative w-full max-w-4xl flex-1 max-h-[45vh] md:max-h-[50vh] lg:max-h-[55vh] transition-opacity duration-700 ease-in-out ${
             isTransitioning ? 'opacity-0' : 'opacity-100'
           }`}
         >
@@ -159,54 +162,54 @@ export default function StoryView({ artworks, onClose }: StoryViewProps) {
           />
         </div>
 
-        {/* Text Content - Right Aligned */}
+        {/* Text Content - Responsive alignment */}
         <div
-          className={`mt-8 w-full max-w-2xl text-right transition-opacity duration-700 ease-in-out ${
+          className={`mt-4 md:mt-8 w-full max-w-2xl text-center md:text-right px-2 transition-opacity duration-700 ease-in-out ${
             isTransitioning ? 'opacity-0' : 'opacity-100'
           }`}
         >
           {/* Artwork Title - Small */}
-          <h2 className="text-xs text-secondary mb-4 tracking-wide uppercase">
+          <h2 className="text-xs text-secondary mb-2 md:mb-4 tracking-wide uppercase">
             {currentArtwork.title}
           </h2>
 
           {/* English Question */}
-          <p className="font-serif text-lg md:text-xl lg:text-2xl text-primary/80 leading-relaxed mb-3">
+          <p className="font-serif text-base md:text-xl lg:text-2xl text-primary/80 leading-relaxed mb-2 md:mb-3">
             &ldquo;{currentArtwork.question}&rdquo;
           </p>
 
           {/* Content Language Question (if different from English) */}
           {contentQuestion && (
-            <p className="font-serif text-base md:text-lg lg:text-xl text-secondary leading-relaxed">
+            <p className="font-serif text-sm md:text-lg lg:text-xl text-secondary leading-relaxed">
               &ldquo;{contentQuestion}&rdquo;
             </p>
           )}
         </div>
 
         {/* Click hint - UI always English */}
-        <p className="mt-8 text-xs text-secondary/50 animate-pulse">
+        <p className="mt-4 md:mt-8 text-xs text-secondary/50 animate-pulse">
           {currentIndex < totalArtworks - 1
             ? UI_TEXT.tapToNavigate
             : UI_TEXT.endOfStory}
         </p>
       </div>
 
-      {/* Navigation Arrows */}
-      <div className="absolute bottom-8 left-0 right-0 flex justify-center gap-8">
+      {/* Navigation Arrows - Responsive */}
+      <div className="pb-4 md:pb-8 flex justify-center gap-6 md:gap-8">
         <button
           onClick={(e) => {
             e.stopPropagation()
             goToPrevious()
           }}
           disabled={currentIndex === 0}
-          className={`p-3 rounded-full transition-all ${
+          className={`p-2 md:p-3 rounded-full transition-all ${
             currentIndex === 0
               ? 'text-gray-300 cursor-not-allowed'
-              : 'text-primary hover:bg-white/50'
+              : 'text-primary hover:bg-white/50 active:bg-white/70'
           }`}
           aria-label="Previous artwork"
         >
-          <ChevronLeft size={32} />
+          <ChevronLeft className="w-8 h-8 md:w-10 md:h-10" />
         </button>
 
         <button
@@ -215,14 +218,14 @@ export default function StoryView({ artworks, onClose }: StoryViewProps) {
             goToNext()
           }}
           disabled={currentIndex === totalArtworks - 1}
-          className={`p-3 rounded-full transition-all ${
+          className={`p-2 md:p-3 rounded-full transition-all ${
             currentIndex === totalArtworks - 1
               ? 'text-gray-300 cursor-not-allowed'
-              : 'text-primary hover:bg-white/50'
+              : 'text-primary hover:bg-white/50 active:bg-white/70'
           }`}
           aria-label="Next artwork"
         >
-          <ChevronRight size={32} />
+          <ChevronRight className="w-8 h-8 md:w-10 md:h-10" />
         </button>
       </div>
     </div>

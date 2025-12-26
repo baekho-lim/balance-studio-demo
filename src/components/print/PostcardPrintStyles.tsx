@@ -67,18 +67,27 @@ function generateCSS(
   .print-image-wrapper {
     width: ${size === 'diptych' ? '6in' : width} !important;
     height: ${height} !important;
-    padding: 0 !important;
     box-sizing: border-box !important;
     flex-shrink: 0;
+    background: white !important;
+  }
+
+  /* Diptych: 외곽만 여백, 두 이미지는 붙임 */
+  .print-image-wrapper:first-child {
+    padding: 0.25in 0 0.25in 0.25in !important;
+  }
+  .print-image-wrapper:last-child {
+    padding: 0.25in 0.25in 0.25in 0 !important;
   }
 
   .print-image-wrapper > div {
     width: 100% !important;
     height: 100% !important;
+    position: relative !important;
   }
 
   .print-image-wrapper img {
-    object-fit: cover !important;
+    object-fit: contain !important;
   }
 
   /* 뒷면 (정보 카드) */

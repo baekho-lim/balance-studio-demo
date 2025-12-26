@@ -3,7 +3,7 @@
 import { useState, useEffect, ReactNode } from 'react'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
-import { LayoutDashboard, Calendar, HelpCircle, BarChart3, Lock } from 'lucide-react'
+import { LayoutDashboard, Calendar, Lock, Newspaper, HelpCircle, BarChart3 } from 'lucide-react'
 
 interface AdminLayoutProps {
   children: ReactNode
@@ -12,6 +12,7 @@ interface AdminLayoutProps {
 const navigation = [
   { name: 'Dashboard', href: '/admin', icon: LayoutDashboard },
   { name: 'Exhibitions', href: '/admin/exhibitions', icon: Calendar },
+  { name: 'News & Press', href: '/admin/news', icon: Newspaper },
   { name: 'FAQ', href: '/admin/faq', icon: HelpCircle },
   { name: 'SEO Status', href: '/admin/seo', icon: BarChart3 },
 ]

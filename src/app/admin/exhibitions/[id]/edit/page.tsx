@@ -2,12 +2,15 @@
 
 import { useParams, useRouter } from 'next/navigation'
 import Link from 'next/link'
-import { ArrowLeft, Save, Plus, Trash2, ExternalLink } from 'lucide-react'
+import Image from 'next/image'
+import { ArrowLeft, Save, Plus, Trash2, ExternalLink, ImageIcon } from 'lucide-react'
 import { useState, useEffect } from 'react'
 import exhibitionsData from '@/data/exhibitions.json'
-import { Exhibition, ExhibitionOrganizer } from '@/types'
+import artworksData from '@/data/artworks.json'
+import { Exhibition, ExhibitionOrganizer, Artwork } from '@/types'
 
 const exhibitions = exhibitionsData as Exhibition[]
+const artworks = artworksData as Artwork[]
 
 export default function ExhibitionEditPage() {
   const params = useParams()
@@ -120,6 +123,30 @@ export default function ExhibitionEditPage() {
       return { ...prev, organizers: updated }
     })
   }
+
+  const updateCoverImage = (artworkId: string) => {
+    const artwork = artworks.find(a => a.id === artworkId)
+    if (!artwork) return
+
+    setFormData(prev => {
+      if (!prev) return null
+      return {
+        ...prev,
+        images: {
+          ...prev.images,
+          cover: artwork.images.thumbnail,
+          coverArtworkId: artworkId
+        }
+      }
+    })
+  }
+
+  // Find current cover artwork
+  const currentCoverArtwork = formData?.images?.coverArtworkId
+    ? artworks.find(a => a.id === formData.images?.coverArtworkId)
+    : formData?.images?.cover
+      ? artworks.find(a => a.images.thumbnail === formData.images?.cover || a.images.full === formData.images?.cover)
+      : null
 
   return (
     <div className="max-w-4xl">
@@ -311,6 +338,61 @@ export default function ExhibitionEditPage() {
                 <option value="free">Free</option>
                 <option value="paid">Paid</option>
               </select>
+            </div>
+          </div>
+        </div>
+
+        {/* Cover Image */}
+        <div className="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+          <h2 className="font-semibold mb-2 flex items-center gap-2">
+            <ImageIcon className="w-5 h-5" />
+            커버 이미지
+          </h2>
+          <p className="text-sm text-secondary mb-4">전시 페이지에 표시될 대표 작품 이미지를 선택하세요.</p>
+
+          <div className="grid grid-cols-2 gap-6">
+            {/* Current Image Preview */}
+            <div>
+              <label className="block text-sm text-secondary mb-2">현재 이미지</label>
+              <div className="relative w-full aspect-[4/3] bg-gray-100 rounded-lg overflow-hidden">
+                {formData.images?.cover ? (
+                  <Image
+                    src={formData.images.cover}
+                    alt="Cover image"
+                    fill
+                    className="object-cover"
+                  />
+                ) : (
+                  <div className="absolute inset-0 flex items-center justify-center text-gray-400">
+                    <ImageIcon className="w-12 h-12" />
+                  </div>
+                )}
+              </div>
+              {currentCoverArtwork && (
+                <p className="text-sm text-secondary mt-2">
+                  {currentCoverArtwork.title} ({currentCoverArtwork.year})
+                </p>
+              )}
+            </div>
+
+            {/* Image Selection */}
+            <div>
+              <label className="block text-sm text-secondary mb-2">작품 선택</label>
+              <select
+                value={formData.images?.coverArtworkId || ''}
+                onChange={(e) => updateCoverImage(e.target.value)}
+                className="w-full px-3 py-2 border rounded-lg focus:ring-2 focus:ring-primary/50 mb-3"
+              >
+                <option value="">-- 작품을 선택하세요 --</option>
+                {artworks.map(artwork => (
+                  <option key={artwork.id} value={artwork.id}>
+                    {artwork.title} ({artwork.year}) - {artwork.chapter}
+                  </option>
+                ))}
+              </select>
+              <p className="text-xs text-gray-400">
+                선택한 작품의 이미지가 전시 카드와 상세 페이지에 표시됩니다.
+              </p>
             </div>
           </div>
         </div>

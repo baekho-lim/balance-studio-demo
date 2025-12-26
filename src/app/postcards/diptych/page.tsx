@@ -205,38 +205,42 @@ export default function DiptychPostcardPage() {
               display: 'flex',
             }}
           >
-            {/* Left Image - es-001 (붙여서 출력) */}
+            {/* Left Image - es-001 (외곽 여백만, 오른쪽은 붙임) */}
             <div
-              className="print-image-wrapper relative"
-              style={{ width: '6in', height: '4in' }}
+              className="print-image-wrapper relative bg-white"
+              style={{ width: '6in', height: '4in', padding: '0.25in 0 0.25in 0.25in' }}
             >
-              <Image
-                src={diptychWorks[0]?.images.full || ''}
-                alt={diptychWorks[0]?.title || ''}
-                fill
-                priority
-                quality={100}
-                unoptimized
-                className="object-cover"
-                sizes="6in"
-              />
+              <div className="relative w-full h-full">
+                <Image
+                  src={diptychWorks[0]?.images.full || ''}
+                  alt={diptychWorks[0]?.title || ''}
+                  fill
+                  priority
+                  quality={100}
+                  unoptimized
+                  className="object-contain"
+                  sizes="6in"
+                />
+              </div>
             </div>
 
-            {/* Right Image - es-002 (붙여서 출력) */}
+            {/* Right Image - es-002 (외곽 여백만, 왼쪽은 붙임) */}
             <div
-              className="print-image-wrapper relative"
-              style={{ width: '6in', height: '4in' }}
+              className="print-image-wrapper relative bg-white"
+              style={{ width: '6in', height: '4in', padding: '0.25in 0.25in 0.25in 0' }}
             >
-              <Image
-                src={diptychWorks[1]?.images.full || ''}
-                alt={diptychWorks[1]?.title || ''}
-                fill
-                priority
-                quality={100}
-                unoptimized
-                className="object-cover"
-                sizes="6in"
-              />
+              <div className="relative w-full h-full">
+                <Image
+                  src={diptychWorks[1]?.images.full || ''}
+                  alt={diptychWorks[1]?.title || ''}
+                  fill
+                  priority
+                  quality={100}
+                  unoptimized
+                  className="object-contain"
+                  sizes="6in"
+                />
+              </div>
             </div>
           </div>
           <p className="text-center text-xs text-secondary mt-2 print:hidden">
