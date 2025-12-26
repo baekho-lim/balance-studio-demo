@@ -1,3 +1,10 @@
+import exhibitionsData from '@/data/exhibitions.json'
+import newsData from '@/data/news.json'
+import { Exhibition, NewsArticle } from '@/types'
+
+const exhibitions = exhibitionsData as Exhibition[]
+const articles = newsData as NewsArticle[]
+
 export default function JsonLd() {
   const siteUrl = 'https://limhyejung.com'
 
@@ -198,6 +205,88 @@ export default function JsonLd() {
     },
   }
 
+  // ExhibitionEvent Schema for each exhibition
+  const exhibitionSchemas = exhibitions.map((exhibition) => {
+    const description = typeof exhibition.description === 'object'
+      ? exhibition.description.en
+      : exhibition.description || ''
+
+    return {
+      '@context': 'https://schema.org',
+      '@type': 'ExhibitionEvent',
+      '@id': `${siteUrl}/exhibitions/${exhibition.id}`,
+      name: exhibition.title,
+      alternateName: exhibition.titleKr,
+      description,
+      startDate: exhibition.startDate,
+      endDate: exhibition.endDate || undefined,
+      eventStatus: exhibition.status === 'current'
+        ? 'https://schema.org/EventScheduled'
+        : exhibition.status === 'past'
+          ? 'https://schema.org/EventMovedOnline'
+          : 'https://schema.org/EventScheduled',
+      eventAttendanceMode: 'https://schema.org/OfflineEventAttendanceMode',
+      location: exhibition.venue ? {
+        '@type': 'Place',
+        name: exhibition.venue,
+        address: {
+          '@type': 'PostalAddress',
+          addressLocality: exhibition.city,
+          addressCountry: exhibition.country,
+        },
+      } : undefined,
+      performer: {
+        '@type': 'Person',
+        '@id': `${siteUrl}/#artist`,
+        name: 'Lim Hyejung',
+      },
+      organizer: exhibition.venue ? {
+        '@type': 'Organization',
+        name: exhibition.venue,
+      } : undefined,
+      image: exhibition.images?.cover ? `${siteUrl}${exhibition.images.cover}` : undefined,
+      url: `${siteUrl}/exhibitions/${exhibition.id}`,
+      inLanguage: ['en', 'ko', 'vi'],
+    }
+  })
+
+  // NewsArticle Schema for each article
+  const newsArticleSchemas = articles.map((article) => ({
+    '@context': 'https://schema.org',
+    '@type': 'NewsArticle',
+    '@id': `${siteUrl}/news/${article.slug}`,
+    headline: article.title.en,
+    alternativeHeadline: article.title.ko,
+    description: article.excerpt.en,
+    datePublished: article.publishDate,
+    dateModified: article.publishDate,
+    author: article.author ? {
+      '@type': 'Person',
+      name: article.author,
+    } : {
+      '@type': 'Person',
+      '@id': `${siteUrl}/#artist`,
+      name: 'Lim Hyejung',
+    },
+    publisher: {
+      '@type': 'Organization',
+      name: 'Lim Hyejung Studio',
+      url: siteUrl,
+    },
+    image: article.images?.hero ? `${siteUrl}${article.images.hero}` : undefined,
+    url: `${siteUrl}/news/${article.slug}`,
+    mainEntityOfPage: {
+      '@type': 'WebPage',
+      '@id': `${siteUrl}/news/${article.slug}`,
+    },
+    articleSection: article.type === 'press-release' ? 'Press Release'
+      : article.type === 'interview' ? 'Interview'
+        : article.type === 'review' ? 'Art Review'
+          : 'Feature',
+    keywords: article.tags?.join(', '),
+    inLanguage: ['en', 'ko', 'vi'],
+  }))
+
   return (
     <>
       <script
@@ -220,6 +309,22 @@ export default function JsonLd() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(featuredArtworkSchema) }}
       />
+      {/* Exhibition Event Schemas */}
+      {exhibitionSchemas.map((schema, index) => (
+        <script
+          key={`exhibition-${index}`}
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
+        />
+      ))}
+      {/* News Article Schemas */}
+      {newsArticleSchemas.map((schema, index) => (
+        <script
+          key={`news-${index}`}
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
+        />
+      ))}
     </>
   )
 }
