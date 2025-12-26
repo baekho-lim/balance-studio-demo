@@ -95,11 +95,51 @@ export default function DiptychPostcardPage() {
             print-color-adjust: exact;
           }
 
+          /* Hide all screen-only elements */
+          .print\\:hidden,
+          button[title="Logout"],
+          [class*="print:hidden"],
+          /* Hide Next.js dev indicators and browser UI */
+          [data-nextjs-dialog],
+          [data-nextjs-dialog-overlay],
+          nextjs-portal,
+          #__next-build-indicator,
+          #__next-prerender-indicator,
+          [class*="nextjs-"],
+          [id*="__next"] > div:first-child:empty,
+          /* Hide any fixed positioned elements at top-left */
+          .fixed.top-4.left-4,
+          .fixed.top-4.right-4,
+          /* Hide watermarks for authenticated users */
+          .print-watermark,
+          .print-watermark-footer,
+          /* Hide any other possible indicators */
+          [style*="position: fixed"],
+          [style*="position:fixed"] {
+            display: none !important;
+            visibility: hidden !important;
+            opacity: 0 !important;
+          }
+
+          /* Force hide everything except postcard content */
+          body > *:not(main) {
+            display: none !important;
+          }
+
           .postcard-wrapper {
-            page-break-after: always;
             page-break-inside: avoid;
             margin: 0 !important;
             padding: 0 !important;
+          }
+
+          /* Only add page break after front if both mode */
+          .postcard-wrapper:first-of-type {
+            page-break-after: always;
+          }
+
+          /* No page break after last element */
+          .postcard-wrapper:last-of-type {
+            page-break-after: avoid;
           }
 
           .print-container {
@@ -113,7 +153,7 @@ export default function DiptychPostcardPage() {
           .print-image-wrapper {
             width: 6in !important;
             height: 4in !important;
-            padding: 0.25in !important;
+            padding: 0 !important;
             box-sizing: border-box !important;
             flex-shrink: 0;
           }
@@ -124,7 +164,7 @@ export default function DiptychPostcardPage() {
           }
 
           .print-image-wrapper img {
-            object-fit: contain !important;
+            object-fit: cover !important;
           }
 
           .print-back {
@@ -256,42 +296,38 @@ export default function DiptychPostcardPage() {
               display: 'flex',
             }}
           >
-            {/* Left Image - es-001 */}
+            {/* Left Image - es-001 (붙여서 출력) */}
             <div
-              className="print-image-wrapper bg-white"
-              style={{ width: '6in', height: '4in', padding: '0.25in', boxSizing: 'border-box' }}
+              className="print-image-wrapper relative"
+              style={{ width: '6in', height: '4in' }}
             >
-              <div className="relative w-full h-full">
-                <Image
-                  src={diptychWorks[0]?.images.full || ''}
-                  alt={diptychWorks[0]?.title || ''}
-                  fill
-                  priority
-                  quality={100}
-                  unoptimized
-                  className="object-contain"
-                  sizes="6in"
-                />
-              </div>
+              <Image
+                src={diptychWorks[0]?.images.full || ''}
+                alt={diptychWorks[0]?.title || ''}
+                fill
+                priority
+                quality={100}
+                unoptimized
+                className="object-cover"
+                sizes="6in"
+              />
             </div>
 
-            {/* Right Image - es-002 */}
+            {/* Right Image - es-002 (붙여서 출력) */}
             <div
-              className="print-image-wrapper bg-white"
-              style={{ width: '6in', height: '4in', padding: '0.25in', boxSizing: 'border-box' }}
+              className="print-image-wrapper relative"
+              style={{ width: '6in', height: '4in' }}
             >
-              <div className="relative w-full h-full">
-                <Image
-                  src={diptychWorks[1]?.images.full || ''}
-                  alt={diptychWorks[1]?.title || ''}
-                  fill
-                  priority
-                  quality={100}
-                  unoptimized
-                  className="object-contain"
-                  sizes="6in"
-                />
-              </div>
+              <Image
+                src={diptychWorks[1]?.images.full || ''}
+                alt={diptychWorks[1]?.title || ''}
+                fill
+                priority
+                quality={100}
+                unoptimized
+                className="object-cover"
+                sizes="6in"
+              />
             </div>
           </div>
           <p className="text-center text-xs text-secondary mt-2 print:hidden">

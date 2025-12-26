@@ -136,6 +136,7 @@ export interface Exhibition {
   type: 'solo' | 'group';          // 전시 유형
   venue: string;                   // 영문 장소명
   venueKr?: string;                // 한글 장소명
+  venueAddress?: string;           // 상세 주소 (예: "235 Nguyễn Văn Cừ, Quận 1, HCMC")
   city: string;                    // 도시
   country: string;                 // 국가 (영문)
   countryCode: string;             // ISO 국가 코드 (VN, KR, US 등)

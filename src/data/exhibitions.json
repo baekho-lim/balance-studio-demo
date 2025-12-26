@@ -46,61 +46,86 @@
   },
   {
     "id": "via-artfair-2025",
-    "title": "VIA Art Fair 2025",
-    "titleKr": "VIA 아트페어 2025",
+    "title": "Vietnam International Art Fair 2025",
+    "titleKr": "베트남 국제 아트페어 2025",
     "type": "group",
-    "venue": "Vietnam International Exhibition & Convention Center",
-    "venueKr": "베트남 국제전시컨벤션센터",
+    "venue": "Hotel Nikko Saigon",
+    "venueKr": "호텔 니코 사이공",
+    "venueAddress": "235 Nguyễn Văn Cừ, Cầu Ông Lãnh, Quận 1, Ho Chi Minh City",
     "city": "Ho Chi Minh City",
     "country": "Vietnam",
     "countryCode": "VN",
-    "startDate": "2025-11-01",
-    "endDate": "2025-11-30",
+    "startDate": "2025-09-12",
+    "endDate": "2025-09-14",
     "status": "past",
     "description": {
-      "en": "International art fair featuring contemporary artists from Korea and Southeast Asia. Lim Hyejung participated as a featured artist.",
-      "ko": "한국과 동남아시아 현대미술 작가들이 참여하는 국제 아트페어. 임혜정 작가가 피처드 아티스트로 참가.",
-      "vi": "Hội chợ nghệ thuật quốc tế giới thiệu các nghệ sĩ đương đại từ Hàn Quốc và Đông Nam Á."
+      "en": "Vietnam's premier international hotel art fair held at the 5-star Hotel Nikko Saigon. This annual art fair brings together leading galleries from Vietnam, Korea, Japan, and Southeast Asia, presenting diverse contemporary artworks. Lim Hyejung participated as a featured artist.",
+      "ko": "5성급 호텔 니코 사이공에서 개최된 베트남 최고의 국제 호텔 아트페어. 베트남, 한국, 일본, 동남아시아의 주요 갤러리들이 참여하여 다양한 현대미술 작품을 선보이는 연례 아트페어. 임혜정 작가가 피처드 아티스트로 참가.",
+      "vi": "Hội chợ nghệ thuật khách sạn quốc tế hàng đầu Việt Nam được tổ chức tại khách sạn 5 sao Nikko Saigon. Hội chợ nghệ thuật thường niên này quy tụ các phòng tranh hàng đầu từ Việt Nam, Hàn Quốc, Nhật Bản và Đông Nam Á."
     },
     "images": {
       "cover": "/images/works/1. I am only passing though the woods..jpg"
     },
     "featured": false,
+    "externalUrl": "https://www.instagram.com/vietnam_international_artfair/",
+    "links": {
+      "official": "https://www.instagram.com/vietnam_international_artfair/",
+      "gallery": "https://vniae.com/"
+    },
     "organizers": [
       {
-        "name": "VIA Art Fair",
-        "nameKr": "VIA 아트페어",
-        "role": "host"
+        "name": "Vietnam International Artfair",
+        "nameKr": "베트남 국제 아트페어",
+        "role": "host",
+        "url": "https://vniae.com/",
+        "instagram": "https://www.instagram.com/vietnam_international_artfair/"
+      },
+      {
+        "name": "D&C Art Gallery",
+        "nameKr": "D&C 아트 갤러리",
+        "role": "partner",
+        "instagram": "https://www.instagram.com/dc.artgallery/"
       }
     ],
     "artistRole": "featured"
   },
   {
     "id": "via-artfair-2024",
-    "title": "VIA Art Fair 2024",
-    "titleKr": "VIA 아트페어 2024",
+    "title": "Vietnam International Art Fair 2024",
+    "titleKr": "베트남 국제 아트페어 2024",
     "type": "group",
-    "venue": "Vietnam International Exhibition & Convention Center",
-    "venueKr": "베트남 국제전시컨벤션센터",
+    "venue": "Hotel Nikko Saigon",
+    "venueKr": "호텔 니코 사이공",
+    "venueAddress": "235 Nguyễn Văn Cừ, Cầu Ông Lãnh, Quận 1, Ho Chi Minh City",
     "city": "Ho Chi Minh City",
     "country": "Vietnam",
     "countryCode": "VN",
-    "startDate": "2024-11-15",
-    "endDate": "2024-11-18",
+    "startDate": "2024-12-19",
+    "endDate": "2024-12-22",
     "status": "past",
     "description": {
-      "en": "Group exhibition showcasing contemporary Korean art at Vietnam Art Fair 2024, one of Southeast Asia's premier art events.",
-      "ko": "동남아시아 최대 규모의 아트 이벤트인 VIA 아트페어 2024에서 한국 현대미술을 선보이는 그룹 전시."
+      "en": "The first-ever international hotel art fair in Vietnam, held at the 5-star Hotel Nikko Saigon. Featuring numerous galleries from Vietnam, Korea, Japan, and Southeast Asia with hundreds of contemporary artworks.",
+      "ko": "베트남 최초의 국제 호텔 아트페어. 5성급 호텔 니코 사이공에서 개최되었으며, 베트남, 한국, 일본, 동남아시아의 수많은 갤러리와 수백 점의 현대미술 작품이 전시됨.",
+      "vi": "Hội chợ nghệ thuật khách sạn quốc tế đầu tiên tại Việt Nam, được tổ chức tại khách sạn 5 sao Nikko Saigon. Quy tụ nhiều phòng tranh từ Việt Nam, Hàn Quốc, Nhật Bản và Đông Nam Á với hàng trăm tác phẩm nghệ thuật đương đại."
     },
     "images": {
       "cover": "/images/works/1. I am only passing though the woods..jpg"
     },
     "featured": false,
+    "externalUrl": "https://www.instagram.com/vietnam_international_artfair/",
+    "openingHours": "12:00-20:00",
+    "admission": "free",
+    "links": {
+      "official": "https://www.instagram.com/vietnam_international_artfair/",
+      "gallery": "https://vniae.com/"
+    },
     "organizers": [
       {
-        "name": "VIA Art Fair",
-        "nameKr": "VIA 아트페어",
-        "role": "host"
+        "name": "Vietnam International Artfair",
+        "nameKr": "베트남 국제 아트페어",
+        "role": "host",
+        "url": "https://vniae.com/",
+        "instagram": "https://www.instagram.com/vietnam_international_artfair/"
       }
     ],
     "artistRole": "participant"

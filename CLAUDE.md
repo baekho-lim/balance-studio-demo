@@ -234,6 +234,23 @@ WIP
 - **이미지 경로 오류**: 파일명의 공백, 특수문자 주의
 - **Git 인증**: Personal Access Token 필요 시 URL에 포함
 - **Node v24 호환성**: 일부 npm 패키지 이슈, native 명령 대안 사용
+- **Webpack 캐시 오류**: "missing required error components" 등 캐시 관련 에러 발생 시 `.next` 폴더 삭제 후 서버 재시작 필요
+
+## 개발 서버 재시작 규칙
+**⚠️ 필수**: 다음 상황에서는 반드시 서버를 재시작할 것:
+1. 파일 수정 후 브라우저에서 변경사항이 반영되지 않을 때
+2. "missing required error components" 등 캐시 관련 에러 발생 시
+3. 새 컴포넌트 추가 또는 import 경로 변경 시
+4. 레이아웃 깨짐이나 예상치 못한 렌더링 오류 시
+
+**재시작 명령**:
+```bash
+# 포트 3000 강제 종료 후 재시작
+lsof -ti:3000 | xargs kill -9 2>/dev/null; sleep 1; npm run dev
+
+# 캐시 완전 삭제 후 재시작 (심각한 오류 시)
+rm -rf .next && npm run dev
+```
 
 ## Quick Commands
 - `npm run dev` - 개발 서버
