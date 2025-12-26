@@ -6,16 +6,30 @@ export * from './locales';
 export const DEFAULT_LOCALE: LocaleCode = 'en';
 export const FALLBACK_LOCALE: LocaleCode = 'ko';
 
+// 언어 코드 → 접미사 매핑 (레거시 데이터 호환)
+const LOCALE_SUFFIX_MAP: Partial<Record<LocaleCode, string>> = {
+  ko: 'Kr',
+  vi: 'Vi',
+  ja: 'Ja',
+  ms: 'Ms',
+  id: 'Id',
+  'zh-CN': 'ZhCn',
+  'zh-TW': 'ZhTw',
+};
+
+// 폴백 체인 (우선순위 기반)
+export const FALLBACK_CHAIN: LocaleCode[] = ['en', 'ko', 'vi'];
+
 /**
  * 다국어 텍스트에서 특정 언어 텍스트 추출
  * @param text - MultilingualText 객체 또는 단순 문자열
  * @param locale - 원하는 언어 코드
- * @param fallback - 폴백 언어 코드 (기본: 'en')
+ * @param fallbackChain - 폴백 언어 코드 배열 (기본: ['en', 'ko', 'vi'])
  */
 export function getLocalizedText(
   text: MultilingualText | string | undefined,
   locale: LocaleCode = 'en',
-  fallback: LocaleCode = 'en'
+  fallbackChain: LocaleCode[] = FALLBACK_CHAIN
 ): string {
   if (!text) return '';
   if (typeof text === 'string') return text;
@@ -23,14 +37,71 @@ export function getLocalizedText(
   // 요청한 언어가 있으면 반환
   if (text[locale]) return text[locale] as string;
 
-  // 폴백 언어
-  if (text[fallback]) return text[fallback] as string;
+  // 폴백 체인 순회
+  for (const fallback of fallbackChain) {
+    if (text[fallback]) return text[fallback] as string;
+  }
 
-  // 영어 (최종 폴백)
-  if (text.en) return text.en;
+  // 어떤 값이든 첫 번째로 있는 것 반환
+  const firstValue = Object.values(text).find(v => typeof v === 'string' && v.length > 0);
+  return (firstValue as string) || '';
+}
 
-  // 한국어 (차선 폴백)
-  if (text.ko) return text.ko;
+/**
+ * 레거시 접미사 패턴에서 다국어 텍스트 추출
+ * 예: { title: 'Hello', titleKr: '안녕' } → locale='ko' → '안녕'
+ * @param obj - 접미사 패턴을 가진 객체
+ * @param baseField - 기본 필드명 (예: 'title', 'question')
+ * @param locale - 원하는 언어 코드
+ */
+export function getLocalizedField<T extends Record<string, unknown>>(
+  obj: T | undefined,
+  baseField: string,
+  locale: LocaleCode = 'en'
+): string {
+  if (!obj) return '';
+
+  // 영어는 기본 필드
+  if (locale === 'en') {
+    return (obj[baseField] as string) || '';
+  }
+
+  // 해당 언어의 접미사 필드 확인
+  const suffix = LOCALE_SUFFIX_MAP[locale];
+  if (suffix) {
+    const localizedField = `${baseField}${suffix}`;
+    if (obj[localizedField]) {
+      return obj[localizedField] as string;
+    }
+  }
+
+  // 폴백: 기본 필드 (영어)
+  return (obj[baseField] as string) || '';
+}
+
+/**
+ * 다국어 텍스트 또는 레거시 패턴 자동 감지하여 추출
+ * @param data - MultilingualText 객체, 접미사 패턴 객체, 또는 문자열
+ * @param locale - 원하는 언어 코드
+ * @param baseField - 레거시 패턴인 경우 기본 필드명
+ */
+export function getText(
+  data: MultilingualText | Record<string, unknown> | string | undefined,
+  locale: LocaleCode = 'en',
+  baseField?: string
+): string {
+  if (!data) return '';
+  if (typeof data === 'string') return data;
+
+  // MultilingualText 형태인지 확인 (en 필드 존재)
+  if ('en' in data && typeof data.en === 'string') {
+    return getLocalizedText(data as MultilingualText, locale);
+  }
+
+  // 레거시 패턴 (baseField 제공된 경우)
+  if (baseField) {
+    return getLocalizedField(data as Record<string, unknown>, baseField, locale);
+  }
 
   return '';
 }
