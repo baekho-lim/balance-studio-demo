@@ -75,12 +75,15 @@
   },
   "locales": {
     "default": "en",
-    "supported": ["en", "ko", "vi", "ja", "id", "ms"],
+    "supported": ["en", "ko", "vi", "ja", "zh-CN", "ms", "id", "de", "fr", "es", "ar"],
     "priority": {
       "P0": ["en", "ko", "vi"],
       "P1": ["ja", "zh-CN", "ms", "id"],
-      "P2": ["de", "fr", "es"]
-    }
+      "P2": ["de", "fr", "es"],
+      "P3": ["ar"]
+    },
+    "uiLanguage": "en",
+    "note": "UI is always English; content language is user-selectable"
   },
   "seo": {
     "siteName": "Lim Hyejung",

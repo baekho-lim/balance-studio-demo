@@ -6,6 +6,12 @@ import { ChevronLeft, ChevronRight, X } from 'lucide-react'
 import type { Artwork } from '@/types'
 import { useLanguage } from '@/i18n'
 
+// UI text is always English
+const UI_TEXT = {
+  tapToNavigate: 'Tap left or right to navigate',
+  endOfStory: 'End of story',
+}
+
 interface StoryViewProps {
   artworks: Artwork[]
   onClose?: () => void
@@ -14,14 +20,16 @@ interface StoryViewProps {
 export default function StoryView({ artworks, onClose }: StoryViewProps) {
   const [currentIndex, setCurrentIndex] = useState(0)
   const [isTransitioning, setIsTransitioning] = useState(false)
-  const { secondaryLanguage, t } = useLanguage()
+  const { contentLanguage } = useLanguage()
 
   const currentArtwork = artworks[currentIndex]
   const totalArtworks = artworks.length
 
-  // Get secondary language question based on selected language
-  const secondaryQuestion = useMemo(() => {
-    switch (secondaryLanguage) {
+  // Get content language question based on selected language
+  const contentQuestion = useMemo(() => {
+    switch (contentLanguage) {
+      case 'en':
+        return null // Will show English as primary
       case 'ko':
         return currentArtwork.questionKr
       case 'vi':
@@ -33,7 +41,7 @@ export default function StoryView({ artworks, onClose }: StoryViewProps) {
       default:
         return currentArtwork.questionKr
     }
-  }, [currentArtwork, secondaryLanguage])
+  }, [currentArtwork, contentLanguage])
 
   const goToNext = useCallback(() => {
     if (currentIndex < totalArtworks - 1 && !isTransitioning) {
@@ -167,19 +175,19 @@ export default function StoryView({ artworks, onClose }: StoryViewProps) {
             &ldquo;{currentArtwork.question}&rdquo;
           </p>
 
-          {/* Secondary Language Question */}
-          {secondaryQuestion && (
+          {/* Content Language Question (if different from English) */}
+          {contentQuestion && (
             <p className="font-serif text-base md:text-lg lg:text-xl text-secondary leading-relaxed">
-              &ldquo;{secondaryQuestion}&rdquo;
+              &ldquo;{contentQuestion}&rdquo;
             </p>
           )}
         </div>
 
-        {/* Click hint */}
+        {/* Click hint - UI always English */}
         <p className="mt-8 text-xs text-secondary/50 animate-pulse">
           {currentIndex < totalArtworks - 1
-            ? t.storyView.tapToNavigate
-            : t.storyView.endOfStory}
+            ? UI_TEXT.tapToNavigate
+            : UI_TEXT.endOfStory}
         </p>
       </div>
 

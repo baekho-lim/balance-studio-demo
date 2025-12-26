@@ -7,19 +7,23 @@ import {
   useCallback,
   type ReactNode,
 } from 'react'
-import type { LanguageCode } from './types'
-import { translations } from './translations'
+import type { LanguageCode, MultiLingualText } from './types'
+
+/**
+ * English UI + Multilingual Content Architecture
+ *
+ * - UI is ALWAYS in English (menus, buttons, labels, section titles)
+ * - Content language is user-selectable (exhibition descriptions, artist notes, etc.)
+ * - This follows the MOMA/Gagosian pattern for global art galleries
+ */
 
 interface LanguageContextType {
-  // Primary language is always English
-  primaryLanguage: 'en'
-  // Secondary language can be any supported language except English
-  secondaryLanguage: Exclude<LanguageCode, 'en'>
-  setSecondaryLanguage: (lang: Exclude<LanguageCode, 'en'>) => void
-  // Get translation for UI text
-  t: (typeof translations)['en']
-  // Get secondary translation
-  tSecondary: (typeof translations)[Exclude<LanguageCode, 'en'>]
+  // Content language: user-selected for body text (default: English)
+  contentLanguage: LanguageCode
+  setContentLanguage: (lang: LanguageCode) => void
+  // Legacy alias for backward compatibility
+  secondaryLanguage: LanguageCode
+  setSecondaryLanguage: (lang: LanguageCode) => void
 }
 
 const LanguageContext = createContext<LanguageContextType | undefined>(
@@ -28,33 +32,30 @@ const LanguageContext = createContext<LanguageContextType | undefined>(
 
 interface LanguageProviderProps {
   children: ReactNode
-  defaultSecondaryLanguage?: Exclude<LanguageCode, 'en'>
+  defaultContentLanguage?: LanguageCode
 }
 
 export function LanguageProvider({
   children,
-  defaultSecondaryLanguage = 'ko',
+  defaultContentLanguage = 'en',
 }: LanguageProviderProps) {
-  const [secondaryLanguage, setSecondaryLanguageState] =
-    useState<Exclude<LanguageCode, 'en'>>(defaultSecondaryLanguage)
+  const [contentLanguage, setContentLanguageState] =
+    useState<LanguageCode>(defaultContentLanguage)
 
-  const setSecondaryLanguage = useCallback(
-    (lang: Exclude<LanguageCode, 'en'>) => {
-      setSecondaryLanguageState(lang)
-      // Persist to localStorage for user preference
-      if (typeof window !== 'undefined') {
-        localStorage.setItem('preferredSecondaryLanguage', lang)
-      }
-    },
-    []
-  )
+  const setContentLanguage = useCallback((lang: LanguageCode) => {
+    setContentLanguageState(lang)
+    // Persist to localStorage for user preference
+    if (typeof window !== 'undefined') {
+      localStorage.setItem('preferredContentLanguage', lang)
+    }
+  }, [])
 
   const value: LanguageContextType = {
-    primaryLanguage: 'en',
-    secondaryLanguage,
-    setSecondaryLanguage,
-    t: translations.en,
-    tSecondary: translations[secondaryLanguage],
+    contentLanguage,
+    setContentLanguage,
+    // Legacy aliases for backward compatibility
+    secondaryLanguage: contentLanguage,
+    setSecondaryLanguage: setContentLanguage,
   }
 
   return (
@@ -72,30 +73,53 @@ export function useLanguage() {
   return context
 }
 
-// Helper hook to get multilingual text
+/**
+ * Hook for components displaying multilingual CONTENT (not UI)
+ *
+ * Use this for:
+ * - Exhibition descriptions
+ * - Artist statements
+ * - Artwork descriptions
+ * - News article body text
+ * - Catalog forewords
+ *
+ * NOT for:
+ * - Menu items (always English)
+ * - Button labels (always English)
+ * - Section titles (always English)
+ */
+export function useContent() {
+  const { contentLanguage } = useLanguage()
+
+  const getText = useCallback(
+    (text: MultiLingualText | string | undefined): string => {
+      if (!text) return ''
+      if (typeof text === 'string') return text
+      // Return selected language or fall back to English
+      return text[contentLanguage] || text.en || ''
+    },
+    [contentLanguage]
+  )
+
+  return { getText, locale: contentLanguage }
+}
+
+// Legacy alias for backward compatibility
 export function useMultiLingualText() {
-  const { secondaryLanguage } = useLanguage()
+  const { contentLanguage } = useLanguage()
 
   const getText = useCallback(
     (
-      texts: {
-        en: string
-        ko?: string
-        vi?: string
-        ja?: string
-        'zh-CN'?: string
-        ms?: string
-        id?: string
-      },
+      texts: MultiLingualText,
       type: 'primary' | 'secondary' = 'primary'
     ): string => {
       if (type === 'primary') {
         return texts.en
       }
-      return texts[secondaryLanguage as keyof typeof texts] || texts.en
+      return texts[contentLanguage] || texts.en
     },
-    [secondaryLanguage]
+    [contentLanguage]
   )
 
-  return { getText, secondaryLanguage }
+  return { getText, secondaryLanguage: contentLanguage }
 }
