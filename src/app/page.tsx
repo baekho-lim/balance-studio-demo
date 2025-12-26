@@ -1,7 +1,6 @@
 'use client'
 
 import { useState, useMemo } from 'react'
-import Image from 'next/image'
 import Hero from '@/components/home/Hero'
 import ArtworkCard from '@/components/works/ArtworkCard'
 import LightboxModal from '@/components/works/LightboxModal'
@@ -9,18 +8,17 @@ import ContactSection from '@/components/home/ContactSection'
 import ViewModeSelector, { type ViewMode } from '@/components/works/ViewModeSelector'
 import ArtistProfileImage from '@/components/artist/ArtistProfileImage'
 
-// Import data
-import artistData from '@/data/artist.json'
-import artworksData from '@/data/artworks.json'
-import chaptersData from '@/data/chapters.json'
-import siteSettings from '@/data/site-settings.json'
+// Import validated data
+import { getArtist, getArtworks, getChapters, getSiteSettings } from '@/lib/data'
+import type { Artwork } from '@/lib/schemas'
 
-import type { Artist, Artwork, Chapter, SiteSettings } from '@/types'
+const artist = getArtist()
+const artworks = getArtworks()
+const chapters = getChapters()
+const settings = getSiteSettings()
 
-const artist = artistData as Artist
-const artworks = artworksData as Artwork[]
-const chapters = chaptersData as Chapter[]
-const settings = siteSettings as SiteSettings
+// Find hero artwork for alt text
+const heroArtwork = artworks.find((a) => a.id === settings.homeHero.artworkId)
 
 export default function HomePage() {
   const [selectedArtwork, setSelectedArtwork] = useState<Artwork | null>(null)
@@ -43,6 +41,7 @@ export default function HomePage() {
         backgroundImage={settings.homeHero.imagePath}
         artistName="Lim Hyejung"
         tagline={settings.homeHero.tagline.en}
+        artworkTitle={heroArtwork?.title}
       />
 
       {/* Works Section - Chapter by Chapter */}

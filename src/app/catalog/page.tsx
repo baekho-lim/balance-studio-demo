@@ -180,6 +180,8 @@ export default function CatalogPage() {
             fill
             className="object-cover"
             priority
+            quality={100}
+            unoptimized
           />
           {/* Subtle overlay for text readability */}
           <div className="absolute inset-0 bg-black/30" />
@@ -305,6 +307,8 @@ export default function CatalogPage() {
                           priority
                           className="object-contain"
                           sizes="(max-width: 768px) 100vw, 33vw"
+                          quality={100}
+                          unoptimized
                         />
                       </div>
                     ))}
@@ -355,6 +359,8 @@ export default function CatalogPage() {
                             priority
                             className="object-contain"
                             sizes="(max-width: 768px) 100vw, 60vw"
+                            quality={100}
+                            unoptimized
                           />
                         </div>
 
@@ -424,6 +430,8 @@ export default function CatalogPage() {
                             priority
                             className="object-contain"
                             sizes="(max-width: 768px) 100vw, 50vw"
+                            quality={100}
+                            unoptimized
                           />
                         </div>
                       )
@@ -473,6 +481,8 @@ export default function CatalogPage() {
                           priority
                           className="object-contain"
                           sizes="(max-width: 768px) 100vw, 80vw"
+                          quality={100}
+                          unoptimized
                         />
                       </div>
 
@@ -530,6 +540,8 @@ export default function CatalogPage() {
                         priority
                         className="object-contain"
                         sizes="(max-width: 768px) 100vw, 60vw"
+                        quality={100}
+                        unoptimized
                       />
                     </div>
 
@@ -576,6 +588,8 @@ export default function CatalogPage() {
                       priority
                       className="object-contain"
                       sizes="(max-width: 768px) 100vw, 80vw"
+                      quality={100}
+                      unoptimized
                     />
                   </div>
 

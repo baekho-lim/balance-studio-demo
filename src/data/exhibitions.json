@@ -1,18 +1,68 @@
 [
   {
-    "year": 2025,
+    "id": "tomura-2024-solo",
     "title": "Utopia = Reality",
     "titleKr": "유토피아는 곧 현실이다",
+    "type": "solo",
+    "venue": "Tomura Gallery",
+    "venueKr": "토무라 갤러리",
+    "city": "Ho Chi Minh City",
+    "country": "Vietnam",
+    "countryCode": "VN",
+    "startDate": "2024-12-01",
+    "endDate": "2025-01-31",
+    "status": "current",
+    "description": {
+      "en": "Solo exhibition featuring 21 artworks exploring inner worlds through nature reconstructed by imagination. The artist presents her philosophy of 'Utopia = Reality' where ideals and reality blur into living, evolving works.",
+      "ko": "상상력으로 재구성된 자연을 통해 내면의 세계를 탐구하는 21점의 작품을 선보이는 솔로 전시. 작가는 이상과 현실의 경계가 흐려지는 '유토피아 = 현실' 철학을 작품으로 제시합니다.",
+      "vi": "Triển lãm cá nhân giới thiệu 21 tác phẩm khám phá thế giới nội tâm thông qua thiên nhiên được tái tạo bằng trí tưởng tượng. Nghệ sĩ trình bày triết lý 'Utopia = Reality' nơi lý tưởng và hiện thực hòa quyện thành những tác phẩm sống động."
+    },
+    "chapters": ["secret-garden", "effortless-spring", "desert-stories", "waters-of-time"],
+    "images": {
+      "cover": "/images/works/21.Just that we grow.jpeg"
+    },
+    "featured": true
+  },
+  {
+    "id": "vietnam-artfair-2024-group",
+    "title": "Vietnam Art Fair 2024",
+    "titleKr": "베트남 아트페어 2024",
+    "type": "group",
+    "venue": "Vietnam International Exhibition & Convention Center",
+    "venueKr": "베트남 국제전시컨벤션센터",
+    "city": "Ho Chi Minh City",
+    "country": "Vietnam",
+    "countryCode": "VN",
+    "startDate": "2024-11-15",
+    "endDate": "2024-11-18",
+    "status": "past",
+    "description": {
+      "en": "Group exhibition showcasing contemporary Korean art at Vietnam Art Fair 2024, one of Southeast Asia's premier art events.",
+      "ko": "동남아시아 최대 규모의 아트 이벤트인 베트남 아트페어 2024에서 한국 현대미술을 선보이는 그룹 전시."
+    },
+    "images": {
+      "cover": "/images/works/1. I am only passing though the woods..jpg"
+    },
+    "featured": false
+  },
+  {
+    "id": "utopia-reality-2025",
+    "title": "Utopia = Reality",
+    "titleKr": "유토피아는 곧 현실이다",
+    "type": "solo",
     "venue": "",
-    "location": "",
+    "venueKr": "",
+    "city": "",
+    "country": "",
+    "countryCode": "",
     "startDate": "2025",
     "endDate": "",
-    "type": "solo",
-    "description": "Current exhibition featuring 21 artworks exploring nature reconstructed through imagination.",
-    "descriptionKr": "상상력으로 재구성된 자연을 탐구하는 21점의 작품을 선보이는 현재 전시.",
-    "chapters": [
-      "secret-garden"
-    ],
-    "featured": true
+    "status": "current",
+    "description": {
+      "en": "Ongoing exhibition series featuring 21 artworks exploring nature reconstructed through imagination.",
+      "ko": "상상력으로 재구성된 자연을 탐구하는 21점의 작품을 선보이는 전시 시리즈."
+    },
+    "chapters": ["secret-garden"],
+    "featured": false
   }
 ]

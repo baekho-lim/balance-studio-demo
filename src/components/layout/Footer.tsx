@@ -1,5 +1,5 @@
 import Link from 'next/link'
-import { Instagram, Mail } from 'lucide-react'
+import { Instagram } from 'lucide-react'
 
 export default function Footer() {
 
@@ -84,15 +84,6 @@ export default function Footer() {
           <div>
             <h4 className="text-sm font-medium uppercase tracking-widest mb-4">Contact</h4>
             <ul className="space-y-3">
-              <li>
-                <a
-                  href="mailto:hello@limhyejung.com"
-                  className="flex items-center gap-2 text-sm text-secondary hover:text-primary transition-colors"
-                >
-                  <Mail size={16} />
-                  hello@limhyejung.com
-                </a>
-              </li>
               <li>
                 <a
                   href="https://www.instagram.com/limhyejung_artworks/"

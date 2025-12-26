@@ -8,12 +8,10 @@ import LanguageSelector from '@/components/ui/LanguageSelector'
 
 const navigation = [
   { name: 'Works', href: '/#works' },
-  { name: 'Catalog', href: '/catalog', isLink: true },
+  { name: 'Exhibitions', href: '/exhibitions', isLink: true },
+  { name: 'News', href: '/news', isLink: true },
   { name: 'Story', href: '/story', isLink: true },
-  { name: 'Postcard', href: '/postcards', isLink: true },
-  { name: 'Gallery', href: '/gallery', isLink: true },
-  { name: 'Archive', href: '/archive', isLink: true },
-  { name: 'Contact', href: '/#contact' },
+  { name: 'Partnership', href: '/partnership', isLink: true },
 ]
 
 export default function Header() {
@@ -70,8 +68,9 @@ export default function Header() {
           ? 'bg-pastel-cream/90 backdrop-blur-sm shadow-sm'
           : 'bg-transparent'
       }`}
+      role="banner"
     >
-      <nav className="container-wide">
+      <nav className="container-wide" aria-label="Main navigation">
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
           <button
@@ -79,6 +78,7 @@ export default function Header() {
             className={`font-serif text-xl tracking-wide hover:opacity-70 transition-all ${
               isScrolled ? 'text-primary' : 'text-white'
             }`}
+            aria-label="Go to homepage"
           >
             Lim Hyejung
           </button>
@@ -124,7 +124,11 @@ export default function Header() {
 
       {/* Mobile Menu */}
       {isMobileMenuOpen && (
-        <div className="md:hidden bg-pastel-cream/95 backdrop-blur-sm">
+        <div
+          className="md:hidden bg-pastel-cream/95 backdrop-blur-sm"
+          role="menu"
+          aria-label="Mobile navigation menu"
+        >
           <div className="container-wide py-8 space-y-6">
             {navigation.map((item) => (
               'isLink' in item && item.isLink ? (

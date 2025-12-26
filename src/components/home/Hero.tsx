@@ -7,20 +7,26 @@ interface HeroProps {
   backgroundImage: string
   artistName: string
   tagline: string
+  artworkTitle?: string
 }
 
 export default function Hero({
   backgroundImage,
   artistName,
   tagline,
+  artworkTitle,
 }: HeroProps) {
   return (
-    <section className="relative h-screen w-full overflow-hidden">
+    <section
+      className="relative h-screen w-full overflow-hidden"
+      role="banner"
+      aria-label="Artist portfolio hero section"
+    >
       {/* Background Image - Full Screen */}
       <div className="absolute inset-0">
         <Image
           src={backgroundImage}
-          alt="Featured artwork"
+          alt={artworkTitle ? `${artworkTitle} by ${artistName}` : `Artwork by ${artistName}`}
           fill
           priority
           className="object-cover object-center"

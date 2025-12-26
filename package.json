@@ -18,13 +18,13 @@
   },
   "dependencies": {
     "file-saver": "^2.0.5",
-    "framer-motion": "^10.16.16",
     "jszip": "^3.10.1",
     "lucide-react": "^0.303.0",
     "next": "14.0.4",
     "qrcode.react": "^4.2.0",
     "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "react-dom": "^18.2.0",
+    "zod": "^4.2.1"
   },
   "devDependencies": {
     "@playwright/test": "^1.56.1",

@@ -79,7 +79,7 @@ export default function PrintWatermark() {
       </div>
 
       <div className="print-watermark-footer">
-        For official PDF download, please contact: hello@limhyejung.com
+        For official PDF download, please contact via Instagram: @limhyejung_artworks
       </div>
     </>
   )

@@ -1,27 +1,20 @@
 import Link from 'next/link'
+import { Exhibition } from '@/types'
 import exhibitionsData from '@/data/exhibitions.json'
-
-interface Exhibition {
-  year: number
-  title: string
-  titleKr: string
-  venue: string
-  location: string
-  startDate: string
-  endDate: string
-  type: string
-  description: string
-  descriptionKr: string
-  chapters: string[]
-  featured: boolean
-}
+import { getLocalizedText, formatExhibitionDates } from '@/lib/i18n'
 
 const exhibitions = exhibitionsData as Exhibition[]
+
+// Get year from startDate
+function getYearFromDate(dateStr: string): number {
+  const match = dateStr.match(/\d{4}/)
+  return match ? parseInt(match[0]) : new Date().getFullYear()
+}
 
 export default function ArchivePage() {
   // Group exhibitions by year
   const exhibitionsByYear = exhibitions.reduce((acc, exhibition) => {
-    const year = exhibition.year
+    const year = getYearFromDate(exhibition.startDate)
     if (!acc[year]) {
       acc[year] = []
     }
@@ -51,58 +44,69 @@ export default function ArchivePage() {
                 {year}
               </h2>
               <div className="space-y-8">
-                {exhibitionsByYear[year].map((exhibition, index) => (
-                  <div
-                    key={index}
-                    className="bg-white p-8 rounded-lg shadow-sm border border-primary/10"
-                  >
-                    <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-4">
-                      <div>
-                        <h3 className="font-serif text-2xl mb-2">
-                          {exhibition.title}
-                        </h3>
-                        <p className="text-secondary mb-4">
-                          {exhibition.titleKr}
-                        </p>
-                        {exhibition.venue && (
-                          <p className="text-sm text-primary/70 mb-2">
-                            {exhibition.venue}
-                            {exhibition.location && `, ${exhibition.location}`}
+                {exhibitionsByYear[year].map((exhibition, index) => {
+                  const description = typeof exhibition.description === 'object'
+                    ? exhibition.description
+                    : { en: exhibition.description || '', ko: exhibition.descriptionKr || '' }
+
+                  return (
+                    <div
+                      key={index}
+                      className="bg-white p-8 rounded-lg shadow-sm border border-primary/10"
+                    >
+                      <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-4">
+                        <div>
+                          <h3 className="font-serif text-2xl mb-2">
+                            {exhibition.title}
+                          </h3>
+                          {exhibition.titleKr && (
+                            <p className="text-secondary mb-4">
+                              {exhibition.titleKr}
+                            </p>
+                          )}
+                          {exhibition.venue && (
+                            <p className="text-sm text-primary/70 mb-2">
+                              {exhibition.venue}
+                              {exhibition.city && exhibition.country && `, ${exhibition.city}, ${exhibition.country}`}
+                            </p>
+                          )}
+                          <p className="text-sm text-secondary mb-4">
+                            {formatExhibitionDates(exhibition.startDate, exhibition.endDate, 'en')}
                           </p>
-                        )}
-                        <p className="text-sm text-secondary mb-4">
-                          {exhibition.startDate}
-                          {exhibition.endDate && ` - ${exhibition.endDate}`}
-                        </p>
-                      </div>
-                      <span
-                        className={`inline-block px-3 py-1 text-xs uppercase tracking-wider rounded-full ${
-                          exhibition.type === 'solo'
-                            ? 'bg-pastel-sage/30 text-primary'
-                            : 'bg-pastel-lavender/30 text-primary'
-                        }`}
-                      >
-                        {exhibition.type === 'solo' ? 'Solo' : 'Group'}
-                      </span>
-                    </div>
-                    <p className="text-primary/80 leading-relaxed mb-2">
-                      {exhibition.description}
-                    </p>
-                    <p className="text-sm text-secondary">
-                      {exhibition.descriptionKr}
-                    </p>
-                    {exhibition.featured && (
-                      <div className="mt-6">
-                        <Link
-                          href="/"
-                          className="inline-block text-sm text-pastel-sage hover:text-primary transition-colors underline underline-offset-4"
+                        </div>
+                        <span
+                          className={`inline-block px-3 py-1 text-xs uppercase tracking-wider rounded-full ${
+                            exhibition.type === 'solo'
+                              ? 'bg-pastel-sage/30 text-primary'
+                              : 'bg-pastel-lavender/30 text-primary'
+                          }`}
                         >
-                          View Current Exhibition
-                        </Link>
+                          {exhibition.type === 'solo' ? 'Solo' : 'Group'}
+                        </span>
                       </div>
-                    )}
-                  </div>
-                ))}
+                      {description.en && (
+                        <p className="text-primary/80 leading-relaxed mb-2">
+                          {getLocalizedText(description, 'en')}
+                        </p>
+                      )}
+                      {description.ko && (
+                        <p className="text-sm text-secondary">
+                          {getLocalizedText(description, 'ko')}
+                        </p>
+                      )}
+                      {exhibition.featured && exhibition.status === 'current' && (
+                        <div className="mt-6">
+                          <Link
+                            href={`/exhibitions/${exhibition.id}`}
+                            className="inline-block text-sm text-pastel-sage hover:text-primary transition-colors underline underline-offset-4"
+                          >
+                            View Current Exhibition
+                          </Link>
+                        </div>
+                      )}
+                    </div>
+                  )
+                })}
               </div>
             </div>
           ))}
