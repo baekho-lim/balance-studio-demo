@@ -1,0 +1,68 @@
+{
+  "gallery": {
+    "id": "limhyejung",
+    "name": {
+      "en": "Lim Hyejung",
+      "ko": "임혜정"
+    },
+    "domain": "limhyejung.com",
+    "tagline": {
+      "en": "Utopia = Reality",
+      "ko": "유토피아 = 현실"
+    },
+    "description": {
+      "en": "Contemporary Korean artist exploring nature reconstructed through imagination",
+      "ko": "상상력으로 재구성된 자연을 통해 내면의 세계를 탐구하는 작가"
+    }
+  },
+  "artist": {
+    "name": {
+      "en": "Lim Hyejung",
+      "ko": "임혜정"
+    },
+    "nameWithBirth": {
+      "en": "Lim Hyejung (b.1981, Korea)",
+      "ko": "임혜정 (b.1981/Korea)"
+    },
+    "birthYear": 1981,
+    "nationality": "Korean",
+    "birthPlace": "Seoul, South Korea"
+  },
+  "contact": {
+    "email": "contact@limhyejung.com",
+    "instagram": {
+      "handle": "@limhyejung_artworks",
+      "url": "https://instagram.com/limhyejung_artworks"
+    },
+    "website": "https://limhyejung.com"
+  },
+  "branding": {
+    "colors": {
+      "primary": "#8B9D7E",
+      "secondary": "#FFF9F0",
+      "accent": "#B8C5A8"
+    },
+    "fonts": {
+      "serif": "Playfair Display",
+      "sans": "Inter"
+    }
+  },
+  "locales": {
+    "default": "en",
+    "supported": ["en", "ko", "vi", "ja", "id", "ms"],
+    "priority": {
+      "P0": ["en", "ko", "vi"],
+      "P1": ["ja", "zh-CN", "ms", "id"],
+      "P2": ["de", "fr", "es"]
+    }
+  },
+  "seo": {
+    "siteName": "Lim Hyejung",
+    "titleTemplate": "%s | Lim Hyejung",
+    "defaultImage": "/images/og-default.webp"
+  },
+  "meta": {
+    "version": "1.0.0",
+    "lastUpdated": "2025-12-26"
+  }
+}
