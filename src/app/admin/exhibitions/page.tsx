@@ -110,16 +110,19 @@ export default function AdminExhibitionsPage() {
       </div>
 
       <div className="mt-8 p-6 bg-pastel-cream/30 rounded-lg">
-        <h3 className="font-semibold mb-2">How to Add/Edit Exhibitions</h3>
+        <h3 className="font-semibold mb-2">전시 관리 안내</h3>
         <p className="text-sm text-secondary mb-4">
-          Exhibition data is stored in <code className="bg-white px-1 rounded">src/data/exhibitions.json</code>.
-          Changes require a Git commit to update the live site.
+          위의 "Add Exhibition" 버튼 또는 각 전시의 "Edit" 버튼을 클릭하여 수정할 수 있습니다.
+          변경사항은 JSON 파일에 저장되며, Git 커밋 후 배포됩니다.
         </p>
-        <ol className="text-sm text-secondary space-y-2 list-decimal list-inside">
-          <li>Edit the JSON file with new exhibition data</li>
-          <li>Include external links (gallery URL, Instagram) for SEO trust signals</li>
-          <li>Commit and push to deploy changes</li>
-        </ol>
+        <div className="text-sm text-secondary space-y-2">
+          <p><strong>SEO 신뢰도 향상 팁:</strong></p>
+          <ul className="list-disc list-inside ml-2 space-y-1">
+            <li>갤러리 공식 웹사이트 URL 추가</li>
+            <li>전시 공식 페이지 링크 추가</li>
+            <li>주최/협력 기관의 인스타그램 링크 추가</li>
+          </ul>
+        </div>
       </div>
     </div>
   )

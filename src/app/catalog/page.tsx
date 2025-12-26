@@ -8,6 +8,7 @@ import catalogData from '@/data/catalog.json'
 import siteSettings from '@/data/site-settings.json'
 import CatalogPrintStyles from '@/components/print/CatalogPrintStyles'
 import PrintWatermark from '@/components/print/PrintWatermark'
+import PrintBaseStyles from '@/components/print/PrintBaseStyles'
 import ArtistProfileImage from '@/components/artist/ArtistProfileImage'
 import AuthGuard from '@/components/admin/AuthGuard'
 import PrintSpecsGuide from '@/components/print/PrintSpecsGuide'
@@ -130,6 +131,8 @@ export default function CatalogPage() {
 
   return (
     <div className="min-h-screen bg-white">
+      {/* 공통 인쇄 CSS - 모듈화된 컴포넌트 */}
+      <PrintBaseStyles />
       {/* Print-Optimized CSS - Now extracted to reusable component */}
       <CatalogPrintStyles />
       {/* Watermark for non-authenticated print attempts */}

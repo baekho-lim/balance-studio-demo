@@ -2,7 +2,7 @@
 
 import { useParams } from 'next/navigation'
 import Link from 'next/link'
-import { ArrowLeft, ExternalLink, Copy, Check } from 'lucide-react'
+import { ArrowLeft, ExternalLink, Copy, Check, Edit } from 'lucide-react'
 import { useState } from 'react'
 import exhibitionsData from '@/data/exhibitions.json'
 import { Exhibition } from '@/types'
@@ -36,19 +36,28 @@ export default function ExhibitionEditPage() {
 
   return (
     <div>
-      <div className="flex items-center gap-4 mb-8">
-        <Link
-          href="/admin/exhibitions"
-          className="p-2 hover:bg-gray-100 rounded-lg transition-colors"
-        >
-          <ArrowLeft className="w-5 h-5" />
-        </Link>
-        <div>
-          <h1 className="text-3xl font-serif">{exhibition.title}</h1>
-          {exhibition.titleKr && (
-            <p className="text-secondary">{exhibition.titleKr}</p>
-          )}
+      <div className="flex items-center justify-between mb-8">
+        <div className="flex items-center gap-4">
+          <Link
+            href="/admin/exhibitions"
+            className="p-2 hover:bg-gray-100 rounded-lg transition-colors"
+          >
+            <ArrowLeft className="w-5 h-5" />
+          </Link>
+          <div>
+            <h1 className="text-3xl font-serif">{exhibition.title}</h1>
+            {exhibition.titleKr && (
+              <p className="text-secondary">{exhibition.titleKr}</p>
+            )}
+          </div>
         </div>
+        <Link
+          href={`/admin/exhibitions/${exhibition.id}/edit`}
+          className="inline-flex items-center gap-2 px-4 py-2 bg-primary text-white rounded-lg hover:bg-primary/90 transition-colors"
+        >
+          <Edit className="w-4 h-4" />
+          Edit
+        </Link>
       </div>
 
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">

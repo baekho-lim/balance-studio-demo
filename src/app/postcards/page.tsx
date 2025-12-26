@@ -11,6 +11,7 @@ import type { Artwork } from '@/types'
 import AuthGuard from '@/components/admin/AuthGuard'
 import PrintWatermark from '@/components/print/PrintWatermark'
 import PrintSpecsGuide from '@/components/print/PrintSpecsGuide'
+import PrintBaseStyles from '@/components/print/PrintBaseStyles'
 
 const artworks = artworksData as Artwork[]
 
@@ -100,6 +101,9 @@ export default function PostcardsPage() {
 
   return (
     <div className="min-h-screen bg-gray-100 py-12 print:py-0">
+      {/* 공통 인쇄 CSS - 모듈화된 컴포넌트 */}
+      <PrintBaseStyles />
+
       {/* Watermark for non-authenticated print attempts */}
       <PrintWatermark />
 

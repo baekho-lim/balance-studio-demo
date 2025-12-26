@@ -11,6 +11,8 @@ import type { Artwork } from '@/types'
 import AuthGuard from '@/components/admin/AuthGuard'
 import PrintWatermark from '@/components/print/PrintWatermark'
 import PrintSpecsGuide from '@/components/print/PrintSpecsGuide'
+import PrintBaseStyles from '@/components/print/PrintBaseStyles'
+import PostcardPrintStyles from '@/components/print/PostcardPrintStyles'
 
 const artworks = artworksData as Artwork[]
 
@@ -80,102 +82,9 @@ export default function DiptychPostcardPage() {
 
   return (
     <div className="min-h-screen bg-gray-200 print:bg-white print:min-h-0">
-      {/* Print CSS */}
-      <style jsx global>{`
-        @media print {
-          @page {
-            size: 12in 4in;
-            margin: 0;
-          }
-
-          body {
-            margin: 0;
-            padding: 0;
-            -webkit-print-color-adjust: exact;
-            print-color-adjust: exact;
-          }
-
-          /* Hide all screen-only elements */
-          .print\\:hidden,
-          button[title="Logout"],
-          [class*="print:hidden"],
-          /* Hide Next.js dev indicators and browser UI */
-          [data-nextjs-dialog],
-          [data-nextjs-dialog-overlay],
-          nextjs-portal,
-          #__next-build-indicator,
-          #__next-prerender-indicator,
-          [class*="nextjs-"],
-          [id*="__next"] > div:first-child:empty,
-          /* Hide any fixed positioned elements at top-left */
-          .fixed.top-4.left-4,
-          .fixed.top-4.right-4,
-          /* Hide watermarks for authenticated users */
-          .print-watermark,
-          .print-watermark-footer,
-          /* Hide any other possible indicators */
-          [style*="position: fixed"],
-          [style*="position:fixed"] {
-            display: none !important;
-            visibility: hidden !important;
-            opacity: 0 !important;
-          }
-
-          /* Force hide everything except postcard content */
-          body > *:not(main) {
-            display: none !important;
-          }
-
-          .postcard-wrapper {
-            page-break-inside: avoid;
-            margin: 0 !important;
-            padding: 0 !important;
-          }
-
-          /* Only add page break after front if both mode */
-          .postcard-wrapper:first-of-type {
-            page-break-after: always;
-          }
-
-          /* No page break after last element */
-          .postcard-wrapper:last-of-type {
-            page-break-after: avoid;
-          }
-
-          .print-container {
-            width: 12in !important;
-            height: 4in !important;
-            margin: 0 !important;
-            padding: 0 !important;
-            display: flex !important;
-          }
-
-          .print-image-wrapper {
-            width: 6in !important;
-            height: 4in !important;
-            padding: 0 !important;
-            box-sizing: border-box !important;
-            flex-shrink: 0;
-          }
-
-          .print-image-wrapper > div {
-            width: 100% !important;
-            height: 100% !important;
-          }
-
-          .print-image-wrapper img {
-            object-fit: cover !important;
-          }
-
-          .print-back {
-            width: 12in !important;
-            height: 4in !important;
-            margin: 0 !important;
-            padding: 0.3in !important;
-            box-sizing: border-box !important;
-          }
-        }
-      `}</style>
+      {/* Print CSS - 모듈화된 컴포넌트 사용 */}
+      <PrintBaseStyles />
+      <PostcardPrintStyles size="diptych" bothSides={printMode === 'both'} />
 
       {/* Watermark for non-authenticated print attempts */}
       <PrintWatermark />
