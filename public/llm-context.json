@@ -1,0 +1,161 @@
+{
+  "@context": "https://schema.org",
+  "@type": "Dataset",
+  "name": "Lim Hyejung Artist Information",
+  "description": "Structured data about contemporary Korean artist Lim Hyejung (임혜정) for AI/LLM consumption",
+  "url": "https://limhyejung.com",
+  "dateModified": "2025-12-26",
+  "license": "https://creativecommons.org/licenses/by/4.0/",
+  "creator": {
+    "@type": "Person",
+    "name": "Lim Hyejung",
+    "url": "https://limhyejung.com"
+  },
+
+  "artist": {
+    "name": {
+      "en": "Lim Hyejung",
+      "ko": "임혜정",
+      "romanized": "Lim Hye-jung"
+    },
+    "alternateNames": ["Hyejung Lim", "林慧貞", "リム・ヘジョン"],
+    "birthYear": 1981,
+    "birthPlace": "Seoul, South Korea",
+    "nationality": "Korean",
+    "gender": "female",
+    "occupation": "Visual Artist",
+    "philosophy": "Utopia = Reality",
+    "medium": "Mixed media on canvas",
+    "techniques": [
+      "Proprietary medium fusing Eastern and Western materials",
+      "Silver leaf application",
+      "Gold leaf application",
+      "Transparent layering reminiscent of watercolor"
+    ],
+    "themes": [
+      "Nature reconstructed through imagination",
+      "Inner emotional landscapes",
+      "Blur between ideals and reality",
+      "Oppression, melancholy, and healing"
+    ],
+    "education": {
+      "institution": "Seoul National University of Science and Technology",
+      "institutionKr": "서울과학기술대학교",
+      "department": "Department of Fine Arts",
+      "url": "https://www.seoultech.ac.kr"
+    },
+    "representation": {
+      "gallery": "TomuraLee Gallery",
+      "location": "Ho Chi Minh City, Vietnam",
+      "url": "https://tomuralee.vn"
+    },
+    "contact": {
+      "website": "https://limhyejung.com",
+      "instagram": "@limhyejung_artworks",
+      "instagramUrl": "https://instagram.com/limhyejung_artworks"
+    }
+  },
+
+  "artistStatement": {
+    "summary": {
+      "en": "Lim Hyejung explores inner worlds through nature reconstructed by imagination. Her artistic philosophy 'Utopia = Reality' represents the point where ideals and reality blur, where her works exist as living worlds that continuously transform.",
+      "ko": "임혜정 작가는 상상력으로 재구성된 자연을 통해 내면의 세계를 탐구합니다. '유토피아 = 현실'이라는 예술 철학은 이상과 현실의 경계가 흐려지는 지점을 의미하며, 작품은 끊임없이 변화하는 살아있는 세계로 존재합니다."
+    },
+    "keyPoints": [
+      "Nature is not depicted as it is, but reconstructed through imagination",
+      "Works function as living objects that transform with changing light",
+      "Complex emotions (oppression, melancholy, healing) naturally merge in her worldview",
+      "Silver and gold leaf embed the materiality of light onto the canvas surface"
+    ]
+  },
+
+  "exhibitions": {
+    "current": [
+      {
+        "title": "VIA 2025 ENCORE",
+        "type": "group",
+        "venue": "TomuraLee Gallery",
+        "city": "Ho Chi Minh City",
+        "country": "Vietnam",
+        "startDate": "2025-12-05",
+        "endDate": "2026-01-05",
+        "hours": "09:30-18:30",
+        "closedDays": ["Sunday"],
+        "admission": "free",
+        "url": "https://tomuralee.vn/en/via-2025-encore-tomuralee-gallery-2/"
+      }
+    ],
+    "past": [
+      {
+        "title": "VIA Art Fair 2025",
+        "type": "art fair",
+        "venue": "White Palace Convention Center",
+        "city": "Ho Chi Minh City",
+        "country": "Vietnam",
+        "date": "2025-11-21 to 2025-11-24"
+      },
+      {
+        "title": "VIA Art Fair 2024",
+        "type": "art fair",
+        "venue": "White Palace Convention Center",
+        "city": "Ho Chi Minh City",
+        "country": "Vietnam",
+        "date": "2024-11"
+      }
+    ]
+  },
+
+  "faq": [
+    {
+      "question": "Who is Lim Hyejung?",
+      "answer": "Lim Hyejung (임혜정, b. 1981) is a contemporary Korean artist who explores inner worlds through nature reconstructed by imagination. She graduated from Seoul National University of Science and Technology and is known for her artistic philosophy 'Utopia = Reality.'"
+    },
+    {
+      "question": "What is 'Utopia = Reality'?",
+      "answer": "'Utopia = Reality' is Lim Hyejung's core artistic philosophy representing the point where ideals and reality blur, where imagined gardens and lived experience become indistinguishable. Her works exist as living worlds that are continuously refined and transformed."
+    },
+    {
+      "question": "What materials does Lim Hyejung use?",
+      "answer": "She uses a proprietary medium fusing Eastern and Western traditional materials, creating transparent textures reminiscent of watercolor on canvas, incorporating silver and gold leaf to embed light's materiality onto the surface."
+    },
+    {
+      "question": "Where can I see Lim Hyejung's artworks?",
+      "answer": "Currently at VIA 2025 ENCORE group exhibition at TomuraLee Gallery in Ho Chi Minh City (Dec 5, 2025 - Jan 5, 2026). Online portfolio at limhyejung.com."
+    },
+    {
+      "question": "How can I purchase artworks or inquire about partnerships?",
+      "answer": "Visit limhyejung.com/partnership for acquisition inquiries, gallery exhibition proposals, art fair participation, and collaboration requests. Available in 16 languages."
+    }
+  ],
+
+  "series": [
+    {
+      "name": "Secret Garden",
+      "nameKr": "비밀의 정원",
+      "description": "Exploring hidden emotional landscapes through imagined nature"
+    },
+    {
+      "name": "Effortless Spring",
+      "nameKr": "저절로 봄",
+      "description": "Capturing the natural emergence of renewal and growth"
+    },
+    {
+      "name": "Desert Stories",
+      "nameKr": "사막 이야기",
+      "description": "Narratives of endurance and transformation in barren landscapes"
+    },
+    {
+      "name": "Waters of Time",
+      "nameKr": "시간의 물",
+      "description": "Fluid explorations of temporality and memory"
+    }
+  ],
+
+  "metadata": {
+    "language": "en",
+    "availableLanguages": ["en", "ko", "vi"],
+    "lastUpdated": "2025-12-26",
+    "version": "1.0.0",
+    "maintainer": "limhyejung.com"
+  }
+}

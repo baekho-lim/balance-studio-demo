@@ -49,15 +49,39 @@ export interface Artwork {
   hasArtistNote?: boolean;  // artwork-notes.json에 원본 노트 있음을 표시
 }
 
+// 작가 외부 ID (권위 있는 Entity 연결)
+export interface ArtistExternalIds {
+  instagram?: string | null;
+  wikidata?: string | null;      // Wikidata Q ID (예: "Q123456789")
+  viaf?: string | null;          // Virtual International Authority File
+  ulan?: string | null;          // Getty ULAN (Union List of Artist Names)
+  isni?: string | null;          // International Standard Name Identifier
+  orcid?: string | null;         // ORCID (학술용)
+}
+
+// 작가 소속/제휴 기관
+export interface ArtistAffiliation {
+  name: string;
+  nameKr?: string;
+  url?: string;
+  type: 'alumniOf' | 'representedBy' | 'memberOf' | 'worksFor';
+}
+
 // 작가 정보
 export interface Artist {
   name: string;
   nameKr: string;
+  birthYear?: number;
+  nationality?: string;
+  birthPlace?: string;
   education: {
     degree: string;
     institution: string;
+    institutionUrl?: string;
     year: number | string;
   }[];
+  externalIds?: ArtistExternalIds;
+  affiliations?: ArtistAffiliation[];
   statement: {
     kr: string;
     en: string;
@@ -72,6 +96,25 @@ export interface Artist {
     instagram?: string;
     website?: string;
   };
+}
+
+// FAQ 아이템 타입 (faq.json용)
+export interface FAQItem {
+  id: string;
+  question: {
+    ko: string;
+    en: string;
+    vi?: string;
+    ja?: string;
+  };
+  answer: {
+    ko: string;
+    en: string;
+    vi?: string;
+    ja?: string;
+  };
+  order: number;
+  exhibitionLink?: string;
 }
 
 // 지원 언어 코드
@@ -153,6 +196,7 @@ export interface Exhibition {
   pressRelease?: string;           // 관련 뉴스 ID
   images?: {
     cover?: string;                // 대표 이미지
+    coverArtworkId?: string;       // 대표 이미지 작품 ID (작품 참조)
     installation?: string[];       // 설치 전경 이미지들
     opening?: string[];            // 오프닝 사진들
   };
@@ -198,6 +242,7 @@ export interface NewsArticle {
   sourceUrl?: string;              // 원문 링크
   images?: {
     hero?: string;                 // 대표 이미지
+    heroArtworkId?: string;        // 대표 이미지 작품 ID (작품 참조)
     gallery?: string[];            // 본문 이미지들
   };
   tags: string[];                  // 태그 배열

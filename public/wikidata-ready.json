@@ -1,0 +1,156 @@
+{
+  "_comment": "Wikidata 제출용 준비 데이터 - 수동으로 https://www.wikidata.org 에서 엔트리 생성 시 사용",
+  "_lastUpdated": "2025-12-26",
+  "_status": "ready_for_submission",
+
+  "label": {
+    "en": "Lim Hyejung",
+    "ko": "임혜정",
+    "vi": "Lim Hyejung",
+    "ja": "リム・ヘジョン",
+    "zh": "林慧貞",
+    "zh-hans": "林慧贞",
+    "zh-hant": "林慧貞"
+  },
+
+  "description": {
+    "en": "South Korean contemporary artist (born 1981)",
+    "ko": "대한민국의 현대미술 작가 (1981년생)",
+    "vi": "Nghệ sĩ đương đại Hàn Quốc (sinh năm 1981)",
+    "ja": "韓国の現代アーティスト（1981年生まれ）"
+  },
+
+  "aliases": {
+    "en": ["Hyejung Lim", "Lim Hye-jung", "Lim Hye Jung"],
+    "ko": ["임혜정 작가", "화가 임혜정"]
+  },
+
+  "claims": {
+    "_comment": "Wikidata Property IDs",
+
+    "P31": {
+      "property": "instance of",
+      "value": "Q5",
+      "valueLabel": "human"
+    },
+
+    "P21": {
+      "property": "sex or gender",
+      "value": "Q6581072",
+      "valueLabel": "female"
+    },
+
+    "P106": {
+      "property": "occupation",
+      "values": [
+        { "value": "Q1028181", "label": "painter" },
+        { "value": "Q483501", "label": "artist" },
+        { "value": "Q3391743", "label": "visual artist" }
+      ]
+    },
+
+    "P27": {
+      "property": "country of citizenship",
+      "value": "Q884",
+      "valueLabel": "South Korea"
+    },
+
+    "P569": {
+      "property": "date of birth",
+      "value": "+1981-00-00T00:00:00Z",
+      "precision": 9,
+      "comment": "Year only (1981)"
+    },
+
+    "P19": {
+      "property": "place of birth",
+      "value": "Q8684",
+      "valueLabel": "Seoul"
+    },
+
+    "P69": {
+      "property": "educated at",
+      "value": "Q7430088",
+      "valueLabel": "Seoul National University of Science and Technology",
+      "qualifiers": {
+        "P812": {
+          "property": "academic major",
+          "value": "Fine Arts"
+        }
+      }
+    },
+
+    "P101": {
+      "property": "field of work",
+      "values": [
+        { "value": "Q11629", "label": "contemporary art" },
+        { "value": "Q3305213", "label": "painting" },
+        { "value": "Q219423", "label": "mixed media" }
+      ]
+    },
+
+    "P136": {
+      "property": "genre",
+      "values": [
+        { "value": "Q11629", "label": "contemporary art" },
+        { "value": "Q1935974", "label": "nature painting" }
+      ]
+    },
+
+    "P937": {
+      "property": "work location",
+      "values": [
+        { "value": "Q8684", "label": "Seoul" },
+        { "value": "Q1854", "label": "Ho Chi Minh City" }
+      ]
+    },
+
+    "P856": {
+      "property": "official website",
+      "value": "https://limhyejung.com"
+    },
+
+    "P2003": {
+      "property": "Instagram username",
+      "value": "limhyejung_artworks"
+    }
+  },
+
+  "references": {
+    "_comment": "증거 자료로 제출할 URL들",
+    "official_website": {
+      "url": "https://limhyejung.com",
+      "title": "Lim Hyejung Official Website",
+      "accessed": "2025-12-26"
+    },
+    "gallery_representation": {
+      "url": "https://tomuralee.vn",
+      "title": "TomuraLee Gallery - Representing Gallery",
+      "accessed": "2025-12-26"
+    },
+    "current_exhibition_2025": {
+      "url": "https://tomuralee.vn/en/via-2025-encore-tomuralee-gallery-2/",
+      "title": "VIA 2025 ENCORE Exhibition at TomuraLee Gallery",
+      "date": "2025-12-05 to 2026-01-05"
+    }
+  },
+
+  "submission_notes": {
+    "notability": [
+      "Represented by TomuraLee Gallery in Vietnam",
+      "Participated in VIA Art Fair 2024 and 2025",
+      "Featured in VIA 2025 ENCORE group exhibition",
+      "Distinctive artistic philosophy: 'Utopia = Reality'"
+    ],
+    "sources_needed": [
+      "Art fair catalog mentions",
+      "Gallery exhibition records",
+      "Press coverage if available"
+    ],
+    "recommended_properties_to_add_later": [
+      "P800 - notable work (when specific works become notable)",
+      "P166 - award received (if applicable)",
+      "P1343 - described by source (media coverage)"
+    ]
+  }
+}

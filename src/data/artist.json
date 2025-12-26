@@ -1,11 +1,35 @@
 {
   "name": "Lim Hyejung",
   "nameKr": "임혜정 (b.1981/Korea)",
+  "birthYear": 1981,
+  "nationality": "Korean",
+  "birthPlace": "Seoul, South Korea",
   "education": [
     {
       "degree": "Department of Fine Arts",
       "institution": "Seoul National University of Science and Technology",
+      "institutionUrl": "https://www.seoultech.ac.kr",
       "year": ""
+    }
+  ],
+  "externalIds": {
+    "instagram": "https://instagram.com/limhyejung_artworks",
+    "wikidata": "Q137589862",
+    "viaf": null,
+    "ulan": null
+  },
+  "affiliations": [
+    {
+      "name": "Seoul National University of Science and Technology",
+      "nameKr": "서울과학기술대학교",
+      "url": "https://www.seoultech.ac.kr",
+      "type": "alumniOf"
+    },
+    {
+      "name": "TomuraLee Gallery",
+      "nameKr": "토무라리 갤러리",
+      "url": "https://tomuralee.vn",
+      "type": "representedBy"
     }
   ],
   "statement": {
