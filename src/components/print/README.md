@@ -1,4 +1,76 @@
-# 📄 Catalog Print Styles
+# 📄 Print System
+
+Professional Print CSS module for generating high-quality PDFs directly from web pages.
+
+## 🆕 모듈화된 Print 시스템 (v2.0)
+
+### 새로운 컴포넌트들
+
+#### 1. PrintBaseStyles (공통)
+모든 인쇄 페이지에서 공유하는 기본 CSS:
+- 숨겨야 할 요소 목록 중앙 관리
+- 브라우저 확장 프로그램, UI 요소 숨김
+- 색상 정확도 설정
+
+```tsx
+import PrintBaseStyles from '@/components/print/PrintBaseStyles'
+
+export default function PrintablePage() {
+  return (
+    <>
+      <PrintBaseStyles />
+      {/* 페이지 콘텐츠 */}
+    </>
+  )
+}
+```
+
+#### 2. PostcardPrintStyles (포스트카드)
+포스트카드 전용 인쇄 CSS:
+- portrait: 4×6인치
+- landscape: 7×5인치
+- diptych: 12×4인치
+
+```tsx
+import PostcardPrintStyles from '@/components/print/PostcardPrintStyles'
+
+<PostcardPrintStyles size="diptych" bothSides={true} />
+```
+
+#### 3. PDFDownloadButton (Playwright PDF)
+브라우저 프린트 대신 Playwright로 깨끗한 PDF 생성:
+
+```tsx
+import PDFDownloadButton from '@/components/print/PDFDownloadButton'
+
+<PDFDownloadButton
+  pageUrl="/postcards/diptych"
+  filename="diptych.pdf"
+  width="12in"
+  height="4in"
+>
+  Download PDF
+</PDFDownloadButton>
+```
+
+### CLI 스크립트
+```bash
+# Diptych 포스트카드 (앞면만)
+npm run pdf:diptych
+
+# Diptych 포스트카드 (앞+뒤)
+npm run pdf:diptych:both
+
+# 카탈로그
+npm run pdf:catalog
+
+# 커스텀 옵션
+node scripts/generate-pdf.js -u /catalog -o my-catalog.pdf -s 8.75x8.75
+```
+
+---
+
+# 📄 Catalog Print Styles (기존)
 
 Professional Print CSS module for generating high-quality PDF catalogs directly from web pages using browser's native `window.print()` functionality.
 

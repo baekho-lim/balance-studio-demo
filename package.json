@@ -14,7 +14,10 @@
     "test:visual": "playwright test",
     "test:visual:update": "playwright test --update-snapshots",
     "test:visual:ui": "playwright test --ui",
-    "test:visual:report": "playwright show-report"
+    "test:visual:report": "playwright show-report",
+    "pdf:diptych": "node scripts/generate-pdf.js -u /postcards/diptych -o diptych.pdf -s 12x4",
+    "pdf:diptych:both": "node scripts/generate-pdf.js -u /postcards/diptych -o diptych-both.pdf -s 12x4 -m both",
+    "pdf:catalog": "node scripts/generate-pdf.js -u /catalog -o catalog.pdf -s 8.75x8.75"
   },
   "dependencies": {
     "file-saver": "^2.0.5",

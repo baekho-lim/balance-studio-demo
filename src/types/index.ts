@@ -114,15 +114,18 @@ export interface ExhibitionOrganizer {
   role: OrganizerRole;             // 역할
   url?: string;                    // 공식 웹사이트
   instagram?: string;              // 인스타그램 URL
+  facebook?: string;               // 페이스북 URL
   logo?: string;                   // 로고 이미지 경로
 }
 
 // 전시 관련 외부 링크 (SEO 신뢰도 강화)
 export interface ExhibitionLinks {
-  official?: string;               // 전시 공식 페이지
+  official?: string;               // 전시 공식 페이지 (년도별)
   gallery?: string;                // 갤러리 공식 웹사이트
   galleryInstagram?: string;       // 갤러리 인스타그램
-  artfair?: string;                // 아트페어 공식 페이지
+  artfair?: string;                // 아트페어 메인 웹사이트
+  artfairInstagram?: string;       // 아트페어 인스타그램
+  artfairFacebook?: string;        // 아트페어 페이스북
   press?: string[];                // 관련 보도자료 링크들
   video?: string;                  // 전시 영상 (YouTube 등)
   catalog?: string;                // 전시 카탈로그 PDF
