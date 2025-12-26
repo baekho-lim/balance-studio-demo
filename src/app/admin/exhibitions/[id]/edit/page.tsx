@@ -3,7 +3,7 @@
 import { useParams, useRouter } from 'next/navigation'
 import Link from 'next/link'
 import Image from 'next/image'
-import { ArrowLeft, Save, Plus, Trash2, ExternalLink, ImageIcon } from 'lucide-react'
+import { ArrowLeft, Save, Plus, Trash2, ExternalLink, ImageIcon, Check } from 'lucide-react'
 import { useState, useEffect } from 'react'
 import exhibitionsData from '@/data/exhibitions.json'
 import artworksData from '@/data/artworks.json'
@@ -375,25 +375,47 @@ export default function ExhibitionEditPage() {
               )}
             </div>
 
-            {/* Image Selection */}
-            <div>
-              <label className="block text-sm text-secondary mb-2">작품 선택</label>
-              <select
-                value={formData.images?.coverArtworkId || ''}
-                onChange={(e) => updateCoverImage(e.target.value)}
-                className="w-full px-3 py-2 border rounded-lg focus:ring-2 focus:ring-primary/50 mb-3"
-              >
-                <option value="">-- 작품을 선택하세요 --</option>
-                {artworks.map(artwork => (
-                  <option key={artwork.id} value={artwork.id}>
-                    {artwork.title} ({artwork.year}) - {artwork.chapter}
-                  </option>
-                ))}
-              </select>
-              <p className="text-xs text-gray-400">
-                선택한 작품의 이미지가 전시 카드와 상세 페이지에 표시됩니다.
-              </p>
+          </div>
+
+          {/* Image Grid Selection */}
+          <div className="mt-6">
+            <label className="block text-sm text-secondary mb-2">작품 선택 (클릭하여 선택)</label>
+            <div className="grid grid-cols-5 gap-3 max-h-96 overflow-y-auto p-2 bg-gray-50 rounded-lg">
+              {artworks.map(artwork => {
+                const isSelected = formData.images?.coverArtworkId === artwork.id
+                return (
+                  <button
+                    key={artwork.id}
+                    type="button"
+                    onClick={() => updateCoverImage(artwork.id)}
+                    className={`relative aspect-square rounded-lg overflow-hidden border-2 transition-all group
+                      ${isSelected
+                        ? 'border-primary ring-2 ring-primary/30'
+                        : 'border-transparent hover:border-gray-300'}`}
+                  >
+                    <Image
+                      src={artwork.images.thumbnail}
+                      alt={artwork.title}
+                      fill
+                      className="object-cover"
+                    />
+                    {/* Selection indicator */}
+                    {isSelected && (
+                      <div className="absolute top-1 right-1 w-6 h-6 bg-primary rounded-full flex items-center justify-center">
+                        <Check className="w-4 h-4 text-white" />
+                      </div>
+                    )}
+                    {/* Hover overlay with title */}
+                    <div className="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-2">
+                      <span className="text-white text-xs line-clamp-2">{artwork.title}</span>
+                    </div>
+                  </button>
+                )
+              })}
             </div>
+            <p className="text-xs text-gray-400 mt-2">
+              선택한 작품의 이미지가 전시 카드와 상세 페이지에 표시됩니다.
+            </p>
           </div>
         </div>
 
