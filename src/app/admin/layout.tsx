@@ -3,7 +3,7 @@
 import { useState, useEffect, ReactNode } from 'react'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
-import { LayoutDashboard, Calendar, Lock, Newspaper, HelpCircle, BarChart3 } from 'lucide-react'
+import { LayoutDashboard, Calendar, Lock, Newspaper, HelpCircle, BarChart3, ImageIcon } from 'lucide-react'
 
 interface AdminLayoutProps {
   children: ReactNode
@@ -15,6 +15,7 @@ const navigation = [
   { name: 'News & Press', href: '/admin/news', icon: Newspaper },
   { name: 'FAQ', href: '/admin/faq', icon: HelpCircle },
   { name: 'SEO Status', href: '/admin/seo', icon: BarChart3 },
+  { name: 'Media Library', href: '/admin/media', icon: ImageIcon },
 ]
 
 export default function AdminLayout({ children }: AdminLayoutProps) {
@@ -37,10 +38,14 @@ export default function AdminLayout({ children }: AdminLayoutProps) {
     e.preventDefault()
     setError('')
 
-    // Simple password check (in production, use proper auth)
-    // Password is checked against environment variable on client side for simplicity
+    // Password is checked against environment variable on client side
     // This is acceptable for a single-user admin with low security requirements
-    const correctPassword = process.env.NEXT_PUBLIC_ADMIN_PASSWORD || 'admin123'
+    const correctPassword = process.env.NEXT_PUBLIC_ADMIN_PASSWORD
+
+    if (!correctPassword) {
+      setError('Admin password not configured')
+      return
+    }
 
     if (password === correctPassword) {
       setIsAuthenticated(true)

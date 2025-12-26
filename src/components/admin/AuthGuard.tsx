@@ -69,7 +69,20 @@ export default function AuthGuard({
   const handleAuthenticate = (e: React.FormEvent) => {
     e.preventDefault()
 
-    // No password required - auto authenticate
+    // Validate password against environment variable
+    const adminPassword = process.env.NEXT_PUBLIC_ADMIN_PASSWORD
+
+    if (!adminPassword) {
+      setError('Admin password not configured')
+      return
+    }
+
+    if (password !== adminPassword) {
+      setError('Incorrect password')
+      return
+    }
+
+    // Password correct - authenticate
     setIsAuthenticated(true)
     // Save authentication status and timestamp
     localStorage.setItem('admin_authenticated', 'true')
