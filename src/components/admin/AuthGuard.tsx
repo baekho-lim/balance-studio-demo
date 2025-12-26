@@ -85,13 +85,9 @@ export default function AuthGuard({
     setPassword('')
   }
 
-  // Show loading state while checking authentication
+  // Show nothing while checking authentication to avoid layout shift
   if (isChecking) {
-    return (
-      <div className="flex items-center justify-center p-8">
-        <div className="text-secondary">Loading...</div>
-      </div>
-    )
+    return null
   }
 
   // If authenticated, show protected content

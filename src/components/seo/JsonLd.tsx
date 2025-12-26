@@ -205,11 +205,25 @@ export default function JsonLd() {
     },
   }
 
-  // ExhibitionEvent Schema for each exhibition
+  // ExhibitionEvent Schema for each exhibition (enhanced with organizers and sameAs)
   const exhibitionSchemas = exhibitions.map((exhibition) => {
     const description = typeof exhibition.description === 'object'
       ? exhibition.description.en
       : exhibition.description || ''
+
+    // Build organizer schema from organizers array or fall back to venue
+    const hostOrganizer = exhibition.organizers?.find(org => org.role === 'host')
+    const organizerSchema = hostOrganizer ? {
+      '@type': 'Organization',
+      name: hostOrganizer.name,
+      url: hostOrganizer.url,
+      sameAs: hostOrganizer.instagram ? [hostOrganizer.instagram] : undefined,
+    } : exhibition.venue ? {
+      '@type': 'Organization',
+      name: exhibition.venue,
+      url: exhibition.links?.gallery,
+      sameAs: exhibition.links?.galleryInstagram ? [exhibition.links.galleryInstagram] : undefined,
+    } : undefined
 
     return {
       '@context': 'https://schema.org',
@@ -223,7 +237,7 @@ export default function JsonLd() {
       eventStatus: exhibition.status === 'current'
         ? 'https://schema.org/EventScheduled'
         : exhibition.status === 'past'
-          ? 'https://schema.org/EventMovedOnline'
+          ? 'https://schema.org/EventPostponed'
           : 'https://schema.org/EventScheduled',
       eventAttendanceMode: 'https://schema.org/OfflineEventAttendanceMode',
       location: exhibition.venue ? {
@@ -240,12 +254,11 @@ export default function JsonLd() {
         '@id': `${siteUrl}/#artist`,
         name: 'Lim Hyejung',
       },
-      organizer: exhibition.venue ? {
-        '@type': 'Organization',
-        name: exhibition.venue,
-      } : undefined,
+      organizer: organizerSchema,
       image: exhibition.images?.cover ? `${siteUrl}${exhibition.images.cover}` : undefined,
-      url: `${siteUrl}/exhibitions/${exhibition.id}`,
+      url: exhibition.externalUrl || `${siteUrl}/exhibitions/${exhibition.id}`,
+      sameAs: exhibition.links?.official ? [exhibition.links.official] : undefined,
+      isAccessibleForFree: exhibition.admission === 'free' ? true : undefined,
       inLanguage: ['en', 'ko', 'vi'],
     }
   })

@@ -1,0 +1,101 @@
+[
+  {
+    "id": "who-is-lim-hyejung",
+    "question": {
+      "ko": "임혜정 작가는 누구인가요?",
+      "en": "Who is Lim Hyejung?",
+      "vi": "Họa sĩ Lim Hyejung là ai?"
+    },
+    "answer": {
+      "ko": "임혜정(b. 1981)은 상상력으로 재구성된 자연을 통해 내면의 세계를 탐구하는 한국의 현대미술 작가입니다. 서울과학기술대학교 조형예술학과를 졸업했으며, \"유토피아는 곧 현실이다(Utopia = Reality)\"라는 예술 철학으로 알려져 있습니다.",
+      "en": "Lim Hyejung (b. 1981) is a contemporary Korean artist who explores inner worlds through nature reconstructed by imagination. She graduated from the Department of Fine Arts at Seoul National University of Science and Technology and is known for her artistic philosophy \"Utopia = Reality.\"",
+      "vi": "Lim Hyejung (sinh năm 1981) là một nghệ sĩ đương đại Hàn Quốc khám phá thế giới nội tâm thông qua thiên nhiên được tái tạo bằng trí tưởng tượng. Cô tốt nghiệp Khoa Mỹ thuật tại Đại học Khoa học và Công nghệ Seoul và được biết đến với triết lý nghệ thuật \"Utopia = Reality.\""
+    },
+    "order": 1
+  },
+  {
+    "id": "what-is-utopia-reality",
+    "question": {
+      "ko": "'유토피아 = 현실'이란 무엇인가요?",
+      "en": "What is 'Utopia = Reality'?",
+      "vi": "'Utopia = Reality' là gì?"
+    },
+    "answer": {
+      "ko": "'유토피아 = 현실'은 임혜정 작가의 핵심 예술 철학입니다. 이상과 현실의 경계가 흐려지는 지점을 의미하며, 상상의 정원과 실제 경험이 구별되지 않는 곳입니다. 작품은 고정된 형태가 아닌 끊임없이 다듬어지고 변화하는 살아있는 세계로 존재하며, 억압, 우울, 치유와 같은 복합적 정서를 담고 있습니다.",
+      "en": "'Utopia = Reality' is Lim Hyejung's core artistic philosophy. It represents the point where ideals and reality blur, where imagined gardens and lived experience become indistinguishable. Her works exist as living worlds that are continuously refined and transformed rather than fixed forms, embodying complex emotions such as oppression, melancholy, and healing.",
+      "vi": "'Utopia = Reality' là triết lý nghệ thuật cốt lõi của Lim Hyejung. Nó đại diện cho điểm mà lý tưởng và thực tế hòa quyện, nơi những khu vườn tưởng tượng và trải nghiệm thực tế trở nên không thể phân biệt. Tác phẩm của cô tồn tại như những thế giới sống động được liên tục hoàn thiện và biến đổi, thể hiện những cảm xúc phức tạp như áp bức, u sầu và chữa lành."
+    },
+    "order": 2
+  },
+  {
+    "id": "materials-technique",
+    "question": {
+      "ko": "어떤 재료와 기법으로 작업하나요?",
+      "en": "What materials and techniques does the artist use?",
+      "vi": "Nghệ sĩ sử dụng những chất liệu và kỹ thuật gì?"
+    },
+    "answer": {
+      "ko": "임혜정 작가는 동양과 서양의 전통 재료를 융합하여 독자적으로 개발한 매체를 사용합니다. 이 고유한 기법은 캔버스 위에 수채화를 연상시키는 투명하고 유려한 질감을 구현하며, 여기에 은박과 금박을 접목하여 빛의 물성을 작품 표면에 정착시킵니다. 이로써 작품은 고정된 이미지가 아닌, 조명과 시선의 각도에 따라 시시각각 변모하는 살아있는 오브제로 기능합니다.",
+      "en": "Lim Hyejung uses a proprietary medium she developed by fusing Eastern and Western traditional materials. This unique technique creates transparent, flowing textures on canvas reminiscent of watercolor, incorporating silver and gold leaf to embed the materiality of light onto the work's surface. As a result, her pieces function not as fixed images but as living objects that transform moment by moment with changing light and viewing angles.",
+      "vi": "Lim Hyejung sử dụng một loại chất liệu độc quyền do cô phát triển bằng cách kết hợp các vật liệu truyền thống phương Đông và phương Tây. Kỹ thuật độc đáo này tạo ra những kết cấu trong suốt, mềm mại trên canvas gợi nhớ đến màu nước, kết hợp lá bạc và lá vàng để gắn kết tính vật chất của ánh sáng lên bề mặt tác phẩm."
+    },
+    "order": 3
+  },
+  {
+    "id": "where-to-see",
+    "question": {
+      "ko": "작품은 어디서 볼 수 있나요?",
+      "en": "Where can I see the artworks?",
+      "vi": "Tôi có thể xem các tác phẩm ở đâu?"
+    },
+    "answer": {
+      "ko": "현재 진행 중인 전시: VIA 2025 ENCORE - TomuraLee Gallery 그룹전 (2025.12.05 ~ 2026.01.05, 호치민시). 운영: 오전 9:30 ~ 오후 6:30 (일요일 휴관), 입장료 무료. 온라인: limhyejung.com",
+      "en": "Current exhibition: VIA 2025 ENCORE - Group exhibition at TomuraLee Gallery (Dec 5, 2025 - Jan 5, 2026, Ho Chi Minh City). Hours: 9:30 AM - 6:30 PM (Closed Sundays), Free admission. Online: limhyejung.com",
+      "vi": "Triển lãm hiện tại: VIA 2025 ENCORE - Triển lãm nhóm tại TomuraLee Gallery (5/12/2025 - 5/1/2026, TP. Hồ Chí Minh). Giờ mở cửa: 9:30 - 18:30 (Đóng cửa Chủ nhật), Miễn phí vào cửa. Trực tuyến: limhyejung.com"
+    },
+    "order": 4,
+    "exhibitionLink": "https://tomuralee.vn/en/via-2025-encore-tomuralee-gallery-2/"
+  },
+  {
+    "id": "how-to-purchase",
+    "question": {
+      "ko": "작품 구매는 어떻게 하나요?",
+      "en": "How can I purchase artworks?",
+      "vi": "Làm thế nào để mua tác phẩm?"
+    },
+    "answer": {
+      "ko": "작품 구매 및 가격 문의는 파트너십 페이지(/partnership)를 통해 연락해 주세요. 문의 유형에서 'Acquisition(작품 구매)'를 선택하시면 됩니다.",
+      "en": "For artwork purchases and price inquiries, please contact us through the Partnership page (/partnership). Select 'Acquisition' as your inquiry type.",
+      "vi": "Để mua tác phẩm và hỏi giá, vui lòng liên hệ qua trang Partnership (/partnership). Chọn 'Acquisition' làm loại yêu cầu của bạn."
+    },
+    "order": 5
+  },
+  {
+    "id": "partnership-inquiry",
+    "question": {
+      "ko": "전시 협업이나 갤러리 파트너십은 어떻게 문의하나요?",
+      "en": "How can I inquire about exhibition collaborations or gallery partnerships?",
+      "vi": "Làm thế nào để hỏi về hợp tác triển lãm hoặc đối tác phòng tranh?"
+    },
+    "answer": {
+      "ko": "갤러리 전시 제안, 아트페어 참여, 커미션 작업, 미디어 인터뷰 등 모든 협업 문의는 파트너십 페이지(/partnership)에서 접수받고 있습니다. 16개 언어로 문의 가능합니다.",
+      "en": "All collaboration inquiries including gallery exhibition proposals, art fair participation, commission work, and media interviews are accepted through the Partnership page (/partnership). Inquiries are available in 16 languages.",
+      "vi": "Tất cả các yêu cầu hợp tác bao gồm đề xuất triển lãm phòng tranh, tham gia hội chợ nghệ thuật, công việc ủy thác và phỏng vấn truyền thông đều được tiếp nhận qua trang Partnership (/partnership). Có thể liên hệ bằng 16 ngôn ngữ."
+    },
+    "order": 6
+  },
+  {
+    "id": "learn-more",
+    "question": {
+      "ko": "작가의 작품 세계를 더 깊이 이해하려면?",
+      "en": "How can I learn more about the artist's work?",
+      "vi": "Làm thế nào để tìm hiểu thêm về tác phẩm của nghệ sĩ?"
+    },
+    "answer": {
+      "ko": "스토리 페이지(/story)에서 작가의 예술 철학과 작품 세계를 더 자세히 알아보실 수 있습니다.",
+      "en": "You can learn more about the artist's philosophy and body of work on the Story page (/story).",
+      "vi": "Bạn có thể tìm hiểu thêm về triết lý và tác phẩm của nghệ sĩ trên trang Story (/story)."
+    },
+    "order": 7
+  }
+]

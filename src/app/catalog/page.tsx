@@ -10,6 +10,8 @@ import CatalogPrintStyles from '@/components/print/CatalogPrintStyles'
 import PrintWatermark from '@/components/print/PrintWatermark'
 import ArtistProfileImage from '@/components/artist/ArtistProfileImage'
 import AuthGuard from '@/components/admin/AuthGuard'
+import PrintSpecsGuide from '@/components/print/PrintSpecsGuide'
+import { Download } from 'lucide-react'
 import type { SiteSettings } from '@/types'
 
 const settings = siteSettings as SiteSettings
@@ -104,6 +106,28 @@ export default function CatalogPage() {
     return { map, totalPages: pageCounter - 1 }
   }, [])
 
+  const handleDownloadAllImages = async () => {
+    const imageEntries = Object.entries(imageMap)
+    for (const [id, imagePath] of imageEntries) {
+      try {
+        const response = await fetch(imagePath)
+        const blob = await response.blob()
+        const url = window.URL.createObjectURL(blob)
+        const link = document.createElement('a')
+        link.href = url
+        const filename = imagePath.split('/').pop() || `${id}.jpg`
+        link.download = filename
+        document.body.appendChild(link)
+        link.click()
+        document.body.removeChild(link)
+        window.URL.revokeObjectURL(url)
+        await new Promise(resolve => setTimeout(resolve, 300))
+      } catch (error) {
+        console.error(`Download failed for ${id}:`, error)
+      }
+    }
+  }
+
   return (
     <div className="min-h-screen bg-white">
       {/* Print-Optimized CSS - Now extracted to reusable component */}
@@ -168,6 +192,23 @@ export default function CatalogPage() {
             Print / PDF
           </button>
         </AuthGuard>
+
+        {/* Download Images Button */}
+        <AuthGuard fallback={null}>
+          <button
+            onClick={handleDownloadAllImages}
+            className="bg-white/90 backdrop-blur-sm text-primary px-4 py-2 rounded-full text-sm hover:bg-gray-100 transition-all shadow-lg flex items-center gap-2"
+            title="Download all artwork images"
+          >
+            <Download size={16} />
+            Download Images
+          </button>
+        </AuthGuard>
+
+        {/* Print Specs Guide */}
+        <div className="bg-white/90 backdrop-blur-sm rounded-full shadow-lg px-3 py-2">
+          <PrintSpecsGuide type="catalog" />
+        </div>
       </div>
 
       {/* Cover Page */}

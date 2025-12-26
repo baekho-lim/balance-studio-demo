@@ -104,6 +104,30 @@ export interface MultilingualText {
 // 전시 상태
 export type ExhibitionStatus = 'upcoming' | 'current' | 'past';
 
+// 주최/협력 기관 역할
+export type OrganizerRole = 'host' | 'co-host' | 'sponsor' | 'partner';
+
+// 주최/협력 기관 정보
+export interface ExhibitionOrganizer {
+  name: string;                    // 영문 기관명
+  nameKr?: string;                 // 한글 기관명
+  role: OrganizerRole;             // 역할
+  url?: string;                    // 공식 웹사이트
+  instagram?: string;              // 인스타그램 URL
+  logo?: string;                   // 로고 이미지 경로
+}
+
+// 전시 관련 외부 링크 (SEO 신뢰도 강화)
+export interface ExhibitionLinks {
+  official?: string;               // 전시 공식 페이지
+  gallery?: string;                // 갤러리 공식 웹사이트
+  galleryInstagram?: string;       // 갤러리 인스타그램
+  artfair?: string;                // 아트페어 공식 페이지
+  press?: string[];                // 관련 보도자료 링크들
+  video?: string;                  // 전시 영상 (YouTube 등)
+  catalog?: string;                // 전시 카탈로그 PDF
+}
+
 // 전시 정보 (확장)
 export interface Exhibition {
   id: string;                      // "tomura-2024-solo"
@@ -126,6 +150,7 @@ export interface Exhibition {
   images?: {
     cover?: string;                // 대표 이미지
     installation?: string[];       // 설치 전경 이미지들
+    opening?: string[];            // 오프닝 사진들
   };
   curatorNote?: {
     en: string;
@@ -133,6 +158,19 @@ export interface Exhibition {
   };
   chapters?: ChapterSlug[];        // 관련 챕터 (기존 호환)
   featured: boolean;               // 메인 노출 여부
+
+  // Phase 3 추가: 운영 정보
+  externalUrl?: string;            // 외부 전시 상세 페이지 URL
+  openingHours?: string;           // "09:30-18:30"
+  closedDays?: string[];           // ["Sunday"]
+  admission?: 'free' | 'paid';     // 입장료 유무
+  admissionFee?: string;           // "50,000 VND"
+
+  // Phase 3.5 추가: SEO 신뢰도 링크
+  links?: ExhibitionLinks;         // 외부 링크 모음
+  organizers?: ExhibitionOrganizer[];  // 주최/협력 기관 목록
+  artistRole?: 'solo' | 'featured' | 'participant';  // 작가 참여 형태
+  artworksDisplayed?: number;      // 출품작 수
 }
 
 // 뉴스/보도자료 유형

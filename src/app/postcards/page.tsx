@@ -4,12 +4,13 @@ import React, { useState } from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
 import { QRCodeSVG } from 'qrcode.react'
-import { ArrowLeft } from 'lucide-react'
+import { ArrowLeft, Download } from 'lucide-react'
 import artworksData from '@/data/artworks.json'
 import catalogData from '@/data/catalog.json'
 import type { Artwork } from '@/types'
 import AuthGuard from '@/components/admin/AuthGuard'
 import PrintWatermark from '@/components/print/PrintWatermark'
+import PrintSpecsGuide from '@/components/print/PrintSpecsGuide'
 
 const artworks = artworksData as Artwork[]
 
@@ -66,6 +67,35 @@ export default function PostcardsPage() {
       return
     }
     window.print()
+  }
+
+  const handleDownloadAll = async () => {
+    const filteredWorks = artworks.filter((work) => {
+      if (orientationFilter === 'all') return true
+      const isPortrait = (work.imageHeight || 0) > (work.imageWidth || 0)
+      if (orientationFilter === 'portrait') return isPortrait
+      if (orientationFilter === 'landscape') return !isPortrait
+      return true
+    })
+
+    for (const work of filteredWorks) {
+      try {
+        const response = await fetch(work.images.full)
+        const blob = await response.blob()
+        const url = window.URL.createObjectURL(blob)
+        const link = document.createElement('a')
+        link.href = url
+        link.download = `${work.id}_${work.title.replace(/\s+/g, '_')}.jpg`
+        document.body.appendChild(link)
+        link.click()
+        document.body.removeChild(link)
+        window.URL.revokeObjectURL(url)
+        // Small delay between downloads
+        await new Promise(resolve => setTimeout(resolve, 300))
+      } catch (error) {
+        console.error(`Download failed for ${work.id}:`, error)
+      }
+    }
   }
 
   return (
@@ -179,12 +209,36 @@ export default function PostcardsPage() {
               : `Loading... ${loadingProgress}/${totalImages}`}
           </button>
         </AuthGuard>
+        <AuthGuard
+          fallback={null}
+        >
+          <button
+            onClick={handleDownloadAll}
+            disabled={!imagesLoaded}
+            className={`px-4 py-2 rounded-full text-sm transition-all shadow-lg flex items-center gap-2 ${
+              imagesLoaded
+                ? 'bg-white/90 backdrop-blur-sm text-primary hover:bg-gray-100'
+                : 'bg-gray-300 text-gray-500 cursor-not-allowed'
+            }`}
+            title="Download all images for print"
+          >
+            <Download size={16} />
+            Download
+          </button>
+        </AuthGuard>
+        <PrintSpecsGuide type="postcard" />
       </div>
 
       <div className="container mx-auto px-4">
         <div className="text-center mb-12 print:hidden">
           <h1 className="font-serif text-3xl mb-2">Postcards</h1>
           <p className="text-secondary">5&quot; x 7&quot; - Print Ready</p>
+          <Link
+            href="/postcards/diptych"
+            className="inline-block mt-4 text-sm text-primary hover:underline"
+          >
+            → Diptych Postcard (4&quot; × 12&quot;)
+          </Link>
         </div>
 
         {/* Postcards Grid - Each artwork: Front → Back pair */}

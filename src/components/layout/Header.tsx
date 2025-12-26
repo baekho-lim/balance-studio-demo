@@ -11,6 +11,7 @@ const navigation = [
   { name: 'Exhibitions', href: '/exhibitions', isLink: true },
   { name: 'News', href: '/news', isLink: true },
   { name: 'Story', href: '/story', isLink: true },
+  { name: 'FAQ', href: '/faq', isLink: true },
   { name: 'Partnership', href: '/partnership', isLink: true },
 ]
 

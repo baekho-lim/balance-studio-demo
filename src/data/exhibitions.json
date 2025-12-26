@@ -1,32 +1,84 @@
 [
   {
-    "id": "tomura-2024-solo",
-    "title": "Utopia = Reality",
-    "titleKr": "유토피아는 곧 현실이다",
-    "type": "solo",
-    "venue": "Tomura Gallery",
-    "venueKr": "토무라 갤러리",
+    "id": "via-2025-encore",
+    "title": "VIA 2025 ENCORE",
+    "titleKr": "VIA 2025 앙코르",
+    "type": "group",
+    "venue": "TomuraLee Gallery",
+    "venueKr": "토무라리 갤러리",
     "city": "Ho Chi Minh City",
     "country": "Vietnam",
     "countryCode": "VN",
-    "startDate": "2024-12-01",
-    "endDate": "2025-01-31",
+    "startDate": "2025-12-05",
+    "endDate": "2026-01-05",
     "status": "current",
     "description": {
-      "en": "Solo exhibition featuring 21 artworks exploring inner worlds through nature reconstructed by imagination. The artist presents her philosophy of 'Utopia = Reality' where ideals and reality blur into living, evolving works.",
-      "ko": "상상력으로 재구성된 자연을 통해 내면의 세계를 탐구하는 21점의 작품을 선보이는 솔로 전시. 작가는 이상과 현실의 경계가 흐려지는 '유토피아 = 현실' 철학을 작품으로 제시합니다.",
-      "vi": "Triển lãm cá nhân giới thiệu 21 tác phẩm khám phá thế giới nội tâm thông qua thiên nhiên được tái tạo bằng trí tưởng tượng. Nghệ sĩ trình bày triết lý 'Utopia = Reality' nơi lý tưởng và hiện thực hòa quyện thành những tác phẩm sống động."
+      "en": "Group exhibition at TomuraLee Gallery featuring selected artists from VIA Art Fair 2025. A curated encore presentation of exceptional contemporary artworks.",
+      "ko": "VIA 아트페어 2025 참여 작가들의 작품을 선보이는 토무라리 갤러리 그룹전. 뛰어난 현대미술 작품들의 앙코르 전시.",
+      "vi": "Triển lãm nhóm tại TomuraLee Gallery giới thiệu các nghệ sĩ được chọn lọc từ VIA Art Fair 2025. Một cuộc trình diễn encore được tuyển chọn của các tác phẩm nghệ thuật đương đại xuất sắc."
     },
-    "chapters": ["secret-garden", "effortless-spring", "desert-stories", "waters-of-time"],
     "images": {
       "cover": "/images/works/21.Just that we grow.jpeg"
     },
-    "featured": true
+    "featured": true,
+    "externalUrl": "https://tomuralee.vn/en/via-2025-encore-tomuralee-gallery-2/",
+    "openingHours": "09:30-18:30",
+    "closedDays": ["Sunday"],
+    "admission": "free",
+    "links": {
+      "official": "https://tomuralee.vn/en/via-2025-encore-tomuralee-gallery-2/",
+      "gallery": "https://tomuralee.vn"
+    },
+    "organizers": [
+      {
+        "name": "TomuraLee Gallery",
+        "nameKr": "토무라리 갤러리",
+        "role": "host",
+        "url": "https://tomuralee.vn"
+      },
+      {
+        "name": "VIA Art Fair",
+        "nameKr": "VIA 아트페어",
+        "role": "partner"
+      }
+    ],
+    "artistRole": "participant"
   },
   {
-    "id": "vietnam-artfair-2024-group",
-    "title": "Vietnam Art Fair 2024",
-    "titleKr": "베트남 아트페어 2024",
+    "id": "via-artfair-2025",
+    "title": "VIA Art Fair 2025",
+    "titleKr": "VIA 아트페어 2025",
+    "type": "group",
+    "venue": "Vietnam International Exhibition & Convention Center",
+    "venueKr": "베트남 국제전시컨벤션센터",
+    "city": "Ho Chi Minh City",
+    "country": "Vietnam",
+    "countryCode": "VN",
+    "startDate": "2025-11-01",
+    "endDate": "2025-11-30",
+    "status": "past",
+    "description": {
+      "en": "International art fair featuring contemporary artists from Korea and Southeast Asia. Lim Hyejung participated as a featured artist.",
+      "ko": "한국과 동남아시아 현대미술 작가들이 참여하는 국제 아트페어. 임혜정 작가가 피처드 아티스트로 참가.",
+      "vi": "Hội chợ nghệ thuật quốc tế giới thiệu các nghệ sĩ đương đại từ Hàn Quốc và Đông Nam Á."
+    },
+    "images": {
+      "cover": "/images/works/1. I am only passing though the woods..jpg"
+    },
+    "featured": false,
+    "organizers": [
+      {
+        "name": "VIA Art Fair",
+        "nameKr": "VIA 아트페어",
+        "role": "host"
+      }
+    ],
+    "artistRole": "featured"
+  },
+  {
+    "id": "via-artfair-2024",
+    "title": "VIA Art Fair 2024",
+    "titleKr": "VIA 아트페어 2024",
     "type": "group",
     "venue": "Vietnam International Exhibition & Convention Center",
     "venueKr": "베트남 국제전시컨벤션센터",
@@ -38,31 +90,19 @@
     "status": "past",
     "description": {
       "en": "Group exhibition showcasing contemporary Korean art at Vietnam Art Fair 2024, one of Southeast Asia's premier art events.",
-      "ko": "동남아시아 최대 규모의 아트 이벤트인 베트남 아트페어 2024에서 한국 현대미술을 선보이는 그룹 전시."
+      "ko": "동남아시아 최대 규모의 아트 이벤트인 VIA 아트페어 2024에서 한국 현대미술을 선보이는 그룹 전시."
     },
     "images": {
       "cover": "/images/works/1. I am only passing though the woods..jpg"
     },
-    "featured": false
-  },
-  {
-    "id": "utopia-reality-2025",
-    "title": "Utopia = Reality",
-    "titleKr": "유토피아는 곧 현실이다",
-    "type": "solo",
-    "venue": "",
-    "venueKr": "",
-    "city": "",
-    "country": "",
-    "countryCode": "",
-    "startDate": "2025",
-    "endDate": "",
-    "status": "current",
-    "description": {
-      "en": "Ongoing exhibition series featuring 21 artworks exploring nature reconstructed through imagination.",
-      "ko": "상상력으로 재구성된 자연을 탐구하는 21점의 작품을 선보이는 전시 시리즈."
-    },
-    "chapters": ["secret-garden"],
-    "featured": false
+    "featured": false,
+    "organizers": [
+      {
+        "name": "VIA Art Fair",
+        "nameKr": "VIA 아트페어",
+        "role": "host"
+      }
+    ],
+    "artistRole": "participant"
   }
 ]
