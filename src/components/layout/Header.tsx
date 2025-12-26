@@ -29,6 +29,9 @@ export default function Header() {
     return () => window.removeEventListener('scroll', handleScroll)
   }, [])
 
+  // 홈페이지가 아니거나 스크롤된 경우 어두운 글씨 사용
+  const useDarkText = pathname !== '/' || isScrolled
+
   const handleNavClick = (href: string) => {
     setIsMobileMenuOpen(false)
 
@@ -77,7 +80,7 @@ export default function Header() {
           <button
             onClick={goToHome}
             className={`font-serif text-xl tracking-wide hover:opacity-70 transition-all ${
-              isScrolled ? 'text-primary' : 'text-white'
+              useDarkText ? 'text-primary' : 'text-white'
             }`}
             aria-label="Go to homepage"
           >
@@ -92,7 +95,7 @@ export default function Header() {
                   key={item.name}
                   href={item.href}
                   className={`text-sm tracking-widest uppercase hover:text-pastel-sage transition-all ${
-                    isScrolled ? 'text-primary' : 'text-white'
+                    useDarkText ? 'text-primary' : 'text-white'
                   }`}
                 >
                   {item.name}
@@ -102,7 +105,7 @@ export default function Header() {
                   key={item.name}
                   onClick={() => handleNavClick(item.href)}
                   className={`text-sm tracking-widest uppercase hover:text-pastel-sage transition-all ${
-                    isScrolled ? 'text-primary' : 'text-white'
+                    useDarkText ? 'text-primary' : 'text-white'
                   }`}
                 >
                   {item.name}
@@ -115,7 +118,7 @@ export default function Header() {
           {/* Mobile Menu Button */}
           <button
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-            className={`md:hidden p-2 ${isScrolled ? 'text-primary' : 'text-white'}`}
+            className={`md:hidden p-2 ${useDarkText ? 'text-primary' : 'text-white'}`}
             aria-label="Toggle menu"
           >
             {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}

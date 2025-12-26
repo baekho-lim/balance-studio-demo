@@ -202,6 +202,16 @@ export interface NewsArticle {
   };
   tags: string[];                  // 태그 배열
   featured: boolean;               // 메인 노출 여부
+  links?: {                        // SEO/GEO 관련 외부 링크
+    artfair?: { name: string; url: string };
+    artfairMain?: { name: string; url: string };
+    exhibition?: { name: string; url: string };
+    gallery?: { name: string; url: string };
+    venue?: { name: string; url: string };
+    social?: {
+      [key: string]: string;       // viaInstagram, viaFacebook, galleryInstagram 등
+    };
+  };
 }
 
 // 파트너십 문의 유형

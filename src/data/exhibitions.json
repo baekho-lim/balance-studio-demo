@@ -84,10 +84,11 @@
         "facebook": "https://www.facebook.com/profile.php?id=61560043380096"
       },
       {
-        "name": "D&C Art Gallery",
-        "nameKr": "D&C 아트 갤러리",
+        "name": "Ahlfah! Collective",
+        "nameKr": "알파 콜렉티브",
         "role": "partner",
-        "instagram": "https://www.instagram.com/dc.artgallery/"
+        "url": "https://ahlfah.com",
+        "instagram": "https://www.instagram.com/ahlfah_collective/"
       }
     ],
     "artistRole": "featured"
@@ -117,7 +118,6 @@
     "featured": false,
     "externalUrl": "https://viaart.vn/via-artfair_2024/",
     "openingHours": "12:00-20:00",
-    "admission": "free",
     "links": {
       "official": "https://viaart.vn/via-artfair_2024/",
       "artfair": "https://viaart.vn/",
@@ -132,6 +132,13 @@
         "url": "https://viaart.vn/",
         "instagram": "https://www.instagram.com/vietnam_international_artfair",
         "facebook": "https://www.facebook.com/profile.php?id=61560043380096"
+      },
+      {
+        "name": "Ahlfah! Collective",
+        "nameKr": "알파 콜렉티브",
+        "role": "partner",
+        "url": "https://ahlfah.com",
+        "instagram": "https://www.instagram.com/ahlfah_collective/"
       }
     ],
     "artistRole": "participant"
