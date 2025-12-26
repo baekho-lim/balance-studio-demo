@@ -123,6 +123,95 @@ git commit -m "message"
 git push origin main  # Vercel 자동 배포 트리거
 ```
 
+## Git Commit 메시지 작성 규칙
+
+### 목적
+3개월, 6개월 후에도 작업 히스토리와 맥락을 명확히 파악할 수 있도록 상세하게 작성
+
+### 커밋 메시지 구조
+```
+<타입>: <제목> (50자 이내)
+
+<본문> (필수 - 상세 설명)
+- 무엇을 변경했는가 (What)
+- 왜 변경했는가 (Why)
+- 어떤 파일/기능에 영향을 미치는가 (Scope)
+
+<관련 컨텍스트> (선택)
+- 관련 Phase/계획 문서 참조
+- 이전 커밋과의 연관성
+- 향후 작업 예고
+
+🤖 Generated with [Claude Code](https://claude.com/claude-code)
+
+Co-Authored-By: Claude Opus 4.5 <noreply@anthropic.com>
+```
+
+### 타입 종류
+- `feat`: 새 기능 추가
+- `fix`: 버그 수정
+- `refactor`: 코드 리팩토링 (기능 변화 없음)
+- `style`: 스타일/UI 변경
+- `docs`: 문서 변경
+- `chore`: 빌드, 설정 변경
+- `perf`: 성능 개선
+- `seo`: SEO/스키마/메타데이터 관련
+
+### 좋은 커밋 메시지 예시
+```
+feat: Add global gallery partnership infrastructure (Phase 2)
+
+Implements 10-year roadmap foundation for international gallery partnerships:
+
+New Pages:
+- /exhibitions: Exhibition listing with current/past/upcoming sections
+- /exhibitions/[slug]: Exhibition detail with multilingual support
+- /news: Press releases and news articles
+- /news/[slug]: News detail with Markdown rendering
+- /partnership: Gallery partnership inquiry form (16 languages)
+
+Data Architecture:
+- exhibitions.json: Solo/group exhibition differentiation
+  - Tomura Gallery solo exhibition (current, featured)
+  - Vietnam Art Fair 2024 group exhibition (past)
+- news.json: Press releases with en/ko/vi content
+
+Infrastructure:
+- i18n utilities: 16-language support foundation
+- Dynamic sitemap generation
+- Updated Header navigation
+
+Related: SEO/AEO/LLM optimization plan (Phase 1 completed in a2b4435)
+Next: JsonLd schema extension for ExhibitionEvent, NewsArticle
+
+🤖 Generated with [Claude Code](https://claude.com/claude-code)
+
+Co-Authored-By: Claude Opus 4.5 <noreply@anthropic.com>
+```
+
+### 나쁜 커밋 메시지 예시 (❌ 피할 것)
+```
+# 너무 짧음
+fix bug
+update files
+add feature
+
+# 맥락 없음
+Add exhibitions page
+Update header
+
+# 미래에 이해 불가
+Fix the thing
+WIP
+```
+
+### 커밋 작성 시 체크리스트
+- [ ] 제목이 변경 내용을 명확히 설명하는가?
+- [ ] 본문에 Why가 포함되어 있는가?
+- [ ] 수정된 주요 파일/컴포넌트가 언급되었는가?
+- [ ] 관련 Phase/계획이 참조되었는가?
+- [ ] 6개월 후 읽어도 맥락을 이해할 수 있는가?
+
 ## Important Files
 - `/src/app/page.tsx` - 메인 페이지, 상태 관리
 - `/src/data/artworks.json` - 작품 데이터 (가장 자주 수정)
