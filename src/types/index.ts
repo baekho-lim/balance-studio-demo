@@ -68,7 +68,7 @@ export interface Artist {
   };
   profileImage: string;
   contact: {
-    email: string;
+    email?: string;
     instagram?: string;
     website?: string;
   };

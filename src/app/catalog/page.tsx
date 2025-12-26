@@ -656,7 +656,7 @@ export default function CatalogPage() {
               <h4 className="text-sm uppercase tracking-widest text-secondary mb-4">
                 {lang === 'en' ? 'Contact' : '연락처'}
               </h4>
-              <p className="mb-1">{catalogData.contact.email}</p>
+              <p className="mb-1">{catalogData.contact.gallery_email}</p>
               <p className="mb-6">{catalogData.contact.instagram}</p>
 
               {/* QR Code for Artist Website */}

@@ -1,0 +1,89 @@
+# https://www.robotstxt.org/robotstxt.html
+
+# Default - Allow all crawlers
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://limhyejung.com/sitemap.xml
+
+# Disallow admin and API pages
+Disallow: /admin/
+Disallow: /api/
+
+# ===========================================
+# AI Crawlers - Explicitly ALLOW
+# ===========================================
+# These directives ensure AI-powered search engines
+# and LLMs can access content for citation/retrieval
+
+# OpenAI Crawlers
+User-agent: GPTBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+# Anthropic Crawlers
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: Anthropic-AI
+Allow: /
+
+User-agent: anthropic-ai
+Allow: /
+
+# Perplexity AI
+User-agent: PerplexityBot
+Allow: /
+
+# Google AI (Bard/Gemini)
+User-agent: Google-Extended
+Allow: /
+
+# Meta AI
+User-agent: FacebookBot
+Allow: /
+
+User-agent: meta-externalagent
+Allow: /
+
+# Microsoft/Bing AI (Copilot)
+User-agent: Bingbot
+Allow: /
+
+# ByteDance AI
+User-agent: Bytespider
+Allow: /
+
+# Apple AI (Apple Intelligence)
+User-agent: Applebot
+Allow: /
+
+# ===========================================
+# Traditional Search Engine Crawlers
+# ===========================================
+
+User-agent: Googlebot
+Allow: /
+
+User-agent: Googlebot-Image
+Allow: /
+
+User-agent: Yandex
+Allow: /
+
+# Korean Search Engines
+User-agent: Yeti
+Allow: /
+
+User-agent: Naverbot
+Allow: /
+
+User-agent: Daumoa
+Allow: /
+
+# Japanese Search Engines
+User-agent: Y!J
+Allow: /

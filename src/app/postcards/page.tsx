@@ -265,7 +265,7 @@ export default function PostcardsPage() {
                       <div className="border-t border-gray-200 pt-3">
                         <div className="flex justify-between items-end text-xs">
                           <div>
-                            <p className="text-secondary mb-1">{catalogData.contact.email}</p>
+                            <p className="text-secondary mb-1">{catalogData.contact.gallery_email}</p>
                             <p className="text-secondary">{catalogData.contact.instagram}</p>
                           </div>
                           <div className="text-right">
