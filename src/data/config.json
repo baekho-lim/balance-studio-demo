@@ -34,7 +34,33 @@
       "handle": "@limhyejung_artworks",
       "url": "https://instagram.com/limhyejung_artworks"
     },
-    "website": "https://limhyejung.com"
+    "website": "https://limhyejung.com",
+    "location": {
+      "city": "Seoul",
+      "country": "South Korea",
+      "timezone": "Asia/Seoul",
+      "utcOffset": "+09:00"
+    },
+    "inquiryTypes": {
+      "purchase": {
+        "en": "Purchase Inquiry",
+        "ko": "작품 구매 문의",
+        "ja": "作品購入に関するお問い合わせ",
+        "zh-CN": "作品购买咨询"
+      },
+      "exhibition": {
+        "en": "Exhibition Proposal",
+        "ko": "전시 제안",
+        "ja": "展示のご提案",
+        "zh-CN": "展览提案"
+      },
+      "press": {
+        "en": "Press & Media",
+        "ko": "언론/미디어 문의",
+        "ja": "メディア関連のお問い合わせ",
+        "zh-CN": "媒体咨询"
+      }
+    }
   },
   "branding": {
     "colors": {

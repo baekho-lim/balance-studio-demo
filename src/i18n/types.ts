@@ -1,5 +1,6 @@
 // Extensible language system - add new languages here
-export const SUPPORTED_LANGUAGES = ['en', 'ko', 'vi', 'ms', 'id'] as const
+// P0: Core markets | P1: Asian expansion (NYC gallery target)
+export const SUPPORTED_LANGUAGES = ['en', 'ko', 'vi', 'ja', 'zh-CN', 'ms', 'id'] as const
 export type LanguageCode = (typeof SUPPORTED_LANGUAGES)[number]
 
 export interface LanguageInfo {
@@ -12,6 +13,8 @@ export const LANGUAGES: Record<LanguageCode, LanguageInfo> = {
   en: { code: 'en', name: 'English', nativeName: 'English' },
   ko: { code: 'ko', name: 'Korean', nativeName: '한국어' },
   vi: { code: 'vi', name: 'Vietnamese', nativeName: 'Tiếng Việt' },
+  ja: { code: 'ja', name: 'Japanese', nativeName: '日本語' },
+  'zh-CN': { code: 'zh-CN', name: 'Chinese (Simplified)', nativeName: '简体中文' },
   ms: { code: 'ms', name: 'Malay', nativeName: 'Bahasa Melayu' },
   id: { code: 'id', name: 'Indonesian', nativeName: 'Bahasa Indonesia' },
 }
@@ -26,6 +29,8 @@ export interface MultiLingualText {
   en: string
   ko?: string
   vi?: string
+  ja?: string
+  'zh-CN'?: string
   ms?: string
   id?: string
 }

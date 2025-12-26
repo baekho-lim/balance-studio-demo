@@ -82,6 +82,8 @@ export function useMultiLingualText() {
         en: string
         ko?: string
         vi?: string
+        ja?: string
+        'zh-CN'?: string
         ms?: string
         id?: string
       },
@@ -90,7 +92,7 @@ export function useMultiLingualText() {
       if (type === 'primary') {
         return texts.en
       }
-      return texts[secondaryLanguage] || texts.en
+      return texts[secondaryLanguage as keyof typeof texts] || texts.en
     },
     [secondaryLanguage]
   )

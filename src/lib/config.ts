@@ -29,6 +29,17 @@ export interface GalleryConfig {
       url: string;
     };
     website: string;
+    location: {
+      city: string;
+      country: string;
+      timezone: string;
+      utcOffset: string;
+    };
+    inquiryTypes: {
+      purchase: MultilingualText;
+      exhibition: MultilingualText;
+      press: MultilingualText;
+    };
   };
   branding: {
     colors: {

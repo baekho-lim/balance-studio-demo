@@ -211,4 +211,88 @@ export const translations: Record<LanguageCode, UITranslations> = {
       secondaryLanguage: 'Bahasa Sekunder',
     },
   },
+  ja: {
+    navigation: {
+      works: '作品',
+      story: 'ストーリー',
+      archive: 'アーカイブ',
+      about: '紹介',
+      contact: 'お問い合わせ',
+    },
+    sections: {
+      aboutTitle: 'アーティストについて',
+      worksTitle: '厳選作品',
+      contactTitle: 'お問い合わせ',
+    },
+    artworkCard: {
+      viewDetails: '詳細を見る',
+      dimensions: 'サイズ',
+      medium: '素材',
+      year: '年',
+    },
+    storyView: {
+      tapToNavigate: '左右をタップしてナビゲート',
+      endOfStory: 'ストーリー終了',
+      close: 'ストーリービューを閉じる',
+      previous: '前の作品',
+      next: '次の作品',
+    },
+    contact: {
+      emailLabel: 'メール',
+      instagramLabel: 'インスタグラム',
+      getInTouch: 'お問い合わせ',
+    },
+    viewModes: {
+      grid: 'グリッド',
+      proportional: 'プロポーショナル',
+      large: '大',
+    },
+    languageSelector: {
+      selectLanguage: '言語を選択',
+      primaryLanguage: 'メイン言語',
+      secondaryLanguage: 'サブ言語',
+    },
+  },
+  'zh-CN': {
+    navigation: {
+      works: '作品',
+      story: '故事',
+      archive: '档案',
+      about: '关于',
+      contact: '联系',
+    },
+    sections: {
+      aboutTitle: '关于艺术家',
+      worksTitle: '精选作品',
+      contactTitle: '联系方式',
+    },
+    artworkCard: {
+      viewDetails: '查看详情',
+      dimensions: '尺寸',
+      medium: '媒介',
+      year: '年份',
+    },
+    storyView: {
+      tapToNavigate: '左右点击导航',
+      endOfStory: '故事结束',
+      close: '关闭故事视图',
+      previous: '上一幅作品',
+      next: '下一幅作品',
+    },
+    contact: {
+      emailLabel: '邮箱',
+      instagramLabel: 'Instagram',
+      getInTouch: '联系我们',
+    },
+    viewModes: {
+      grid: '网格',
+      proportional: '比例',
+      large: '大图',
+    },
+    languageSelector: {
+      selectLanguage: '选择语言',
+      primaryLanguage: '主要语言',
+      secondaryLanguage: '次要语言',
+    },
+  },
 }
