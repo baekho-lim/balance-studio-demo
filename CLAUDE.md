@@ -1,5 +1,11 @@
 # Artist Portfolio Project - Claude Context
 
+## 문서 구조
+- **CLAUDE.md** (이 파일): 핵심 규칙, 프로세스, 기술 가이드라인 (Git 추적)
+- **CLAUDE.local.md**: 작업 맥락, 히스토리, 진행 상황 (Git 무시, 로컬 전용)
+
+> 새 세션 시작 시 CLAUDE.local.md를 먼저 읽어 맥락 파악
+
 ## Project Overview
 Next.js 14 기반 아티스트 포트폴리오 웹사이트. 작품 갤러리, 작가 소개, 연락처를 포함한 단일 페이지 애플리케이션.
 

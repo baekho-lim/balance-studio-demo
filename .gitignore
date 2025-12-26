@@ -37,3 +37,6 @@ next-env.d.ts
 /test-results/
 /playwright-report/
 /playwright/.auth/
+
+# claude local context (not tracked in git)
+CLAUDE.local.md
