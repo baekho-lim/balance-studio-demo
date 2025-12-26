@@ -6,6 +6,7 @@ import Link from 'next/link'
 import { ArrowLeft } from 'lucide-react'
 import LightboxModal from '@/components/works/LightboxModal'
 import artworksData from '@/data/artworks.json'
+import { getArtistName } from '@/lib/config'
 import type { Artwork } from '@/types'
 
 const artworks = artworksData as Artwork[]
@@ -137,7 +138,7 @@ export default function GalleryPage() {
 
         {/* Copyright Notice */}
         <div className="mt-8 text-center text-xs text-secondary">
-          <p>© {new Date().getFullYear()} Lim Hyejung. All artworks are protected by copyright.</p>
+          <p>© {new Date().getFullYear()} {getArtistName('en')}. All artworks are protected by copyright.</p>
           <p className="mt-1">모든 작품의 저작권은 작가에게 있으며 무단 복제 및 사용을 금지합니다.</p>
         </div>
       </div>

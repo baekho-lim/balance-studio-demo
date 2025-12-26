@@ -1,7 +1,12 @@
 import Link from 'next/link'
 import { Instagram } from 'lucide-react'
+import { config, getArtistName, getInstagramUrl, getInstagramHandle } from '@/lib/config'
 
 export default function Footer() {
+  const artistNameEn = getArtistName('en')
+  const artistNameKo = getArtistName('ko')
+  const instagramUrl = getInstagramUrl()
+  const instagramHandle = getInstagramHandle()
 
   return (
     <footer className="bg-pastel-cream border-t border-primary/10">
@@ -12,12 +17,12 @@ export default function Footer() {
           <div>
             <Link href="/" className="inline-block">
               <h3 className="font-serif text-lg mb-2 hover:text-primary transition-colors cursor-pointer">
-                Lim Hyejung
+                {artistNameEn}
               </h3>
             </Link>
-            <p className="text-sm text-secondary mb-4">임혜정</p>
+            <p className="text-sm text-secondary mb-4">{artistNameKo}</p>
             <p className="text-xs text-secondary/70 leading-relaxed">
-              Contemporary artist exploring the threshold between imagination and reality
+              {config.gallery.description.en}
             </p>
           </div>
 
@@ -86,13 +91,13 @@ export default function Footer() {
             <ul className="space-y-3">
               <li>
                 <a
-                  href="https://www.instagram.com/limhyejung_artworks/"
+                  href={instagramUrl}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="flex items-center gap-2 text-sm text-secondary hover:text-primary transition-colors"
                 >
                   <Instagram size={16} />
-                  @limhyejung_artworks
+                  {instagramHandle}
                 </a>
               </li>
             </ul>
@@ -102,7 +107,7 @@ export default function Footer() {
         {/* Copyright */}
         <div className="pt-8 border-t border-primary/10 text-center">
           <p className="text-xs text-secondary">
-            &copy; {new Date().getFullYear()} Lim Hyejung. All rights reserved.
+            &copy; {new Date().getFullYear()} {artistNameEn}. All rights reserved.
           </p>
         </div>
       </div>
