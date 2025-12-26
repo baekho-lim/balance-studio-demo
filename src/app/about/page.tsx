@@ -1,8 +1,28 @@
 import Image from 'next/image'
+import { Metadata } from 'next'
 import artistData from '@/data/artist.json'
 import type { Artist } from '@/types'
 
 const artist = artistData as Artist
+
+export const metadata: Metadata = {
+  title: 'About | Lim Hyejung',
+  description: 'Learn about Lim Hyejung (임혜정), a contemporary Korean artist known for oil paintings exploring nature, identity, and the philosophy of "Utopia = Reality".',
+  keywords: ['Lim Hyejung', '임혜정', 'Korean artist', 'contemporary art', 'oil painting', 'artist biography', 'artist statement'],
+  openGraph: {
+    title: 'About Lim Hyejung | Contemporary Korean Artist',
+    description: 'Discover the artistic journey, philosophy, and background of Lim Hyejung, a Korean contemporary artist exploring nature and reality.',
+    type: 'profile',
+    images: [{ url: '/images/artist-profile.webp', width: 1200, height: 630, alt: 'Lim Hyejung Artist Profile' }],
+  },
+  alternates: {
+    canonical: 'https://limhyejung.com/about',
+    languages: {
+      'en': 'https://limhyejung.com/about',
+      'ko': 'https://limhyejung.com/about',
+    },
+  },
+}
 
 export default function AboutPage() {
   return (
