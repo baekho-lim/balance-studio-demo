@@ -10,6 +10,7 @@ import ArtistProfileImage from '@/components/artist/ArtistProfileImage'
 
 // Import validated data
 import { getArtist, getArtworks, getChapters, getSiteSettings } from '@/lib/data'
+import { getArtistName } from '@/lib/config'
 import type { Artwork } from '@/lib/schemas'
 
 const artist = getArtist()
@@ -39,7 +40,7 @@ export default function HomePage() {
       {/* Hero Section - Full Screen */}
       <Hero
         backgroundImage={settings.homeHero.imagePath}
-        artistName="Lim Hyejung"
+        artistName={getArtistName('en')}
         tagline={settings.homeHero.tagline.en}
         artworkTitle={heroArtwork?.title}
       />

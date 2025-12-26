@@ -6,6 +6,7 @@ import Link from 'next/link'
 import { QRCodeSVG } from 'qrcode.react'
 import catalogData from '@/data/catalog.json'
 import siteSettings from '@/data/site-settings.json'
+import { getFullUrl } from '@/lib/config'
 import CatalogPrintStyles from '@/components/print/CatalogPrintStyles'
 import PrintWatermark from '@/components/print/PrintWatermark'
 import PrintBaseStyles from '@/components/print/PrintBaseStyles'
@@ -725,7 +726,7 @@ export default function CatalogPage() {
                 <div className="mb-4">
                   <div className="bg-white p-3 rounded-lg shadow-sm inline-block">
                     <QRCodeSVG
-                      value="https://www.limhyejung.com/"
+                      value={getFullUrl()}
                       size={120}
                       level="M"
                       includeMargin={false}
@@ -733,7 +734,7 @@ export default function CatalogPage() {
                   </div>
                 </div>
                 <p className="text-sm text-primary">
-                  https://www.limhyejung.com/
+                  {getFullUrl()}
                 </p>
               </div>
             </div>
