@@ -13,7 +13,9 @@ import {
   Bot,
   ChevronDown,
   ChevronUp,
-  ExternalLink
+  ExternalLink,
+  CalendarCheck,
+  Square
 } from 'lucide-react'
 
 // 10년 로드맵 데이터
@@ -154,6 +156,46 @@ const pendingManualTasks = [
   { task: '소셜 미디어 프로필 최적화', priority: 'P2', effect: 'sameAs 강화' },
   { task: 'Getty ULAN 신청', priority: 'P3', effect: '미술가 권위 DB' },
 ]
+
+// 월간 점검 체크리스트
+const monthlyChecklist = {
+  technical: {
+    title: '기술 검증',
+    items: [
+      { name: 'Schema.org Validator 통과', link: 'https://validator.schema.org/' },
+      { name: 'Google Rich Results Test 통과', link: 'https://search.google.com/test/rich-results' },
+      { name: 'PageSpeed Insights 점수 확인', link: 'https://pagespeed.web.dev/' },
+      { name: 'hreflang 검증', link: 'https://technicalseo.com/tools/hreflang/' },
+    ]
+  },
+  llmCitation: {
+    title: 'LLM Citation 테스트',
+    items: [
+      { name: 'ChatGPT에서 "임혜정 작가" 검색', link: 'https://chat.openai.com/' },
+      { name: 'Perplexity에서 "Lim Hyejung artist" 검색', link: 'https://www.perplexity.ai/' },
+      { name: 'Gemini에서 "Who is Lim Hyejung" 검색', link: 'https://gemini.google.com/' },
+      { name: 'Claude에서 "임혜정 작가에 대해 알려줘" 검색', link: 'https://claude.ai/' },
+    ]
+  },
+  external: {
+    title: '외부 Entity 상태',
+    items: [
+      { name: 'Wikidata 엔트리 확인/업데이트', link: 'https://www.wikidata.org/wiki/Q137589862' },
+      { name: 'Google Knowledge Panel 상태 확인', link: 'https://www.google.com/search?q=Lim+Hyejung+artist' },
+      { name: 'Instagram 프로필 최신화', link: 'https://instagram.com/limhyejung_artworks' },
+      { name: 'Google Search Console 인덱싱 상태', link: 'https://search.google.com/search-console' },
+    ]
+  },
+  content: {
+    title: '콘텐츠 업데이트',
+    items: [
+      { name: '새 전시/뉴스 추가 확인', link: '/admin/exhibitions' },
+      { name: 'FAQ 최신화', link: '/admin/faq' },
+      { name: 'sitemap.xml 확인', link: '/sitemap.xml' },
+      { name: '작품 이미지 alt 텍스트 확인', link: '/works' },
+    ]
+  }
+}
 
 export default function AdminStrategyPage() {
   const [expandedPhase, setExpandedPhase] = useState<string | null>('Phase 9')
@@ -392,6 +434,49 @@ export default function AdminStrategyPage() {
               Knowledge Panel
             </a>
           </div>
+        </div>
+      </div>
+
+      {/* Monthly Checklist */}
+      <div className="bg-white rounded-lg shadow-sm border border-gray-200 p-6">
+        <div className="flex items-center justify-between mb-6">
+          <div className="flex items-center gap-2">
+            <CalendarCheck className="w-5 h-5 text-primary" />
+            <h2 className="text-xl font-semibold">월간 점검 체크리스트</h2>
+          </div>
+          <span className="text-sm text-secondary">매월 1일 점검 권장</span>
+        </div>
+
+        <div className="grid grid-cols-2 gap-6">
+          {Object.entries(monthlyChecklist).map(([key, category]) => (
+            <div key={key} className="space-y-3">
+              <h3 className="font-medium text-sm text-secondary uppercase tracking-wide">
+                {category.title}
+              </h3>
+              <div className="space-y-2">
+                {category.items.map((item, idx) => (
+                  <a
+                    key={idx}
+                    href={item.link}
+                    target={item.link.startsWith('/') ? '_self' : '_blank'}
+                    rel="noopener noreferrer"
+                    className="flex items-center gap-3 p-2 rounded-lg hover:bg-gray-50 transition-colors group"
+                  >
+                    <Square className="w-4 h-4 text-gray-300 group-hover:text-primary flex-shrink-0" />
+                    <span className="text-sm flex-1">{item.name}</span>
+                    <ExternalLink className="w-3 h-3 text-gray-300 group-hover:text-primary" />
+                  </a>
+                ))}
+              </div>
+            </div>
+          ))}
+        </div>
+
+        <div className="mt-6 p-4 bg-amber-50 rounded-lg">
+          <p className="text-sm text-amber-700">
+            <strong>팁:</strong> LLM Citation 테스트는 AI 인덱싱에 수일~수주가 소요됩니다.
+            새로운 전시나 뉴스 추가 후 1-2주 뒤에 테스트하세요.
+          </p>
         </div>
       </div>
 
