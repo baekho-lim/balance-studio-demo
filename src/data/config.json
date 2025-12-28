@@ -95,6 +95,7 @@
       { "name": "Works", "href": "/#works", "isLink": false },
       { "name": "Exhibitions", "href": "/exhibitions", "isLink": true },
       { "name": "News", "href": "/news", "isLink": true },
+      { "name": "Blog", "href": "/blog", "isLink": true },
       { "name": "Story", "href": "/story", "isLink": true },
       { "name": "FAQ", "href": "/faq", "isLink": true },
       { "name": "Partnership", "href": "/partnership", "isLink": true }
@@ -103,6 +104,7 @@
       { "name": "Dashboard", "href": "/admin", "icon": "LayoutDashboard" },
       { "name": "Exhibitions", "href": "/admin/exhibitions", "icon": "Calendar" },
       { "name": "News & Press", "href": "/admin/news", "icon": "Newspaper" },
+      { "name": "Blog", "href": "/admin/blog", "icon": "FileText" },
       { "name": "FAQ", "href": "/admin/faq", "icon": "HelpCircle" },
       { "name": "SEO Status", "href": "/admin/seo", "icon": "BarChart3" },
       { "name": "Strategy", "href": "/admin/strategy", "icon": "Target" },

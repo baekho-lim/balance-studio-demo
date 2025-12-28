@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from 'react'
 import Link from 'next/link'
-import { Plus, Edit, Trash2, Eye, Pin, Star, Search, Filter } from 'lucide-react'
+import { Plus, Edit, Trash2, Eye, Pin, Star, Search, Filter, BarChart3 } from 'lucide-react'
 
 interface BlogPost {
   id: string
@@ -133,13 +133,22 @@ export default function AdminBlogPage() {
             블로그 글을 작성하고 관리합니다
           </p>
         </div>
-        <Link
-          href="/admin/blog/new"
-          className="flex items-center gap-2 px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors"
-        >
-          <Plus className="w-4 h-4" />
-          새 글 작성
-        </Link>
+        <div className="flex items-center gap-2">
+          <Link
+            href="/admin/blog/analytics"
+            className="flex items-center gap-2 px-4 py-2 border border-gray-300 rounded-lg hover:bg-gray-50 transition-colors"
+          >
+            <BarChart3 className="w-4 h-4" />
+            분석
+          </Link>
+          <Link
+            href="/admin/blog/new"
+            className="flex items-center gap-2 px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors"
+          >
+            <Plus className="w-4 h-4" />
+            새 글 작성
+          </Link>
+        </div>
       </div>
 
       {/* Filters */}
