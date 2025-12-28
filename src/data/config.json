@@ -108,6 +108,7 @@
       { "name": "FAQ", "href": "/admin/faq", "icon": "HelpCircle" },
       { "name": "SEO Status", "href": "/admin/seo", "icon": "BarChart3" },
       { "name": "Strategy", "href": "/admin/strategy", "icon": "Target" },
+      { "name": "Themes", "href": "/admin/themes", "icon": "Palette" },
       { "name": "Media Library", "href": "/admin/media", "icon": "ImageIcon" }
     ]
   },

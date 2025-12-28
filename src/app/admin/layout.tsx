@@ -3,7 +3,7 @@
 import { useState, useEffect, ReactNode } from 'react'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
-import { LayoutDashboard, Calendar, Lock, Newspaper, HelpCircle, BarChart3, ImageIcon, Target, FileText, LucideIcon } from 'lucide-react'
+import { LayoutDashboard, Calendar, Lock, Newspaper, HelpCircle, BarChart3, ImageIcon, Target, FileText, Palette, LucideIcon } from 'lucide-react'
 import config from '@/data/config.json'
 
 interface AdminLayoutProps {
@@ -20,6 +20,7 @@ const iconMap: Record<string, LucideIcon> = {
   Target,
   ImageIcon,
   FileText,
+  Palette,
 }
 
 // Navigation loaded from config.json for easier maintenance
