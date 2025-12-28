@@ -20,9 +20,16 @@
       "ko": "한국 현대미술 작가 임혜정이 제1회 베트남 국제 아트페어 2024에 참가하며 동남아시아 미술 시장에 첫 발을 내딛었다."
     },
     "images": {
-      "hero": "/images/works/1. I am only passing though the woods..jpg"
+      "hero": "/images/works/2024/breathing.jpg",
+      "heroArtworkId": "breathing-2024"
     },
-    "tags": ["group-exhibition", "art-fair", "vietnam", "2024", "hotel-nikko-saigon"],
+    "tags": [
+      "group-exhibition",
+      "art-fair",
+      "vietnam",
+      "2024",
+      "hotel-nikko-saigon"
+    ],
     "featured": false,
     "links": {
       "artfair": {
@@ -69,9 +76,17 @@
       "ko": "임혜정 작가가 VIA 아트페어 2025에서 피처드 아티스트로 선정되어 2년 연속 참가하며 독립적인 전시 공간과 홍보 지원을 받는다."
     },
     "images": {
-      "hero": "/images/works/1. I am only passing though the woods..jpg"
+      "hero": "/images/works/19.they live like nothing....jpeg",
+      "heroArtworkId": "ds-004"
     },
-    "tags": ["group-exhibition", "art-fair", "vietnam", "2025", "hotel-nikko-saigon", "featured-artist"],
+    "tags": [
+      "group-exhibition",
+      "art-fair",
+      "vietnam",
+      "2025",
+      "hotel-nikko-saigon",
+      "featured-artist"
+    ],
     "featured": true,
     "links": {
       "artfair": {
@@ -118,9 +133,16 @@
       "ko": "임혜정 작가가 VIA 아트페어 2025 선정 작가들의 앙코르 기획전인 'VIA 2025 앙코르' 그룹전에 참가한다."
     },
     "images": {
-      "hero": "/images/works/21.Just that we grow.jpeg"
+      "hero": "/images/works/1. I am only passing though the woods..jpg",
+      "heroArtworkId": "sg-001"
     },
-    "tags": ["group-exhibition", "vietnam", "2025", "tomuralee-gallery", "encore"],
+    "tags": [
+      "group-exhibition",
+      "vietnam",
+      "2025",
+      "tomuralee-gallery",
+      "encore"
+    ],
     "featured": true,
     "links": {
       "exhibition": {

@@ -18,12 +18,15 @@
       "vi": "Triển lãm nhóm tại TomuraLee Gallery giới thiệu các nghệ sĩ được chọn lọc từ VIA Art Fair 2025. Một cuộc trình diễn encore được tuyển chọn của các tác phẩm nghệ thuật đương đại xuất sắc."
     },
     "images": {
-      "cover": "/images/works/21.Just that we grow.jpeg"
+      "cover": "/images/works/2. Look at me or Wait for the daffodiles..JPG",
+      "coverArtworkId": "sg-002"
     },
     "featured": true,
     "externalUrl": "https://tomuralee.vn/en/via-2025-encore-tomuralee-gallery-2/",
     "openingHours": "09:30-18:30",
-    "closedDays": ["Sunday"],
+    "closedDays": [
+      "Sunday"
+    ],
     "admission": "free",
     "links": {
       "official": "https://tomuralee.vn/en/via-2025-encore-tomuralee-gallery-2/",
@@ -64,7 +67,8 @@
       "vi": "Hội chợ nghệ thuật khách sạn quốc tế hàng đầu Việt Nam được tổ chức tại khách sạn 5 sao Nikko Saigon. Hội chợ nghệ thuật thường niên này quy tụ các phòng tranh hàng đầu từ Việt Nam, Hàn Quốc, Nhật Bản và Đông Nam Á."
     },
     "images": {
-      "cover": "/images/works/1. I am only passing though the woods..jpg"
+      "cover": "/images/works/21.Just that we grow.jpeg",
+      "coverArtworkId": "wt-004"
     },
     "featured": false,
     "externalUrl": "https://viaart.vn/via-artfair_2025/",
@@ -113,7 +117,8 @@
       "vi": "Hội chợ nghệ thuật khách sạn quốc tế đầu tiên tại Việt Nam, được tổ chức tại khách sạn 5 sao Nikko Saigon. Quy tụ nhiều phòng tranh từ Việt Nam, Hàn Quốc, Nhật Bản và Đông Nam Á với hàng trăm tác phẩm nghệ thuật đương đại."
     },
     "images": {
-      "cover": "/images/works/1. I am only passing though the woods..jpg"
+      "cover": "/images/works/2024/breathing.jpg",
+      "coverArtworkId": "breathing-2024"
     },
     "featured": false,
     "externalUrl": "https://viaart.vn/via-artfair_2024/",
