@@ -1,0 +1,143 @@
+[
+  {
+    "id": "plan-001",
+    "name": {
+      "en": "Drop-In Class",
+      "ko": "1회 수업"
+    },
+    "description": {
+      "en": "Single class pass. Perfect for trying out our studio or for occasional visits.",
+      "ko": "1회 수업권입니다. 스튜디오 체험이나 가끔 방문하시는 분들에게 적합합니다."
+    },
+    "type": "drop-in",
+    "price": 35000,
+    "currency": "KRW",
+    "billingCycle": "one-time",
+    "validDays": 30,
+    "benefits": [
+      { "en": "Access to any group class", "ko": "모든 그룹 수업 참여 가능" },
+      { "en": "Mat rental included", "ko": "매트 대여 포함" }
+    ],
+    "featured": false,
+    "popular": false,
+    "displayOrder": 1,
+    "status": "active",
+    "createdAt": "2024-01-01T00:00:00.000Z",
+    "updatedAt": "2024-12-01T00:00:00.000Z"
+  },
+  {
+    "id": "plan-002",
+    "name": {
+      "en": "10 Class Pack",
+      "ko": "10회권"
+    },
+    "description": {
+      "en": "Flexible 10-class package valid for 3 months. Our most popular choice for regular practitioners.",
+      "ko": "3개월간 유효한 유연한 10회 패키지입니다. 정기적으로 수련하시는 분들께 가장 인기 있는 선택입니다."
+    },
+    "type": "class-pack",
+    "classesIncluded": 10,
+    "price": 300000,
+    "currency": "KRW",
+    "billingCycle": "one-time",
+    "validDays": 90,
+    "benefits": [
+      { "en": "Save 15% vs drop-in", "ko": "1회권 대비 15% 할인" },
+      { "en": "Access to all group classes", "ko": "모든 그룹 수업 이용 가능" },
+      { "en": "Mat rental included", "ko": "매트 대여 포함" },
+      { "en": "Pause option (up to 2 weeks)", "ko": "일시정지 가능 (최대 2주)" }
+    ],
+    "featured": true,
+    "popular": true,
+    "displayOrder": 2,
+    "status": "active",
+    "createdAt": "2024-01-01T00:00:00.000Z",
+    "updatedAt": "2024-12-01T00:00:00.000Z"
+  },
+  {
+    "id": "plan-003",
+    "name": {
+      "en": "Monthly Unlimited",
+      "ko": "월정액 무제한"
+    },
+    "description": {
+      "en": "Unlimited access to all group classes for one month. Best value for dedicated practitioners.",
+      "ko": "한 달간 모든 그룹 수업 무제한 이용. 열정적인 수련자에게 최고의 가치를 제공합니다."
+    },
+    "type": "unlimited",
+    "price": 280000,
+    "currency": "KRW",
+    "billingCycle": "monthly",
+    "maxBookingsPerDay": 2,
+    "benefits": [
+      { "en": "Unlimited group classes", "ko": "그룹 수업 무제한" },
+      { "en": "Priority booking", "ko": "우선 예약권" },
+      { "en": "10% shop discount", "ko": "샵 10% 할인" },
+      { "en": "Free guest pass (1/month)", "ko": "무료 게스트 패스 (월 1회)" },
+      { "en": "Mat rental included", "ko": "매트 대여 포함" }
+    ],
+    "featured": true,
+    "popular": false,
+    "displayOrder": 3,
+    "status": "active",
+    "createdAt": "2024-01-01T00:00:00.000Z",
+    "updatedAt": "2024-12-01T00:00:00.000Z"
+  },
+  {
+    "id": "plan-004",
+    "name": {
+      "en": "Private Session",
+      "ko": "개인 레슨"
+    },
+    "description": {
+      "en": "One-on-one session with a certified instructor. Fully customized to your goals and needs.",
+      "ko": "자격증 보유 강사와의 1:1 세션입니다. 개인의 목표와 필요에 맞춤화됩니다."
+    },
+    "type": "drop-in",
+    "price": 120000,
+    "currency": "KRW",
+    "billingCycle": "one-time",
+    "validDays": 30,
+    "benefits": [
+      { "en": "50-minute private session", "ko": "50분 개인 세션" },
+      { "en": "Personalized program", "ko": "맞춤형 프로그램" },
+      { "en": "Access to all equipment", "ko": "모든 기구 이용 가능" },
+      { "en": "Posture assessment", "ko": "자세 평가 포함" }
+    ],
+    "featured": false,
+    "popular": false,
+    "displayOrder": 4,
+    "status": "active",
+    "createdAt": "2024-01-01T00:00:00.000Z",
+    "updatedAt": "2024-12-01T00:00:00.000Z"
+  },
+  {
+    "id": "plan-005",
+    "name": {
+      "en": "10 Private Sessions",
+      "ko": "개인 레슨 10회권"
+    },
+    "description": {
+      "en": "Package of 10 private sessions. Ideal for intensive training or rehabilitation programs.",
+      "ko": "개인 레슨 10회 패키지입니다. 집중 트레이닝이나 재활 프로그램에 이상적입니다."
+    },
+    "type": "class-pack",
+    "classesIncluded": 10,
+    "price": 1000000,
+    "currency": "KRW",
+    "billingCycle": "one-time",
+    "validDays": 120,
+    "benefits": [
+      { "en": "Save 17% vs single session", "ko": "단일 세션 대비 17% 할인" },
+      { "en": "Personalized program", "ko": "맞춤형 프로그램" },
+      { "en": "Progress tracking", "ko": "진행 상황 추적" },
+      { "en": "Flexible scheduling", "ko": "유연한 일정 조정" }
+    ],
+    "featured": true,
+    "popular": false,
+    "displayOrder": 5,
+    "status": "active",
+    "createdAt": "2024-01-01T00:00:00.000Z",
+    "updatedAt": "2024-12-01T00:00:00.000Z"
+  }
+]

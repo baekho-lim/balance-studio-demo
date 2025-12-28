@@ -92,6 +92,26 @@ export default function DemoPage() {
               <li>• Product, Variant, Order</li>
             </ul>
           </Link>
+
+          {/* Pilates Studio Demo */}
+          <Link
+            href="/demo/pilates"
+            className="block p-6 bg-gradient-to-br from-blue-500 to-purple-600 rounded-lg shadow hover:shadow-lg transition-shadow text-white"
+          >
+            <div className="flex items-center gap-3 mb-3">
+              <span className="text-2xl">🧘‍♀️</span>
+              <h2 className="text-xl font-semibold">Pilates Studio Template</h2>
+            </div>
+            <p className="text-blue-100 text-sm mb-4">
+              필라테스/웰니스 비즈니스를 위한 완전한 템플릿
+            </p>
+            <ul className="text-sm text-blue-100 space-y-1">
+              <li>• 클래스 스케줄 (주간/일간 보기)</li>
+              <li>• 강사 프로필 페이지</li>
+              <li>• 멤버십 & 가격표</li>
+              <li>• 예약 시스템 UI</li>
+            </ul>
+          </Link>
         </div>
 
         <div className="mt-12 p-6 bg-blue-50 rounded-lg">

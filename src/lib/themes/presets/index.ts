@@ -7,10 +7,12 @@
 export { minimalTheme } from './minimal'
 export { boldTheme } from './bold'
 export { elegantTheme } from './elegant'
+export { wellnessTheme } from './wellness'
 
 import { minimalTheme } from './minimal'
 import { boldTheme } from './bold'
 import { elegantTheme } from './elegant'
+import { wellnessTheme } from './wellness'
 import type { ThemeConfig, ThemePreset } from '../types'
 
 // All available themes
@@ -18,6 +20,7 @@ export const themes: Record<ThemePreset, ThemeConfig> = {
   minimal: minimalTheme,
   bold: boldTheme,
   elegant: elegantTheme,
+  wellness: wellnessTheme,
   custom: elegantTheme, // Default to elegant for custom
 }
 

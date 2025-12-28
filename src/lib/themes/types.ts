@@ -190,7 +190,7 @@ export interface ThemeConfig {
 }
 
 // Theme preset type for quick theme selection
-export type ThemePreset = 'minimal' | 'bold' | 'elegant' | 'custom'
+export type ThemePreset = 'minimal' | 'bold' | 'elegant' | 'wellness' | 'custom'
 
 // Active theme context
 export interface ThemeState {

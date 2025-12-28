@@ -1,0 +1,103 @@
+[
+  {
+    "id": "inst-001",
+    "slug": "sarah-kim",
+    "name": {
+      "en": "Sarah Kim",
+      "ko": "김서라"
+    },
+    "title": {
+      "en": "Founder & Senior Instructor",
+      "ko": "대표 & 수석 강사"
+    },
+    "bio": {
+      "en": "Sarah has over 15 years of experience in Pilates instruction. After training in New York, she returned to Seoul to establish Balance Studio. Her approach combines classical Pilates principles with modern rehabilitation techniques.",
+      "ko": "서라는 15년 이상의 필라테스 지도 경력을 보유하고 있습니다. 뉴욕에서 트레이닝을 받은 후 서울로 돌아와 밸런스 스튜디오를 설립했습니다. 그녀의 접근법은 클래식 필라테스 원칙과 현대 재활 기법을 결합합니다."
+    },
+    "shortBio": {
+      "en": "15+ years experience. Stott Pilates certified. Specializes in rehabilitation and prenatal.",
+      "ko": "15년+ 경력. Stott Pilates 자격. 재활 및 산전 필라테스 전문."
+    },
+    "certifications": [
+      "Stott Pilates Full Certification",
+      "Polestar Pilates Rehabilitation",
+      "Pre/Postnatal Pilates Specialist"
+    ],
+    "specialties": ["Rehabilitation", "Prenatal", "Reformer", "Tower"],
+    "experienceYears": 15,
+    "profileImage": "/images/demo/instructor-1.jpg",
+    "instagram": "@sarahkim_pilates",
+    "featured": true,
+    "displayOrder": 1,
+    "status": "active",
+    "createdAt": "2024-01-01T00:00:00.000Z",
+    "updatedAt": "2024-12-01T00:00:00.000Z"
+  },
+  {
+    "id": "inst-002",
+    "slug": "jiwon-park",
+    "name": {
+      "en": "Jiwon Park",
+      "ko": "박지원"
+    },
+    "title": {
+      "en": "Lead Mat Instructor",
+      "ko": "매트 필라테스 수석 강사"
+    },
+    "bio": {
+      "en": "Jiwon specializes in mat Pilates and group classes. With a background in dance, she brings a unique artistic flair to her teaching. Her classes focus on building core strength and improving flexibility.",
+      "ko": "지원은 매트 필라테스와 그룹 수업을 전문으로 합니다. 무용 배경을 바탕으로 독특한 예술적 감각을 수업에 접목합니다. 그녀의 수업은 코어 강화와 유연성 향상에 중점을 둡니다."
+    },
+    "shortBio": {
+      "en": "8 years experience. Dance background. Mat Pilates specialist.",
+      "ko": "8년 경력. 무용 전공. 매트 필라테스 전문."
+    },
+    "certifications": [
+      "Balanced Body Mat Certification",
+      "Yoga Alliance RYT-200",
+      "NASM Certified Personal Trainer"
+    ],
+    "specialties": ["Mat Pilates", "Barre", "Flexibility", "Dance Conditioning"],
+    "experienceYears": 8,
+    "profileImage": "/images/demo/instructor-2.jpg",
+    "instagram": "@jiwon_moves",
+    "featured": true,
+    "displayOrder": 2,
+    "status": "active",
+    "createdAt": "2024-01-01T00:00:00.000Z",
+    "updatedAt": "2024-12-01T00:00:00.000Z"
+  },
+  {
+    "id": "inst-003",
+    "slug": "minho-lee",
+    "name": {
+      "en": "Minho Lee",
+      "ko": "이민호"
+    },
+    "title": {
+      "en": "Reformer Specialist",
+      "ko": "리포머 전문 강사"
+    },
+    "bio": {
+      "en": "Minho brings a sports science background to his Pilates instruction. He specializes in reformer work and athletic conditioning, helping clients achieve their fitness goals through targeted exercise programs.",
+      "ko": "민호는 스포츠 과학 배경을 필라테스 지도에 접목합니다. 리포머와 운동 컨디셔닝을 전문으로 하며, 맞춤형 운동 프로그램을 통해 고객들의 피트니스 목표 달성을 돕습니다."
+    },
+    "shortBio": {
+      "en": "6 years experience. Sports science degree. Athletic conditioning expert.",
+      "ko": "6년 경력. 스포츠 과학 전공. 운동 컨디셔닝 전문."
+    },
+    "certifications": [
+      "BASI Pilates Comprehensive",
+      "TRX Certified Instructor",
+      "Sports Science Degree"
+    ],
+    "specialties": ["Reformer", "Athletic Conditioning", "Men's Pilates", "Sports Rehab"],
+    "experienceYears": 6,
+    "profileImage": "/images/demo/instructor-3.jpg",
+    "featured": false,
+    "displayOrder": 3,
+    "status": "active",
+    "createdAt": "2024-01-01T00:00:00.000Z",
+    "updatedAt": "2024-12-01T00:00:00.000Z"
+  }
+]

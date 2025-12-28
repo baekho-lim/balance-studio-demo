@@ -23,6 +23,7 @@ export {
   minimalTheme,
   boldTheme,
   elegantTheme,
+  wellnessTheme,
   themes,
   getThemeById,
   getThemeList,
