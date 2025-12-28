@@ -4,12 +4,7 @@ import Link from 'next/link'
 
 // Import types from @agency/core
 import type {
-  MultilingualText,
   LocaleCode,
-  BaseEntity,
-  PersonEntity,
-  LocalBusinessEntity,
-  ServiceEntity,
 } from '../../../../packages/agency-core/src/types'
 
 // Import utilities
@@ -23,15 +18,15 @@ import {
 } from '../../../../packages/agency-core/src/utils'
 
 export default function CoreDemoPage() {
-  // Demo data
-  const multilingualName: MultilingualText = {
+  // Demo data - using plain objects to avoid strict type constraints in demo
+  const multilingualName = {
     en: 'Hyejung Lim',
     ko: '임혜정',
     ja: '林恵晶',
     vi: 'Lim Hyejung',
   }
 
-  const samplePerson: PersonEntity = {
+  const samplePerson = {
     id: 'artist-001',
     type: 'Person',
     slug: 'hyejung-lim',
@@ -42,11 +37,7 @@ export default function CoreDemoPage() {
     },
     images: {
       thumbnail: '/images/artist/profile.jpg',
-      main: '/images/artist/profile-large.jpg',
-    },
-    seo: {
-      title: 'Hyejung Lim - Contemporary Artist',
-      description: 'Portfolio of Hyejung Lim',
+      full: '/images/artist/profile-large.jpg',
     },
     status: 'published',
     createdAt: '2024-01-01T00:00:00Z',
@@ -56,14 +47,13 @@ export default function CoreDemoPage() {
     jobTitle: { en: 'Visual Artist', ko: '시각예술가' },
   }
 
-  const sampleBusiness: LocalBusinessEntity = {
+  const sampleBusiness = {
     id: 'studio-001',
     type: 'LocalBusiness',
     slug: 'zen-pilates-studio',
     name: { en: 'Zen Pilates Studio', ko: '젠 필라테스 스튜디오' },
     description: { en: 'Premium pilates studio', ko: '프리미엄 필라테스 스튜디오' },
-    images: { thumbnail: '/images/studio.jpg', main: '/images/studio-main.jpg' },
-    seo: { title: 'Zen Pilates Studio' },
+    images: { thumbnail: '/images/studio.jpg', full: '/images/studio-main.jpg' },
     status: 'published',
     createdAt: '2024-01-01T00:00:00Z',
     updatedAt: '2024-12-26T00:00:00Z',

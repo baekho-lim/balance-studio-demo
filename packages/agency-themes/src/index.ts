@@ -160,8 +160,16 @@ export const defaultTheme: ThemeConfig = {
   }
 }
 
-// Theme presets map
-export const themePresets: Record<ThemePresetId, Partial<ThemeConfig>> = {
+// Deep partial type for theme overrides
+type DeepPartial<T> = {
+  [P in keyof T]?: T[P] extends object ? DeepPartial<T[P]> : T[P]
+}
+
+// Theme override input type - allows partial nested objects
+export type ThemeOverrides = DeepPartial<ThemeConfig> & { id: string; name: string }
+
+// Theme presets map - each preset has required id and name
+export const themePresets: Record<ThemePresetId, ThemeOverrides> = {
   minimal: {
     id: 'minimal',
     name: 'Minimal',
@@ -191,16 +199,50 @@ export const themePresets: Record<ThemePresetId, Partial<ThemeConfig>> = {
 
 /**
  * Create a theme by extending the default theme
+ * Uses deep merge to allow partial overrides at any level
  */
-export function createTheme(overrides: Partial<ThemeConfig>): ThemeConfig {
+export function createTheme(overrides: ThemeOverrides): ThemeConfig {
+  // Simple shallow merge for each section - defaultTheme provides all required fields
   return {
-    ...defaultTheme,
-    ...overrides,
-    colors: { ...defaultTheme.colors, ...overrides.colors },
-    typography: { ...defaultTheme.typography, ...overrides.typography },
-    layout: { ...defaultTheme.layout, ...overrides.layout },
-    components: { ...defaultTheme.components, ...overrides.components },
-    animation: { ...defaultTheme.animation, ...overrides.animation }
+    id: overrides.id,
+    name: overrides.name,
+    description: overrides.description ?? defaultTheme.description,
+    version: overrides.version ?? defaultTheme.version,
+    author: overrides.author ?? defaultTheme.author,
+    colors: { ...defaultTheme.colors, ...(overrides.colors as Partial<typeof defaultTheme.colors>) },
+    typography: {
+      fontFamily: { ...defaultTheme.typography.fontFamily, ...overrides.typography?.fontFamily },
+      fontSize: { ...defaultTheme.typography.fontSize, ...overrides.typography?.fontSize } as typeof defaultTheme.typography.fontSize,
+      fontWeight: { ...defaultTheme.typography.fontWeight, ...overrides.typography?.fontWeight },
+      lineHeight: { ...defaultTheme.typography.lineHeight, ...overrides.typography?.lineHeight },
+      letterSpacing: overrides.typography?.letterSpacing
+        ? { ...defaultTheme.typography.letterSpacing, ...overrides.typography.letterSpacing }
+        : defaultTheme.typography.letterSpacing
+    },
+    spacing: { ...defaultTheme.spacing, ...(overrides.spacing as Partial<typeof defaultTheme.spacing>) } as typeof defaultTheme.spacing,
+    borderRadius: { ...defaultTheme.borderRadius, ...(overrides.borderRadius as Partial<typeof defaultTheme.borderRadius>) },
+    shadows: { ...defaultTheme.shadows, ...(overrides.shadows as Partial<typeof defaultTheme.shadows>) },
+    breakpoints: { ...defaultTheme.breakpoints, ...(overrides.breakpoints as Partial<typeof defaultTheme.breakpoints>) },
+    layout: { ...defaultTheme.layout, ...(overrides.layout as Partial<typeof defaultTheme.layout>) },
+    components: {
+      button: {
+        ...defaultTheme.components.button,
+        ...overrides.components?.button,
+        sizes: {
+          ...defaultTheme.components.button.sizes,
+          ...(overrides.components?.button?.sizes as Partial<typeof defaultTheme.components.button.sizes>)
+        }
+      },
+      card: { ...defaultTheme.components.card, ...overrides.components?.card },
+      input: { ...defaultTheme.components.input, ...overrides.components?.input },
+      badge: { ...defaultTheme.components.badge, ...overrides.components?.badge }
+    },
+    animation: {
+      duration: { ...defaultTheme.animation.duration, ...overrides.animation?.duration },
+      easing: { ...defaultTheme.animation.easing, ...overrides.animation?.easing },
+      transitions: { ...defaultTheme.animation.transitions, ...overrides.animation?.transitions }
+    },
+    industry: overrides.industry as ThemeConfig['industry']
   }
 }
 

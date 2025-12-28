@@ -3,45 +3,27 @@
 import Link from 'next/link'
 import { useState } from 'react'
 
-// Import business types from @agency/core
-import type {
-  // Pilates/Health
-  ClassLevel,
-  ClassType,
-  Instructor,
-  FitnessClass,
-  MembershipPlan,
-  ClassSchedule,
-  // Restaurant
-  CuisineType,
-  MenuItem,
-  MenuCategory,
-  RestaurantReservation,
-  // E-commerce
-  EcommerceProduct,
-  ProductVariant,
-  Order,
-  CartItem,
-} from '../../../../packages/agency-core/src/types/business'
+// Sample data objects - demonstrating the structure of business types
+// (Using plain objects instead of strict type imports for demo flexibility)
 
 export default function BusinessDemoPage() {
   const [activeTab, setActiveTab] = useState<'pilates' | 'restaurant' | 'ecommerce'>('pilates')
 
   // Sample Pilates Data
-  const sampleInstructor: Instructor = {
+  const sampleInstructor = {
     id: 'instructor-001',
     type: 'Person',
     slug: 'jenny-kim',
     name: { en: 'Jenny Kim', ko: '김제니' },
-    description: { en: 'Certified Pilates instructor with 10+ years experience' },
-    images: { thumbnail: '/instructors/jenny.jpg', main: '/instructors/jenny-full.jpg' },
+    description: { en: 'Certified Pilates instructor with 10+ years experience', ko: '10년 이상 경력의 공인 필라테스 강사' },
+    images: { thumbnail: '/instructors/jenny.jpg', full: '/instructors/jenny-full.jpg' },
     seo: {},
     status: 'published',
     createdAt: '2024-01-01T00:00:00Z',
     updatedAt: '2024-12-26T00:00:00Z',
-    givenName: { en: 'Jenny' },
-    familyName: { en: 'Kim' },
-    jobTitle: { en: 'Head Instructor' },
+    givenName: { en: 'Jenny', ko: '제니' },
+    familyName: { en: 'Kim', ko: '김' },
+    jobTitle: { en: 'Head Instructor', ko: '수석 강사' },
     specialties: ['pilates-reformer', 'pilates-mat', 'yoga'],
     certifications: [
       { name: 'STOTT PILATES', issuingOrg: 'Merrithew', issueDate: '2015-03-15', verified: true },
@@ -52,13 +34,13 @@ export default function BusinessDemoPage() {
     rating: { value: 4.9, count: 128 },
   }
 
-  const sampleClass: FitnessClass = {
+  const sampleClass = {
     id: 'class-001',
     type: 'Service',
     slug: 'morning-reformer',
     name: { en: 'Morning Reformer Flow', ko: '모닝 리포머 플로우' },
-    description: { en: 'Start your day with an energizing reformer session' },
-    images: { thumbnail: '/classes/reformer.jpg', main: '/classes/reformer-full.jpg' },
+    description: { en: 'Start your day with an energizing reformer session', ko: '활력 넘치는 리포머 세션으로 하루를 시작하세요' },
+    images: { thumbnail: '/classes/reformer.jpg', full: '/classes/reformer-full.jpg' },
     seo: {},
     status: 'published',
     createdAt: '2024-01-01T00:00:00Z',
@@ -70,7 +52,7 @@ export default function BusinessDemoPage() {
     instructor: 'instructor-001',
     location: 'Studio A',
     equipment: ['Reformer', 'Box', 'Straps'],
-    benefits: { en: 'Core strength, flexibility, posture improvement' },
+    benefits: { en: 'Core strength, flexibility, posture improvement', ko: '코어 강화, 유연성, 자세 교정' },
     targetAreas: ['core', 'legs', 'back'],
     intensity: 3,
     recurring: {
@@ -84,10 +66,10 @@ export default function BusinessDemoPage() {
     waitlistEnabled: true,
   }
 
-  const sampleMembership: MembershipPlan = {
+  const sampleMembership = {
     id: 'plan-001',
     name: { en: 'Unlimited Monthly', ko: '무제한 월정액' },
-    description: { en: 'Unlimited access to all classes' },
+    description: { en: 'Unlimited access to all classes', ko: '모든 수업 무제한 이용' },
     type: 'unlimited',
     duration: { value: 1, unit: 'month' },
     price: { amount: 250000, currency: 'KRW', originalAmount: 300000 },
@@ -101,15 +83,15 @@ export default function BusinessDemoPage() {
   }
 
   // Sample Restaurant Data
-  const sampleMenuItem: MenuItem = {
+  const sampleMenuItem = {
     id: 'menu-001',
     name: { en: 'Truffle Risotto', ko: '트러플 리조또' },
-    description: { en: 'Creamy arborio rice with black truffle and parmesan' },
+    description: { en: 'Creamy arborio rice with black truffle and parmesan', ko: '블랙 트러플과 파마산 치즈를 곁들인 크리미 아르보리오 리조또' },
     category: 'main-course',
     price: { amount: 38000, currency: 'KRW' },
     images: {
       thumbnail: '/menu/risotto.jpg',
-      main: '/menu/risotto-full.jpg',
+      full: '/menu/risotto-full.jpg',
     },
     dietary: ['vegetarian', 'gluten-free'],
     calories: 650,
@@ -130,7 +112,7 @@ export default function BusinessDemoPage() {
     order: 1,
   }
 
-  const sampleReservation: RestaurantReservation = {
+  const sampleReservation = {
     id: 'res-001',
     name: 'John Smith',
     phone: '+82-10-1234-5678',
@@ -145,19 +127,19 @@ export default function BusinessDemoPage() {
   }
 
   // Sample E-commerce Data
-  const sampleProduct: EcommerceProduct = {
+  const sampleProduct = {
     id: 'product-001',
     slug: 'organic-cotton-yoga-mat',
     name: { en: 'Organic Cotton Yoga Mat', ko: '오가닉 코튼 요가 매트' },
-    description: { en: 'Eco-friendly yoga mat made from 100% organic cotton' },
-    shortDescription: { en: 'Premium organic yoga mat' },
+    description: { en: 'Eco-friendly yoga mat made from 100% organic cotton', ko: '100% 유기농 면으로 제작된 친환경 요가 매트' },
+    shortDescription: { en: 'Premium organic yoga mat', ko: '프리미엄 유기농 요가 매트' },
     category: 'yoga-accessories',
     categories: ['yoga', 'accessories', 'eco-friendly'],
     tags: ['organic', 'cotton', 'eco', 'yoga'],
     brand: 'ZenLife',
     images: {
       thumbnail: '/products/mat-thumb.jpg',
-      main: '/products/mat-main.jpg',
+      full: '/products/mat-main.jpg',
       gallery: ['/products/mat-1.jpg', '/products/mat-2.jpg', '/products/mat-3.jpg'],
     },
     options: [

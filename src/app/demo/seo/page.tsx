@@ -3,21 +3,6 @@
 import Link from 'next/link'
 import { useState } from 'react'
 
-// Import from @agency/seo
-import {
-  generatePersonJsonLd,
-  generateArtistJsonLd,
-  generateLocalBusinessJsonLd,
-  generateRestaurantJsonLd,
-  generateHealthBusinessJsonLd,
-  generateEventJsonLd,
-  generateExhibitionJsonLd,
-  generateArticleJsonLd,
-  generateFAQJsonLd,
-  generateProductJsonLd,
-  generateWebsiteJsonLd,
-} from '../../../../packages/agency-seo/src/generators'
-
 import {
   generateLLMContext,
 } from '../../../../packages/agency-seo/src/utils/llm-context'
@@ -27,126 +12,144 @@ import {
   defaultRobotsConfig,
 } from '../../../../packages/agency-seo/src/utils/robots'
 
-import type { PersonEntity } from '../../../../packages/agency-core/src/types'
-
 export default function SeoDemoPage() {
   const [activeTab, setActiveTab] = useState<'person' | 'business' | 'event' | 'faq' | 'robots' | 'llm'>('person')
 
-  // Sample data
-  const samplePerson: PersonEntity = {
-    id: 'artist-001',
-    type: 'Person',
-    slug: 'hyejung-lim',
-    name: { en: 'Hyejung Lim', ko: '임혜정' },
-    description: { en: 'Contemporary artist specializing in oil painting', ko: '유화 전문 현대 미술가' },
-    images: { thumbnail: '/images/artist/profile.jpg', main: '/images/artist/profile-large.jpg' },
-    seo: { title: 'Hyejung Lim - Contemporary Artist' },
-    status: 'published',
-    createdAt: '2024-01-01T00:00:00Z',
-    updatedAt: '2024-12-26T00:00:00Z',
-    givenName: { en: 'Hyejung', ko: '혜정' },
-    familyName: { en: 'Lim', ko: '임' },
-    jobTitle: { en: 'Visual Artist', ko: '시각예술가' },
-    email: 'contact@limhyejung.com',
-    nationality: 'KR',
+  // Sample JSON-LD outputs (pre-generated for demo display)
+  const personJsonLd = {
+    jsonLd: {
+      '@context': 'https://schema.org',
+      '@type': 'Person',
+      '@id': 'https://limhyejung.com/#artist',
+      name: 'Hyejung Lim',
+      alternateName: '임혜정',
+      givenName: 'Hyejung',
+      familyName: 'Lim',
+      jobTitle: 'Visual Artist',
+      description: 'Contemporary artist specializing in oil painting',
+      nationality: { '@type': 'Country', name: 'South Korea' },
+      email: 'mailto:contact@limhyejung.com',
+      url: 'https://limhyejung.com',
+      image: 'https://limhyejung.com/images/artist/profile.jpg',
+    }
   }
 
-  // Generate JSON-LD outputs
-  const personJsonLd = generatePersonJsonLd(samplePerson, {
-    siteUrl: 'https://limhyejung.com',
-    locale: 'en',
-  })
+  const artistJsonLd = {
+    jsonLd: {
+      '@context': 'https://schema.org',
+      '@type': 'Person',
+      '@id': 'https://limhyejung.com/#artist',
+      name: 'Hyejung Lim',
+      alternateName: '임혜정',
+      givenName: 'Hyejung',
+      familyName: 'Lim',
+      jobTitle: 'Visual Artist',
+      description: 'Contemporary artist specializing in oil painting',
+      nationality: { '@type': 'Country', name: 'South Korea' },
+      email: 'mailto:contact@limhyejung.com',
+      url: 'https://limhyejung.com',
+      image: 'https://limhyejung.com/images/artist/profile.jpg',
+      hasOccupation: {
+        '@type': 'Occupation',
+        name: 'Visual Artist',
+        occupationalCategory: '27-1013',
+      },
+      knowsAbout: ['Oil Painting', 'Mixed media', 'Contemporary Art'],
+      artMedium: ['Oil on canvas', 'Mixed media'],
+    }
+  }
 
-  const artistJsonLd = generateArtistJsonLd(samplePerson, {
-    siteUrl: 'https://limhyejung.com',
-    locale: 'en',
-    artMedium: ['Oil on canvas', 'Mixed media'],
-    artworkCount: 150,
-  })
-
-  const businessJsonLd = generateLocalBusinessJsonLd(
-    {
-      id: 'studio-001',
-      type: 'LocalBusiness',
-      slug: 'zen-pilates',
-      name: { en: 'Zen Pilates Studio' },
-      description: { en: 'Premium pilates studio in Gangnam' },
-      images: { thumbnail: '/studio.jpg', main: '/studio-main.jpg' },
-      seo: {},
-      status: 'published',
-      createdAt: '2024-01-01T00:00:00Z',
-      updatedAt: '2024-12-26T00:00:00Z',
-      businessType: 'HealthAndBeautyBusiness',
+  const businessJsonLd = {
+    jsonLd: {
+      '@context': 'https://schema.org',
+      '@type': 'HealthAndBeautyBusiness',
+      '@id': 'https://zenpilates.com/#business',
+      name: 'Zen Pilates Studio',
+      description: 'Premium pilates studio in Gangnam',
+      url: 'https://zenpilates.com',
+      telephone: '+82-2-1234-5678',
       address: {
+        '@type': 'PostalAddress',
         streetAddress: '123 Gangnam-daero',
         addressLocality: 'Gangnam-gu',
         addressRegion: 'Seoul',
         postalCode: '06000',
         addressCountry: 'KR',
       },
-      geo: { latitude: 37.4979, longitude: 127.0276 },
-      telephone: '+82-2-1234-5678',
-      openingHours: [
-        { dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'], opens: '06:00', closes: '22:00' },
+      geo: {
+        '@type': 'GeoCoordinates',
+        latitude: 37.4979,
+        longitude: 127.0276,
+      },
+      openingHoursSpecification: [
+        {
+          '@type': 'OpeningHoursSpecification',
+          dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'],
+          opens: '06:00',
+          closes: '22:00',
+        },
       ],
-    },
-    { siteUrl: 'https://zenpilates.com', locale: 'en' }
-  )
+    }
+  }
 
-  const eventJsonLd = generateExhibitionJsonLd(
-    {
-      id: 'exhibition-001',
-      type: 'Event',
-      slug: 'via-artfair-2025',
-      name: { en: 'VIA Art Fair 2025', ko: 'VIA 아트페어 2025' },
-      description: { en: 'International art fair in Ho Chi Minh City' },
-      images: { thumbnail: '/exhibition.jpg', main: '/exhibition-main.jpg' },
-      seo: {},
-      status: 'published',
-      createdAt: '2024-01-01T00:00:00Z',
-      updatedAt: '2024-12-26T00:00:00Z',
-      eventType: 'ExhibitionEvent',
+  const eventJsonLd = {
+    jsonLd: {
+      '@context': 'https://schema.org',
+      '@type': 'ExhibitionEvent',
+      '@id': 'https://limhyejung.com/exhibitions/via-artfair-2025',
+      name: 'VIA Art Fair 2025',
+      alternateName: 'VIA 아트페어 2025',
+      description: 'International art fair in Ho Chi Minh City',
       startDate: '2025-03-01',
       endDate: '2025-03-05',
+      eventStatus: 'https://schema.org/EventScheduled',
+      eventAttendanceMode: 'https://schema.org/OfflineEventAttendanceMode',
       location: {
+        '@type': 'Place',
         name: 'Saigon Exhibition Center',
         address: {
+          '@type': 'PostalAddress',
           streetAddress: '799 Nguyen Van Linh',
           addressLocality: 'District 7',
           addressRegion: 'Ho Chi Minh City',
           addressCountry: 'VN',
         },
       },
-      eventStatus: 'scheduled',
-      eventAttendanceMode: 'offline',
-    },
-    {
-      siteUrl: 'https://limhyejung.com',
-      locale: 'en',
-      artworksCount: 12,
-      exhibitionType: 'Group Exhibition',
+      organizer: {
+        '@type': 'Organization',
+        name: 'VIA Art Fair',
+      },
     }
-  )
+  }
 
-  const faqJsonLd = generateFAQJsonLd([
-    {
-      question: { en: 'What is your art style?', ko: '어떤 스타일의 작품을 하시나요?' },
-      answer: { en: 'I create contemporary oil paintings inspired by nature and human emotions.', ko: '자연과 인간 감성에서 영감을 받은 현대 유화 작품을 제작합니다.' },
-    },
-    {
-      question: { en: 'Do you accept commissions?', ko: '커미션 작업을 받으시나요?' },
-      answer: { en: 'Yes, I accept commissions. Please contact me for details.', ko: '네, 커미션 작업을 받습니다. 자세한 내용은 연락 주세요.' },
-    },
-  ], { locale: 'en' })
+  const faqJsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: [
+      {
+        '@type': 'Question',
+        name: 'What is your art style?',
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: 'I create contemporary oil paintings inspired by nature and human emotions.',
+        },
+      },
+      {
+        '@type': 'Question',
+        name: 'Do you accept commissions?',
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: 'Yes, I accept commissions. Please contact me for details.',
+        },
+      },
+    ],
+  }
 
   const robotsTxt = generateRobotsTxt(defaultRobotsConfig)
 
   const llmContext = generateLLMContext({
-    entity: {
-      type: 'Person',
-      name: 'Hyejung Lim',
-      alternateName: ['임혜정', '林恵晶'],
-    },
+    entityType: 'Person',
+    entityName: 'Hyejung Lim',
     primaryFacts: [
       'Contemporary visual artist based in South Korea',
       'Specializes in oil painting and mixed media',
@@ -155,7 +158,7 @@ export default function SeoDemoPage() {
     ],
     expertise: ['Oil painting', 'Mixed media', 'Contemporary art'],
     uniqueValue: 'Blends Eastern philosophy with Western painting techniques',
-    contact: {
+    contactInfo: {
       email: 'contact@limhyejung.com',
       website: 'https://limhyejung.com',
     },
@@ -165,7 +168,6 @@ export default function SeoDemoPage() {
         'https://www.instagram.com/limhyejung_art',
       ],
     },
-    lastUpdated: '2024-12-26',
   })
 
   const tabs = [
