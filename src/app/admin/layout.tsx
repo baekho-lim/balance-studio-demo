@@ -3,21 +3,29 @@
 import { useState, useEffect, ReactNode } from 'react'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
-import { LayoutDashboard, Calendar, Lock, Newspaper, HelpCircle, BarChart3, ImageIcon, Target } from 'lucide-react'
+import { LayoutDashboard, Calendar, Lock, Newspaper, HelpCircle, BarChart3, ImageIcon, Target, LucideIcon } from 'lucide-react'
+import config from '@/data/config.json'
 
 interface AdminLayoutProps {
   children: ReactNode
 }
 
-const navigation = [
-  { name: 'Dashboard', href: '/admin', icon: LayoutDashboard },
-  { name: 'Exhibitions', href: '/admin/exhibitions', icon: Calendar },
-  { name: 'News & Press', href: '/admin/news', icon: Newspaper },
-  { name: 'FAQ', href: '/admin/faq', icon: HelpCircle },
-  { name: 'SEO Status', href: '/admin/seo', icon: BarChart3 },
-  { name: 'Strategy', href: '/admin/strategy', icon: Target },
-  { name: 'Media Library', href: '/admin/media', icon: ImageIcon },
-]
+// Icon mapping for dynamic loading from config
+const iconMap: Record<string, LucideIcon> = {
+  LayoutDashboard,
+  Calendar,
+  Newspaper,
+  HelpCircle,
+  BarChart3,
+  Target,
+  ImageIcon,
+}
+
+// Navigation loaded from config.json for easier maintenance
+const navigation = config.navigation.admin.map(item => ({
+  ...item,
+  icon: iconMap[item.icon] || LayoutDashboard
+}))
 
 export default function AdminLayout({ children }: AdminLayoutProps) {
   const [isAuthenticated, setIsAuthenticated] = useState(false)

@@ -5,15 +5,10 @@ import { useRouter, usePathname } from 'next/navigation'
 import Link from 'next/link'
 import { Menu, X } from 'lucide-react'
 import LanguageSelector from '@/components/ui/LanguageSelector'
+import config from '@/data/config.json'
 
-const navigation = [
-  { name: 'Works', href: '/#works' },
-  { name: 'Exhibitions', href: '/exhibitions', isLink: true },
-  { name: 'News', href: '/news', isLink: true },
-  { name: 'Story', href: '/story', isLink: true },
-  { name: 'FAQ', href: '/faq', isLink: true },
-  { name: 'Partnership', href: '/partnership', isLink: true },
-]
+// Navigation loaded from config.json for easier maintenance
+const navigation = config.navigation.main
 
 export default function Header() {
   const [isScrolled, setIsScrolled] = useState(false)

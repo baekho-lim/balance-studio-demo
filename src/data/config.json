@@ -90,8 +90,27 @@
     "titleTemplate": "%s | Lim Hyejung",
     "defaultImage": "/images/og-default.webp"
   },
+  "navigation": {
+    "main": [
+      { "name": "Works", "href": "/#works", "isLink": false },
+      { "name": "Exhibitions", "href": "/exhibitions", "isLink": true },
+      { "name": "News", "href": "/news", "isLink": true },
+      { "name": "Story", "href": "/story", "isLink": true },
+      { "name": "FAQ", "href": "/faq", "isLink": true },
+      { "name": "Partnership", "href": "/partnership", "isLink": true }
+    ],
+    "admin": [
+      { "name": "Dashboard", "href": "/admin", "icon": "LayoutDashboard" },
+      { "name": "Exhibitions", "href": "/admin/exhibitions", "icon": "Calendar" },
+      { "name": "News & Press", "href": "/admin/news", "icon": "Newspaper" },
+      { "name": "FAQ", "href": "/admin/faq", "icon": "HelpCircle" },
+      { "name": "SEO Status", "href": "/admin/seo", "icon": "BarChart3" },
+      { "name": "Strategy", "href": "/admin/strategy", "icon": "Target" },
+      { "name": "Media Library", "href": "/admin/media", "icon": "ImageIcon" }
+    ]
+  },
   "meta": {
-    "version": "1.0.0",
-    "lastUpdated": "2025-12-26"
+    "version": "1.1.0",
+    "lastUpdated": "2025-12-28"
   }
 }
