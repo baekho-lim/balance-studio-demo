@@ -14,7 +14,8 @@ import {
   Megaphone,
   X,
   Clock,
-  CheckCircle2
+  CheckCircle2,
+  FileText
 } from 'lucide-react'
 import Link from 'next/link'
 import { useRouter } from 'next/navigation'
@@ -357,6 +358,33 @@ export default function DashboardPage() {
             <p className="text-xs text-blue-700">
               <strong>HITL Demo:</strong> 프로덕션 환경에서는 모든 액션이 관리자 승인 후 실행됩니다.
             </p>
+          </div>
+        </div>
+      </div>
+
+      {/* Quick Actions - Content Studio CTA */}
+      <div className="mt-8">
+        <div className="bg-gradient-to-r from-purple-600 to-blue-600 rounded-xl p-6 text-white">
+          <div className="flex items-center justify-between">
+            <div className="flex items-center gap-4">
+              <div className="w-12 h-12 rounded-xl bg-white/20 flex items-center justify-center">
+                <FileText className="w-6 h-6" />
+              </div>
+              <div>
+                <h3 className="font-semibold text-lg">콘텐츠 플랜 생성</h3>
+                <p className="text-white/80 text-sm">
+                  AI가 페르소나별 SEO 최적화 콘텐츠를 추천합니다
+                </p>
+              </div>
+            </div>
+            <Link
+              href="/demo/commerce/content-studio"
+              className="flex items-center gap-2 px-5 py-2.5 bg-white text-purple-600 rounded-lg font-medium hover:bg-white/90 transition-colors"
+            >
+              <Sparkles className="w-4 h-4" />
+              콘텐츠 스튜디오
+              <ArrowRight className="w-4 h-4" />
+            </Link>
           </div>
         </div>
       </div>
