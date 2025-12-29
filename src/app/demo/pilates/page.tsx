@@ -2,10 +2,12 @@
 
 import Link from 'next/link'
 import { Calendar, Users, CreditCard, Sparkles, ArrowRight, Clock, MapPin, Phone } from 'lucide-react'
+import { SectionHeader, LevelBadge, Button, CTAGroup, Card } from '@agency/ui'
 
 // Import demo data
 import classesData from '@/data/demo/pilates-classes.json'
 import instructorsData from '@/data/demo/pilates-instructors.json'
+import studioConfig from '@/data/demo/pilates-config.json'
 
 export default function PilatesDemoPage() {
   const featuredClasses = classesData.filter(c => c.featured).slice(0, 3)
@@ -23,36 +25,34 @@ export default function PilatesDemoPage() {
               Pilates Studio Demo Template
             </div>
             <h1 className="text-5xl md:text-6xl font-bold mb-6 leading-tight">
-              Find Your Balance.<br />
-              Transform Your Body.
+              {studioConfig.tagline.en.split(',')[0]}.<br />
+              {studioConfig.tagline.en.split(',')[1]?.trim() || 'Transform Your Body'}.
             </h1>
             <p className="text-xl text-blue-100 mb-8 max-w-2xl">
-              Experience the art of movement at Balance Studio. Our expert instructors
+              Experience the art of movement at {studioConfig.name.en}. Our expert instructors
               guide you through personalized Pilates sessions designed for your goals.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4">
-              <Link
-                href="/demo/pilates/schedule"
-                className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-white text-blue-600 rounded-xl font-semibold hover:bg-blue-50 transition-colors"
-              >
+            <CTAGroup align="left">
+              <Button href="/demo/pilates/schedule" variant="secondary" size="lg">
                 View Schedule
-                <ArrowRight className="w-5 h-5" />
-              </Link>
-              <Link
+                <ArrowRight className="w-5 h-5 ml-2" />
+              </Button>
+              <Button
                 href="/demo/pilates/pricing"
-                className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-blue-500/30 backdrop-blur-sm text-white rounded-xl font-semibold hover:bg-blue-500/40 transition-colors"
+                size="lg"
+                className="bg-blue-500/30 backdrop-blur-sm hover:bg-blue-500/40"
               >
                 See Pricing
-              </Link>
-            </div>
+              </Button>
+            </CTAGroup>
           </div>
 
-          {/* Quick Info */}
+          {/* Quick Info - using config */}
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mt-16">
             {[
-              { icon: MapPin, label: 'Location', value: 'Gangnam, Seoul' },
-              { icon: Clock, label: 'Hours', value: 'Mon-Sat 7AM-9PM' },
-              { icon: Phone, label: 'Contact', value: '02-1234-5678' },
+              { icon: MapPin, label: 'Location', value: `${studioConfig.address.addressLocality}, ${studioConfig.address.addressRegion}` },
+              { icon: Clock, label: 'Hours', value: studioConfig.openingHoursDisplay.en.weekday.split(':')[1]?.trim() || 'Mon-Sat 7AM-9PM' },
+              { icon: Phone, label: 'Contact', value: studioConfig.telephoneDisplay },
             ].map((item, idx) => (
               <div
                 key={idx}
@@ -106,19 +106,18 @@ export default function PilatesDemoPage() {
       {/* Featured Classes */}
       <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold text-gray-900 mb-4">Featured Classes</h2>
-            <p className="text-gray-500 max-w-2xl mx-auto">
-              From beginner-friendly mat classes to advanced reformer sessions,
-              we have something for everyone.
-            </p>
-          </div>
+          <SectionHeader
+            title="Featured Classes"
+            subtitle="From beginner-friendly mat classes to advanced reformer sessions, we have something for everyone."
+          />
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {featuredClasses.map(cls => (
-              <div
+              <Card
                 key={cls.id}
-                className="group bg-gray-50 rounded-2xl overflow-hidden hover:shadow-lg transition-all"
+                padding="none"
+                hover
+                className="overflow-hidden"
               >
                 {/* Image Placeholder */}
                 <div className="aspect-[4/3] bg-gradient-to-br from-blue-100 to-purple-100 flex items-center justify-center">
@@ -127,14 +126,7 @@ export default function PilatesDemoPage() {
 
                 <div className="p-6">
                   <div className="flex items-center gap-2 mb-2">
-                    <span className={`px-2 py-0.5 rounded-full text-xs font-medium ${
-                      cls.level === 'beginner' ? 'bg-green-100 text-green-700' :
-                      cls.level === 'intermediate' ? 'bg-yellow-100 text-yellow-700' :
-                      cls.level === 'advanced' ? 'bg-red-100 text-red-700' :
-                      'bg-blue-100 text-blue-700'
-                    }`}>
-                      {cls.level.replace('-', ' ')}
-                    </span>
+                    <LevelBadge level={cls.level as 'beginner' | 'intermediate' | 'advanced' | 'all-levels'} />
                     <span className="text-gray-400 text-sm">{cls.durationMinutes} min</span>
                   </div>
 
@@ -151,18 +143,15 @@ export default function PilatesDemoPage() {
                     <ArrowRight className="w-4 h-4" />
                   </Link>
                 </div>
-              </div>
+              </Card>
             ))}
           </div>
 
           <div className="text-center mt-10">
-            <Link
-              href="/demo/pilates/schedule"
-              className="inline-flex items-center gap-2 px-6 py-3 border-2 border-gray-900 text-gray-900 rounded-xl font-medium hover:bg-gray-900 hover:text-white transition-colors"
-            >
+            <Button href="/demo/pilates/schedule" variant="outline">
               View Full Schedule
-              <ArrowRight className="w-4 h-4" />
-            </Link>
+              <ArrowRight className="w-4 h-4 ml-2" />
+            </Button>
           </div>
         </div>
       </section>
@@ -170,20 +159,14 @@ export default function PilatesDemoPage() {
       {/* Instructors Preview */}
       <section className="py-20 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold text-gray-900 mb-4">Meet Our Instructors</h2>
-            <p className="text-gray-500 max-w-2xl mx-auto">
-              Our certified professionals bring years of experience and passion
-              to every class.
-            </p>
-          </div>
+          <SectionHeader
+            title="Meet Our Instructors"
+            subtitle="Our certified professionals bring years of experience and passion to every class."
+          />
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {featuredInstructors.map(instructor => (
-              <div
-                key={instructor.id}
-                className="bg-white rounded-2xl p-6 text-center hover:shadow-lg transition-shadow"
-              >
+              <Card key={instructor.id} hover className="text-center">
                 {/* Avatar */}
                 <div className="w-24 h-24 bg-gradient-to-br from-blue-200 to-purple-200 rounded-full mx-auto mb-4 flex items-center justify-center">
                   <span className="text-3xl text-blue-600 font-bold">
@@ -208,7 +191,7 @@ export default function PilatesDemoPage() {
                 <p className="text-gray-500 text-sm">
                   {instructor.experienceYears}+ years experience
                 </p>
-              </div>
+              </Card>
             ))}
           </div>
 
@@ -234,20 +217,14 @@ export default function PilatesDemoPage() {
             New members get 50% off their first class pack.
             No commitment required.
           </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link
-              href="/demo/pilates/pricing"
-              className="px-8 py-4 bg-blue-600 text-white rounded-xl font-semibold hover:bg-blue-700 transition-colors"
-            >
+          <CTAGroup>
+            <Button href="/demo/pilates/pricing" variant="primary" size="lg">
               View Pricing
-            </Link>
-            <Link
-              href="/demo/pilates/schedule"
-              className="px-8 py-4 bg-gray-700 text-white rounded-xl font-semibold hover:bg-gray-600 transition-colors"
-            >
+            </Button>
+            <Button href="/demo/pilates/schedule" variant="secondary" size="lg" className="bg-gray-700 hover:bg-gray-600">
               Book a Class
-            </Link>
-          </div>
+            </Button>
+          </CTAGroup>
         </div>
       </section>
 
