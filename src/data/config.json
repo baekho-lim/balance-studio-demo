@@ -102,6 +102,8 @@
     ],
     "admin": [
       { "name": "Dashboard", "href": "/admin", "icon": "LayoutDashboard" },
+      { "name": "Inquiries", "href": "/admin/inquiries", "icon": "MessageSquare" },
+      { "name": "Sites", "href": "/admin/sites", "icon": "Globe" },
       { "name": "Exhibitions", "href": "/admin/exhibitions", "icon": "Calendar" },
       { "name": "News & Press", "href": "/admin/news", "icon": "Newspaper" },
       { "name": "Blog", "href": "/admin/blog", "icon": "FileText" },

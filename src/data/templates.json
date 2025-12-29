@@ -1,0 +1,162 @@
+[
+  {
+    "id": "pilates",
+    "name": {
+      "en": "Pilates & Fitness Studio",
+      "ko": "필라테스/피트니스 스튜디오"
+    },
+    "shortDescription": {
+      "en": "Perfect for yoga, pilates, gym, and wellness studios",
+      "ko": "요가, 필라테스, 헬스장, 웰니스 스튜디오에 적합"
+    },
+    "description": {
+      "en": "A modern, elegant template designed for fitness and wellness businesses. Features class schedules, instructor profiles, membership pricing, and booking integration. Optimized for SEO with Schema.org markup for local businesses.",
+      "ko": "피트니스 및 웰니스 비즈니스를 위한 현대적이고 우아한 템플릿. 수업 일정, 강사 프로필, 멤버십 가격, 예약 기능 포함. 지역 비즈니스용 Schema.org 마크업으로 SEO 최적화."
+    },
+    "thumbnail": "/images/templates/pilates-thumb.png",
+    "demoUrl": "/demo/pilates",
+    "status": "available",
+    "category": "health-wellness",
+    "features": [
+      { "en": "Class schedule & booking", "ko": "수업 일정 및 예약" },
+      { "en": "Instructor profiles", "ko": "강사 프로필" },
+      { "en": "Membership pricing", "ko": "멤버십 가격표" },
+      { "en": "SEO optimized", "ko": "SEO 최적화" },
+      { "en": "Mobile responsive", "ko": "모바일 반응형" }
+    ],
+    "pages": ["home", "schedule", "instructors", "pricing", "contact"],
+    "colors": {
+      "primary": "#3B82F6",
+      "secondary": "#8B5CF6",
+      "accent": "#EC4899"
+    }
+  },
+  {
+    "id": "restaurant",
+    "name": {
+      "en": "Restaurant & Cafe",
+      "ko": "레스토랑/카페"
+    },
+    "shortDescription": {
+      "en": "Ideal for restaurants, cafes, bakeries, and food businesses",
+      "ko": "레스토랑, 카페, 베이커리, 음식점에 적합"
+    },
+    "description": {
+      "en": "Showcase your menu, ambiance, and story with this appetizing template. Includes menu display, reservation system, gallery, and location map. Perfect for attracting food lovers and boosting local search visibility.",
+      "ko": "메뉴, 분위기, 스토리를 선보일 수 있는 맛있는 템플릿. 메뉴 표시, 예약 시스템, 갤러리, 위치 지도 포함. 음식 애호가들을 유치하고 로컬 검색 가시성을 높이는 데 완벽."
+    },
+    "thumbnail": "/images/templates/restaurant-thumb.png",
+    "demoUrl": "/demo/restaurant",
+    "status": "coming_soon",
+    "category": "food-beverage",
+    "features": [
+      { "en": "Menu showcase", "ko": "메뉴 전시" },
+      { "en": "Reservation system", "ko": "예약 시스템" },
+      { "en": "Photo gallery", "ko": "포토 갤러리" },
+      { "en": "Location & hours", "ko": "위치 및 영업시간" },
+      { "en": "Social integration", "ko": "소셜 미디어 연동" }
+    ],
+    "pages": ["home", "menu", "about", "gallery", "reservation", "contact"],
+    "colors": {
+      "primary": "#D97706",
+      "secondary": "#DC2626",
+      "accent": "#059669"
+    }
+  },
+  {
+    "id": "academy",
+    "name": {
+      "en": "Academy & Education",
+      "ko": "학원/교육기관"
+    },
+    "shortDescription": {
+      "en": "For language schools, tutoring centers, and educational institutes",
+      "ko": "어학원, 학습 센터, 교육기관에 적합"
+    },
+    "description": {
+      "en": "Build trust with parents and students through a professional education website. Features course catalog, teacher profiles, enrollment forms, and testimonials. Designed to convert visitors into enrollments.",
+      "ko": "전문적인 교육 웹사이트로 학부모와 학생들의 신뢰를 구축하세요. 강좌 카탈로그, 강사 프로필, 등록 양식, 후기 기능 포함. 방문자를 등록으로 전환하도록 설계."
+    },
+    "thumbnail": "/images/templates/academy-thumb.png",
+    "demoUrl": "/demo/academy",
+    "status": "coming_soon",
+    "category": "education",
+    "features": [
+      { "en": "Course catalog", "ko": "강좌 목록" },
+      { "en": "Teacher profiles", "ko": "강사 프로필" },
+      { "en": "Enrollment forms", "ko": "등록 양식" },
+      { "en": "Student testimonials", "ko": "학생 후기" },
+      { "en": "Class schedule", "ko": "수업 일정" }
+    ],
+    "pages": ["home", "courses", "teachers", "enrollment", "faq", "contact"],
+    "colors": {
+      "primary": "#2563EB",
+      "secondary": "#7C3AED",
+      "accent": "#10B981"
+    }
+  },
+  {
+    "id": "ecommerce",
+    "name": {
+      "en": "E-commerce Shop",
+      "ko": "쇼핑몰"
+    },
+    "shortDescription": {
+      "en": "For online stores, boutiques, and retail businesses",
+      "ko": "온라인 스토어, 부티크, 소매업에 적합"
+    },
+    "description": {
+      "en": "Launch your online store with this conversion-optimized e-commerce template. Product catalog, shopping cart, checkout flow, and order management. Integrated with popular payment gateways.",
+      "ko": "전환 최적화된 이커머스 템플릿으로 온라인 스토어를 시작하세요. 제품 카탈로그, 장바구니, 결제 흐름, 주문 관리 포함. 인기 결제 게이트웨이와 통합."
+    },
+    "thumbnail": "/images/templates/ecommerce-thumb.png",
+    "demoUrl": "/demo/shop",
+    "status": "coming_soon",
+    "category": "retail",
+    "features": [
+      { "en": "Product catalog", "ko": "제품 카탈로그" },
+      { "en": "Shopping cart", "ko": "장바구니" },
+      { "en": "Secure checkout", "ko": "안전한 결제" },
+      { "en": "Order tracking", "ko": "주문 추적" },
+      { "en": "Inventory management", "ko": "재고 관리" }
+    ],
+    "pages": ["home", "products", "categories", "cart", "checkout", "account"],
+    "colors": {
+      "primary": "#0891B2",
+      "secondary": "#6366F1",
+      "accent": "#F59E0B"
+    }
+  },
+  {
+    "id": "portfolio",
+    "name": {
+      "en": "Creative Portfolio",
+      "ko": "크리에이티브 포트폴리오"
+    },
+    "shortDescription": {
+      "en": "For artists, designers, photographers, and creative professionals",
+      "ko": "아티스트, 디자이너, 사진작가, 크리에이터에 적합"
+    },
+    "description": {
+      "en": "Showcase your creative work with this stunning portfolio template. Features project galleries, about section, client testimonials, and contact form. Perfect for freelancers and creative agencies.",
+      "ko": "멋진 포트폴리오 템플릿으로 창작물을 선보이세요. 프로젝트 갤러리, 소개 섹션, 클라이언트 후기, 연락처 양식 포함. 프리랜서와 크리에이티브 에이전시에 완벽."
+    },
+    "thumbnail": "/images/templates/portfolio-thumb.png",
+    "demoUrl": "/demo/portfolio",
+    "status": "coming_soon",
+    "category": "creative",
+    "features": [
+      { "en": "Project gallery", "ko": "프로젝트 갤러리" },
+      { "en": "Lightbox viewing", "ko": "라이트박스 보기" },
+      { "en": "Client testimonials", "ko": "클라이언트 후기" },
+      { "en": "Contact form", "ko": "문의 양식" },
+      { "en": "Social links", "ko": "소셜 링크" }
+    ],
+    "pages": ["home", "portfolio", "about", "services", "contact"],
+    "colors": {
+      "primary": "#1F2937",
+      "secondary": "#4B5563",
+      "accent": "#F472B6"
+    }
+  }
+]
