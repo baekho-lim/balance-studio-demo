@@ -4,13 +4,14 @@
     "ko": "커머스 그로스 OS"
   },
   "tagline": {
-    "en": "Unified Commerce Intelligence Platform",
-    "ko": "통합 커머스 인텔리전스 플랫폼"
+    "en": "Multichannel Revenue/ROAS/Retention-based Action OS (Front-only)",
+    "ko": "멀티채널 매출/ROAS/재구매 기반 액션 추천 운영 OS (Front-only)"
   },
   "description": {
     "en": "All-in-one platform for e-commerce growth. Connect your store, understand your customers, and scale your business with AI-powered insights.",
     "ko": "이커머스 성장을 위한 올인원 플랫폼. 스토어를 연결하고, 고객을 이해하고, AI 기반 인사이트로 비즈니스를 성장시키세요."
   },
+  "categories": ["analytics", "crm", "ads", "content", "global"],
   "colors": {
     "primary": "#2563EB",
     "primaryDark": "#1D4ED8",
