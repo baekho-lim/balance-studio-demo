@@ -1,0 +1,125 @@
+{
+  "name": {
+    "en": "Commerce Growth OS",
+    "ko": "커머스 그로스 OS"
+  },
+  "tagline": {
+    "en": "Unified Commerce Intelligence Platform",
+    "ko": "통합 커머스 인텔리전스 플랫폼"
+  },
+  "description": {
+    "en": "All-in-one platform for e-commerce growth. Connect your store, understand your customers, and scale your business with AI-powered insights.",
+    "ko": "이커머스 성장을 위한 올인원 플랫폼. 스토어를 연결하고, 고객을 이해하고, AI 기반 인사이트로 비즈니스를 성장시키세요."
+  },
+  "colors": {
+    "primary": "#2563EB",
+    "primaryDark": "#1D4ED8",
+    "accent": "#F59E0B",
+    "accentDark": "#D97706",
+    "sidebar": "#111827",
+    "sidebarText": "#9CA3AF",
+    "sidebarActive": "#2563EB",
+    "success": "#10B981",
+    "warning": "#F59E0B",
+    "error": "#EF4444"
+  },
+  "logo": {
+    "icon": "C",
+    "text": "Commerce OS"
+  },
+  "navigation": [
+    {
+      "name": { "en": "Dashboard", "ko": "대시보드" },
+      "href": "/demo/commerce/dashboard",
+      "icon": "LayoutDashboard"
+    },
+    {
+      "name": { "en": "Customers", "ko": "고객" },
+      "href": "/demo/commerce/customers",
+      "icon": "Users"
+    },
+    {
+      "name": { "en": "CRM", "ko": "CRM" },
+      "href": "/demo/commerce/crm",
+      "icon": "Target"
+    },
+    {
+      "name": { "en": "Ads", "ko": "광고" },
+      "href": "/demo/commerce/ads",
+      "icon": "Megaphone"
+    },
+    {
+      "name": { "en": "Content Studio", "ko": "콘텐츠 스튜디오" },
+      "href": "/demo/commerce/content-studio",
+      "icon": "PenTool"
+    },
+    {
+      "name": { "en": "Integrations", "ko": "연동" },
+      "href": "/demo/commerce/integrations",
+      "icon": "Plug"
+    },
+    {
+      "name": { "en": "Settings", "ko": "설정" },
+      "href": "/demo/commerce/settings",
+      "icon": "Settings"
+    }
+  ],
+  "onboarding": {
+    "title": {
+      "en": "Welcome to Commerce Growth OS",
+      "ko": "커머스 그로스 OS에 오신 것을 환영합니다"
+    },
+    "subtitle": {
+      "en": "Connect your store to get started",
+      "ko": "시작하려면 스토어를 연결하세요"
+    },
+    "steps": [
+      {
+        "number": 1,
+        "title": { "en": "Connect Store", "ko": "스토어 연결" },
+        "description": { "en": "Link your e-commerce platform", "ko": "이커머스 플랫폼 연결" }
+      },
+      {
+        "number": 2,
+        "title": { "en": "Sync Data", "ko": "데이터 동기화" },
+        "description": { "en": "Import customers and orders", "ko": "고객 및 주문 데이터 가져오기" }
+      },
+      {
+        "number": 3,
+        "title": { "en": "Connect Marketing", "ko": "마케팅 연결" },
+        "description": { "en": "Link ad platforms", "ko": "광고 플랫폼 연결" }
+      },
+      {
+        "number": 4,
+        "title": { "en": "Start Growing", "ko": "성장 시작" },
+        "description": { "en": "Use AI insights to scale", "ko": "AI 인사이트로 성장하기" }
+      }
+    ],
+    "platforms": [
+      { "id": "shopify", "name": "Shopify", "icon": "shopify", "popular": true },
+      { "id": "cafe24", "name": "Cafe24", "icon": "cafe24", "popular": true },
+      { "id": "woocommerce", "name": "WooCommerce", "icon": "woocommerce", "popular": false },
+      { "id": "imweb", "name": "Imweb", "icon": "imweb", "popular": false },
+      { "id": "naver", "name": "Naver Smartstore", "icon": "naver", "popular": true },
+      { "id": "coupang", "name": "Coupang", "icon": "coupang", "popular": false }
+    ]
+  },
+  "seo": {
+    "keywords": [
+      "commerce",
+      "e-commerce",
+      "growth",
+      "CRM",
+      "customer data",
+      "advertising",
+      "shopify",
+      "cafe24",
+      "이커머스",
+      "커머스",
+      "고객관리",
+      "광고관리"
+    ],
+    "ogType": "website",
+    "ogLocale": "ko_KR"
+  }
+}

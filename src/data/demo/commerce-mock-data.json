@@ -1,0 +1,103 @@
+{
+  "kpis": {
+    "revenue": {
+      "value": 124500000,
+      "currency": "KRW",
+      "change": 12.5,
+      "period": "vs last month"
+    },
+    "orders": {
+      "value": 1847,
+      "change": 8.3,
+      "period": "vs last month"
+    },
+    "customers": {
+      "value": 12453,
+      "change": 15.2,
+      "period": "vs last month"
+    },
+    "aov": {
+      "value": 67400,
+      "currency": "KRW",
+      "change": 3.8,
+      "period": "vs last month"
+    }
+  },
+  "revenueChart": {
+    "labels": ["1월", "2월", "3월", "4월", "5월", "6월", "7월", "8월", "9월", "10월", "11월", "12월"],
+    "data": [85000000, 92000000, 88000000, 95000000, 102000000, 98000000, 110000000, 115000000, 108000000, 118000000, 122000000, 124500000]
+  },
+  "topProducts": [
+    { "id": "p1", "name": "프리미엄 스킨케어 세트", "sales": 342, "revenue": 34200000, "growth": 15.2 },
+    { "id": "p2", "name": "하이드레이팅 토너", "sales": 528, "revenue": 26400000, "growth": 8.7 },
+    { "id": "p3", "name": "안티에이징 세럼", "sales": 215, "revenue": 21500000, "growth": 22.3 },
+    { "id": "p4", "name": "선크림 SPF50+", "sales": 412, "revenue": 16480000, "growth": 5.1 },
+    { "id": "p5", "name": "클렌징 폼", "sales": 687, "revenue": 13740000, "growth": -2.3 }
+  ],
+  "recentOrders": [
+    { "id": "ORD-2024-1847", "customer": "김민지", "amount": 89000, "status": "delivered", "date": "2024-12-29" },
+    { "id": "ORD-2024-1846", "customer": "이서윤", "amount": 156000, "status": "shipping", "date": "2024-12-29" },
+    { "id": "ORD-2024-1845", "customer": "박지원", "amount": 42000, "status": "processing", "date": "2024-12-28" },
+    { "id": "ORD-2024-1844", "customer": "최유나", "amount": 234000, "status": "delivered", "date": "2024-12-28" },
+    { "id": "ORD-2024-1843", "customer": "정하은", "amount": 67000, "status": "delivered", "date": "2024-12-28" }
+  ],
+  "customers": [
+    { "id": "c1", "name": "김민지", "email": "minji.k@email.com", "phone": "010-1234-5678", "totalOrders": 12, "totalSpent": 1250000, "ltv": 1875000, "segment": "VIP", "lastOrder": "2024-12-29", "joinDate": "2023-06-15" },
+    { "id": "c2", "name": "이서윤", "email": "seoyun.l@email.com", "phone": "010-2345-6789", "totalOrders": 8, "totalSpent": 890000, "ltv": 1120000, "segment": "Regular", "lastOrder": "2024-12-29", "joinDate": "2023-09-22" },
+    { "id": "c3", "name": "박지원", "email": "jiwon.p@email.com", "phone": "010-3456-7890", "totalOrders": 3, "totalSpent": 185000, "ltv": 280000, "segment": "New", "lastOrder": "2024-12-28", "joinDate": "2024-11-05" },
+    { "id": "c4", "name": "최유나", "email": "yuna.c@email.com", "phone": "010-4567-8901", "totalOrders": 25, "totalSpent": 3450000, "ltv": 5200000, "segment": "VIP", "lastOrder": "2024-12-28", "joinDate": "2022-03-10" },
+    { "id": "c5", "name": "정하은", "email": "haeun.j@email.com", "phone": "010-5678-9012", "totalOrders": 6, "totalSpent": 520000, "ltv": 680000, "segment": "Regular", "lastOrder": "2024-12-28", "joinDate": "2024-01-18" },
+    { "id": "c6", "name": "강지수", "email": "jisoo.k@email.com", "phone": "010-6789-0123", "totalOrders": 1, "totalSpent": 45000, "ltv": 45000, "segment": "New", "lastOrder": "2024-12-27", "joinDate": "2024-12-20" },
+    { "id": "c7", "name": "윤서아", "email": "seoa.y@email.com", "phone": "010-7890-1234", "totalOrders": 15, "totalSpent": 1850000, "ltv": 2780000, "segment": "VIP", "lastOrder": "2024-12-26", "joinDate": "2023-02-28" },
+    { "id": "c8", "name": "임수빈", "email": "subin.l@email.com", "phone": "010-8901-2345", "totalOrders": 4, "totalSpent": 320000, "ltv": 420000, "segment": "Regular", "lastOrder": "2024-12-25", "joinDate": "2024-05-12" },
+    { "id": "c9", "name": "한예진", "email": "yejin.h@email.com", "phone": "010-9012-3456", "totalOrders": 2, "totalSpent": 98000, "ltv": 150000, "segment": "Dormant", "lastOrder": "2024-09-15", "joinDate": "2024-03-20" },
+    { "id": "c10", "name": "송다연", "email": "dayeon.s@email.com", "phone": "010-0123-4567", "totalOrders": 1, "totalSpent": 52000, "ltv": 52000, "segment": "Dormant", "lastOrder": "2024-08-02", "joinDate": "2024-07-28" }
+  ],
+  "segments": [
+    { "id": "vip", "name": { "en": "VIP", "ko": "VIP" }, "count": 1245, "criteria": "totalSpent > 1000000", "color": "#8B5CF6" },
+    { "id": "regular", "name": { "en": "Regular", "ko": "일반" }, "count": 5832, "criteria": "orders >= 3", "color": "#3B82F6" },
+    { "id": "new", "name": { "en": "New", "ko": "신규" }, "count": 3421, "criteria": "joinDate > 30days", "color": "#10B981" },
+    { "id": "dormant", "name": { "en": "Dormant", "ko": "휴면" }, "count": 1955, "criteria": "lastOrder > 90days", "color": "#EF4444" }
+  ],
+  "adCampaigns": [
+    { "id": "ad1", "name": "Winter Sale 2024", "platform": "meta", "status": "active", "budget": 5000000, "spent": 3250000, "impressions": 1250000, "clicks": 42500, "conversions": 1280, "roas": 4.2, "cpa": 2539 },
+    { "id": "ad2", "name": "New Year Collection", "platform": "google", "status": "active", "budget": 3000000, "spent": 1850000, "impressions": 890000, "clicks": 28700, "conversions": 720, "roas": 3.8, "cpa": 2569 },
+    { "id": "ad3", "name": "Skincare Routine", "platform": "meta", "status": "paused", "budget": 2000000, "spent": 2000000, "impressions": 620000, "clicks": 18600, "conversions": 485, "roas": 2.9, "cpa": 4124 },
+    { "id": "ad4", "name": "Brand Awareness", "platform": "tiktok", "status": "active", "budget": 1500000, "spent": 680000, "impressions": 2100000, "clicks": 52500, "conversions": 320, "roas": 2.1, "cpa": 2125 },
+    { "id": "ad5", "name": "Retargeting Cart", "platform": "google", "status": "active", "budget": 1000000, "spent": 520000, "impressions": 180000, "clicks": 8640, "conversions": 412, "roas": 6.8, "cpa": 1262 }
+  ],
+  "integrations": [
+    { "id": "shopify", "name": "Shopify", "category": "ecommerce", "status": "connected", "lastSync": "2024-12-29T10:30:00Z", "dataCount": 12453 },
+    { "id": "cafe24", "name": "Cafe24", "category": "ecommerce", "status": "not_connected", "lastSync": null, "dataCount": 0 },
+    { "id": "meta", "name": "Meta Ads", "category": "marketing", "status": "connected", "lastSync": "2024-12-29T09:15:00Z", "dataCount": 45 },
+    { "id": "google", "name": "Google Ads", "category": "marketing", "status": "connected", "lastSync": "2024-12-29T09:20:00Z", "dataCount": 32 },
+    { "id": "tiktok", "name": "TikTok Ads", "category": "marketing", "status": "pending", "lastSync": null, "dataCount": 0 },
+    { "id": "naver", "name": "Naver Ads", "category": "marketing", "status": "not_connected", "lastSync": null, "dataCount": 0 },
+    { "id": "kakao", "name": "Kakao Moment", "category": "marketing", "status": "not_connected", "lastSync": null, "dataCount": 0 },
+    { "id": "hubspot", "name": "HubSpot", "category": "crm", "status": "not_connected", "lastSync": null, "dataCount": 0 },
+    { "id": "stripe", "name": "Stripe", "category": "payment", "status": "connected", "lastSync": "2024-12-29T11:00:00Z", "dataCount": 8920 },
+    { "id": "toss", "name": "Toss Payments", "category": "payment", "status": "not_connected", "lastSync": null, "dataCount": 0 }
+  ],
+  "contentKeywords": [
+    { "keyword": "스킨케어 루틴", "volume": 12400, "difficulty": 45, "trend": "up" },
+    { "keyword": "겨울 피부 관리", "volume": 8900, "difficulty": 38, "trend": "up" },
+    { "keyword": "안티에이징 세럼", "volume": 6200, "difficulty": 62, "trend": "stable" },
+    { "keyword": "하이드레이팅 토너 추천", "volume": 4800, "difficulty": 35, "trend": "up" },
+    { "keyword": "민감성 피부 선크림", "volume": 3500, "difficulty": 52, "trend": "stable" }
+  ],
+  "storeSettings": {
+    "name": "글로우 뷰티",
+    "domain": "glowbeauty.kr",
+    "email": "support@glowbeauty.kr",
+    "phone": "02-1234-5678",
+    "address": "서울시 강남구 테헤란로 123",
+    "currency": "KRW",
+    "timezone": "Asia/Seoul",
+    "language": "ko"
+  },
+  "teamMembers": [
+    { "id": "u1", "name": "김영수", "email": "youngsoo@glowbeauty.kr", "role": "admin", "lastActive": "2024-12-29T11:30:00Z" },
+    { "id": "u2", "name": "이지은", "email": "jieun@glowbeauty.kr", "role": "marketing", "lastActive": "2024-12-29T10:45:00Z" },
+    { "id": "u3", "name": "박민호", "email": "minho@glowbeauty.kr", "role": "cs", "lastActive": "2024-12-28T18:20:00Z" }
+  ]
+}

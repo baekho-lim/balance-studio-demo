@@ -112,6 +112,26 @@ export default function DemoPage() {
               <li>• 예약 시스템 UI</li>
             </ul>
           </Link>
+
+          {/* Commerce Growth OS Demo */}
+          <Link
+            href="/demo/commerce"
+            className="block p-6 bg-gradient-to-br from-blue-600 to-amber-500 rounded-lg shadow hover:shadow-lg transition-shadow text-white"
+          >
+            <div className="flex items-center gap-3 mb-3">
+              <span className="text-2xl">🛒</span>
+              <h2 className="text-xl font-semibold">Commerce Growth OS</h2>
+            </div>
+            <p className="text-blue-100 text-sm mb-4">
+              통합 커머스 인텔리전스 플랫폼
+            </p>
+            <ul className="text-sm text-blue-100 space-y-1">
+              <li>• Import/Onboarding Wizard</li>
+              <li>• Customer 360° View & CRM</li>
+              <li>• Ad Campaign Management</li>
+              <li>• AI Content Studio</li>
+            </ul>
+          </Link>
         </div>
 
         <div className="mt-12 p-6 bg-blue-50 rounded-lg">
