@@ -1,6 +1,6 @@
 import type { Metadata } from 'next'
 import { Inter, Poppins } from 'next/font/google'
-import { PilatesHeader, PilatesFooter } from '@/components/templates/pilates'
+import { PilatesHeader, PilatesFooter, PilatesStudioJsonLd } from '@/components/templates/pilates'
 
 const inter = Inter({
   subsets: ['latin'],
@@ -36,6 +36,7 @@ export default function PilatesLayout({
 }) {
   return (
     <div className={`${inter.variable} ${poppins.variable} font-sans`}>
+      <PilatesStudioJsonLd />
       <PilatesHeader />
       <main>{children}</main>
       <PilatesFooter />
