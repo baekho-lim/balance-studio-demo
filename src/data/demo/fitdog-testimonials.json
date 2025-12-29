@@ -1,0 +1,92 @@
+[
+  {
+    "id": "testimonial-1",
+    "type": "beta",
+    "dogName": "코코",
+    "dogBreed": {
+      "en": "Maltese",
+      "ko": "말티즈"
+    },
+    "dogAge": "3살",
+    "ownerName": "김지영",
+    "avatar": null,
+    "problem": {
+      "en": "Chronic soft stool, tried 5+ different foods",
+      "ko": "만성적인 묽은 변, 사료 5번 이상 바꿈"
+    },
+    "result": {
+      "en": "Stool quality improved from score 3 to 5 within 2 weeks",
+      "ko": "2주 만에 변 점수 3점 → 5점으로 개선"
+    },
+    "quote": {
+      "en": "I always worried 'is this food right for Coco?' Now I can see the results in data, so I'm relieved.",
+      "ko": "항상 '이게 코코한테 맞나?' 불안했는데, 이제 데이터로 결과가 보이니까 안심이 돼요."
+    },
+    "rating": 5,
+    "improvement": {
+      "stoolScore": { "before": 3, "after": 5 },
+      "weeks": 2
+    },
+    "displayOrder": 1
+  },
+  {
+    "id": "testimonial-2",
+    "type": "beta",
+    "dogName": "뽀삐",
+    "dogBreed": {
+      "en": "Poodle",
+      "ko": "푸들"
+    },
+    "dogAge": "7살",
+    "ownerName": "이민수",
+    "avatar": null,
+    "problem": {
+      "en": "Joint stiffness, low energy as an aging dog",
+      "ko": "노견으로 관절 뻣뻣함, 활력 저하"
+    },
+    "result": {
+      "en": "Walks more actively, joint supplement topping was key",
+      "ko": "산책 시 더 활발해짐, 관절 토핑이 핵심이었음"
+    },
+    "quote": {
+      "en": "Ppoppi is 7 but suddenly moves like she's 4 again. The personalized topping recommendation was amazing.",
+      "ko": "뽀삐가 7살인데 갑자기 4살처럼 움직여요. 맞춤 토핑 추천이 신기했어요."
+    },
+    "rating": 5,
+    "improvement": {
+      "energyLevel": { "before": "low", "after": "high" },
+      "weeks": 3
+    },
+    "displayOrder": 2
+  },
+  {
+    "id": "testimonial-3",
+    "type": "beta",
+    "dogName": "초코",
+    "dogBreed": {
+      "en": "Mixed",
+      "ko": "믹스견"
+    },
+    "dogAge": "2살",
+    "ownerName": "박서연",
+    "avatar": null,
+    "problem": {
+      "en": "Skin issues, constant scratching",
+      "ko": "피부 트러블, 계속 긁음"
+    },
+    "result": {
+      "en": "Scratching reduced by 80% with Omega-3 skin topping",
+      "ko": "오메가-3 피부 토핑으로 긁는 행동 80% 감소"
+    },
+    "quote": {
+      "en": "At the hospital they just said 'atopy' but couldn't fix it. FitDog's nutrition approach actually worked.",
+      "ko": "병원에서는 '아토피'라고만 하고 해결이 안 됐는데, 핏독 영양 접근법이 진짜 효과가 있었어요."
+    },
+    "rating": 5,
+    "improvement": {
+      "scratchingFrequency": { "before": "constant", "after": "rare" },
+      "weeks": 4
+    },
+    "displayOrder": 3
+  }
+]

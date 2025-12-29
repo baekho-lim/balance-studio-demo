@@ -32,6 +32,38 @@
     }
   },
   {
+    "id": "fitdog",
+    "name": {
+      "en": "FitDog Pre-registration",
+      "ko": "핏독 사전등록"
+    },
+    "shortDescription": {
+      "en": "High-conversion landing page for pet nutrition service",
+      "ko": "반려견 맞춤 영양 서비스 사전등록 랜딩 페이지"
+    },
+    "description": {
+      "en": "A mobile-first, high-conversion landing page template for pet nutrition services. Features AI stool analysis explanation, personalization dashboard preview, trust-building elements (vet endorsement, scientific references), and pre-registration form with FOMO triggers.",
+      "ko": "펫 영양 서비스를 위한 모바일 우선, 고전환 랜딩 페이지 템플릿. AI 변 분석 설명, 개인화 대시보드 미리보기, 신뢰 구축 요소(수의사 추천, 과학적 근거), FOMO 트리거가 포함된 사전등록 폼 제공."
+    },
+    "thumbnail": "/images/templates/fitdog-thumb.png",
+    "demoUrl": "/demo/fitdog",
+    "status": "available",
+    "category": "pet-services",
+    "features": [
+      { "en": "Pre-registration form", "ko": "사전등록 폼" },
+      { "en": "AI analysis preview", "ko": "AI 분석 미리보기" },
+      { "en": "Trust badges & vet endorsement", "ko": "신뢰 배지 및 수의사 추천" },
+      { "en": "FOMO progress bar", "ko": "FOMO 진행바" },
+      { "en": "Sticky mobile CTA", "ko": "모바일 고정 CTA" }
+    ],
+    "pages": ["landing"],
+    "colors": {
+      "primary": "#16A3A3",
+      "secondary": "#16A3A3",
+      "accent": "#FF6B6B"
+    }
+  },
+  {
     "id": "restaurant",
     "name": {
       "en": "Restaurant & Cafe",

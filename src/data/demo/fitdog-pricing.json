@@ -1,0 +1,149 @@
+{
+  "currency": "KRW",
+  "monthly": {
+    "basePrice": 48000,
+    "description": {
+      "en": "Monthly average (varies by dog size)",
+      "ko": "월 평균 (강아지 크기에 따라 변동)"
+    }
+  },
+  "includes": [
+    {
+      "id": "include-1",
+      "title": {
+        "en": "AI Stool Report",
+        "ko": "AI 변 리포트"
+      },
+      "description": {
+        "en": "Unlimited stool photo analysis",
+        "ko": "변 사진 분석 무제한"
+      },
+      "icon": "BarChart"
+    },
+    {
+      "id": "include-2",
+      "title": {
+        "en": "Personalized Formula",
+        "ko": "맞춤 포뮬러"
+      },
+      "description": {
+        "en": "Base + recommended toppings",
+        "ko": "베이스 + 추천 토핑 조합"
+      },
+      "icon": "Package"
+    },
+    {
+      "id": "include-3",
+      "title": {
+        "en": "Regular Adjustments",
+        "ko": "정기 조정"
+      },
+      "description": {
+        "en": "Formula updates based on health changes",
+        "ko": "건강 변화에 따른 포뮬러 업데이트"
+      },
+      "icon": "RefreshCw"
+    },
+    {
+      "id": "include-4",
+      "title": {
+        "en": "Nutrition Consultation",
+        "ko": "영양 상담"
+      },
+      "description": {
+        "en": "Chat support with nutrition team",
+        "ko": "영양팀 채팅 상담 지원"
+      },
+      "icon": "MessageCircle"
+    }
+  ],
+  "sizeVariations": [
+    {
+      "size": "small",
+      "label": {
+        "en": "Small (under 5kg)",
+        "ko": "소형 (5kg 미만)"
+      },
+      "priceRange": {
+        "min": 38000,
+        "max": 45000
+      }
+    },
+    {
+      "size": "medium",
+      "label": {
+        "en": "Medium (5-15kg)",
+        "ko": "중형 (5-15kg)"
+      },
+      "priceRange": {
+        "min": 45000,
+        "max": 55000
+      }
+    },
+    {
+      "size": "large",
+      "label": {
+        "en": "Large (over 15kg)",
+        "ko": "대형 (15kg 이상)"
+      },
+      "priceRange": {
+        "min": 55000,
+        "max": 70000
+      }
+    }
+  ],
+  "preRegistrationBenefits": [
+    {
+      "id": "benefit-1",
+      "title": {
+        "en": "Free AI Stool Report",
+        "ko": "무료 AI 변 리포트 1회"
+      },
+      "description": {
+        "en": "Try our analysis before committing",
+        "ko": "가입 전 분석 체험"
+      },
+      "value": "15000",
+      "icon": "Gift"
+    },
+    {
+      "id": "benefit-2",
+      "title": {
+        "en": "20% Off First Month",
+        "ko": "런칭 첫 달 20% 할인"
+      },
+      "description": {
+        "en": "Save up to ₩14,000",
+        "ko": "최대 14,000원 절약"
+      },
+      "value": "20%",
+      "icon": "Percent"
+    },
+    {
+      "id": "benefit-3",
+      "title": {
+        "en": "Beta Tester (First 50)",
+        "ko": "베타 테스터 (선착순 50명)"
+      },
+      "description": {
+        "en": "1 free topping for 3 months",
+        "ko": "3개월간 토핑 1종 무료"
+      },
+      "value": "45000",
+      "icon": "Star",
+      "limited": true,
+      "remaining": 23
+    }
+  ],
+  "guarantee": {
+    "title": {
+      "en": "100% Satisfaction Guarantee",
+      "ko": "100% 만족 보장"
+    },
+    "description": {
+      "en": "If your dog doesn't improve in 30 days, full refund",
+      "ko": "30일 내 개선이 없으면 전액 환불"
+    },
+    "icon": "Shield"
+  }
+}

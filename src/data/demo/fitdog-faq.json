@@ -1,0 +1,132 @@
+[
+  {
+    "id": "faq-1",
+    "question": {
+      "en": "Can you diagnose health conditions just from stool photos?",
+      "ko": "변 사진만으로 건강을 진단하나요?"
+    },
+    "answer": {
+      "en": "No, this is not a diagnosis. Stool condition is an observational indicator, and we recommend dietary adjustments based on patterns. If you observe any abnormal signs, we always recommend consulting with a veterinarian.",
+      "ko": "진단이 아닙니다. 변 상태는 관찰 지표이고, 패턴을 바탕으로 식단 조정을 권장합니다. 이상 신호가 감지되면 반드시 수의사 상담을 권유드립니다."
+    },
+    "category": "service",
+    "displayOrder": 1
+  },
+  {
+    "id": "faq-2",
+    "question": {
+      "en": "How accurate is the AI analysis?",
+      "ko": "AI 분석의 정확도는 어느 정도인가요?"
+    },
+    "answer": {
+      "en": "Our AI is trained on over 50,000 stool images for pattern recognition. We achieve 85% consistency with veterinary assessments for basic stool quality evaluation. However, we always recommend combining this with regular vet checkups.",
+      "ko": "핏독 AI는 5만 건 이상의 변 이미지로 학습된 패턴 인식 모델입니다. 기본적인 변 상태 평가에서 수의사 평가와 85% 일치율을 보입니다. 단, 정기적인 수의사 검진과 병행하시길 권장합니다."
+    },
+    "category": "technology",
+    "displayOrder": 2
+  },
+  {
+    "id": "faq-3",
+    "question": {
+      "en": "What if my dog doesn't eat the food?",
+      "ko": "우리 아이가 사료를 안 먹으면 어떻게 하나요?"
+    },
+    "answer": {
+      "en": "We offer a 2-week transition period support. Our nutrition team provides personalized feeding strategies, and if the food doesn't suit your dog, we'll adjust the formula or offer a full refund.",
+      "ko": "2주간의 적응 기간 지원을 제공합니다. 영양팀이 맞춤 급여 전략을 안내해드리며, 정말 맞지 않는 경우 포뮬러 조정 또는 전액 환불해드립니다."
+    },
+    "category": "product",
+    "displayOrder": 3
+  },
+  {
+    "id": "faq-4",
+    "question": {
+      "en": "How do you handle food allergies?",
+      "ko": "알레르기가 있는 경우는 어떻게 하나요?"
+    },
+    "answer": {
+      "en": "During sign-up, we collect detailed allergy information. All our formulas can be customized to exclude specific proteins (chicken, beef, etc.) or ingredients. If your dog has severe allergies, we recommend consulting your vet first.",
+      "ko": "가입 시 상세 알레르기 정보를 수집합니다. 모든 포뮬러는 특정 단백질(닭, 소 등)이나 성분을 제외하고 맞춤 제작 가능합니다. 심한 알레르기가 있다면 수의사 상담 후 이용을 권장드립니다."
+    },
+    "category": "product",
+    "displayOrder": 4
+  },
+  {
+    "id": "faq-5",
+    "question": {
+      "en": "Are there breed-specific formulas?",
+      "ko": "품종별로 다른 사료를 주나요?"
+    },
+    "answer": {
+      "en": "We don't differentiate by breed alone. Instead, we customize based on your dog's actual health data: size, age, activity level, and stool patterns. A healthy Maltese and a healthy Poodle may get similar recommendations if their health indicators match.",
+      "ko": "품종만으로 구분하지 않습니다. 실제 건강 데이터(크기, 나이, 활동량, 변 상태 패턴)를 기반으로 맞춤화합니다. 건강한 말티즈와 건강한 푸들이 비슷한 상태라면 유사한 추천을 받을 수 있습니다."
+    },
+    "category": "service",
+    "displayOrder": 5
+  },
+  {
+    "id": "faq-6",
+    "question": {
+      "en": "How much does it cost?",
+      "ko": "가격은 얼마인가요?"
+    },
+    "answer": {
+      "en": "Average monthly cost is ₩48,000 (varies by dog size). This includes AI stool reports, personalized formula, and regular adjustments. Pre-registration members get 20% off the first month.",
+      "ko": "월 평균 48,000원입니다 (강아지 크기에 따라 변동). AI 변 리포트, 맞춤 포뮬러, 정기 조정이 모두 포함됩니다. 사전등록 시 첫 달 20% 할인 혜택을 드립니다."
+    },
+    "category": "pricing",
+    "displayOrder": 6
+  },
+  {
+    "id": "faq-7",
+    "question": {
+      "en": "Can I cancel anytime?",
+      "ko": "언제든 해지할 수 있나요?"
+    },
+    "answer": {
+      "en": "Yes, there's no minimum commitment. You can pause or cancel your subscription anytime through your account settings. Unused portions of the current month are not refunded, but there are no cancellation fees.",
+      "ko": "네, 약정 기간이 없습니다. 계정 설정에서 언제든 구독을 일시정지하거나 해지할 수 있습니다. 현재 월의 미사용분은 환불되지 않지만, 해지 수수료는 없습니다."
+    },
+    "category": "pricing",
+    "displayOrder": 7
+  },
+  {
+    "id": "faq-8",
+    "question": {
+      "en": "How is my data protected?",
+      "ko": "개인정보는 안전한가요?"
+    },
+    "answer": {
+      "en": "We use bank-level encryption (AES-256) for all data. Stool images are processed by AI and stored securely without personally identifiable metadata. We never share or sell customer data to third parties.",
+      "ko": "모든 데이터는 은행 수준의 암호화(AES-256)로 보호됩니다. 변 사진은 AI 처리 후 개인 식별 메타데이터 없이 안전하게 저장됩니다. 고객 정보를 제3자에게 공유하거나 판매하지 않습니다."
+    },
+    "category": "security",
+    "displayOrder": 8
+  },
+  {
+    "id": "faq-9",
+    "question": {
+      "en": "Isn't 10 toppings too complicated?",
+      "ko": "토핑이 10가지나 되면 너무 복잡하지 않나요?"
+    },
+    "answer": {
+      "en": "You don't need to choose yourself! Based on your dog's stool analysis and health profile, we recommend 1-3 toppings that best fit their current needs. As conditions change, we automatically adjust the recommendations.",
+      "ko": "직접 고르실 필요 없습니다! 아이의 변 분석과 건강 프로필을 바탕으로 현재 상태에 맞는 1-3개의 토핑을 추천해드립니다. 상태가 변하면 추천도 자동으로 조정됩니다."
+    },
+    "category": "product",
+    "displayOrder": 9
+  },
+  {
+    "id": "faq-10",
+    "question": {
+      "en": "When is the official launch?",
+      "ko": "정식 런칭은 언제인가요?"
+    },
+    "answer": {
+      "en": "We're targeting Q1 2025 for official launch. Pre-registered members will be notified first and get priority access. Beta testers (first 50) will start receiving products in late January 2025.",
+      "ko": "2025년 1분기 정식 런칭을 목표로 하고 있습니다. 사전등록 회원분들께 가장 먼저 안내드리며, 베타 테스터(선착순 50명)는 2025년 1월 말부터 제품을 받아보실 수 있습니다."
+    },
+    "category": "service",
+    "displayOrder": 10
+  }
+]

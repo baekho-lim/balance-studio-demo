@@ -1,0 +1,272 @@
+{
+  "bases": [
+    {
+      "id": "base-daily",
+      "name": {
+        "en": "Daily Balance",
+        "ko": "데일리 밸런스"
+      },
+      "description": {
+        "en": "Balanced nutrition for everyday wellness",
+        "ko": "일상적인 영양 균형을 위한 기본 베이스"
+      },
+      "icon": "Scale",
+      "color": "#16A3A3",
+      "displayOrder": 1
+    },
+    {
+      "id": "base-sensitive",
+      "name": {
+        "en": "Sensitive Digestion",
+        "ko": "민감 소화"
+      },
+      "description": {
+        "en": "Gentle formula for sensitive stomachs",
+        "ko": "민감한 위장을 위한 순한 포뮬러"
+      },
+      "icon": "Heart",
+      "color": "#8B5CF6",
+      "displayOrder": 2
+    },
+    {
+      "id": "base-weight",
+      "name": {
+        "en": "Weight Management",
+        "ko": "체중 관리"
+      },
+      "description": {
+        "en": "Calorie-controlled for healthy weight",
+        "ko": "건강한 체중을 위한 칼로리 조절"
+      },
+      "icon": "TrendingDown",
+      "color": "#F59E0B",
+      "displayOrder": 3
+    },
+    {
+      "id": "base-vitality",
+      "name": {
+        "en": "Vitality & Muscle",
+        "ko": "활력 & 근육"
+      },
+      "description": {
+        "en": "High protein for active dogs",
+        "ko": "활동적인 강아지를 위한 고단백"
+      },
+      "icon": "Zap",
+      "color": "#EF4444",
+      "displayOrder": 4
+    }
+  ],
+  "toppings": [
+    {
+      "id": "topping-gut",
+      "name": {
+        "en": "Gut Health",
+        "ko": "장 건강"
+      },
+      "description": {
+        "en": "Probiotics & fiber",
+        "ko": "프로바이오틱스, 식이섬유"
+      },
+      "whenToIncrease": {
+        "en": "Loose stool, digestive issues",
+        "ko": "묽은 변, 소화 불량 시"
+      },
+      "whenToDecrease": {
+        "en": "Stable stool condition",
+        "ko": "안정적인 변 상태 시"
+      },
+      "icon": "Leaf",
+      "displayOrder": 1
+    },
+    {
+      "id": "topping-skin",
+      "name": {
+        "en": "Skin & Coat",
+        "ko": "피부 건강"
+      },
+      "description": {
+        "en": "Omega-3 & biotin",
+        "ko": "오메가-3, 비오틴"
+      },
+      "whenToIncrease": {
+        "en": "Dry skin, itching",
+        "ko": "건조한 피부, 가려움 시"
+      },
+      "whenToDecrease": {
+        "en": "Healthy coat condition",
+        "ko": "윤기 나는 모질 시"
+      },
+      "icon": "Sparkles",
+      "displayOrder": 2
+    },
+    {
+      "id": "topping-joint",
+      "name": {
+        "en": "Joint Care",
+        "ko": "관절 건강"
+      },
+      "description": {
+        "en": "Glucosamine & chondroitin",
+        "ko": "글루코사민, 콘드로이친"
+      },
+      "whenToIncrease": {
+        "en": "Stiffness, aging dogs",
+        "ko": "뻣뻣함, 노견"
+      },
+      "whenToDecrease": {
+        "en": "Active movement",
+        "ko": "활발한 움직임 시"
+      },
+      "icon": "Bone",
+      "displayOrder": 3
+    },
+    {
+      "id": "topping-eye",
+      "name": {
+        "en": "Eye Health",
+        "ko": "눈 건강"
+      },
+      "description": {
+        "en": "Lutein & vitamin A",
+        "ko": "루테인, 비타민 A"
+      },
+      "whenToIncrease": {
+        "en": "Tear stains, aging",
+        "ko": "눈물 자국, 노화"
+      },
+      "whenToDecrease": {
+        "en": "Clear eyes",
+        "ko": "맑은 눈 상태 시"
+      },
+      "icon": "Eye",
+      "displayOrder": 4
+    },
+    {
+      "id": "topping-immune",
+      "name": {
+        "en": "Immunity",
+        "ko": "면역력"
+      },
+      "description": {
+        "en": "Antioxidants & vitamins",
+        "ko": "항산화제, 비타민"
+      },
+      "whenToIncrease": {
+        "en": "Seasonal changes, stress",
+        "ko": "환절기, 스트레스 시"
+      },
+      "whenToDecrease": {
+        "en": "Stable health",
+        "ko": "안정적인 건강 시"
+      },
+      "icon": "Shield",
+      "displayOrder": 5
+    },
+    {
+      "id": "topping-weight-loss",
+      "name": {
+        "en": "Weight Control",
+        "ko": "체중 조절"
+      },
+      "description": {
+        "en": "L-carnitine & fiber",
+        "ko": "L-카르니틴, 식이섬유"
+      },
+      "whenToIncrease": {
+        "en": "Overweight",
+        "ko": "과체중 시"
+      },
+      "whenToDecrease": {
+        "en": "Ideal weight reached",
+        "ko": "적정 체중 도달 시"
+      },
+      "icon": "TrendingDown",
+      "displayOrder": 6
+    },
+    {
+      "id": "topping-coat",
+      "name": {
+        "en": "Coat Shine",
+        "ko": "모질 윤기"
+      },
+      "description": {
+        "en": "Salmon oil & zinc",
+        "ko": "연어 오일, 아연"
+      },
+      "whenToIncrease": {
+        "en": "Dull coat, shedding",
+        "ko": "푸석한 모질, 탈모"
+      },
+      "whenToDecrease": {
+        "en": "Shiny coat",
+        "ko": "윤기 나는 모질 시"
+      },
+      "icon": "Star",
+      "displayOrder": 7
+    },
+    {
+      "id": "topping-dental",
+      "name": {
+        "en": "Dental Care",
+        "ko": "구강 건강"
+      },
+      "description": {
+        "en": "Plaque control",
+        "ko": "치석 관리"
+      },
+      "whenToIncrease": {
+        "en": "Bad breath, plaque",
+        "ko": "입냄새, 치석"
+      },
+      "whenToDecrease": {
+        "en": "Clean teeth",
+        "ko": "깨끗한 치아 시"
+      },
+      "icon": "Smile",
+      "displayOrder": 8
+    },
+    {
+      "id": "topping-energy",
+      "name": {
+        "en": "Energy Boost",
+        "ko": "활력 증진"
+      },
+      "description": {
+        "en": "B vitamins & iron",
+        "ko": "비타민 B군, 철분"
+      },
+      "whenToIncrease": {
+        "en": "Low energy, fatigue",
+        "ko": "무기력, 피로"
+      },
+      "whenToDecrease": {
+        "en": "Normal energy levels",
+        "ko": "정상 활력 시"
+      },
+      "icon": "Zap",
+      "displayOrder": 9
+    },
+    {
+      "id": "topping-calm",
+      "name": {
+        "en": "Calming",
+        "ko": "진정 효과"
+      },
+      "description": {
+        "en": "L-theanine & chamomile",
+        "ko": "L-테아닌, 카모마일"
+      },
+      "whenToIncrease": {
+        "en": "Anxiety, stress",
+        "ko": "불안, 스트레스"
+      },
+      "whenToDecrease": {
+        "en": "Calm behavior",
+        "ko": "안정된 행동 시"
+      },
+      "icon": "Moon",
+      "displayOrder": 10
+    }
+  ]
+}
