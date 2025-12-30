@@ -201,13 +201,43 @@ var themePresets = {
 };
 function createTheme(overrides) {
   return {
-    ...defaultTheme,
-    ...overrides,
+    id: overrides.id,
+    name: overrides.name,
+    description: overrides.description ?? defaultTheme.description,
+    version: overrides.version ?? defaultTheme.version,
+    author: overrides.author ?? defaultTheme.author,
     colors: { ...defaultTheme.colors, ...overrides.colors },
-    typography: { ...defaultTheme.typography, ...overrides.typography },
+    typography: {
+      fontFamily: { ...defaultTheme.typography.fontFamily, ...overrides.typography?.fontFamily },
+      fontSize: { ...defaultTheme.typography.fontSize, ...overrides.typography?.fontSize },
+      fontWeight: { ...defaultTheme.typography.fontWeight, ...overrides.typography?.fontWeight },
+      lineHeight: { ...defaultTheme.typography.lineHeight, ...overrides.typography?.lineHeight },
+      letterSpacing: overrides.typography?.letterSpacing ? { ...defaultTheme.typography.letterSpacing, ...overrides.typography.letterSpacing } : defaultTheme.typography.letterSpacing
+    },
+    spacing: { ...defaultTheme.spacing, ...overrides.spacing },
+    borderRadius: { ...defaultTheme.borderRadius, ...overrides.borderRadius },
+    shadows: { ...defaultTheme.shadows, ...overrides.shadows },
+    breakpoints: { ...defaultTheme.breakpoints, ...overrides.breakpoints },
     layout: { ...defaultTheme.layout, ...overrides.layout },
-    components: { ...defaultTheme.components, ...overrides.components },
-    animation: { ...defaultTheme.animation, ...overrides.animation }
+    components: {
+      button: {
+        ...defaultTheme.components.button,
+        ...overrides.components?.button,
+        sizes: {
+          ...defaultTheme.components.button.sizes,
+          ...overrides.components?.button?.sizes
+        }
+      },
+      card: { ...defaultTheme.components.card, ...overrides.components?.card },
+      input: { ...defaultTheme.components.input, ...overrides.components?.input },
+      badge: { ...defaultTheme.components.badge, ...overrides.components?.badge }
+    },
+    animation: {
+      duration: { ...defaultTheme.animation.duration, ...overrides.animation?.duration },
+      easing: { ...defaultTheme.animation.easing, ...overrides.animation?.easing },
+      transitions: { ...defaultTheme.animation.transitions, ...overrides.animation?.transitions }
+    },
+    industry: overrides.industry
   };
 }
 function getThemePreset(presetId) {

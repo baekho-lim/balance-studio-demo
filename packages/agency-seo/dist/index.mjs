@@ -1055,7 +1055,7 @@ function mergeRobotsConfigs(...configs) {
       }
     }
     if (config.sitemaps) {
-      result.sitemaps = [.../* @__PURE__ */ new Set([...result.sitemaps || [], ...config.sitemaps])];
+      result.sitemaps = Array.from(/* @__PURE__ */ new Set([...result.sitemaps || [], ...config.sitemaps]));
     }
     if (config.host) {
       result.host = config.host;

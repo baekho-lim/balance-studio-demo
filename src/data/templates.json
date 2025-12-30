@@ -29,6 +29,39 @@
       "primary": "#3B82F6",
       "secondary": "#8B5CF6",
       "accent": "#EC4899"
+    },
+    "options": [
+      { "name": { "en": "Multi-language support", "ko": "다국어 지원" }, "price": "+50만원" },
+      { "name": { "en": "Additional pages (5)", "ko": "추가 페이지 (5개)" }, "price": "+30만원" },
+      { "name": { "en": "Content automation", "ko": "콘텐츠 자동화" }, "price": "+80만원" },
+      { "name": { "en": "Monthly maintenance", "ko": "월 유지보수" }, "price": "월 10만원" }
+    ],
+    "pricing": {
+      "starter": {
+        "price": "150만원",
+        "features": [
+          { "en": "5 basic pages", "ko": "기본 5페이지" },
+          { "en": "SEO optimization", "ko": "SEO 최적화" },
+          { "en": "1 revision round", "ko": "1회 수정" }
+        ]
+      },
+      "growth": {
+        "price": "300만원",
+        "features": [
+          { "en": "10 pages", "ko": "10페이지" },
+          { "en": "SEO/AEO optimization", "ko": "SEO/AEO 최적화" },
+          { "en": "Blog integration", "ko": "블로그 연동" },
+          { "en": "3 revision rounds", "ko": "3회 수정" }
+        ]
+      },
+      "pro": {
+        "price": "500만원",
+        "features": [
+          { "en": "Unlimited pages", "ko": "무제한 페이지" },
+          { "en": "Full options", "ko": "풀옵션" },
+          { "en": "Monthly maintenance included", "ko": "월 유지보수 포함" }
+        ]
+      }
     }
   },
   {
@@ -61,6 +94,39 @@
       "primary": "#16A3A3",
       "secondary": "#16A3A3",
       "accent": "#FF6B6B"
+    },
+    "options": [
+      { "name": { "en": "Multi-language support", "ko": "다국어 지원" }, "price": "+50만원" },
+      { "name": { "en": "Additional pages (5)", "ko": "추가 페이지 (5개)" }, "price": "+30만원" },
+      { "name": { "en": "Content automation", "ko": "콘텐츠 자동화" }, "price": "+80만원" },
+      { "name": { "en": "Monthly maintenance", "ko": "월 유지보수" }, "price": "월 10만원" }
+    ],
+    "pricing": {
+      "starter": {
+        "price": "100만원",
+        "features": [
+          { "en": "Single landing page", "ko": "단일 랜딩 페이지" },
+          { "en": "Registration form", "ko": "등록 폼" },
+          { "en": "1 revision round", "ko": "1회 수정" }
+        ]
+      },
+      "growth": {
+        "price": "200만원",
+        "features": [
+          { "en": "Landing + Thank you page", "ko": "랜딩 + 감사 페이지" },
+          { "en": "Email integration", "ko": "이메일 연동" },
+          { "en": "Analytics setup", "ko": "분석 설정" },
+          { "en": "3 revision rounds", "ko": "3회 수정" }
+        ]
+      },
+      "pro": {
+        "price": "350만원",
+        "features": [
+          { "en": "Full funnel (5 pages)", "ko": "풀 퍼널 (5페이지)" },
+          { "en": "A/B testing ready", "ko": "A/B 테스트 준비" },
+          { "en": "Monthly maintenance included", "ko": "월 유지보수 포함" }
+        ]
+      }
     }
   },
   {
@@ -93,6 +159,39 @@
       "primary": "#D97706",
       "secondary": "#DC2626",
       "accent": "#059669"
+    },
+    "options": [
+      { "name": { "en": "Multi-language support", "ko": "다국어 지원" }, "price": "+50만원" },
+      { "name": { "en": "Additional pages (5)", "ko": "추가 페이지 (5개)" }, "price": "+30만원" },
+      { "name": { "en": "Content automation", "ko": "콘텐츠 자동화" }, "price": "+80만원" },
+      { "name": { "en": "Monthly maintenance", "ko": "월 유지보수" }, "price": "월 10만원" }
+    ],
+    "pricing": {
+      "starter": {
+        "price": "150만원",
+        "features": [
+          { "en": "5 basic pages", "ko": "기본 5페이지" },
+          { "en": "SEO optimization", "ko": "SEO 최적화" },
+          { "en": "1 revision round", "ko": "1회 수정" }
+        ]
+      },
+      "growth": {
+        "price": "300만원",
+        "features": [
+          { "en": "10 pages", "ko": "10페이지" },
+          { "en": "SEO/AEO optimization", "ko": "SEO/AEO 최적화" },
+          { "en": "Blog integration", "ko": "블로그 연동" },
+          { "en": "3 revision rounds", "ko": "3회 수정" }
+        ]
+      },
+      "pro": {
+        "price": "500만원",
+        "features": [
+          { "en": "Unlimited pages", "ko": "무제한 페이지" },
+          { "en": "Full options", "ko": "풀옵션" },
+          { "en": "Monthly maintenance included", "ko": "월 유지보수 포함" }
+        ]
+      }
     }
   },
   {
@@ -125,6 +224,39 @@
       "primary": "#2563EB",
       "secondary": "#7C3AED",
       "accent": "#10B981"
+    },
+    "options": [
+      { "name": { "en": "Multi-language support", "ko": "다국어 지원" }, "price": "+50만원" },
+      { "name": { "en": "Additional pages (5)", "ko": "추가 페이지 (5개)" }, "price": "+30만원" },
+      { "name": { "en": "Content automation", "ko": "콘텐츠 자동화" }, "price": "+80만원" },
+      { "name": { "en": "Monthly maintenance", "ko": "월 유지보수" }, "price": "월 10만원" }
+    ],
+    "pricing": {
+      "starter": {
+        "price": "150만원",
+        "features": [
+          { "en": "5 basic pages", "ko": "기본 5페이지" },
+          { "en": "SEO optimization", "ko": "SEO 최적화" },
+          { "en": "1 revision round", "ko": "1회 수정" }
+        ]
+      },
+      "growth": {
+        "price": "300만원",
+        "features": [
+          { "en": "10 pages", "ko": "10페이지" },
+          { "en": "SEO/AEO optimization", "ko": "SEO/AEO 최적화" },
+          { "en": "Blog integration", "ko": "블로그 연동" },
+          { "en": "3 revision rounds", "ko": "3회 수정" }
+        ]
+      },
+      "pro": {
+        "price": "500만원",
+        "features": [
+          { "en": "Unlimited pages", "ko": "무제한 페이지" },
+          { "en": "Full options", "ko": "풀옵션" },
+          { "en": "Monthly maintenance included", "ko": "월 유지보수 포함" }
+        ]
+      }
     }
   },
   {
@@ -157,6 +289,39 @@
       "primary": "#0891B2",
       "secondary": "#6366F1",
       "accent": "#F59E0B"
+    },
+    "options": [
+      { "name": { "en": "Multi-language support", "ko": "다국어 지원" }, "price": "+50만원" },
+      { "name": { "en": "Additional pages (5)", "ko": "추가 페이지 (5개)" }, "price": "+30만원" },
+      { "name": { "en": "Content automation", "ko": "콘텐츠 자동화" }, "price": "+80만원" },
+      { "name": { "en": "Monthly maintenance", "ko": "월 유지보수" }, "price": "월 10만원" }
+    ],
+    "pricing": {
+      "starter": {
+        "price": "200만원",
+        "features": [
+          { "en": "Basic store setup", "ko": "기본 스토어 설정" },
+          { "en": "10 products", "ko": "10개 상품" },
+          { "en": "1 revision round", "ko": "1회 수정" }
+        ]
+      },
+      "growth": {
+        "price": "400만원",
+        "features": [
+          { "en": "100 products", "ko": "100개 상품" },
+          { "en": "Payment integration", "ko": "결제 연동" },
+          { "en": "Inventory sync", "ko": "재고 동기화" },
+          { "en": "3 revision rounds", "ko": "3회 수정" }
+        ]
+      },
+      "pro": {
+        "price": "700만원",
+        "features": [
+          { "en": "Unlimited products", "ko": "무제한 상품" },
+          { "en": "Multi-channel sync", "ko": "멀티채널 동기화" },
+          { "en": "Monthly maintenance included", "ko": "월 유지보수 포함" }
+        ]
+      }
     }
   },
   {
@@ -189,6 +354,39 @@
       "primary": "#1F2937",
       "secondary": "#4B5563",
       "accent": "#F472B6"
+    },
+    "options": [
+      { "name": { "en": "Multi-language support", "ko": "다국어 지원" }, "price": "+50만원" },
+      { "name": { "en": "Additional pages (5)", "ko": "추가 페이지 (5개)" }, "price": "+30만원" },
+      { "name": { "en": "Content automation", "ko": "콘텐츠 자동화" }, "price": "+80만원" },
+      { "name": { "en": "Monthly maintenance", "ko": "월 유지보수" }, "price": "월 10만원" }
+    ],
+    "pricing": {
+      "starter": {
+        "price": "120만원",
+        "features": [
+          { "en": "5 basic pages", "ko": "기본 5페이지" },
+          { "en": "20 portfolio items", "ko": "20개 작품" },
+          { "en": "1 revision round", "ko": "1회 수정" }
+        ]
+      },
+      "growth": {
+        "price": "250만원",
+        "features": [
+          { "en": "10 pages", "ko": "10페이지" },
+          { "en": "Unlimited portfolio items", "ko": "무제한 작품" },
+          { "en": "Blog integration", "ko": "블로그 연동" },
+          { "en": "3 revision rounds", "ko": "3회 수정" }
+        ]
+      },
+      "pro": {
+        "price": "400만원",
+        "features": [
+          { "en": "Unlimited pages", "ko": "무제한 페이지" },
+          { "en": "E-commerce integration", "ko": "이커머스 연동" },
+          { "en": "Monthly maintenance included", "ko": "월 유지보수 포함" }
+        ]
+      }
     }
   }
 ]

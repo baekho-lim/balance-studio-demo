@@ -1,6 +1,10 @@
 'use client'
 
-import { useState, useEffect } from 'react'
+import { useState, useEffect, Suspense } from 'react'
+import { useSearchParams } from 'next/navigation'
+import { Sparkles, Zap } from 'lucide-react'
+
+// Classic Components
 import FitDogHero from '@/components/templates/fitdog/FitDogHero'
 import FitDogPainPoints from '@/components/templates/fitdog/FitDogPainPoints'
 import FitDogSolution from '@/components/templates/fitdog/FitDogSolution'
@@ -12,6 +16,12 @@ import FitDogPricing from '@/components/templates/fitdog/FitDogPricing'
 import FitDogTestimonials from '@/components/templates/fitdog/FitDogTestimonials'
 import FitDogFAQ from '@/components/templates/fitdog/FitDogFAQ'
 import FitDogFinalCTA from '@/components/templates/fitdog/FitDogFinalCTA'
+
+// Enhanced Components
+import FitDogHeroEnhanced from '@/components/templates/fitdog/FitDogHeroEnhanced'
+import FitDogPainPointsEnhanced from '@/components/templates/fitdog/FitDogPainPointsEnhanced'
+import FitDogSolutionEnhanced from '@/components/templates/fitdog/FitDogSolutionEnhanced'
+import FitDogHowItWorksEnhanced from '@/components/templates/fitdog/FitDogHowItWorksEnhanced'
 
 interface FitDogConfig {
   name: { en: string; ko: string }
@@ -157,13 +167,59 @@ interface FAQ {
   displayOrder: number
 }
 
-export default function FitDogPage() {
+// Version Toggle Component
+function VersionToggle({
+  version,
+  onChange,
+  primaryColor,
+}: {
+  version: 'classic' | 'enhanced'
+  onChange: (v: 'classic' | 'enhanced') => void
+  primaryColor: string
+}) {
+  return (
+    <div className="fixed top-20 left-1/2 -translate-x-1/2 z-50">
+      <div className="bg-white rounded-full shadow-lg border border-gray-200 p-1 flex items-center gap-1">
+        <button
+          onClick={() => onChange('classic')}
+          className={`flex items-center gap-2 px-4 py-2 rounded-full text-sm font-medium transition-all ${
+            version === 'classic'
+              ? 'bg-gray-900 text-white'
+              : 'text-gray-600 hover:bg-gray-100'
+          }`}
+        >
+          <Zap className="w-4 h-4" />
+          Classic
+        </button>
+        <button
+          onClick={() => onChange('enhanced')}
+          className="flex items-center gap-2 px-4 py-2 rounded-full text-sm font-medium transition-all"
+          style={{
+            backgroundColor: version === 'enhanced' ? primaryColor : 'transparent',
+            color: version === 'enhanced' ? 'white' : '#4B5563',
+          }}
+        >
+          <Sparkles className="w-4 h-4" />
+          Enhanced
+        </button>
+      </div>
+    </div>
+  )
+}
+
+// Main Page Content
+function FitDogPageContent() {
+  const searchParams = useSearchParams()
   const [config, setConfig] = useState<FitDogConfig | null>(null)
   const [products, setProducts] = useState<Products | null>(null)
   const [pricing, setPricing] = useState<Pricing | null>(null)
   const [testimonials, setTestimonials] = useState<Testimonial[]>([])
   const [faq, setFaq] = useState<FAQ[]>([])
   const [isLoading, setIsLoading] = useState(true)
+
+  // Get initial version from URL param or default to 'enhanced'
+  const urlVersion = searchParams.get('v') as 'classic' | 'enhanced' | null
+  const [version, setVersion] = useState<'classic' | 'enhanced'>(urlVersion || 'enhanced')
 
   useEffect(() => {
     Promise.all([
@@ -187,6 +243,14 @@ export default function FitDogPage() {
       })
   }, [])
 
+  // Update URL when version changes
+  const handleVersionChange = (newVersion: 'classic' | 'enhanced') => {
+    setVersion(newVersion)
+    const url = new URL(window.location.href)
+    url.searchParams.set('v', newVersion)
+    window.history.replaceState({}, '', url.toString())
+  }
+
   if (isLoading || !config) {
     return (
       <div className="min-h-screen flex items-center justify-center bg-gray-50 pt-14">
@@ -198,19 +262,44 @@ export default function FitDogPage() {
     )
   }
 
+  const isEnhanced = version === 'enhanced'
+
   return (
-    <div className="pt-14">
+    <div className={isEnhanced ? '' : 'pt-14'}>
+      {/* Version Toggle */}
+      <VersionToggle
+        version={version}
+        onChange={handleVersionChange}
+        primaryColor={config.colors.primary}
+      />
+
       {/* S1: Hero with Registration Form */}
-      <FitDogHero config={config} />
+      {isEnhanced ? (
+        <FitDogHeroEnhanced config={config} />
+      ) : (
+        <FitDogHero config={config} />
+      )}
 
       {/* S2: Pain Points / Empathy */}
-      <FitDogPainPoints painPoints={config.painPoints} colors={config.colors} />
+      {isEnhanced ? (
+        <FitDogPainPointsEnhanced painPoints={config.painPoints} colors={config.colors} />
+      ) : (
+        <FitDogPainPoints painPoints={config.painPoints} colors={config.colors} />
+      )}
 
       {/* S3: Solution Promise */}
-      <FitDogSolution solution={config.solution} colors={config.colors} />
+      {isEnhanced ? (
+        <FitDogSolutionEnhanced solution={config.solution} colors={config.colors} />
+      ) : (
+        <FitDogSolution solution={config.solution} colors={config.colors} />
+      )}
 
       {/* S4: How It Works */}
-      <FitDogHowItWorks howItWorks={config.howItWorks} colors={config.colors} />
+      {isEnhanced ? (
+        <FitDogHowItWorksEnhanced howItWorks={config.howItWorks} colors={config.colors} />
+      ) : (
+        <FitDogHowItWorks howItWorks={config.howItWorks} colors={config.colors} />
+      )}
 
       {/* S5: Personalization Engine */}
       <FitDogPersonalization personalization={config.personalization} colors={config.colors} />
@@ -233,5 +322,23 @@ export default function FitDogPage() {
       {/* S11: Final CTA */}
       <FitDogFinalCTA config={config} />
     </div>
+  )
+}
+
+// Wrap with Suspense for useSearchParams
+export default function FitDogPage() {
+  return (
+    <Suspense
+      fallback={
+        <div className="min-h-screen flex items-center justify-center bg-gray-50 pt-14">
+          <div className="text-center">
+            <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-teal-500 mx-auto"></div>
+            <p className="mt-4 text-gray-500">로딩 중...</p>
+          </div>
+        </div>
+      }
+    >
+      <FitDogPageContent />
+    </Suspense>
   )
 }

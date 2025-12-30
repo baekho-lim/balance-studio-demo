@@ -10,6 +10,7 @@ interface FitDogConfig {
     current: number
     benefits: string[]
     betaLimit: number
+    betaBenefit?: { en: string; ko: string }
   }
 }
 

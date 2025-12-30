@@ -22,7 +22,7 @@ import {
   Shirt,
   Sofa
 } from 'lucide-react'
-import MarkdownEditor from '@/components/admin/MarkdownEditor'
+import { MarkdownEditor } from '@/components/templates/commerce'
 import mockData from '@/data/demo/commerce-mock-data.json'
 
 interface ContentForm {

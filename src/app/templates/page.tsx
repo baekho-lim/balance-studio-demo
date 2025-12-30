@@ -79,59 +79,62 @@ export default function TemplatesPage() {
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {availableTemplates.map(template => (
-              <Card key={template.id} padding="none" hover className="overflow-hidden">
-                {/* Thumbnail */}
-                <div
-                  className="aspect-[16/10] flex items-center justify-center"
-                  style={{
-                    background: `linear-gradient(135deg, ${template.colors.primary}20, ${template.colors.secondary}20)`
-                  }}
-                >
+              <Link key={template.id} href={`/templates/${template.id}`}>
+                <Card padding="none" hover className="overflow-hidden cursor-pointer">
+                  {/* Thumbnail */}
                   <div
-                    className="w-20 h-20 rounded-2xl flex items-center justify-center text-white text-3xl font-bold"
-                    style={{ background: `linear-gradient(135deg, ${template.colors.primary}, ${template.colors.secondary})` }}
+                    className="aspect-[16/10] flex items-center justify-center"
+                    style={{
+                      background: `linear-gradient(135deg, ${template.colors.primary}20, ${template.colors.secondary}20)`
+                    }}
                   >
-                    {template.name.ko.charAt(0)}
-                  </div>
-                </div>
-
-                <div className="p-6">
-                  {/* Category Badge */}
-                  <div className="flex items-center gap-2 mb-3">
-                    <Badge variant="primary">
-                      {categoryLabels[template.category]?.ko || template.category}
-                    </Badge>
-                    <Badge variant="success">사용 가능</Badge>
+                    <div
+                      className="w-20 h-20 rounded-2xl flex items-center justify-center text-white text-3xl font-bold"
+                      style={{ background: `linear-gradient(135deg, ${template.colors.primary}, ${template.colors.secondary})` }}
+                    >
+                      {template.name.ko.charAt(0)}
+                    </div>
                   </div>
 
-                  {/* Title & Description */}
-                  <h3 className="text-xl font-bold text-gray-900 mb-2">{template.name.ko}</h3>
-                  <p className="text-gray-500 text-sm mb-4 line-clamp-2">
-                    {template.shortDescription.ko}
-                  </p>
+                  <div className="p-6">
+                    {/* Category Badge */}
+                    <div className="flex items-center gap-2 mb-3">
+                      <Badge variant="primary">
+                        {categoryLabels[template.category]?.ko || template.category}
+                      </Badge>
+                      <Badge variant="success">사용 가능</Badge>
+                    </div>
 
-                  {/* Features */}
-                  <div className="space-y-1 mb-6">
-                    {template.features.slice(0, 3).map((feature, idx) => (
-                      <div key={idx} className="flex items-center gap-2 text-sm text-gray-600">
-                        <Check className="w-4 h-4 text-green-500" />
-                        {feature.ko}
-                      </div>
-                    ))}
-                  </div>
+                    {/* Title & Description */}
+                    <h3 className="text-xl font-bold text-gray-900 mb-2">{template.name.ko}</h3>
+                    <p className="text-gray-500 text-sm mb-4 line-clamp-2">
+                      {template.shortDescription.ko}
+                    </p>
 
-                  {/* Actions */}
-                  <div className="flex gap-3">
-                    <Button href={template.demoUrl} variant="outline" className="flex-1">
-                      <Eye className="w-4 h-4 mr-1" />
-                      데모 보기
-                    </Button>
-                    <Button href={`/inquiry?template=${template.id}`} variant="gradient" className="flex-1">
-                      문의하기
-                    </Button>
+                    {/* Features */}
+                    <div className="space-y-1 mb-6">
+                      {template.features.slice(0, 3).map((feature, idx) => (
+                        <div key={idx} className="flex items-center gap-2 text-sm text-gray-600">
+                          <Check className="w-4 h-4 text-green-500" />
+                          {feature.ko}
+                        </div>
+                      ))}
+                    </div>
+
+                    {/* Actions */}
+                    <div className="flex gap-3">
+                      <span className="flex-1 inline-flex items-center justify-center px-4 py-2 border border-gray-300 rounded-lg text-gray-700 text-sm font-medium hover:bg-gray-50">
+                        <Eye className="w-4 h-4 mr-1" />
+                        상세 보기
+                      </span>
+                      <span className="flex-1 inline-flex items-center justify-center px-4 py-2 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-lg text-sm font-medium">
+                        <ArrowRight className="w-4 h-4 mr-1" />
+                        선택하기
+                      </span>
+                    </div>
                   </div>
-                </div>
-              </Card>
+                </Card>
+              </Link>
             ))}
           </div>
         </div>
@@ -148,28 +151,30 @@ export default function TemplatesPage() {
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
               {comingSoonTemplates.map(template => (
-                <Card key={template.id} padding="md" className="opacity-80">
-                  {/* Mini Thumbnail */}
-                  <div
-                    className="aspect-square rounded-xl mb-4 flex items-center justify-center"
-                    style={{
-                      background: `linear-gradient(135deg, ${template.colors.primary}15, ${template.colors.secondary}15)`
-                    }}
-                  >
+                <Link key={template.id} href={`/templates/${template.id}`}>
+                  <Card padding="md" className="opacity-80 cursor-pointer hover:opacity-100 transition-opacity">
+                    {/* Mini Thumbnail */}
                     <div
-                      className="w-12 h-12 rounded-xl flex items-center justify-center text-white text-xl font-bold"
-                      style={{ background: `linear-gradient(135deg, ${template.colors.primary}, ${template.colors.secondary})` }}
+                      className="aspect-square rounded-xl mb-4 flex items-center justify-center"
+                      style={{
+                        background: `linear-gradient(135deg, ${template.colors.primary}15, ${template.colors.secondary}15)`
+                      }}
                     >
-                      {template.name.ko.charAt(0)}
+                      <div
+                        className="w-12 h-12 rounded-xl flex items-center justify-center text-white text-xl font-bold"
+                        style={{ background: `linear-gradient(135deg, ${template.colors.primary}, ${template.colors.secondary})` }}
+                      >
+                        {template.name.ko.charAt(0)}
+                      </div>
                     </div>
-                  </div>
 
-                  <Badge variant="warning" className="mb-2">Coming Soon</Badge>
-                  <h3 className="font-bold text-gray-900 mb-1">{template.name.ko}</h3>
-                  <p className="text-gray-500 text-xs line-clamp-2">
-                    {template.shortDescription.ko}
-                  </p>
-                </Card>
+                    <Badge variant="warning" className="mb-2">Coming Soon</Badge>
+                    <h3 className="font-bold text-gray-900 mb-1">{template.name.ko}</h3>
+                    <p className="text-gray-500 text-xs line-clamp-2">
+                      {template.shortDescription.ko}
+                    </p>
+                  </Card>
+                </Link>
               ))}
             </div>
           </div>

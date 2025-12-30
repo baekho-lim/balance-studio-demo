@@ -1,0 +1,107 @@
+{
+  "portfolio": [
+    {
+      "id": "limhyejung",
+      "name": { "en": "Lim Hyejung", "ko": "임혜정 작가" },
+      "type": "portfolio",
+      "industry": "artist",
+      "industryLabel": { "en": "Artist", "ko": "아티스트" },
+      "url": "https://limhyejung.com",
+      "thumbnail": "/images/showcase/limhyejung-thumb.jpg",
+      "description": {
+        "en": "Artist portfolio featuring gallery, exhibitions, and multilingual support with SEO optimization",
+        "ko": "작품 갤러리, 전시 정보, 다국어 지원을 갖춘 SEO 최적화 아티스트 포트폴리오"
+      },
+      "features": ["gallery", "exhibitions", "multilingual", "seo", "blog"],
+      "techStack": ["Next.js 14", "TypeScript", "Tailwind CSS"],
+      "completedAt": "2024-12-01",
+      "caseStudy": {
+        "duration": "4주",
+        "highlights": [
+          "SEO 최적화로 구글 검색 1페이지 노출",
+          "다국어 지원 (한국어/영어/베트남어)",
+          "작품 갤러리 라이트박스",
+          "전시 정보 관리 시스템"
+        ]
+      },
+      "featured": true
+    }
+  ],
+  "demos": [
+    {
+      "id": "pilates",
+      "name": { "en": "Balance Studio", "ko": "밸런스 스튜디오" },
+      "type": "demo",
+      "industry": "pilates",
+      "industryLabel": { "en": "Pilates/Yoga", "ko": "필라테스/요가" },
+      "demoUrl": "/demo/pilates",
+      "thumbnail": "/images/showcase/pilates-thumb.jpg",
+      "description": {
+        "en": "Pilates studio template with class booking, instructor profiles, and pricing tables",
+        "ko": "클래스 예약, 강사 소개, 가격표를 갖춘 필라테스 스튜디오 템플릿"
+      },
+      "features": ["booking", "instructors", "pricing", "schedule", "seo"],
+      "templateId": "pilates",
+      "featured": true
+    },
+    {
+      "id": "fitdog",
+      "name": { "en": "FitDog", "ko": "핏독" },
+      "type": "demo",
+      "industry": "petcare",
+      "industryLabel": { "en": "Pet Care", "ko": "펫케어" },
+      "demoUrl": "/demo/fitdog",
+      "thumbnail": "/images/showcase/fitdog-thumb.jpg",
+      "description": {
+        "en": "Pet care service template with booking system, pet profiles, and service showcase",
+        "ko": "예약 시스템, 반려동물 프로필, 서비스 소개를 갖춘 펫케어 템플릿"
+      },
+      "features": ["booking", "pet-profiles", "services", "gallery", "seo"],
+      "templateId": "petcare",
+      "featured": true
+    },
+    {
+      "id": "commerce",
+      "name": { "en": "Commerce Growth OS", "ko": "커머스 그로스 OS" },
+      "type": "demo",
+      "industry": "ecommerce",
+      "industryLabel": { "en": "E-commerce", "ko": "이커머스" },
+      "demoUrl": "/demo/commerce",
+      "thumbnail": "/images/showcase/commerce-thumb.jpg",
+      "description": {
+        "en": "E-commerce analytics platform with CRM, ads management, and AI content studio",
+        "ko": "CRM, 광고 관리, AI 콘텐츠 스튜디오를 갖춘 이커머스 분석 플랫폼"
+      },
+      "features": ["crm", "analytics", "ads", "content-studio", "integrations", "seo"],
+      "templateId": "ecommerce",
+      "featured": true
+    }
+  ],
+  "industries": [
+    { "id": "all", "label": { "en": "All", "ko": "전체" } },
+    { "id": "artist", "label": { "en": "Artist", "ko": "아티스트" } },
+    { "id": "pilates", "label": { "en": "Pilates/Yoga", "ko": "필라테스/요가" } },
+    { "id": "petcare", "label": { "en": "Pet Care", "ko": "펫케어" } },
+    { "id": "ecommerce", "label": { "en": "E-commerce", "ko": "이커머스" } },
+    { "id": "restaurant", "label": { "en": "Restaurant", "ko": "레스토랑" }, "comingSoon": true },
+    { "id": "education", "label": { "en": "Education", "ko": "교육" }, "comingSoon": true }
+  ],
+  "featureLabels": {
+    "gallery": { "en": "Gallery", "ko": "갤러리" },
+    "exhibitions": { "en": "Exhibitions", "ko": "전시" },
+    "multilingual": { "en": "Multilingual", "ko": "다국어" },
+    "seo": { "en": "SEO", "ko": "SEO" },
+    "blog": { "en": "Blog", "ko": "블로그" },
+    "booking": { "en": "Booking", "ko": "예약" },
+    "instructors": { "en": "Instructors", "ko": "강사" },
+    "pricing": { "en": "Pricing", "ko": "가격표" },
+    "schedule": { "en": "Schedule", "ko": "스케줄" },
+    "pet-profiles": { "en": "Pet Profiles", "ko": "반려동물 프로필" },
+    "services": { "en": "Services", "ko": "서비스" },
+    "crm": { "en": "CRM", "ko": "CRM" },
+    "analytics": { "en": "Analytics", "ko": "분석" },
+    "ads": { "en": "Ads", "ko": "광고" },
+    "content-studio": { "en": "Content Studio", "ko": "콘텐츠 스튜디오" },
+    "integrations": { "en": "Integrations", "ko": "연동" }
+  }
+}
