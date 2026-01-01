@@ -4,5 +4,9 @@
       "path": "/api/blog/publish-scheduled",
       "schedule": "0 0 * * *"
     }
-  ]
+  ],
+  "deploymentProtection": {
+    "production": "none",
+    "preview": "none"
+  }
 }
