@@ -98,7 +98,9 @@
       { "name": "Blog", "href": "/blog", "isLink": true },
       { "name": "Story", "href": "/story", "isLink": true },
       { "name": "FAQ", "href": "/faq", "isLink": true },
-      { "name": "Partnership", "href": "/partnership", "isLink": true }
+      { "name": "Partnership", "href": "/partnership", "isLink": true },
+      { "name": "Showcase", "href": "/showcase", "isLink": true },
+      { "name": "Templates", "href": "/templates", "isLink": true }
     ],
     "admin": [
       { "name": "Dashboard", "href": "/admin", "icon": "LayoutDashboard" },
